@@ -1896,7 +1896,7 @@ PrefabInstance:
       objectReference: {fileID: 2100297451}
     - target: {fileID: 421622393872476953, guid: def90604114b2af499e7d0adff8cfb1f, type: 3}
       propertyPath: m_Lens.OrthographicSize
-      value: 3.05
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 421622393872476954, guid: def90604114b2af499e7d0adff8cfb1f, type: 3}
       propertyPath: m_Name
@@ -2097,6 +2097,10 @@ PrefabInstance:
     - target: {fileID: 7632611915348462418, guid: 0f6f6cc96f2d0ad48b0beff1c5649fb2, type: 3}
       propertyPath: m_Name
       value: Player Main Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 7632611915348462420, guid: 0f6f6cc96f2d0ad48b0beff1c5649fb2, type: 3}
+      propertyPath: orthographic size
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 7632611915348462421, guid: 0f6f6cc96f2d0ad48b0beff1c5649fb2, type: 3}
       propertyPath: m_RootOrder
