@@ -7,7 +7,9 @@ public class Interactable : MonoBehaviour
     public void Interact(Form currForm)
     {
         if (currForm != requiredForm)
+        {
             return;
+        }
 
         Destroy(this.gameObject);
     }

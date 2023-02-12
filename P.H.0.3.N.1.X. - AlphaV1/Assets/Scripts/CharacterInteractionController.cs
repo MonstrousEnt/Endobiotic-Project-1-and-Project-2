@@ -12,17 +12,19 @@ public class CharacterInteractionController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Enemy"))
-        {
-            Respawn();
-        }
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy"))
+        {
             Respawn();
+        }
         else
+        {
             Interact(collision);
+        }
+           
     }
 
     private void Respawn()
