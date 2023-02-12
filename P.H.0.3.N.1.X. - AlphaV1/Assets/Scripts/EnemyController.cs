@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class tempEnemyController : MonoBehaviour
+public class EnemyController : MonoBehaviour
 {
     [SerializeField] private Transform target;
     [SerializeField] private float speed;

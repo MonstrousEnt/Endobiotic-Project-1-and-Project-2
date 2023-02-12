@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterFormsController))]
-public class CharacterRespawnController : MonoBehaviour
+public class CharacterInteractionController : MonoBehaviour
 {
     private CharacterFormsController characterFormsController;
 
@@ -18,6 +18,13 @@ public class CharacterRespawnController : MonoBehaviour
             Respawn();
         }
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy"))
+            Respawn();
+        else
+            Interact(collision);
+    }
 
     private void Respawn()
     {
@@ -25,5 +32,10 @@ public class CharacterRespawnController : MonoBehaviour
 
         Vector2 randomLocation = new Vector2(Random.Range(-4.0f, 4.0f), Random.Range(-2.0f, 2.0f));
         transform.position = new Vector3(randomLocation.x, randomLocation.y, 0);
+    }
+
+    private void Interact(Collider2D collision)
+    {
+        collision.GetComponent<Interactable>().Interact(characterFormsController.currForm);
     }
 }
