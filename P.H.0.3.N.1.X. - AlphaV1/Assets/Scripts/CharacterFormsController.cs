@@ -37,6 +37,5 @@ public class CharacterFormsController : MonoBehaviour
     {
         currForm = (Form)newFormInt;
         spriteRenderer.sprite = formSprites[newFormInt];
-        Debug.Log("Form changed to: " + (Form)newFormInt);
     }    
 }

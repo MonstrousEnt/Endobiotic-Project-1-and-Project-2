@@ -14,7 +14,6 @@ public class CharacterInteractionController : MonoBehaviour
     {
         if (collision.collider.CompareTag("Enemy"))
         {
-            Debug.Log("collided");
             Respawn();
         }
     }
