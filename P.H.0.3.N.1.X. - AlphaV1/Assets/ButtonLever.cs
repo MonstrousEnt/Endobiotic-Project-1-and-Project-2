@@ -11,9 +11,21 @@ public class ButtonLever : MonoBehaviour
 
     [SerializeField] private GameObject DoorGameObject;
 
+    [SerializeField] private GameObject UIButtonLeverMenu;
+
     public void AcvtiveButtonLever()
+    {
+        StopCoroutine(RunButtonLever());
+        StartCoroutine(RunButtonLever());
+    }
+
+    private IEnumerator RunButtonLever()
     {
         //button do something
         DoorGameObject.SetActive(false);
+
+        yield return new WaitForSeconds(1.5f);
+
+        UIButtonLeverMenu.SetActive(false);
     }
 }
