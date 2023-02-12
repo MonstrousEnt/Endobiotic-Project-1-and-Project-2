@@ -6,6 +6,8 @@ public class OpenButtonLeverMneu : MonoBehaviour
 {
     [SerializeField] private GameObject UIMenuButtonLever;
 
+   
+
     private void Start()
     {
         UIMenuButtonLever.SetActive(false);
@@ -15,6 +17,16 @@ public class OpenButtonLeverMneu : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.J))
+        {
+            UIMenuButtonLever.SetActive(true);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        CharacterFormsController player = collision.collider.GetComponent<CharacterFormsController>();
+
+        if (player.currForm == Form.Manipulator)
         {
             UIMenuButtonLever.SetActive(true);
         }
