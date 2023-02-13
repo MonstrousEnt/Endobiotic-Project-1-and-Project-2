@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -7,9 +8,16 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Rigidbody2D rigidBody2D;
     [SerializeField] private Animator animator;
 
-    [Header("Move")]
+    [Header("Free Movement")]
     [SerializeField] private float moveSpeed = 5;
     [SerializeField] private Vector2 movement;
+
+    [Header("Gird Base Movement")]
+    [SerializeField] private bool isMoving;
+    [SerializeField] private Vector2 origPos;
+    [SerializeField] private Vector2 targetPos;
+    [SerializeField] private float timeToMove = 0.2f; //This time is in seconds
+
 
     [Header("Animation")]
     [SerializeField] private string currentAnimaton;
@@ -35,45 +43,102 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        inputsGirdBasedMovement();
+    }
+
+    private void FixedUpdate()
+    {
+       
+    }
+
+    private void inputsFreeMovement()
+    {
         //Get the move directions (Up (y +1), Down (y -1), Left (x +1), and Right (x -1))
         movement.x = Input.GetAxis("Horizontal");
         movement.y = Input.GetAxis("Vertical");
     }
 
-    private void FixedUpdate()
+    private void freeMovement()
     {
         rigidBody2D.velocity = new Vector2(movement.x * moveSpeed, movement.y * moveSpeed);
-
-        Move();
     }
 
-    private void Move()
-    {   
+    private void inputsGirdBasedMovement()
+    {
+        if (Input.GetKey(KeyCode.W) && !isMoving)
+        {
+            Move(Vector2.up);
+        }
+
+        if (Input.GetKey(KeyCode.A) && !isMoving)
+        {
+            Move(Vector2.left);
+        }
+
+        if (Input.GetKey(KeyCode.S) && !isMoving)
+        {
+            Move(Vector2.down);
+        }
+
+        if (Input.GetKey(KeyCode.D) && !isMoving)
+        {
+            Move(Vector2.right);
+        }
+    }
+
+    private IEnumerator MovePlayerGridBased(Vector2 direction)
+    {
+        isMoving = true;
+
+        float elapsedTime = 0;
+
+        origPos = transform.position;
+        targetPos = origPos + direction;
+
+        while(elapsedTime < timeToMove)
+        {
+            transform.position = Vector2.Lerp(origPos, targetPos, (elapsedTime / timeToMove));
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.position = targetPos;
+
+        isMoving = false;
+    }
+
+    private void Move(Vector2 direction)
+    {
+        StopCoroutine(MovePlayerGridBased(direction));
+        StartCoroutine(MovePlayerGridBased(direction));
+
+        //freeMovement();
+
         //if player can move:
-        movementAnimation();
+        movementAnimation(direction);
     }
 
         #region Animation Methods
 
-        private void movementAnimation()
+        private void movementAnimation(Vector2 direction)
     {
         
-        if (movement.y <= -0.01f && Mathf.Abs(movement.x) < turnThresholdMoveY)
+        if (direction.y <= -0.01f && Mathf.Abs(movement.x) < turnThresholdMoveY)
         {
             ChangeAnimationState(WALK_DOWN);
             LastMoveDir = "D";
         }
-        else if (movement.y >= 0.01f && Mathf.Abs(movement.x) < turnThresholdMoveY)
+        else if (direction.y >= 0.01f && Mathf.Abs(movement.x) < turnThresholdMoveY)
         {
             ChangeAnimationState(WALK_UP);
             LastMoveDir = "U";
         }
-        else if (movement.x <= -0.01f)
+        else if (direction.x <= -0.01f)
         {
             ChangeAnimationState(WALK_LEFT);
             LastMoveDir = "L";
         }
-        else if (movement.x >= 0.01f)
+        else if (direction.x >= 0.01f)
         {
             ChangeAnimationState(WALK_RIGHT);
             LastMoveDir = "R";
