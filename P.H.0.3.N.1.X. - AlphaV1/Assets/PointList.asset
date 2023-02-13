@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6e1ec672a1fb6d4c87f8efba3deb7ab, type: 3}
+  m_Name: PointList
+  m_EditorClassIdentifier: 
+  CollectedpiontDatas:
+  - {fileID: 11400000, guid: 920801672c782d04495e99e1c3636f0e, type: 2}
+  - {fileID: 11400000, guid: 63a1c87b0cdaa8e4c9c8f90a2b3d3de7, type: 2}
+  - {fileID: 11400000, guid: 806cbd4c8c77dac4d8854fa5c4ff41bc, type: 2}
+  - {fileID: 11400000, guid: 920801672c782d04495e99e1c3636f0e, type: 2}
