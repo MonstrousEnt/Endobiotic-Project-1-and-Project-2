@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 759186879241046264}
   - component: {fileID: 759186879241046267}
   - component: {fileID: 759186879241046266}
+  - component: {fileID: 1410499798}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -192,6 +193,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 166a1ba85fe282d48b859f0ae901f7d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidBody2D: {fileID: 0}
+  rigidBody2D: {fileID: 759186879241046264}
+  animator: {fileID: 1410499798}
   moveSpeed: 3
   movement: {x: 0, y: 0}
+  currentAnimaton: 
+  LastMoveDir: D
+  turnThresholdMoveY: 0.71
+--- !u!95 &1410499798
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759186879241046210}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1afddae23e3ebf04c8b6dc09afb1a49f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
