@@ -78,8 +78,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9672cd9d4c9bbdf498aa217938988b95, type: 3}
+  m_SortingOrder: 4
+  m_Sprite: {fileID: 21300000, guid: e34c27a6a34dfd84b87aadec1846879b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   formSprites:
-  - {fileID: 21300000, guid: 1eca87b2df8f46342b434e9b0190a44c, type: 3}
+  - {fileID: 21300000, guid: e34c27a6a34dfd84b87aadec1846879b, type: 3}
   - {fileID: 21300000, guid: 7a00d4d018efd0a489183c1dd403e8a8, type: 3}
   - {fileID: 21300000, guid: d421055b488a89544a2dda4dfb42d6c1, type: 3}
   - {fileID: 21300000, guid: d10be3a297e0031419e6a1736eb260be, type: 3}
@@ -134,18 +134,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.005557537, y: -0.18895596}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.24, y: 0.24}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.24, y: 0.24}
+  m_Size: {x: 0.4845314, y: 0.61791193}
   m_EdgeRadius: 0
 --- !u!50 &759186879241046264
 Rigidbody2D:
