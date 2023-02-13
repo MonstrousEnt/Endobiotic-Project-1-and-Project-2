@@ -3,25 +3,30 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 public class InteractableSpriteController : MonoBehaviour
 {
-    [SerializeField] Sprite isActiveSprite;
-    [SerializeField] Sprite isInactiveSprite;
+    [SerializeField] Sprite nonInteractableSprite;
+    [SerializeField] Sprite isInteractableSprite;
+    [SerializeField] Sprite hasInteractedSprite;
 
     private SpriteRenderer spriteRenderer;
 
-    private void Start()
+    private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    public void ChangeSprite(bool status)
+    public void ChangeSprite(bool isActive, bool hasActivated)
     {
-        if (status)
+        if (hasActivated)
         {
-            spriteRenderer.sprite = isActiveSprite;
+            spriteRenderer.sprite = hasInteractedSprite;
+        }
+        else if(isActive)
+        {
+            spriteRenderer.sprite = isInteractableSprite;
         }
         else
         {
-            spriteRenderer.sprite = isInactiveSprite;
+            spriteRenderer.sprite = nonInteractableSprite;
         }
     }
 }

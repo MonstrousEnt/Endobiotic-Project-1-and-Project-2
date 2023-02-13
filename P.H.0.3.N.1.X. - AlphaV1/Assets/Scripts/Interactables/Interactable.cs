@@ -2,15 +2,21 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(InteractableSpriteController))]
-public class Interactable : MonoBehaviour
+public class Interactable : MonoBehaviour, IPrerequisite
 {
     [SerializeField] private Form requiredForm = Form.Manipulator;
-    [SerializeField] private bool isInteractable = true;
 
-    private bool hasActivated;
+    private bool isInteractable;
+    private bool hasInteracted;
     private InteractableSpriteController interactableSpriteController;
 
     public UnityEvent onActivated;
+    public Interactable[] prerequisites;
+
+    private void Awake()
+    {
+        interactableSpriteController = GetComponent<InteractableSpriteController>();
+    }
 
     private void Start()
     {
@@ -19,10 +25,11 @@ public class Interactable : MonoBehaviour
             onActivated = new UnityEvent();
         }
 
-        hasActivated = false;
+        hasInteracted = false;        
 
-        interactableSpriteController = GetComponent<InteractableSpriteController>();
-        interactableSpriteController.ChangeSprite(isInteractable && !hasActivated);
+        SubscriteToPrerequisites();
+
+        CheckSetActive();
     }
 
     public void Interact(Form currForm)
@@ -32,13 +39,13 @@ public class Interactable : MonoBehaviour
             return;
         }
 
-        if (currForm != requiredForm || hasActivated == true)
+        if (currForm != requiredForm || hasInteracted == true)
         {
             return;
         }
 
-        hasActivated = true;
-        interactableSpriteController.ChangeSprite(isInteractable && !hasActivated);
+        hasInteracted = true;
+        UpdateSprite();
 
         if (onActivated != null)
         {
@@ -46,9 +53,65 @@ public class Interactable : MonoBehaviour
         }
     }
 
-    public void SetActive()
+    private void CheckSetActive()
     {
-        isInteractable = true;
-        interactableSpriteController.ChangeSprite(isInteractable && !hasActivated);
+        if (CheckIfPrerequisitesMet())
+        {
+            isInteractable = true;
+            UpdateSprite();
+        }
+        else
+        {
+            isInteractable = false;
+            UpdateSprite();
+        }
+    }
+
+    private void UpdateSprite()
+    {
+        interactableSpriteController.ChangeSprite(isInteractable, hasInteracted);
+    }
+
+    private bool CheckIfPrerequisitesMet()
+    {
+        if(prerequisites.Length <= 0)
+        {
+            return true;
+        }
+        else
+        {
+            bool returnValue = true;
+
+            for (int i = 0; i < prerequisites.Length; i++)
+            {
+                if (!prerequisites[i].IsComplete())
+                {
+                    returnValue = false;
+                }
+            }
+
+            return returnValue;
+        }
+    }
+
+    public bool IsComplete()
+    {
+        return hasInteracted;
+    }
+
+    public void SetPrerequisiteComplete()
+    {
+        CheckSetActive();
+    }
+
+    private void SubscriteToPrerequisites()
+    {
+        if(prerequisites.Length > 0)
+        {
+            for (int i = 0; i < prerequisites.Length; i++)
+            {
+                prerequisites[i].onActivated.AddListener(SetPrerequisiteComplete);
+            }
+        }
     }
 }
