@@ -27,7 +27,7 @@ public class UIPauseMenu : MonoBehaviour
     public void OpenHowToPlayMenu()
     {
         activePauseMneu(false);
-        GameMangerRootMaster.instance.uIEvents.InvokeActiveHowToPlayMenu(true);
+        GameMangerRootMaster.instance.uIEvents.InvokeActiveGameInstructionMenu(true);
     }
 
     public void QuitGame()

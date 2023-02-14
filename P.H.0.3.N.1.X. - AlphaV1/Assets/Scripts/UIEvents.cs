@@ -13,7 +13,7 @@ public class UIEvents : MonoBehaviour
 
     [Header("UI Menus")]
     public UnityEvent<bool> activePauseMenuUnityEvents;
-    public UnityEvent<bool> activeHowToPlayMenuUnityEvents;
+    public UnityEvent<bool> activeGameInstructionMenuUnityEvents;
 
     public void InvokeActiveFadeBackground(bool activeFlag)
     {
@@ -26,8 +26,8 @@ public class UIEvents : MonoBehaviour
     }
 
 
-    public void InvokeActiveHowToPlayMenu(bool active)
+    public void InvokeActiveGameInstructionMenu(bool active)
     {
-        activeHowToPlayMenuUnityEvents.Invoke(active);
+        activeGameInstructionMenuUnityEvents.Invoke(active);
     }
 }
