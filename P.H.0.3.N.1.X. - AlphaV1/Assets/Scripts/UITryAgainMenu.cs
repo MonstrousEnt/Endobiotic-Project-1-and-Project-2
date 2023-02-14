@@ -5,6 +5,8 @@ using UnityEngine;
 public class UITryAgainMenu : MonoBehaviour
 {
 
+    [SerializeField] private PopUpData popUpDataQuitPopUp;
+
     [SerializeField]  private GameObject mainWindowGameObject;
 
 
@@ -12,8 +14,8 @@ public class UITryAgainMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //GameMangerRootMaster.instance.settingsManager.ActivePause(true, 0f);
-        //activeTrigAgainMneu(true);
+        GameMangerRootMaster.instance.settingsManager.ActivePause(true, 0f);
+        activeTrigAgainMneu(true);
     }
 
     // Update is called once per frame
@@ -43,9 +45,12 @@ public class UITryAgainMenu : MonoBehaviour
         GameMangerRootMaster.instance.levelLoaderManger.LoadNextLevel(LevelName.MainLevel);
     }
 
-    public void QuitGame()
+    public void OepnQuitPopUp()
     {
-        Debug.Log("Quiting Game...");
-        Application.Quit();
+        GameMangerRootMaster.instance.settingsManager.ActivePause(true, 0f);
+
+        GameMangerRootMaster.instance.uIEvents.InvokeSetPopUpData(popUpDataQuitPopUp);
+
+        GameMangerRootMaster.instance.uIEvents.InvokeActivePopUp(true);
     }
 }

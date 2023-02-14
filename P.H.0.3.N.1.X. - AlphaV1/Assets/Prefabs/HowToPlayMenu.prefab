@@ -262,11 +262,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainWindowGameObject: {fileID: 7060931734266905703}
-  gameInstructionList: {fileID: 0}
-  GameInstructionNameText: {fileID: 0}
-  GameInstructionImage: {fileID: 0}
-  GameInstructionDescrptionTextBox: {fileID: 0}
+  gameInstructionList: {fileID: 11400000, guid: 0f98c39517262814eaf26e7ce1d8a203, type: 2}
+  GameInstructionNameText: {fileID: 1176698928342046365}
+  GameInstructionImage: {fileID: 4193318953054236932}
+  GameInstructionDescrptionTextBox: {fileID: 1923785770326700838}
   currentIndex: 0
+  maxIndex: 0
 --- !u!1 &7060931733976556271
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,7 +359,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7060931734266905702
 RectTransform:
   m_ObjectHideFlags: 0
