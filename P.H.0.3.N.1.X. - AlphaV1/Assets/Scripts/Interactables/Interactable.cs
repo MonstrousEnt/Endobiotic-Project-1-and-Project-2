@@ -52,6 +52,21 @@ public class Interactable : MonoBehaviour, IPrerequisite
             onActivated.Invoke();
         }
     }
+    public bool IsComplete()
+    {
+        return hasInteracted;
+    }
+
+    public void SetPrerequisiteComplete()
+    {
+        CheckSetActive();
+    }
+
+    public void Reenable()
+    {
+        hasInteracted = false;
+        UpdateSprite();
+    }
 
     private void CheckSetActive()
     {
@@ -92,17 +107,7 @@ public class Interactable : MonoBehaviour, IPrerequisite
 
             return returnValue;
         }
-    }
-
-    public bool IsComplete()
-    {
-        return hasInteracted;
-    }
-
-    public void SetPrerequisiteComplete()
-    {
-        CheckSetActive();
-    }
+    }    
 
     private void SubscriteToPrerequisites()
     {

@@ -4,10 +4,12 @@ using UnityEngine;
 public class CharacterInteractionController : MonoBehaviour
 {
     private CharacterFormsController characterFormsController;
+    private CharacterItemHolder characterItemHolder;
 
     private void Start()
     {
         characterFormsController = GetComponent<CharacterFormsController>();
+        characterItemHolder = GetComponent<CharacterItemHolder>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -30,7 +32,9 @@ public class CharacterInteractionController : MonoBehaviour
     private void Respawn()
     {
         characterFormsController.KillForm();
+        characterItemHolder.DropItem();
 
+        // TODO set a respawn location or enable a variable for a designer
         Vector2 randomLocation = new Vector2(Random.Range(-4.0f, 4.0f), Random.Range(-2.0f, 2.0f));
         transform.position = new Vector3(randomLocation.x, randomLocation.y, 0);
     }

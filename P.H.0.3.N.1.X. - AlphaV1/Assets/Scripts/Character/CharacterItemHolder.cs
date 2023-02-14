@@ -2,5 +2,30 @@ using UnityEngine;
 
 public class CharacterItemHolder : MonoBehaviour
 {
-    // Holds a reference to the item being carried.  Has a method to spawn a gameObject under the character while carrying and destory once dropped.  Holds a reference to the original item holder incase of death.
+    private PickupObject m_currentPickupObject;
+    [SerializeField] private SpriteRenderer m_itemSpriteRenderer;
+
+    private void Start()
+    {
+        m_itemSpriteRenderer.sprite = null;
+    }
+
+    public void AddItem(PickupObject pickupObject, Sprite itemSprite)
+    {
+        m_currentPickupObject = pickupObject;
+        m_itemSpriteRenderer.sprite = itemSprite;
+    }
+
+    public void DropItem()
+    {
+        if(m_currentPickupObject == null)
+        {
+            return;
+        }
+
+        m_currentPickupObject.ReturnItem();
+        m_currentPickupObject = null;
+
+        m_itemSpriteRenderer.sprite = null;
+    }
 }
