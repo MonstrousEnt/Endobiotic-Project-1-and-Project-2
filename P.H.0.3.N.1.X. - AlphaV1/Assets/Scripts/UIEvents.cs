@@ -12,8 +12,12 @@ public class UIEvents : MonoBehaviour
     public UnityEvent<bool> activeFadeBackgroundUnityEvents;
 
     [Header("UI Menus")]
-    public UnityEvent<bool> activePauseMenuUnityEvents;
-    public UnityEvent<bool> activeGameInstructionMenuUnityEvents;
+    public UnityEvent<bool> activePauseMenuUnityEvent;
+    public UnityEvent<bool> activeGameInstructionMenuUnityEvent;
+
+    [Header("Other UI")]
+    public UnityEvent<PopUpData> setPopUpDataUnityEvent;
+    public UnityEvent<bool> activePopUpUnityEvent;
 
     public void InvokeActiveFadeBackground(bool activeFlag)
     {
@@ -22,12 +26,21 @@ public class UIEvents : MonoBehaviour
 
     public void InvokeActivePauseMenu(bool activeFlag)
     {
-        activePauseMenuUnityEvents.Invoke(activeFlag);
+        activePauseMenuUnityEvent.Invoke(activeFlag);
     }
 
-
-    public void InvokeActiveGameInstructionMenu(bool active)
+    public void InvokeActiveGameInstructionMenu(bool activeFlag)
     {
-        activeGameInstructionMenuUnityEvents.Invoke(active);
+        activeGameInstructionMenuUnityEvent.Invoke(activeFlag);
+    }
+
+    public void InvokeSetPopUpData(PopUpData popUpData)
+    {
+        setPopUpDataUnityEvent.Invoke(popUpData);
+    }
+
+    public void InvokeActivePopUp(bool activeFlag)
+    {
+        activePopUpUnityEvent.Invoke(activeFlag);
     }
 }

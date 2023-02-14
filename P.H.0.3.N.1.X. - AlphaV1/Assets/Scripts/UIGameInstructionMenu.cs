@@ -19,13 +19,13 @@ public class UIGameInstructionMenu : MonoBehaviour
 
     private void Awake()
     {
-        GameMangerRootMaster.instance.uIEvents.activeGameInstructionMenuUnityEvents.AddListener(activeHowToPlay);
+        GameMangerRootMaster.instance.uIEvents.activeGameInstructionMenuUnityEvent.AddListener(activeHowToPlay);
     }
 
     private void Start()
     {
-        GameMangerRootMaster.instance.settingsManager.ActivePause(true, 0f);
-        activeHowToPlay(true);
+        //GameMangerRootMaster.instance.settingsManager.ActivePause(true, 0f);
+        //activeHowToPlay(true);
     }
 
     private void Update()
@@ -81,7 +81,7 @@ public class UIGameInstructionMenu : MonoBehaviour
 
     private void OnDestroy()
     {
-        GameMangerRootMaster.instance.uIEvents.activeGameInstructionMenuUnityEvents.RemoveListener(activeHowToPlay);
+        GameMangerRootMaster.instance.uIEvents.activeGameInstructionMenuUnityEvent.RemoveListener(activeHowToPlay);
     }
 
 }

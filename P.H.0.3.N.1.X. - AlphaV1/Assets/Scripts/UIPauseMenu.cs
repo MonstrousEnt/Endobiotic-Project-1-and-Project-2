@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class UIPauseMenu : MonoBehaviour
 {
+    [SerializeField] private PopUpData popUpDataQuitPopUp;
+
     [SerializeField] private GameObject MainWindowGameObject;
 
     private void Awake()
     {
-        GameMangerRootMaster.instance.uIEvents.activePauseMenuUnityEvents.AddListener(activePauseMneu);
+        GameMangerRootMaster.instance.uIEvents.activePauseMenuUnityEvent.AddListener(activePauseMneu);
     }
 
     private void activePauseMneu(bool activeFlag)
@@ -30,14 +32,17 @@ public class UIPauseMenu : MonoBehaviour
         GameMangerRootMaster.instance.uIEvents.InvokeActiveGameInstructionMenu(true);
     }
 
-    public void QuitGame()
+    public void OepnQuitPopUp()
     {
-        Debug.Log("Quiting Game...");
-        Application.Quit();
+        GameMangerRootMaster.instance.settingsManager.ActivePause(true, 0f);
+
+        GameMangerRootMaster.instance.uIEvents.InvokeSetPopUpData(popUpDataQuitPopUp);
+
+        GameMangerRootMaster.instance.uIEvents.InvokeActivePopUp(true);
     }
 
     private void OnDestroy()
     {
-        GameMangerRootMaster.instance.uIEvents.activePauseMenuUnityEvents.RemoveListener(activePauseMneu);
+        GameMangerRootMaster.instance.uIEvents.activePauseMenuUnityEvent.RemoveListener(activePauseMneu);
     }
 }

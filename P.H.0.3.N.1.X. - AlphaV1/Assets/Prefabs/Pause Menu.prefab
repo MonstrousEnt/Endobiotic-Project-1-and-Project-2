@@ -50,6 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4124186e4bcab714a92da017d06504cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  popUpDataQuitPopUp: {fileID: 11400000, guid: 0af3184b15876264abddb016fcde85f8, type: 2}
   MainWindowGameObject: {fileID: 3831578487425469746}
 --- !u!1 &3831578485876035193
 GameObject:
@@ -578,7 +579,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3831578485761701292}
         m_TargetAssemblyTypeName: UIPauseMenu, Assembly-CSharp
-        m_MethodName: QuitGame
+        m_MethodName: OepnQuitPopUp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
