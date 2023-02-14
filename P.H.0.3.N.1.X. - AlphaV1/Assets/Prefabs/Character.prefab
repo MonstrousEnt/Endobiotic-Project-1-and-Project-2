@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 759186879241046267}
   - component: {fileID: 759186879241046266}
   - component: {fileID: 1410499798}
+  - component: {fileID: 2114810535}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -138,7 +139,7 @@ BoxCollider2D:
   m_Offset: {x: 0.005557537, y: -0.18895596}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     oldSize: {x: 1, y: 1}
     newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
@@ -195,11 +196,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody2D: {fileID: 759186879241046264}
   animator: {fileID: 1410499798}
+  playerAnimation: {fileID: 2114810535}
   moveSpeed: 3
   movement: {x: 0, y: 0}
-  currentAnimaton: 
-  LastMoveDir: D
-  turnThresholdMoveY: 0.71
 --- !u!95 &1410499798
 Animator:
   serializedVersion: 5
@@ -220,3 +219,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &2114810535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759186879241046210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a0b30bcd3f68424788ba969aa77838d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1410499798}
+  currentAnimaton: 
+  LastMoveDir: D
+  turnThresholdMoveY: 0.71
