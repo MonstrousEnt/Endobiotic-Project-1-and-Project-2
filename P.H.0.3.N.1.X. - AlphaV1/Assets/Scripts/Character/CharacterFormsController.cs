@@ -10,6 +10,7 @@ public class CharacterFormsController : MonoBehaviour
 
     public Form currForm { get; private set; }
     public Sprite[] formSprites;
+    public Color[] formColours;
 
     private SpriteRenderer spriteRenderer;
 
@@ -36,6 +37,13 @@ public class CharacterFormsController : MonoBehaviour
     private void ChangeForm(int newFormInt)
     {
         currForm = (Form)newFormInt;
-        spriteRenderer.sprite = formSprites[newFormInt];
-    }    
+        spriteRenderer.color = formColours[newFormInt];
+    }
+
+
+    //private void ChangeForm(int newFormInt)
+    //{
+    //    currForm = (Form)newFormInt;
+    //    spriteRenderer.sprite = formSprites[newFormInt];
+    //}    
 }

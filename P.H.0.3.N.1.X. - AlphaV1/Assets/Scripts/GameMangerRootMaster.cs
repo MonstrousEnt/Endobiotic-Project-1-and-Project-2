@@ -9,7 +9,11 @@ public class GameMangerRootMaster : MonoBehaviour
 	public static GameMangerRootMaster instance;
 
 	[Header("Game Mangers")]
-	public LevelLoaderGameManager levelLoader;
+	public SettingsGameManager settingsManager;
+	public LevelGanmeManager levelManager;
+
+	[Header("Unity Events Managers")]
+	public UIEvents uIEvents;
 
 
 	private void Awake()
