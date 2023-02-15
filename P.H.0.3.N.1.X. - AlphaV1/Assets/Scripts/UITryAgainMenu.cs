@@ -14,8 +14,8 @@ public class UITryAgainMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameMangerRootMaster.instance.settingsManager.ActivePause(true, 0f);
-        activeTrigAgainMneu(true);
+        //GameMangerRootMaster.instance.settingsManager.ActivePause(true, 0f);
+        //activeTrigAgainMneu(true);
     }
 
     // Update is called once per frame
