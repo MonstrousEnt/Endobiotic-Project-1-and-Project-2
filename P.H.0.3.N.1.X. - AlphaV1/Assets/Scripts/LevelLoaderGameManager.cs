@@ -9,11 +9,21 @@ public class LevelLoaderGameManager : MonoBehaviour
 	[SerializeField] private Animator _animator; 
 	[SerializeField] private float _transtionTime = 1f;
 
+    private void Awake()
+    {
+        GameMangerRootMaster.instance.levelManager.loadNextLevelUnityEvent.AddListener(LoadNextLevel);
+    }
+
+    private void OnDestroy()
+    {
+        GameMangerRootMaster.instance.levelManager.loadNextLevelUnityEvent.RemoveListener(LoadNextLevel);
+    }
+
     /// <summary>
     /// Load the next scene.
     /// </summary>
     /// <param name="sceneName"></param>
-    public void LoadNextLevel(LevelName scene)
+    private void LoadNextLevel(LevelName scene)
 	{
 		//StopCoroutine(LoadLevel(scene.ToString()));
 		StartCoroutine(LoadLevel(scene.ToString()));
@@ -28,6 +38,7 @@ public class LevelLoaderGameManager : MonoBehaviour
 	{
         //Play the transition
         _animator.SetTrigger("StartCrossfade");
+		Debug.Log("Triggering crossfade!");
 
         //Wait for a couple seconds
         yield return new WaitForSeconds(_transtionTime);

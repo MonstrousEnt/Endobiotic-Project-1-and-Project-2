@@ -42,7 +42,7 @@ public class UITryAgainMenu : MonoBehaviour
 
         GameMangerRootMaster.instance.levelManager.Level1Restart();
 
-        GameMangerRootMaster.instance.levelLoaderManger.LoadNextLevel(LevelName.MainLevel);
+        GameMangerRootMaster.instance.levelManager.InvokeLoadNextLevelUnityEvent(LevelName.MainLevel);
     }
 
     public void OepnQuitPopUp()

@@ -9,7 +9,6 @@ public class GameMangerRootMaster : MonoBehaviour
 	public static GameMangerRootMaster instance;
 
 	[Header("Game Mangers")]
-	public LevelLoaderGameManager levelLoaderManger;
 	public SettingsGameManager settingsManager;
 	public LevelGanmeManager levelManager;
 
