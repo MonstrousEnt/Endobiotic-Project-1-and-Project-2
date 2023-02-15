@@ -9,7 +9,9 @@ public class UIStartScreen : MonoBehaviour
         if (Input.anyKeyDown)
         {
             //open level one
-            GameMangerRootMaster.instance.levelLoaderManger.LoadNextLevel(LevelName.MainLevel);
+            GameMangerRootMaster.instance.levelManager.InvokeLoadNextLevelUnityEvent(LevelName.MainLevel);
+
+
         }
     }
 }

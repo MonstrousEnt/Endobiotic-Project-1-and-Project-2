@@ -5,6 +5,8 @@ using UnityEngine;
 public class UITryAgainMenu : MonoBehaviour
 {
 
+    [SerializeField] private PopUpData popUpDataQuitPopUp;
+
     [SerializeField]  private GameObject mainWindowGameObject;
 
 
@@ -40,12 +42,15 @@ public class UITryAgainMenu : MonoBehaviour
 
         GameMangerRootMaster.instance.levelManager.Level1Restart();
 
-        GameMangerRootMaster.instance.levelLoaderManger.LoadNextLevel(LevelName.MainLevel);
+        GameMangerRootMaster.instance.levelManager.InvokeLoadNextLevelUnityEvent(LevelName.MainLevel);
     }
 
-    public void QuitGame()
+    public void OepnQuitPopUp()
     {
-        Debug.Log("Quiting Game...");
-        Application.Quit();
+        GameMangerRootMaster.instance.settingsManager.ActivePause(true, 0f);
+
+        GameMangerRootMaster.instance.uIEvents.InvokeSetPopUpData(popUpDataQuitPopUp);
+
+        GameMangerRootMaster.instance.uIEvents.InvokeActivePopUp(true);
     }
 }

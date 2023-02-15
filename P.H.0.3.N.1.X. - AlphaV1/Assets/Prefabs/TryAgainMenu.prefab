@@ -841,6 +841,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19b85a6d87b5b20449971df643e6ef89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  popUpDataQuitPopUp: {fileID: 11400000, guid: 0af3184b15876264abddb016fcde85f8, type: 2}
   mainWindowGameObject: {fileID: 8225104315876770247}
 --- !u!1 &8225104315221570443
 GameObject:
@@ -966,7 +967,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8225104314968284485}
         m_TargetAssemblyTypeName: UITryAgainMenu, Assembly-CSharp
-        m_MethodName: QuitGame
+        m_MethodName: OepnQuitPopUp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
