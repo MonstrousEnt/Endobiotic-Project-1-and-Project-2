@@ -6,34 +6,34 @@ using UnityEngine.SceneManagement;
 public class LevelLoaderGameManager : MonoBehaviour
 {
 	//Class Variables
-	//[SerializeField] private Animator _animator; 
+	[SerializeField] private Animator _animator; 
 	[SerializeField] private float _transtionTime = 1f;
 
-	/// <summary>
-	/// Load the next scene.
-	/// </summary>
-	/// <param name="sceneName"></param>
-	public void LoadNextLevel(LevelName scene)
+    /// <summary>
+    /// Load the next scene.
+    /// </summary>
+    /// <param name="sceneName"></param>
+    public void LoadNextLevel(LevelName scene)
 	{
-		LoadLevel(scene.ToString());
+		//StopCoroutine(LoadLevel(scene.ToString()));
+		StartCoroutine(LoadLevel(scene.ToString()));
 	}
-
 
 	/// <summary>
 	/// Load the next scene, and run the cross fade transition before the next level load.
 	/// </summary>
 	/// <param name="sceneName"></param>
 	/// <returns></returns>
-	private void LoadLevel(string sceneName)
+	private IEnumerator LoadLevel(string sceneName)
 	{
-		////Play the transition
-		//_animator.SetTrigger("StartCrossfade");
+        //Play the transition
+        _animator.SetTrigger("StartCrossfade");
 
-		////Wait for a couple seconds
-		//yield return new WaitForSeconds(_transtionTime);
+        //Wait for a couple seconds
+        yield return new WaitForSeconds(_transtionTime);
 
-		//Load the next scene
-		SceneManager.LoadScene(sceneName);
+        //Load the next scene
+        SceneManager.LoadScene(sceneName);
 	}
 
 }

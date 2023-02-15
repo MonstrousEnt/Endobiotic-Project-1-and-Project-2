@@ -273,7 +273,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &328471805
 GameObject:
@@ -414,6 +414,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 459193670929273613, guid: e29981482ed9a0d4f913f699a0fbaf12, type: 3}
   m_PrefabInstance: {fileID: 459193669585025810}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1617332700 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6643653552184594023, guid: 581425c529412a94f89bdd4159389eed, type: 3}
+  m_PrefabInstance: {fileID: 7356713126994734016}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &459193669585025810
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -424,6 +429,10 @@ PrefabInstance:
     - target: {fileID: 459193670929273612, guid: e29981482ed9a0d4f913f699a0fbaf12, type: 3}
       propertyPath: m_Name
       value: UIStartScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 459193670929273612, guid: e29981482ed9a0d4f913f699a0fbaf12, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 459193670929273613, guid: e29981482ed9a0d4f913f699a0fbaf12, type: 3}
       propertyPath: m_Pivot.x
@@ -518,13 +527,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 343385835355595096, guid: 581425c529412a94f89bdd4159389eed, type: 3}
+      propertyPath: _animator
+      value: 
+      objectReference: {fileID: 1617332700}
+    - target: {fileID: 343385835355595096, guid: 581425c529412a94f89bdd4159389eed, type: 3}
+      propertyPath: _transtionTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6643653552184594023, guid: 581425c529412a94f89bdd4159389eed, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: d1fd2f1ca55fd4a458df768936f5dc6b, type: 2}
     - target: {fileID: 7356713128686940362, guid: 581425c529412a94f89bdd4159389eed, type: 3}
       propertyPath: m_Name
       value: GameManagers
       objectReference: {fileID: 0}
     - target: {fileID: 7356713128686940363, guid: 581425c529412a94f89bdd4159389eed, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7356713128686940363, guid: 581425c529412a94f89bdd4159389eed, type: 3}
       propertyPath: m_LocalPosition.x
