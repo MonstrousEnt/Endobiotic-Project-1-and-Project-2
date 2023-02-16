@@ -11,6 +11,7 @@ public class GameMangerRootMaster : MonoBehaviour
 	[Header("Game Mangers")]
 	public SettingsGameManager settingsManager;
 	public LevelGanmeManager levelManager;
+	public PlayerManager playerManager;
 
 	[Header("Unity Events Managers")]
 	public UIEvents uIEvents;
