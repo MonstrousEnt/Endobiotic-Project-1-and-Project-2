@@ -18,6 +18,8 @@ public class UIEvents : MonoBehaviour
     [Header("Other UI")]
     public UnityEvent<PopUpData> setPopUpDataUnityEvent;
     public UnityEvent<bool> activePopUpUnityEvent;
+    public UnityEvent<DialogueData> setDialogueDataUnityEvent;
+    public UnityEvent<bool> activeDialogueBoxUnityEvent;
 
     public void InvokeActiveFadeBackground(bool activeFlag)
     {
@@ -42,5 +44,15 @@ public class UIEvents : MonoBehaviour
     public void InvokeActivePopUp(bool activeFlag)
     {
         activePopUpUnityEvent.Invoke(activeFlag);
+    }
+
+    public void InvokeSetDialogueDataUnityEvent(DialogueData dialogueData)
+    {
+        setDialogueDataUnityEvent.Invoke(dialogueData);
+    }
+
+    public void InvokeActiveDialogueBoxUnityEvent(bool activeFlag)
+    {
+        activeDialogueBoxUnityEvent.Invoke(activeFlag);
     }
 }

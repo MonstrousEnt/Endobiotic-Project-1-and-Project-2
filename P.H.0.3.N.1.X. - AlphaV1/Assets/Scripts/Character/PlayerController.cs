@@ -35,16 +35,27 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        //Get the move directions (Up (y +1), Down (y -1), Left (x +1), and Right (x -1))
-        movement.x = Input.GetAxis("Horizontal");
-        movement.y = Input.GetAxis("Vertical");
+        if (GameMangerRootMaster.instance.playerManager.canMove)
+        {
+            //Get the move directions (Up (y +1), Down (y -1), Left (x +1), and Right (x -1))
+            movement.x = Input.GetAxis("Horizontal");
+            movement.y = Input.GetAxis("Vertical");
+        }
+
     }
 
     private void FixedUpdate()
     {
-        rigidBody2D.velocity = new Vector2(movement.x * moveSpeed, movement.y * moveSpeed);
+        if (GameMangerRootMaster.instance.playerManager.canMove)
+        {
+            rigidBody2D.velocity = new Vector2(movement.x * moveSpeed, movement.y * moveSpeed);
 
-        Move();
+            Move();
+        }
+        else if (!GameMangerRootMaster.instance.playerManager.canMove)
+        {
+            rigidBody2D.velocity = Vector2.zero;
+        }
     }
 
     private void Move()
