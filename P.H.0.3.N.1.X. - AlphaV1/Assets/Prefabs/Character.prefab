@@ -10,10 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 759186879241046271}
   - component: {fileID: 759186879241046268}
+  - component: {fileID: 759186879241046264}
+  - component: {fileID: 759186879241046265}
   - component: {fileID: 759186879241046269}
   - component: {fileID: 759186879241046270}
-  - component: {fileID: 759186879241046265}
-  - component: {fileID: 759186879241046264}
+  - component: {fileID: 4398488082201832907}
   - component: {fileID: 759186879241046267}
   - component: {fileID: 759186879241046266}
   - component: {fileID: 1410499798}
@@ -21,7 +22,7 @@ GameObject:
   - component: {fileID: 2100297452}
   m_Layer: 0
   m_Name: Character
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,70 +95,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &759186879241046269
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 759186879241046210}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f74a8284aa31fa9498d8819a05bbffb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  formSprites:
-  - {fileID: 21300000, guid: e34c27a6a34dfd84b87aadec1846879b, type: 3}
-  - {fileID: 21300000, guid: 7a00d4d018efd0a489183c1dd403e8a8, type: 3}
-  - {fileID: 21300000, guid: d421055b488a89544a2dda4dfb42d6c1, type: 3}
-  - {fileID: 21300000, guid: d10be3a297e0031419e6a1736eb260be, type: 3}
-  - {fileID: 21300000, guid: 13b04dbb8dee6d54984471f2789dbf6c, type: 3}
-  - {fileID: 21300000, guid: 9672cd9d4c9bbdf498aa217938988b95, type: 3}
-  formColours:
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 0, g: 1, b: 0.10012627, a: 1}
-  - {r: 1, g: 0.46949852, b: 0, a: 1}
-  - {r: 1, g: 0, b: 0.48377466, a: 1}
-  - {r: 0.608263, g: 0, b: 1, a: 1}
-  - {r: 0, g: 0.12585497, b: 1, a: 1}
---- !u!114 &759186879241046270
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 759186879241046210}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d33e8ff906ff954b9826303bee2c174, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!61 &759186879241046265
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 759186879241046210}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.005557537, y: -0.18895596}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 0.16, y: 0.16}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.4845314, y: 0.61791193}
-  m_EdgeRadius: 0
 --- !u!50 &759186879241046264
 Rigidbody2D:
   serializedVersion: 4
@@ -179,6 +116,86 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!61 &759186879241046265
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759186879241046210}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.005557537, y: -0.18895596}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.4845314, y: 0.61791193}
+  m_EdgeRadius: 0
+--- !u!114 &759186879241046269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759186879241046210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f74a8284aa31fa9498d8819a05bbffb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  formSprites:
+  - {fileID: 21300000, guid: e34c27a6a34dfd84b87aadec1846879b, type: 3}
+  - {fileID: 21300000, guid: 7a00d4d018efd0a489183c1dd403e8a8, type: 3}
+  - {fileID: 21300000, guid: d421055b488a89544a2dda4dfb42d6c1, type: 3}
+  - {fileID: 21300000, guid: d10be3a297e0031419e6a1736eb260be, type: 3}
+  - {fileID: 21300000, guid: 2250f1bc4cf044c41928dfd1afa90fa9, type: 3}
+  - {fileID: 21300000, guid: 9672cd9d4c9bbdf498aa217938988b95, type: 3}
+  formColours:
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 0, g: 1, b: 0.10012627, a: 1}
+  - {r: 1, g: 0.46949852, b: 0, a: 1}
+  - {r: 1, g: 0, b: 0.48377466, a: 1}
+  - {r: 0.608263, g: 0, b: 1, a: 1}
+  - {r: 0, g: 0.12585497, b: 1, a: 1}
+--- !u!114 &759186879241046270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759186879241046210}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d33e8ff906ff954b9826303bee2c174, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4398488082201832907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759186879241046210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a0b30bcd3f68424788ba969aa77838d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1410499798}
+  currentAnimaton: 
+  LastMoveDir: D
+  turnThresholdMoveY: 0.71
 --- !u!114 &759186879241046267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,11 +222,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody2D: {fileID: 759186879241046264}
   animator: {fileID: 1410499798}
+  playerAnimation: {fileID: 4398488082201832907}
   moveSpeed: 3
   movement: {x: 0, y: 0}
-  currentAnimaton: 
-  LastMoveDir: D
-  turnThresholdMoveY: 0.71
 --- !u!95 &1410499798
 Animator:
   serializedVersion: 5

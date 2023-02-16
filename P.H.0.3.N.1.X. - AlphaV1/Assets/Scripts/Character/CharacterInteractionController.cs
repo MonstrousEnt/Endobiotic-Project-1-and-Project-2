@@ -14,11 +14,14 @@ public class CharacterInteractionController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-
+        if (collision.collider.CompareTag("Trap"))
+        {
+            Respawn();
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Enemy"))
+    {        
+        if (collision.CompareTag("Enemy") && characterFormsController.currForm != Form.Destroyer)
         {
             Respawn();
         }
@@ -41,6 +44,6 @@ public class CharacterInteractionController : MonoBehaviour
 
     private void Interact(Collider2D collision)
     {
-        collision.GetComponent<Interactable>().Interact(characterFormsController.currForm);
+        collision.GetComponent<Interactable>()?.Interact(characterFormsController.currForm);
     }
 }
