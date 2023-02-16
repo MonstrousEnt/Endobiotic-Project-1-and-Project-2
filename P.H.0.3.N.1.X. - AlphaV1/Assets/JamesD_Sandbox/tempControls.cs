@@ -16,7 +16,7 @@ public class tempControls : MonoBehaviour
     {
         if (Input.GetMouseButtonUp(0))
         {
-            //cfc.KillForm();
+            cfc.KillForm();
         }
     }
 }

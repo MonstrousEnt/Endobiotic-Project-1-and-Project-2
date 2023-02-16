@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6987543291139730605}
   m_Layer: 0
   m_Name: Switch1
-  m_TagString: Interactable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,9 +120,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1a29c6dca269fd4e9b88ef6d2eb50cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nonInteractableSprite: {fileID: 21300000, guid: 97e88ff808790e24ea45665b96be393f, type: 3}
   isInteractableSprite: {fileID: 21300000, guid: 97e88ff808790e24ea45665b96be393f, type: 3}
   hasInteractedSprite: {fileID: 21300000, guid: de91f13e53881cc42b51bc1dc7c898a9, type: 3}
+  nonInteractableSprite: {fileID: 21300000, guid: 97e88ff808790e24ea45665b96be393f, type: 3}
 --- !u!114 &3956143202205067925
 MonoBehaviour:
   m_ObjectHideFlags: 0
