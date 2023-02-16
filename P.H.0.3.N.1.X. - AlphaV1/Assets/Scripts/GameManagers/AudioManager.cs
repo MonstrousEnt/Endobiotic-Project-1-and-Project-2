@@ -19,4 +19,19 @@ public class AudioManager : MonoBehaviour
             soundList.soundDatas[i].source.playOnAwake = soundList.soundDatas[i].playOnAwake;
         }
     }
+
+    public void SetAudioLoop(SoundData soundData, bool flag)
+    {
+        soundData.source.loop = flag;
+    }
+
+    public void PlayAudio(SoundData soundData)
+    {
+        soundData.source.Play();
+    }
+
+    public void StopAudio(SoundData soundData)
+    {
+        soundData.source.Stop();
+    }
 }

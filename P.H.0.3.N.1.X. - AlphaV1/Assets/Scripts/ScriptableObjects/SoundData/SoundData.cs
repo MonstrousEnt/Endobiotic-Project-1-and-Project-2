@@ -24,22 +24,6 @@ public class SoundData : ScriptableObject
 
     [HideInInspector]
     public AudioSource source;
-
-    public void SetAudioLoop(bool flag)
-    {
-        loop = flag;
-    }
-
-    public void PlayAudio()
-    {
-        source.Play();
-    }
-
-    public void StopAudio()
-    { 
-        source.Stop();
-    }
-
 }
 
 #if UNITY_EDITOR

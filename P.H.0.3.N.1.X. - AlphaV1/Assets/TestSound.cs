@@ -6,27 +6,22 @@ public class TestSound : MonoBehaviour
 {
    [SerializeField] private  SoundData soundData;
 
-    private void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.T))
         {
-            soundData.PlayAudio();
+           GameMangerRootMaster.instance.audioManager.PlayAudio(soundData);
         }
 
         if (Input.GetKeyDown(KeyCode.U))
         {
-            soundData.StopAudio();
+            GameMangerRootMaster.instance.audioManager.StopAudio(soundData);
         }
 
         if (Input.GetKeyDown(KeyCode.F))
         {
-            soundData.SetAudioLoop(false);
+            GameMangerRootMaster.instance.audioManager.SetAudioLoop(soundData, false);
         }
     }
 }
