@@ -302,7 +302,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1984629924898865264
 RectTransform:
   m_ObjectHideFlags: 0
@@ -377,6 +377,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64d7babecf22b76458ebc65b162765a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainWindowGameObject: {fileID: 1984629924898865267}
+  nameText: {fileID: 1984629924193608379}
+  portraitImage: {fileID: 1984629924677726691}
+  messageTextBox: {fileID: 1984629925257430431}
+  activeSubmit: 0
+  dialogueData: {fileID: 0}
 --- !u!1 &1984629925257430425
 GameObject:
   m_ObjectHideFlags: 0
