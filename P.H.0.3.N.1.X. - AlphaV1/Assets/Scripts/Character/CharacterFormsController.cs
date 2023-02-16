@@ -20,24 +20,24 @@ public class CharacterFormsController : MonoBehaviour
         Init();
     }
 
-    public void KillForm()
-    {
-        int numForms = Enum.GetNames(typeof(Form)).Length;
-        int currFormNum = (int)currForm;
-        int nextFormInt = (currFormNum + 1) % numForms;        
+    //public void KillForm()
+    //{
+    //    int numForms = Enum.GetNames(typeof(Form)).Length;
+    //    int currFormNum = (int)currForm;
+    //    int nextFormInt = (currFormNum + 1) % numForms;        
 
-        ChangeForm(nextFormInt);
-    }
+    //    ChangeForm(nextFormInt);
+    //}
 
     private void Init()
     {
         ChangeForm(0);        
     }
 
-    private void ChangeForm(int newFormInt)
+    public void ChangeForm(Form newForm)
     {
-        currForm = (Form)newFormInt;
-        spriteRenderer.color = formColours[newFormInt];
+        currForm = newForm;
+        spriteRenderer.color = formColours[(int)newForm];
     }
 
 
