@@ -15,7 +15,7 @@ MonoBehaviour:
   soundName: Tech Music Test
   clip: {fileID: 8300000, guid: da82c0f5a0211874895ad4ee465bf889, type: 3}
   volume: 0.5
-  pitch: 2
+  pitch: 1
   loop: 1
   playOnAwake: 0
   source: {fileID: 0}
