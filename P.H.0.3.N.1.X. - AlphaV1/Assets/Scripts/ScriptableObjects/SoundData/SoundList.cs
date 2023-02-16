@@ -5,6 +5,5 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "SoundList", menuName = "Scriptable Objects/Sound List")]
 public class SoundList : ScriptableObject
 {
-    public List<SoundData> soundEffects;
-    public List<SoundData> soundtracks;
+    public List<SoundData> soundDatas = new List<SoundData>();
 }

@@ -25,24 +25,6 @@ public class SoundData : ScriptableObject
     [HideInInspector]
     public AudioSource source;
 
-
-    private void OnEnable()
-    {
-        SetupAudioSource();
-    }
-
-    public void SetupAudioSource()
-    {
-        if (clip != null)
-        {
-            this.source.clip = clip;
-            this.source.volume = volume;
-            this.source.pitch = pitch;
-            this.source.loop = loop;
-            this.source.playOnAwake = playOnAwake;
-        }
-    }
-
     public void SetAudioLoop(bool flag)
     {
         loop = flag;

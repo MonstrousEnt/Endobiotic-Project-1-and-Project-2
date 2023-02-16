@@ -8,8 +8,7 @@ public class TestSound : MonoBehaviour
 
     private void Start()
     {
-        soundData.source = gameObject.AddComponent<AudioSource>();
-        soundData.SetupAudioSource();
+
     }
 
     // Update is called once per frame
