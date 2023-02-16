@@ -1359,6 +1359,26 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5974273130741917465, guid: 4b38d9e6f99bf8d4ca9a9edd3eca816f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 51390535c5b699a4b88eca722f4c5b11, type: 3}
+    - target: {fileID: 5974273130741917465, guid: 4b38d9e6f99bf8d4ca9a9edd3eca816f, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5974273130741917465, guid: 4b38d9e6f99bf8d4ca9a9edd3eca816f, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5974273130741917465, guid: 4b38d9e6f99bf8d4ca9a9edd3eca816f, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5974273130741917465, guid: 4b38d9e6f99bf8d4ca9a9edd3eca816f, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5974273130741917465, guid: 4b38d9e6f99bf8d4ca9a9edd3eca816f, type: 3}
       propertyPath: m_SortingOrder
       value: 3
       objectReference: {fileID: 0}
@@ -1372,7 +1392,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5974273130741917467, guid: 4b38d9e6f99bf8d4ca9a9edd3eca816f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.752
+      value: -1.9999998
       objectReference: {fileID: 0}
     - target: {fileID: 5974273130741917467, guid: 4b38d9e6f99bf8d4ca9a9edd3eca816f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1412,6 +1432,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b38d9e6f99bf8d4ca9a9edd3eca816f, type: 3}
+--- !u!1 &1183091033 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5974273130741917464, guid: 4b38d9e6f99bf8d4ca9a9edd3eca816f, type: 3}
+  m_PrefabInstance: {fileID: 1183091032}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1183091034
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183091033}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 57808707a63a1074ab8f394904500aa5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1001 &1215577177
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1745,10 +1790,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character
       objectReference: {fileID: 0}
-    - target: {fileID: 759186879241046269, guid: 3a334dbb0c6f35d4e9db11017a66d16e, type: 3}
-      propertyPath: formSprites.Array.data[4]
-      value: 
-      objectReference: {fileID: 21300000, guid: 2250f1bc4cf044c41928dfd1afa90fa9, type: 3}
     - target: {fileID: 759186879241046271, guid: 3a334dbb0c6f35d4e9db11017a66d16e, type: 3}
       propertyPath: m_RootOrder
       value: 3
