@@ -1,8 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-   public bool canMove = true;
+    private bool canMove = true;
+    
+    public void EnableCharacterControls()
+    {
+        canMove = true;
+    }
+
+    public void DisableCharacterControls()
+    {
+        canMove = false;
+    }
+
+    public bool CanMove()
+    {
+        return canMove;
+    }
 }
