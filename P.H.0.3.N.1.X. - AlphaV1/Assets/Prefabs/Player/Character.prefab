@@ -162,9 +162,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   formSprites:
   - {fileID: 21300000, guid: e34c27a6a34dfd84b87aadec1846879b, type: 3}
-  - {fileID: 21300000, guid: 7a00d4d018efd0a489183c1dd403e8a8, type: 3}
-  - {fileID: 21300000, guid: d421055b488a89544a2dda4dfb42d6c1, type: 3}
-  - {fileID: 21300000, guid: d10be3a297e0031419e6a1736eb260be, type: 3}
+  - {fileID: 21300000, guid: e62ae18d0516a0b4c947853480712198, type: 3}
+  - {fileID: 21300000, guid: f32d0161b6a086942bddd2a2caaf33ad, type: 3}
+  - {fileID: 21300000, guid: 1a08dc93de7c20f4fbaa4cb77b5a4b2a, type: 3}
   - {fileID: 21300000, guid: 2250f1bc4cf044c41928dfd1afa90fa9, type: 3}
   - {fileID: 21300000, guid: 9672cd9d4c9bbdf498aa217938988b95, type: 3}
   formColours:
