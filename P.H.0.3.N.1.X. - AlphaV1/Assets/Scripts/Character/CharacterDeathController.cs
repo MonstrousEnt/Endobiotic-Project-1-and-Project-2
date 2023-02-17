@@ -1,19 +1,27 @@
 using UnityEngine;
 
-public class CharacterDeathController : MonoBehaviour
+public class CharacterDeathController : BaseControllerAnimations
 {
-    Animator animator;
+    private string currentAnimaton;
+    private const string DEATH = "death";
 
     private void Start()
     {
-        animator = GetComponent<Animator>();
-        Die();
+        m_animator = GetComponentInChildren<Animator>();
     }
 
-    private void Die()
+    public void Die()
     {
-        // play the death animation
-        animator.SetTrigger("die");
-        // play the death VFX
+        ChangeAnimationState(DEATH);
+    }
+
+    private void ChangeAnimationState(string newAnimation)
+    {
+        if (currentAnimaton == newAnimation) return;
+
+        print(m_animator);
+        print("play");
+        m_animator.Play(newAnimation);
+        currentAnimaton = newAnimation;
     }
 }
