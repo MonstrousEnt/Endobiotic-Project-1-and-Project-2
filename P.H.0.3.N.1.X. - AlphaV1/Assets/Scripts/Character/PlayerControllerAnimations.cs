@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerControllerAnimations : MonoBehaviour
+public class PlayerControllerAnimations : BaseControllerAnimations
 {
     [Header("Components")]
-    [SerializeField] private Animator animator;
+    //[SerializeField] private Animator m_animator;
 
     [Header("Animation")]
     [SerializeField] private string currentAnimaton;
@@ -14,7 +14,7 @@ public class PlayerControllerAnimations : MonoBehaviour
 
     //Animation States
     [Header("Animation States")]
-    [SerializeField] private const string IDLE_DOWN = "Idle_Down";
+    [SerializeField] public const string IDLE_DOWN = "Idle_Down";
     [SerializeField] private const string IDLE_UP = "Idle_Up";
     [SerializeField] private const string IDLE_LEFT = "Idle_Left";
     [SerializeField] private const string IDLE_RIGHT = "Idle_Right";
@@ -24,6 +24,10 @@ public class PlayerControllerAnimations : MonoBehaviour
     [SerializeField] private const string WALK_LEFT = "Walk_Left";
     [SerializeField] private const string WALK_RIGHT = "Walk_Right";
 
+    //public void SetAnimator(Animator newAnimator)
+    //{
+    //    m_animator = newAnimator;
+    //}
 
     #region Animation Methods
 
@@ -71,7 +75,7 @@ public class PlayerControllerAnimations : MonoBehaviour
     {
         if (currentAnimaton == newAnimation) return;
 
-        animator.Play(newAnimation);
+        m_animator.Play(newAnimation);
         currentAnimaton = newAnimation;
     }
 

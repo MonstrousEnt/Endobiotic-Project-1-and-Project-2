@@ -1,7 +1,5 @@
-using System;
 using UnityEngine;
 
-[RequireComponent(typeof(SpriteRenderer))]
 public class CharacterFormsController : MonoBehaviour
 {
     /// <summary>
@@ -9,25 +7,16 @@ public class CharacterFormsController : MonoBehaviour
     /// </summary>
 
     public Form currForm { get; private set; }
-    public Sprite[] formSprites;
     public Color[] formColours;
+    [SerializeField] private GameObject[] formObjects;
 
-    private SpriteRenderer spriteRenderer;
+    private BaseControllerAnimations controllerAnimations;
 
-    private void Start()
+    private void Awake()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        controllerAnimations = GetComponent<BaseControllerAnimations>();
         Init();
     }
-
-    //public void KillForm()
-    //{
-    //    int numForms = Enum.GetNames(typeof(Form)).Length;
-    //    int currFormNum = (int)currForm;
-    //    int nextFormInt = (currFormNum + 1) % numForms;        
-
-    //    ChangeForm(nextFormInt);
-    //}
 
     private void Init()
     {
@@ -37,13 +26,18 @@ public class CharacterFormsController : MonoBehaviour
     public void ChangeForm(Form newForm)
     {
         currForm = newForm;
-        spriteRenderer.color = formColours[(int)newForm];
-    }
 
+        foreach (GameObject formObject in formObjects)
+        {
+            formObject.SetActive(false);
+        }
 
-    //private void ChangeForm(int newFormInt)
-    //{
-    //    currForm = (Form)newFormInt;
-    //    spriteRenderer.sprite = formSprites[newFormInt];
-    //}    
+        print(string.Format("Requested form for {0} is {1}", gameObject.name, newForm));
+        print(string.Format("Activating {0} gameobject for {1}", formObjects[(int)newForm], gameObject.name));
+
+        formObjects[(int)newForm].SetActive(true);
+        formObjects[(int)newForm].GetComponent<SpriteRenderer>().color = formColours[(int)newForm];
+
+        controllerAnimations.SetAnimator(formObjects[(int)newForm].GetComponent<Animator>());
+    } 
 }

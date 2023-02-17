@@ -10,8 +10,16 @@ public class EnemyController : MonoBehaviour
     private bool isAttacking = false;
     private Transform m_target = null;
 
+    private CharacterFormsController characterFormController;
+
+    private void Awake()
+    {
+        characterFormController = GetComponent<CharacterFormsController>();
+    }
+
     private void Start()
     {
+        characterFormController.ChangeForm(form);
         StartCoroutine(intelligence(aggroRadius, 0.5f));
     }
 
