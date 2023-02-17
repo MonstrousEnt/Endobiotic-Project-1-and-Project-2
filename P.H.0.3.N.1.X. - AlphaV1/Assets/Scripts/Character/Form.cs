@@ -3,7 +3,7 @@ public enum Form
     Manipulator,
     Transport,
     Magnetic,
-    Generator,
+    Electronic,
     Destroyer,
-    Charged
+    Battery
 }
