@@ -12,9 +12,11 @@ GameObject:
   - component: {fileID: 4897866979042997234}
   - component: {fileID: 1417941440432259219}
   - component: {fileID: 703949297}
+  - component: {fileID: 2985887495635317926}
+  - component: {fileID: 7782432540117886378}
   m_Layer: 0
   m_Name: batterypack1
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,7 +118,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.5, y: 0.5}
@@ -130,5 +132,37 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.5, y: 1.5}
   m_EdgeRadius: 0
+--- !u!114 &2985887495635317926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5607133989209406239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1a29c6dca269fd4e9b88ef6d2eb50cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nonInteractableSprite: {fileID: 21300000, guid: 1762e24161f28fc4f94f48617fcc75e0, type: 3}
+  isInteractableSprite: {fileID: 21300000, guid: f53a11d893809764f9b8d9e4f0af9e63, type: 3}
+  hasInteractedSprite: {fileID: 21300000, guid: f53a11d893809764f9b8d9e4f0af9e63, type: 3}
+--- !u!114 &7782432540117886378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5607133989209406239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d009865d7133ae44fb34cc672668f2a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiredForm: 0
+  onActivated:
+    m_PersistentCalls:
+      m_Calls: []
+  prerequisites: []
