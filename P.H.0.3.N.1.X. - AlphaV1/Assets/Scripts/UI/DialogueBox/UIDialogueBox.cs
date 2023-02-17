@@ -60,7 +60,7 @@ public class UIDialogueBox : MonoBehaviour
 
     private void activeDialogueBox(bool activeFlag)
     {
-        GameMangerRootMaster.instance.playerManager.canMove = false;
+        GameMangerRootMaster.instance.playerManager.DisableCharacterControls();
 
         mainWindowGameObject.SetActive(activeFlag);
 
@@ -142,6 +142,6 @@ public class UIDialogueBox : MonoBehaviour
     {
         mainWindowGameObject.SetActive(false);
 
-        GameMangerRootMaster.instance.playerManager.canMove = true;
+        GameMangerRootMaster.instance.playerManager.EnableCharacterControls();
     }
 }
