@@ -10,7 +10,6 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float SpawnInterval = 3.5f;
     [SerializeField] private Form[] preferredRobot;
 
-
     [SerializeField] private int maxRobots = 6;
     [SerializeField] private int amountOfRobots = 0;
 
