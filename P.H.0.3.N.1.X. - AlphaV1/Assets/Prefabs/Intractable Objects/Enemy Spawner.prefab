@@ -101,9 +101,6 @@ MonoBehaviour:
   spawnInterval: 3.5
   spawnDistanceX: 0.5
   spawnDistanceY: 0.5
-  requiredRobotsForms: 030000000100000004000000
-  requiredRobotAmounts: 010000000100000001000000
-  userSpawnedRobots:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  requiredRobotsForms: 
+  requiredRobotAmounts: 
+  userSpawnedRobots: []
