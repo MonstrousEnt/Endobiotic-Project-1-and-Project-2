@@ -271,6 +271,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Battery Form Settings
       objectReference: {fileID: 0}
+    - target: {fileID: 9097501589359721563, guid: b530d697d15ec554caef4c802dafc719, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b530d697d15ec554caef4c802dafc719, type: 3}
 --- !u!4 &4132209562324056348 stripped
@@ -293,6 +297,10 @@ PrefabInstance:
     - target: {fileID: 58426643701671946, guid: 17263d9fcb644b84a8139cf218a42617, type: 3}
       propertyPath: m_Name
       value: Destroyer Form Settings
+      objectReference: {fileID: 0}
+    - target: {fileID: 58426643701671946, guid: 17263d9fcb644b84a8139cf218a42617, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5533012925616265177, guid: 17263d9fcb644b84a8139cf218a42617, type: 3}
       propertyPath: m_RootOrder
@@ -405,6 +413,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Manipulator Form Settings
       objectReference: {fileID: 0}
+    - target: {fileID: 7582520855147879950, guid: 97e44d59474628f42ac208187708b123, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97e44d59474628f42ac208187708b123, type: 3}
 --- !u!1 &3403883613414607733 stripped
@@ -471,6 +483,10 @@ PrefabInstance:
     - target: {fileID: 5983434800065231907, guid: ea872177709e86c41b5f470b7e3f483e, type: 3}
       propertyPath: m_Name
       value: Magnetic Form Settings
+      objectReference: {fileID: 0}
+    - target: {fileID: 5983434800065231907, guid: ea872177709e86c41b5f470b7e3f483e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea872177709e86c41b5f470b7e3f483e, type: 3}
@@ -539,6 +555,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Electronic Form Settings
       objectReference: {fileID: 0}
+    - target: {fileID: 8112819389730598028, guid: 134637e0a9212e844ae45cc958aba618, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 134637e0a9212e844ae45cc958aba618, type: 3}
 --- !u!1 &2751161396087445226 stripped
@@ -561,6 +581,10 @@ PrefabInstance:
     - target: {fileID: 2040373966066872361, guid: a400538306dad384e8c15212b92c9046, type: 3}
       propertyPath: m_Name
       value: Transport Form Settings
+      objectReference: {fileID: 0}
+    - target: {fileID: 2040373966066872361, guid: a400538306dad384e8c15212b92c9046, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8263028671512994632, guid: a400538306dad384e8c15212b92c9046, type: 3}
       propertyPath: m_RootOrder
