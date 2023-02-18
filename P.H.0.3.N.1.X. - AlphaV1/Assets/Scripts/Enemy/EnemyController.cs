@@ -61,16 +61,10 @@ public class EnemyController : MonoBehaviour
 
     private void SetBehaviour(GameObject target)
     {
-        if(target != null)
+        if(target != null && target.TryGetComponent(out CharacterFormsController formController) && formController.currForm != form)
         {
-            if(target.TryGetComponent(out CharacterFormsController formController))
-            {
-                if(formController.currForm != form)
-                {
-                    m_target = target.transform;
-                    isAttacking = true;
-                }
-            }
+            m_target = target.transform;
+            isAttacking = true;
         }
         else
         {

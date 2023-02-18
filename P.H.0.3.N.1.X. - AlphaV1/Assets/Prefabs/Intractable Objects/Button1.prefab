@@ -12,9 +12,11 @@ GameObject:
   - component: {fileID: 1664065496598059213}
   - component: {fileID: 1997499863172041880}
   - component: {fileID: 1440339559}
+  - component: {fileID: 7441334633731823956}
+  - component: {fileID: 4129920993213651277}
   m_Layer: 0
   m_Name: Button1
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,7 +96,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4631313539986442518}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 926e8c0635118984f8ee91c5f93e087c, type: 2}
   m_CullingMode: 0
@@ -116,10 +118,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.5, y: 0.40717626}
+  m_Offset: {x: 0.5, y: 0.4883483}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -130,5 +132,37 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.55990684, y: 0.42537642}
+  m_Size: {x: 0.99054813, y: 0.9116913}
   m_EdgeRadius: 0
+--- !u!114 &7441334633731823956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4631313539986442518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1a29c6dca269fd4e9b88ef6d2eb50cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nonInteractableSprite: {fileID: 21300000, guid: e2f064414e5cf9545ada0a4df97eb9f0, type: 3}
+  isInteractableSprite: {fileID: 21300000, guid: e2f064414e5cf9545ada0a4df97eb9f0, type: 3}
+  hasInteractedSprite: {fileID: 21300000, guid: 0ea2254840f75df46b54ae6dc094f74d, type: 3}
+--- !u!114 &4129920993213651277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4631313539986442518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d009865d7133ae44fb34cc672668f2a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiredForm: 0
+  onActivated:
+    m_PersistentCalls:
+      m_Calls: []
+  prerequisites: []
