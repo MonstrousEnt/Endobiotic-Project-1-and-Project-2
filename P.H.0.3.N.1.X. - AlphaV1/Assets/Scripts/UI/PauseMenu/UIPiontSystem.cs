@@ -24,11 +24,12 @@ public class UIPiontSystem : MonoBehaviour
 
         pointsTextBox.text = "";
 
-        for (int i = 0; i < pointList.CollectedpiontDatas.Count; i++)
-        {
-            pointsTextBox.text += pointList.CollectedpiontDatas[i].piontName + " " + pointList.CollectedpiontDatas[i].amount + "\n";
-            pointFullTotal += pointList.CollectedpiontDatas[i].amount;
-        }
+        //To Do Update this
+        //for (int i = 0; i < pointList.CollectedpiontDatas.Count; i++)
+        //{
+        //    pointsTextBox.text += pointList.CollectedpiontDatas[i].piontName + " " + pointList.CollectedpiontDatas[i].amount + "\n";
+        //    pointFullTotal += pointList.CollectedpiontDatas[i].amount;
+        //}
 
         pointsTextBox.text += "\n\n" + pointFullTotal.ToString();
 

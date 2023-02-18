@@ -5,10 +5,20 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "PointList", menuName = "Scriptable Objects/Point List")]
 public class PointList : ScriptableObject
 {
-    public List<PiontData> CollectedpiontDatas = new List<PiontData>();
+    public List<PiontData> treausresCollectedPointDatas = new List<PiontData>();
+
+    public void AddToTheCollectPointsList(List<PiontData> piontDatas, PiontData piontData)
+    {
+        piontDatas.Add(piontData);
+    }
 
     public void Reset()
     {
-        CollectedpiontDatas.Clear();
+        treausresCollectedPointDatas.Clear();
+    }
+
+    private void OnEnable()
+    {
+        Reset();
     }
 }

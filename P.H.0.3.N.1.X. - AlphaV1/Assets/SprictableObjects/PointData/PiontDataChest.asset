@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 493a3e9b725f08146a3d5786b8c7e5ae, type: 3}
-  m_Name: PiontData3
+  m_Name: PiontDataChest
   m_EditorClassIdentifier: 
-  piontName: Point 3
+  piontName: Chest
   amount: 100
