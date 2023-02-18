@@ -28,4 +28,15 @@ public class CharacterItemHolder : MonoBehaviour
 
         m_itemSpriteRenderer.sprite = null;
     }
+
+    public void UseItem()
+    {
+        if (m_currentPickupObject == null)
+        {
+            return;
+        }
+
+        m_currentPickupObject = null;
+        m_itemSpriteRenderer.sprite = null;
+    }
 }
