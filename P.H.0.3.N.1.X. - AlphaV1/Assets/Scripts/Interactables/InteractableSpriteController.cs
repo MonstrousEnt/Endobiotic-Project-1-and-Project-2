@@ -3,6 +3,8 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 public class InteractableSpriteController : MonoBehaviour
 {
+    [SerializeField] private bool useInteractableSpriteController = true;
+
     [SerializeField] Sprite nonInteractableSprite;
     [SerializeField] Sprite isInteractableSprite;
     [SerializeField] Sprite hasInteractedSprite;
@@ -14,8 +16,17 @@ public class InteractableSpriteController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
+    private void Start()
+    {
+        if (useInteractableSpriteController)
+            DisableAnimatorIfNeeded();
+    }
+
     public void ChangeSprite(bool isActive, bool hasActivated)
     {
+        if (!useInteractableSpriteController)
+            return;
+
         if (hasActivated)
         {
             spriteRenderer.sprite = hasInteractedSprite;
@@ -27,6 +38,15 @@ public class InteractableSpriteController : MonoBehaviour
         else
         {
             spriteRenderer.sprite = nonInteractableSprite;
+        }
+    }
+
+    private void DisableAnimatorIfNeeded()
+    {
+        if(TryGetComponent(out Animator animator))
+        {
+            if (animator.isActiveAndEnabled)
+                animator.enabled = false;
         }
     }
 }
