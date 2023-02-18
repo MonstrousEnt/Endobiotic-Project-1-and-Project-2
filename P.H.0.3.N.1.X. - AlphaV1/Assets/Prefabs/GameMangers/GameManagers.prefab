@@ -52,6 +52,7 @@ MonoBehaviour:
   settingsManager: {fileID: 6408850795554491908}
   levelManager: {fileID: 1281981357}
   playerManager: {fileID: 6702961966432706159}
+  audioManager: {fileID: 8117561945647159494}
   uIEvents: {fileID: 4692461290769467909}
 --- !u!1001 &192221253107072852
 PrefabInstance:
@@ -329,6 +330,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43241c0b96c8dd04587979aeffd7fdc5, type: 3}
+--- !u!114 &8117561945647159494 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8828231128002860517, guid: 43241c0b96c8dd04587979aeffd7fdc5, type: 3}
+  m_PrefabInstance: {fileID: 730553988791864611}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed93613d9ebeb494b871a1cc0334a76c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &9149333319281696492 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8420469986518193103, guid: 43241c0b96c8dd04587979aeffd7fdc5, type: 3}
