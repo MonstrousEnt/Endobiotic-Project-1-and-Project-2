@@ -12,6 +12,8 @@ public class TreasureObject : MonoBehaviour
 
     [SerializeField] private float animationTime;
 
+    [SerializeField] private SoundData soundDataPickUpItem;
+
     private void Start()
     {
         HPointsGameObject.SetActive(false);
@@ -20,6 +22,8 @@ public class TreasureObject : MonoBehaviour
     public void PickupTreasure()
     {
         pointList.AddToTheCollectPointsList(pointList.treausresCollectedPointDatas, piontData);
+
+        GameMangerRootMaster.instance.audioManager.PlayAudio(soundDataPickUpItem);
 
         StopCoroutine(chestAnimatiom());
         StartCoroutine(chestAnimatiom());

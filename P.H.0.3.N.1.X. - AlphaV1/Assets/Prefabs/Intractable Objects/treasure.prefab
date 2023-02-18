@@ -199,6 +199,7 @@ MonoBehaviour:
   piontData: {fileID: 11400000, guid: 906f47838eb95be4e8a8dc93b7add5bc, type: 2}
   pointList: {fileID: 11400000, guid: 4c7053bf12bd96f4892ad360aac32887, type: 2}
   animationTime: 1
+  soundDataPickUpItem: {fileID: 11400000, guid: 60981b7cc18765b4c8f51aed43b58cb9, type: 2}
 --- !u!61 &5820486581826931271
 BoxCollider2D:
   m_ObjectHideFlags: 0
