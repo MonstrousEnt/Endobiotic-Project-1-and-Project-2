@@ -118,3 +118,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 499c2b3ff330cd1449754d6fd14c46d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerControllerAnimations: {fileID: 0}
+  soundDataPlayerAttack: {fileID: 11400000, guid: b0ea7c92da8143049a2020cbaf124efc, type: 2}

@@ -4,6 +4,8 @@ public class DestroyerFormAttack : MonoBehaviour
 {
     [SerializeField] PlayerControllerAnimations playerControllerAnimations;
 
+    [SerializeField] private SoundData soundDataPlayerAttack; 
+
     private void Update()
     {
         if (playerControllerAnimations == null)
@@ -12,6 +14,8 @@ public class DestroyerFormAttack : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Mouse1) || Input.GetButton("Fire1"))
         {
             playerControllerAnimations.DestroyerAttack();
+
+            GameMangerRootMaster.instance.audioManager.PlayAudio(soundDataPlayerAttack);
         }
     }
 }
