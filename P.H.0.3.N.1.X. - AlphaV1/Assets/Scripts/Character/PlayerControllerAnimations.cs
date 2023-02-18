@@ -24,6 +24,18 @@ public class PlayerControllerAnimations : BaseControllerAnimations
     [SerializeField] private const string WALK_LEFT = "Walk_Left";
     [SerializeField] private const string WALK_RIGHT = "Walk_Right";
 
+    //Destroyer
+    [SerializeField] private const string DEST_ATK_DOWN = "Destroyer_Atk_Down";
+    [SerializeField] private const string DEST_ATK_UP = "Destroyer_Atk_Up";
+    [SerializeField] private const string DEST_ATK_LEFT = "Destroyer_Atk_Left";
+    [SerializeField] private const string DEST_ATK_RIGHT = "Destroyer_Atk_Right";
+
+    //Magnetic
+    [SerializeField] private const string MAGNET_PULL_DOWN = "Pull_Down";
+    [SerializeField] private const string MAGNET_PULL_UP = "Pull_Up";
+    [SerializeField] private const string MAGNET_PULL_LEFT = "Pull_Left";
+    [SerializeField] private const string MAGNET_PULL_RIGHT = "Pull_Right";
+
     //public void SetAnimator(Animator newAnimator)
     //{
     //    m_animator = newAnimator;
@@ -68,6 +80,46 @@ public class PlayerControllerAnimations : BaseControllerAnimations
                 ChangeAnimationState(IDLE_RIGHT);
         }
 
+    }
+
+    //Destroyer attack
+    public void DestroyerAttack()
+    {        
+        switch (LastMoveDir)
+        {            
+            case "U":
+                ChangeAnimationState(DEST_ATK_DOWN);
+                break;
+            case "D":
+                ChangeAnimationState(DEST_ATK_DOWN);
+                break;
+            case "L":
+                ChangeAnimationState(DEST_ATK_LEFT);
+                break;
+            case "R":
+                ChangeAnimationState(DEST_ATK_RIGHT);
+                break;
+        }        
+    }
+
+    //Magnet Pull
+    public void MagnetPull()
+    { 
+        switch (LastMoveDir)
+        {
+            case "U":
+                ChangeAnimationState(MAGNET_PULL_DOWN);
+                break;
+            case "D":
+                ChangeAnimationState(MAGNET_PULL_DOWN);
+                break;
+            case "L":
+                ChangeAnimationState(MAGNET_PULL_LEFT);
+                break;
+            case "R":
+                ChangeAnimationState(MAGNET_PULL_RIGHT);
+                break;
+        }        
     }
 
     // mini animation manager
