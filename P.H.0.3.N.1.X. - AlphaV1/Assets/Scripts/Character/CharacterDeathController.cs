@@ -19,8 +19,6 @@ public class CharacterDeathController : BaseControllerAnimations
     {
         if (currentAnimaton == newAnimation) return;
 
-        print(m_animator);
-        print("play");
         m_animator.Play(newAnimation);
         currentAnimaton = newAnimation;
     }
