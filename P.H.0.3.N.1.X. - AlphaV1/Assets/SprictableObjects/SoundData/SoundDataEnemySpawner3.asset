@@ -15,7 +15,7 @@ MonoBehaviour:
   soundName: Enemy Spawner 3
   clip: {fileID: 8300000, guid: bc87389d2ce3769419f1e3d786072e80, type: 3}
   volume: 0.5
-  pitch: 0
+  pitch: 1
   loop: 0
   playOnAwake: 0
   source: {fileID: 0}
