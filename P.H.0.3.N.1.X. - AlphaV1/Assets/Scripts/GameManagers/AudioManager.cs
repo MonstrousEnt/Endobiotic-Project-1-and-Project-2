@@ -6,7 +6,7 @@ public class AudioManager : MonoBehaviour
 {
     [SerializeField] private SoundList soundList;
 
-    private void Start()
+    private void Awake()
     {
         for (int i = 0; i < soundList.soundDatas.Count; i++)
         {
