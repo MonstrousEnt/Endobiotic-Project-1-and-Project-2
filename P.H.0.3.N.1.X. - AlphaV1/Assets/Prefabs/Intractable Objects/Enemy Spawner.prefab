@@ -98,9 +98,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   robotPrefab: {fileID: 5974273130741917464, guid: 4b38d9e6f99bf8d4ca9a9edd3eca816f, type: 3}
-  SpawnInterval: 3.5
-  preferredRobot: 00000000
-  maxRobots: 6
-  amountOfRobots: 0
-  spawnDistanceX: 0.25
-  spawnDistanceY: 0.25
+  spawnInterval: 3.5
+  spawnDistanceX: 0.5
+  spawnDistanceY: 0.5
+  requiredRobotsForms: 
+  requiredRobotAmounts: 
+  userSpawnedRobots: []

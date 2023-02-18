@@ -62,7 +62,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1.75
   intialForm: 0
-  aggroRadius: 1
+  aggroRadius: 2
 --- !u!61 &5974273130741917412
 BoxCollider2D:
   m_ObjectHideFlags: 0
