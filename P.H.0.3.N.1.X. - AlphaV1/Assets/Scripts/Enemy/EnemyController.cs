@@ -11,10 +11,12 @@ public class EnemyController : MonoBehaviour
     private Transform m_target = null;
 
     private CharacterFormsController characterFormController;
+    private Rigidbody2D m_rigidbody2D;
 
     private void Awake()
     {
         characterFormController = GetComponent<CharacterFormsController>();
+        m_rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
     private void Start()
@@ -25,6 +27,8 @@ public class EnemyController : MonoBehaviour
 
     private void Update()
     {
+        m_rigidbody2D.velocity = Vector2.zero;
+
         if (!isAttacking)
         {
             return;
