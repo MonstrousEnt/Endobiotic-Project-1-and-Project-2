@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7423945253493970142}
   - component: {fileID: 6235512265262423350}
+  - component: {fileID: 3822909757939837012}
   m_Layer: 0
   m_Name: Enemy Spawner
   m_TagString: Untagged
@@ -84,3 +85,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3822909757939837012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3847802261881520632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434f3bc82591a6e46a3bbe165129c959, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  robotPrefab: {fileID: 5974273130741917464, guid: 4b38d9e6f99bf8d4ca9a9edd3eca816f, type: 3}
+  SpawnInterval: 3.5
+  preferredRobot: 00000000
+  maxRobots: 6
+  amountOfRobots: 0
+  spawnDistanceX: 0.25
+  spawnDistanceY: 0.25
