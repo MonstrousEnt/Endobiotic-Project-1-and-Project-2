@@ -88,7 +88,7 @@ public class PlayerControllerAnimations : BaseControllerAnimations
         switch (LastMoveDir)
         {            
             case "U":
-                ChangeAnimationState(DEST_ATK_DOWN);
+                ChangeAnimationState(DEST_ATK_UP);
                 break;
             case "D":
                 ChangeAnimationState(DEST_ATK_DOWN);
