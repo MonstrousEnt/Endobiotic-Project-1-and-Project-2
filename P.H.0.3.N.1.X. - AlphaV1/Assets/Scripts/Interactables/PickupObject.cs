@@ -21,7 +21,7 @@ public class PickupObject : MonoBehaviour
     }
 
     public void PickupItem()
-    {
+    {        
         characterItemHolder.AddItem(this, itemSprite);
     }
 
