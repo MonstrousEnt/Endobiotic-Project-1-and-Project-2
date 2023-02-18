@@ -61,8 +61,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1.75
-  form: 5
-  aggroRadius: 5
+  intialForm: 0
+  aggroRadius: 1
 --- !u!61 &5974273130741917412
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -214,6 +214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1a29c6dca269fd4e9b88ef6d2eb50cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useInteractableSpriteController: 1
   nonInteractableSprite: {fileID: 0}
   isInteractableSprite: {fileID: 0}
   hasInteractedSprite: {fileID: 0}

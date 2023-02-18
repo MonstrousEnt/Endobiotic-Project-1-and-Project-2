@@ -313,6 +313,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Switch_Door
       objectReference: {fileID: 0}
+    - target: {fileID: 5956102941572679869, guid: 0eb2abe8c14506946aa28b095a7d41c4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6461881571056551451, guid: 0eb2abe8c14506946aa28b095a7d41c4, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -531,6 +535,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Circuit_01
       objectReference: {fileID: 0}
+    - target: {fileID: 5562528501051465912, guid: c0113d68b0de8874cad45f5a86ec0083, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6334992487962387125, guid: c0113d68b0de8874cad45f5a86ec0083, type: 3}
       propertyPath: isInteractableSprite
       value: 
@@ -634,7 +642,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &637449568
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -805,6 +813,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Switch_02
       objectReference: {fileID: 0}
+    - target: {fileID: 5956102941572679869, guid: 0eb2abe8c14506946aa28b095a7d41c4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6461881571056551451, guid: 0eb2abe8c14506946aa28b095a7d41c4, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -873,6 +885,10 @@ PrefabInstance:
     - target: {fileID: 5956102941572679869, guid: 0eb2abe8c14506946aa28b095a7d41c4, type: 3}
       propertyPath: m_Name
       value: Switch_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 5956102941572679869, guid: 0eb2abe8c14506946aa28b095a7d41c4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6461881571056551451, guid: 0eb2abe8c14506946aa28b095a7d41c4, type: 3}
       propertyPath: m_Enabled
@@ -982,6 +998,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Circuit_02
       objectReference: {fileID: 0}
+    - target: {fileID: 5562528501051465912, guid: c0113d68b0de8874cad45f5a86ec0083, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6334992487962387125, guid: c0113d68b0de8874cad45f5a86ec0083, type: 3}
       propertyPath: isInteractableSprite
       value: 
@@ -1016,7 +1036,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1257949883
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1201,6 +1221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1a29c6dca269fd4e9b88ef6d2eb50cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useInteractableSpriteController: 1
   nonInteractableSprite: {fileID: 21300000, guid: 4b085ffffd751e74abda1e48d4006bcb, type: 3}
   isInteractableSprite: {fileID: 21300000, guid: 4b085ffffd751e74abda1e48d4006bcb, type: 3}
   hasInteractedSprite: {fileID: 21300000, guid: 4b085ffffd751e74abda1e48d4006bcb, type: 3}
@@ -1248,11 +1269,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7423945253493970142, guid: 89ce67d46f79bc9449a3db1b86d641fa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.0146377
+      value: 3.35
       objectReference: {fileID: 0}
     - target: {fileID: 7423945253493970142, guid: 89ce67d46f79bc9449a3db1b86d641fa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.4226389
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 7423945253493970142, guid: 89ce67d46f79bc9449a3db1b86d641fa, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1365,6 +1386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1a29c6dca269fd4e9b88ef6d2eb50cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useInteractableSpriteController: 1
   nonInteractableSprite: {fileID: 21300000, guid: 1762e24161f28fc4f94f48617fcc75e0, type: 3}
   isInteractableSprite: {fileID: 21300000, guid: f53a11d893809764f9b8d9e4f0af9e63, type: 3}
   hasInteractedSprite: {fileID: 0}
@@ -1564,6 +1586,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1722396129021320526, guid: 3330a168158ed674c90cba740c58bd47, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6882119998641695630, guid: 3330a168158ed674c90cba740c58bd47, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1608,6 +1634,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7831489366631050728, guid: 3330a168158ed674c90cba740c58bd47, type: 3}
+      propertyPath: useInteractableSpriteController
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8573741446981851647, guid: 3330a168158ed674c90cba740c58bd47, type: 3}
       propertyPath: m_Name
       value: treasure
@@ -1645,6 +1675,10 @@ PrefabInstance:
     - target: {fileID: 4640000536401428780, guid: d78247087851f734bbdcaceb2f05be76, type: 3}
       propertyPath: m_Name
       value: exitdoor1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4640000536401428780, guid: d78247087851f734bbdcaceb2f05be76, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7192170271303141417, guid: d78247087851f734bbdcaceb2f05be76, type: 3}
       propertyPath: m_RootOrder
@@ -1961,11 +1995,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 759186879241046271, guid: 3a334dbb0c6f35d4e9db11017a66d16e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.37
+      value: -5.43
       objectReference: {fileID: 0}
     - target: {fileID: 759186879241046271, guid: 3a334dbb0c6f35d4e9db11017a66d16e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.79
+      value: -2.35
       objectReference: {fileID: 0}
     - target: {fileID: 759186879241046271, guid: 3a334dbb0c6f35d4e9db11017a66d16e, type: 3}
       propertyPath: m_LocalPosition.z
