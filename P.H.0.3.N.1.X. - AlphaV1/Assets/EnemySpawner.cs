@@ -61,7 +61,7 @@ public class EnemySpawner : MonoBehaviour
                     Quaternion.identity
                 );
 
-                yield return new WaitForEndOfFrame();
+                yield return 0;
 
                 newEnemy.GetComponent<CharacterFormsController>().ChangeForm(value.Key);
                 newEnemy.GetComponent<EnemyObject>().deathEvent.AddListener(UpdateCurrentRobotsList);
@@ -116,6 +116,9 @@ public class EnemySpawner : MonoBehaviour
                 currentRobots.Add(robotForm, 1);
             }
 
+            if (!requiredRobots.ContainsKey(robotForm))
+                requiredRobots.Add(robotForm, 1);
+
             robot.GetComponent<EnemyObject>().deathEvent.AddListener(UpdateCurrentRobotsList);
         }
 
@@ -133,9 +136,20 @@ public class EnemySpawner : MonoBehaviour
     {
         Dictionary<Form, int> tempDict = new Dictionary<Form, int>();
 
-        foreach (KeyValuePair<Form, int> value in currentRobots)
+        foreach (KeyValuePair<Form, int> value in requiredRobots)
         {
-            int missingAmount = Mathf.Clamp(requiredRobots[value.Key] - value.Value, 0, int.MaxValue);
+            int currentAmount;
+            if (requiredRobots.ContainsKey(value.Key))
+            {
+                currentAmount = currentRobots[value.Key];
+            }
+            else
+            {
+                currentAmount = 0;
+            }
+
+
+            int missingAmount = Mathf.Clamp(value.Value - currentAmount, 0, int.MaxValue);
             if (missingAmount > 0)
             {
                 tempDict[value.Key] = missingAmount;
