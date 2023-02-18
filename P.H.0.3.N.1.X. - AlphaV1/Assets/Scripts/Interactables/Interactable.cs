@@ -45,13 +45,15 @@ public class Interactable : MonoBehaviour, IPrerequisite
         }
 
         hasInteracted = true;
-        UpdateSprite();
 
         if (onActivated != null)
         {
             onActivated.Invoke();
         }
+
+        UpdateSprite();
     }
+
     public bool IsComplete()
     {
         return hasInteracted;
