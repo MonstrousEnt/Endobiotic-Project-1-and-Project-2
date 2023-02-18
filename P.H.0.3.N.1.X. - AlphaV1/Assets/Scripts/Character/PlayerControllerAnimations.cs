@@ -25,10 +25,10 @@ public class PlayerControllerAnimations : BaseControllerAnimations
     [SerializeField] private const string WALK_RIGHT = "Walk_Right";
 
     //Destroyer
-    [SerializeField] private const string DEST_ATK_DOWN = "Destroyer_Atk_Down";
-    [SerializeField] private const string DEST_ATK_UP = "Destroyer_Atk_Up";
-    [SerializeField] private const string DEST_ATK_LEFT = "Destroyer_Atk_Left";
-    [SerializeField] private const string DEST_ATK_RIGHT = "Destroyer_Atk_Right";
+    [SerializeField] private const string DEST_ATK_DOWN = "Atk_Down";
+    [SerializeField] private const string DEST_ATK_UP = "Atk_Up";
+    [SerializeField] private const string DEST_ATK_LEFT = "Atk_Left";
+    [SerializeField] private const string DEST_ATK_RIGHT = "Atk_Right";
 
     //Magnetic
     [SerializeField] private const string MAGNET_PULL_DOWN = "Pull_Down";
@@ -36,10 +36,6 @@ public class PlayerControllerAnimations : BaseControllerAnimations
     [SerializeField] private const string MAGNET_PULL_LEFT = "Pull_Left";
     [SerializeField] private const string MAGNET_PULL_RIGHT = "Pull_Right";
 
-    //public void SetAnimator(Animator newAnimator)
-    //{
-    //    m_animator = newAnimator;
-    //}
 
     #region Animation Methods
 
@@ -84,7 +80,8 @@ public class PlayerControllerAnimations : BaseControllerAnimations
 
     //Destroyer attack
     public void DestroyerAttack()
-    {        
+    {
+        print("here");
         switch (LastMoveDir)
         {            
             case "U":

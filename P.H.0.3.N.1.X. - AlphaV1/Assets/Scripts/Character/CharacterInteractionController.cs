@@ -25,11 +25,15 @@ public class CharacterInteractionController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Trap"))
+        if (collision.collider.CompareTag("Enemy") && collision.collider.GetComponent<EnemyController>().GetForm() == Form.Enemy && characterFormsController.currForm == Form.Destroyer)
+        {
+            return;
+        }
+        else if (collision.collider.CompareTag("Enemy") && collision.collider.GetComponent<EnemyController>().GetForm() == Form.Enemy)
         {
             Respawn();
         }
-        else if (collision.collider.CompareTag("Enemy") && characterFormsController.currForm != Form.Destroyer && characterFormsController.currForm != collision.collider.GetComponent<EnemyController>().GetForm())
+        else if (collision.collider.CompareTag("Enemy") && characterFormsController.currForm != collision.collider.GetComponent<EnemyController>().GetForm())
         {
             RespawnAsNewForm(collision.collider.GetComponent<EnemyController>().GetForm(), collision.collider.transform.position);
             collision.collider.gameObject.SetActive(false);
@@ -37,7 +41,7 @@ public class CharacterInteractionController : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Interactable"))
+        if (collision.CompareTag("Interactable") || collision.CompareTag("Enemy"))
         {
             if(collision.TryGetComponent(out Interactable interactable))
             {

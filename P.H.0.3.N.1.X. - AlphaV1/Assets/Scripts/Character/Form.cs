@@ -5,5 +5,6 @@ public enum Form
     Magnetic,
     Electronic,
     Destroyer,
-    Battery
+    Battery,
+    Enemy
 }

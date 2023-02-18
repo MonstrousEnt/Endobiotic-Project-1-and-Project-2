@@ -32,9 +32,6 @@ public class CharacterFormsController : MonoBehaviour
             formObject.SetActive(false);
         }
 
-        print(string.Format("Requested form for {0} is {1}", gameObject.name, newForm));
-        print(string.Format("Activating {0} gameobject for {1}", formObjects[(int)newForm], gameObject.name));
-
         formObjects[(int)newForm].SetActive(true);
         formObjects[(int)newForm].GetComponent<SpriteRenderer>().color = formColours[(int)newForm];
 
