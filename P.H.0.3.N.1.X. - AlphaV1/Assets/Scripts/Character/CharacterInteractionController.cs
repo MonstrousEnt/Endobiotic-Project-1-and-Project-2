@@ -36,7 +36,7 @@ public class CharacterInteractionController : MonoBehaviour
         else if (collision.collider.CompareTag("Enemy") && characterFormsController.currForm != collision.collider.GetComponent<CharacterFormsController>().currForm)
         {
             RespawnAsNewForm(collision.collider.GetComponent<CharacterFormsController>().currForm, collision.collider.transform.position);
-            collision.collider.gameObject.SetActive(false);
+            collision.collider.GetComponent<EnemyObject>().DestroyEnemy();
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
