@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1a29c6dca269fd4e9b88ef6d2eb50cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useInteractableSpriteController: 1
   nonInteractableSprite: {fileID: 21300000, guid: 6203c6239fcec624cb50ec05606f9d30, type: 3}
   isInteractableSprite: {fileID: 21300000, guid: 6203c6239fcec624cb50ec05606f9d30, type: 3}
   hasInteractedSprite: {fileID: 0}
@@ -158,3 +159,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d4f02ab5e2af7e4da90fcfaa4710662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundDataSolvePuzzle: {fileID: 11400000, guid: 623be40336174cc4286318a2c9d626e2, type: 2}
