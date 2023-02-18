@@ -12,7 +12,8 @@ public class PlayerController : MonoBehaviour
 
     [Header("Move")]
     [SerializeField] private float moveSpeed = 5;
-    [SerializeField] private Vector2 movement;  
+    [SerializeField] private Vector2 movement;
+
 
     void Start()
     {
@@ -33,7 +34,6 @@ public class PlayerController : MonoBehaviour
         {
             Interact();
         }
-
     }
 
     private void FixedUpdate()

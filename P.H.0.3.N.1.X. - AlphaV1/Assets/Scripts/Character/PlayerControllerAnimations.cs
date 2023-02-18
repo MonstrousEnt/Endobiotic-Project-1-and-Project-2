@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerControllerAnimations : BaseControllerAnimations
@@ -36,6 +34,12 @@ public class PlayerControllerAnimations : BaseControllerAnimations
     [SerializeField] private const string MAGNET_PULL_LEFT = "Pull_Left";
     [SerializeField] private const string MAGNET_PULL_RIGHT = "Pull_Right";
 
+    private float requiredTime;
+
+    private void Start()
+    {
+        requiredTime = Time.time;
+    }
 
     #region Animation Methods
 
@@ -95,7 +99,8 @@ public class PlayerControllerAnimations : BaseControllerAnimations
             case "R":
                 ChangeAnimationState(DEST_ATK_RIGHT);
                 break;
-        }        
+        }
+        requiredTime = Time.time + 0.25f;
     }
 
     //Magnet Pull
@@ -121,6 +126,9 @@ public class PlayerControllerAnimations : BaseControllerAnimations
     // mini animation manager
     void ChangeAnimationState(string newAnimation)
     {
+        if (requiredTime > Time.time)
+            return;
+
         if (currentAnimaton == newAnimation) return;
 
         m_animator.Play(newAnimation);
