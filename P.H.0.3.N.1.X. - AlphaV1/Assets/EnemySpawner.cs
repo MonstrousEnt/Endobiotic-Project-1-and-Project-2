@@ -116,8 +116,8 @@ public class EnemySpawner : MonoBehaviour
                 currentRobots.Add(robotForm, 1);
             }
 
-            //if (!requiredRobots.ContainsKey(robotForm))
-            //    requiredRobots.Add(robotForm, 1);
+            if (!requiredRobots.ContainsKey(robotForm))
+                requiredRobots.Add(robotForm, 1);
 
             robot.GetComponent<EnemyObject>().deathEvent.AddListener(UpdateCurrentRobotsList);
         }
@@ -139,7 +139,7 @@ public class EnemySpawner : MonoBehaviour
         foreach (KeyValuePair<Form, int> value in requiredRobots)
         {
             int currentAmount;
-            if (currentRobots.ContainsKey(value.Key))
+            if (requiredRobots.ContainsKey(value.Key))
             {
                 currentAmount = currentRobots[value.Key];
             }
