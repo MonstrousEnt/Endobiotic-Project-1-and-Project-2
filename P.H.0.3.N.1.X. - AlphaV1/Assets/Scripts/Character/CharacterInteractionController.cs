@@ -12,6 +12,9 @@ public class CharacterInteractionController : MonoBehaviour
     [SerializeField] private GameObject deathPrefab;
     [SerializeField] private ParticleSystem riseAgainParticles;
 
+    [SerializeField] private float invulTime = 0.5f;
+    private float invulTimer;
+
     private void Awake()
     {
         characterFormsController = GetComponent<CharacterFormsController>();
@@ -21,10 +24,14 @@ public class CharacterInteractionController : MonoBehaviour
     private void Start()
     {
         currentlyInteractable = new List<Interactable>();
+        invulTimer = Time.time;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (invulTimer > Time.time)
+            return;
+
         if (collision.collider.CompareTag("Enemy") && collision.collider.GetComponent<CharacterFormsController>().currForm == Form.Enemy && characterFormsController.currForm == Form.Destroyer)
         {
             return;
@@ -37,6 +44,7 @@ public class CharacterInteractionController : MonoBehaviour
         {
             RespawnAsNewForm(collision.collider.GetComponent<CharacterFormsController>().currForm, collision.collider.transform.position);
             collision.collider.GetComponent<EnemyObject>().DestroyEnemy();
+            invulTimer = Time.time + invulTime;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
