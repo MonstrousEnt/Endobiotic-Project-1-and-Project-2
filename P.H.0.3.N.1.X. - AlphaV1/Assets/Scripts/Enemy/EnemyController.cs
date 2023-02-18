@@ -4,7 +4,7 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     [SerializeField] private float speed;
-    [SerializeField] private Form form = Form.Manipulator;
+    [SerializeField] private Form intialForm = Form.Manipulator;
     [SerializeField] private float aggroRadius = 5;
 
     private bool isAttacking = false;
@@ -19,7 +19,7 @@ public class EnemyController : MonoBehaviour
 
     private void Start()
     {
-        characterFormController.ChangeForm(form);
+        characterFormController.ChangeForm(intialForm);
         StartCoroutine(intelligence(aggroRadius, 0.5f));
     }
 
@@ -41,7 +41,7 @@ public class EnemyController : MonoBehaviour
 
     public Form GetForm()
     {
-        return form;
+        return intialForm;
     }
 
     private GameObject FindTargetsInRange(float range)
@@ -61,7 +61,7 @@ public class EnemyController : MonoBehaviour
 
     private void SetBehaviour(GameObject target)
     {
-        if(target != null && target.TryGetComponent(out CharacterFormsController formController) && formController.currForm != form)
+        if(target != null && target.TryGetComponent(out CharacterFormsController formController) && formController.currForm != characterFormController.currForm)
         {
             m_target = target.transform;
             isAttacking = true;

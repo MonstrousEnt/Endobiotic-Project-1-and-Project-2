@@ -12,9 +12,12 @@ GameObject:
   - component: {fileID: 7687573258232035822}
   - component: {fileID: 1722396129021320526}
   - component: {fileID: 7112280484154873586}
+  - component: {fileID: 7831489366631050728}
+  - component: {fileID: 6387407614147305317}
+  - component: {fileID: 6010931146940835615}
   m_Layer: 0
   m_Name: treasure
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,7 +97,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8573741446981851647}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 1918707d61659c743bac175924c0c959, type: 2}
   m_CullingMode: 0
@@ -116,7 +119,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.5, y: 0.5}
@@ -130,5 +133,61 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8801813, y: 0.8691087}
+  m_Size: {x: 1.7, y: 1.7}
   m_EdgeRadius: 0
+--- !u!114 &7831489366631050728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8573741446981851647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1a29c6dca269fd4e9b88ef6d2eb50cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nonInteractableSprite: {fileID: 21300000, guid: a78fd2df00d00f747bd7246ff886c6ef, type: 3}
+  isInteractableSprite: {fileID: 21300000, guid: a78fd2df00d00f747bd7246ff886c6ef, type: 3}
+  hasInteractedSprite: {fileID: 21300000, guid: 0922e144ac650ad43bb7a0a588791514, type: 3}
+--- !u!114 &6387407614147305317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8573741446981851647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d009865d7133ae44fb34cc672668f2a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiredForm: 0
+  onActivated:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6010931146940835615}
+        m_TargetAssemblyTypeName: TreasureObject, Assembly-CSharp
+        m_MethodName: PickupTreasure
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  prerequisites: []
+--- !u!114 &6010931146940835615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8573741446981851647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae9a49a28ac23c24fa6c40c5dcc5e815, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -81,7 +81,6 @@ public class PlayerControllerAnimations : BaseControllerAnimations
     //Destroyer attack
     public void DestroyerAttack()
     {
-        print("here");
         switch (LastMoveDir)
         {            
             case "U":
