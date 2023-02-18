@@ -22,7 +22,6 @@ public class SoundData : ScriptableObject
 
     public bool playOnAwake;
 
-    [HideInInspector]
     public AudioSource source;
 }
 

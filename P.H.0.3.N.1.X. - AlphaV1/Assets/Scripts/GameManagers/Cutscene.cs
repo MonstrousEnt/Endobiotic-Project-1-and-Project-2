@@ -13,8 +13,15 @@ public class Cutscene : MonoBehaviour
 
     [SerializeField] private SoundData soundDataGameMusic;
 
+    private void Awake()
+    {
+        
+    }
+
     private void Start()
     {
+        GameMangerRootMaster.instance.audioManager.ResetSound();
+
         StartCoroutine(IntroCutscene());
     }
 

@@ -21,7 +21,7 @@ public class UIStartScreen : MonoBehaviour
             GameMangerRootMaster.instance.audioManager.StopAudio(soundDataTitleScreen);
 
             //open level one
-            GameMangerRootMaster.instance.levelManager.InvokeLoadNextLevelUnityEvent(LevelName.MainLevel);
+            GameMangerRootMaster.instance.levelManager.InvokeLoadNextLevelUnityEvent(LevelName.BenDebugScene);
 
 
         }
