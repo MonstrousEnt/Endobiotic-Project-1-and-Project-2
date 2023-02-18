@@ -20,6 +20,7 @@ public class UIEvents : MonoBehaviour
     public UnityEvent<bool> activePopUpUnityEvent;
     public UnityEvent<DialogueData> setDialogueDataUnityEvent;
     public UnityEvent<bool> activeDialogueBoxUnityEvent;
+    public UnityEvent displayGameCreditsUnityEvent;
 
     public void InvokeActiveFadeBackground(bool activeFlag)
     {
@@ -54,5 +55,10 @@ public class UIEvents : MonoBehaviour
     public void InvokeActiveDialogueBoxUnityEvent(bool activeFlag)
     {
         activeDialogueBoxUnityEvent.Invoke(activeFlag);
+    }
+
+    public void InvokeDisplayGameCreditsUnityEvent()
+    {
+        displayGameCreditsUnityEvent.Invoke();
     }
 }
