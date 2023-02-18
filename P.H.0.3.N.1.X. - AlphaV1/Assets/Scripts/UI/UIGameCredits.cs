@@ -18,7 +18,7 @@ public class UIGameCredits : MonoBehaviour
 
     private void Start()
     {
-        displayGameCredits();
+        //displayGameCredits();
     }
 
     private void OnDestroy()

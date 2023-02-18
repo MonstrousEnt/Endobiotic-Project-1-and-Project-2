@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class LevelGanmeManager : MonoBehaviour
 {
     [SerializeField] private PointList pointList;
+    [SerializeField] private TimerData timerData;
     public UnityEvent <LevelName> loadNextLevelUnityEvent;
 
     public void Level1Restart()
@@ -13,6 +14,7 @@ public class LevelGanmeManager : MonoBehaviour
         //Any thing we want the game to restart
 
         pointList.Reset();
+        timerData.Reset();
     }
 
     public void InvokeLoadNextLevelUnityEvent(LevelName scene)
