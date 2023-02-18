@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 853605898}
   - component: {fileID: 1140174129068089872}
   - component: {fileID: 7922197815093173546}
-  - component: {fileID: 1868289491398934427}
   - component: {fileID: 8751380591369465611}
+  - component: {fileID: 6409998194036200798}
   m_Layer: 0
   m_Name: Block-green
   m_TagString: Interactable
@@ -148,6 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1a29c6dca269fd4e9b88ef6d2eb50cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useInteractableSpriteController: 0
   nonInteractableSprite: {fileID: 21300000, guid: cb9bb61dbc63ce440b793990e2a77e2a, type: 3}
   isInteractableSprite: {fileID: 21300000, guid: cb9bb61dbc63ce440b793990e2a77e2a, type: 3}
   hasInteractedSprite: {fileID: 21300000, guid: 72035d0362e3f3a428aa1f78dcc61ebf, type: 3}
@@ -167,9 +168,9 @@ MonoBehaviour:
   onActivated:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1868289491398934427}
-        m_TargetAssemblyTypeName: DoorObjective, Assembly-CSharp
-        m_MethodName: DisableDoor
+      - m_Target: {fileID: 6409998194036200798}
+        m_TargetAssemblyTypeName: GreenBlockObject, Assembly-CSharp
+        m_MethodName: BreakBlock
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -180,18 +181,6 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   prerequisites: []
---- !u!114 &1868289491398934427
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 188307105416807641}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d4f02ab5e2af7e4da90fcfaa4710662, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &8751380591369465611
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -218,3 +207,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5, y: 1.5}
   m_EdgeRadius: 0
+--- !u!114 &6409998194036200798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188307105416807641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6cdd659ce7e0eb49b13e7495e6b15df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_timeUnderColliderRemoved: 0.25

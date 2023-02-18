@@ -15,14 +15,9 @@ public class PickupObject : MonoBehaviour
         characterItemHolder = FindObjectOfType<CharacterItemHolder>();
     }
 
-    private void Start()
-    {
-        itemSprite = spriteRenderer.sprite;
-    }
-
     public void PickupItem()
     {        
-        characterItemHolder.AddItem(this, itemSprite);
+        characterItemHolder.AddItem(this, spriteRenderer.sprite);
     }
 
     public void ReturnItem()

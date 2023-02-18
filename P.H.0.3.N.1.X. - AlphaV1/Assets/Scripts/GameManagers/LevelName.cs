@@ -5,5 +5,5 @@ using UnityEngine;
 public enum LevelName
 {
     StartScreen,
-    MainLevel
+    BenDebugScene
 }

@@ -17,7 +17,11 @@ public class EnemySpawner : MonoBehaviour
     private Dictionary<Form, int> requiredRobots = new Dictionary<Form, int>();
     private Dictionary<Form, int> currentRobots = new Dictionary<Form, int>();
 
-   
+    [SerializeField] private SoundData soundDataSpawner1;
+    [SerializeField] private SoundData soundDataSpawner2;
+    [SerializeField] private SoundData soundDataSpawner3;
+
+
     private void Start()
     {
         //StartCoroutine(spawnEnemy(SpawnInterval, robotPrefab));
@@ -77,6 +81,8 @@ public class EnemySpawner : MonoBehaviour
                     currentRobots.Add(value.Key, 1);
                 }
                 //print(string.Format("Spawned {0} {1} robots", value.Value, value.Key));
+
+                RandomSpawnerSound();
             }
         }
     }
@@ -161,5 +167,28 @@ public class EnemySpawner : MonoBehaviour
         //print("----------");
 
         StartCoroutine(SpawnRobots(tempDict));
+    }
+
+    private void RandomSpawnerSound()
+    {
+        //Get a random number
+        int randNum = Random.Range(1, 4);
+
+        //Pick a jump sound
+        switch (randNum)
+        {
+            case 1:
+                //Play the jump sound 1
+                GameMangerRootMaster.instance.audioManager.PlayAudio(soundDataSpawner1);
+                break;
+            case 2:
+                //Play the jump sound 2
+                GameMangerRootMaster.instance.audioManager.PlayAudio(soundDataSpawner2);
+                break;
+            case 3:
+                //Play the jump sound 3
+                GameMangerRootMaster.instance.audioManager.PlayAudio(soundDataSpawner3);
+                break;
+        }
     }
 }

@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/StartScreen.unity
     guid: 3f6dfe80346dd7945b9fb5d89b596969
   - enabled: 1
-    path: Assets/Scenes/MainLevel.unity
-    guid: 1fce3810b0162874fb6590a58b794b46
+    path: Assets/Scenes/BenDebugScene.unity
+    guid: 7f826cfb96cf1864fb10694bf7c1bd26
   m_configObjects: {}

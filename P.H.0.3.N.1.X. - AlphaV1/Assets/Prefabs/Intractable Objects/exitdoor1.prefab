@@ -124,3 +124,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d4f02ab5e2af7e4da90fcfaa4710662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundDataSolvePuzzle: {fileID: 11400000, guid: 623be40336174cc4286318a2c9d626e2, type: 2}

@@ -14,3 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundDatas:
   - {fileID: 11400000, guid: 60981b7cc18765b4c8f51aed43b58cb9, type: 2}
+  - {fileID: 11400000, guid: 9c262e3b02875eb43b93d5e01b543c18, type: 2}
+  - {fileID: 11400000, guid: b0ea7c92da8143049a2020cbaf124efc, type: 2}
+  - {fileID: 11400000, guid: e8c71e82fe42f6a4580ced286a5487ef, type: 2}
+  - {fileID: 11400000, guid: 2fb63c9c9fc39c94698019247444b10f, type: 2}
+  - {fileID: 11400000, guid: a8a2539967a8a0f46b505e82b62abbfd, type: 2}
+  - {fileID: 11400000, guid: 85c86135453365142bdd9239f64ea281, type: 2}
+  - {fileID: 11400000, guid: 623be40336174cc4286318a2c9d626e2, type: 2}
+  - {fileID: 11400000, guid: e6d52d08566e84d4f88374892a010b70, type: 2}
+  - {fileID: 11400000, guid: 5ef9b9fbbae2e374f984402b8f34b922, type: 2}
+  - {fileID: 11400000, guid: f13d029d5fda77244b684fad62ac3242, type: 2}
+  - {fileID: 11400000, guid: ec599096b8da7a9478574048bf36e1eb, type: 2}

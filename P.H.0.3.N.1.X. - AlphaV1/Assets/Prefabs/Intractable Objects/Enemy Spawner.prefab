@@ -104,3 +104,6 @@ MonoBehaviour:
   requiredRobotsForms: 
   requiredRobotAmounts: 
   userSpawnedRobots: []
+  soundDataSpawner1: {fileID: 11400000, guid: e8c71e82fe42f6a4580ced286a5487ef, type: 2}
+  soundDataSpawner2: {fileID: 11400000, guid: 2fb63c9c9fc39c94698019247444b10f, type: 2}
+  soundDataSpawner3: {fileID: 11400000, guid: a8a2539967a8a0f46b505e82b62abbfd, type: 2}
