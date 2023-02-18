@@ -20,6 +20,8 @@ public class Cutscene : MonoBehaviour
     {
         GameMangerRootMaster.instance.playerManager.DisableCharacterControls();
 
+        // Start sound here
+
         rebirthParticles.Play();
 
         yield return new WaitForSeconds(2.0f);
