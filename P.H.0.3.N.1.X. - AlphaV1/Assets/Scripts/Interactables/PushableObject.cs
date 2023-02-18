@@ -7,6 +7,8 @@ public class PushableObject : MonoBehaviour
     [SerializeField] private InteractableOjbects objectType;
     [SerializeField] private bool destroyOnceUsed;
 
+    [SerializeField] private SoundData soundDataPush;
+
     private Rigidbody2D rigidBody2D;
 
     private void Awake()
@@ -33,6 +35,8 @@ public class PushableObject : MonoBehaviour
             if (formController.currForm == requiredForm)
             {
                 rigidBody2D.mass = 10;
+
+                GameMangerRootMaster.instance.audioManager.PlayAudio(soundDataPush);
             }
             else
             {
