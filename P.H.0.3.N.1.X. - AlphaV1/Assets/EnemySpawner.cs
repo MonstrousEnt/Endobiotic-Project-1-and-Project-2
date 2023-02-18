@@ -116,8 +116,8 @@ public class EnemySpawner : MonoBehaviour
                 currentRobots.Add(robotForm, 1);
             }
 
-            if (!requiredRobots.ContainsKey(robotForm))
-                requiredRobots.Add(robotForm, 1);
+            //if (!requiredRobots.ContainsKey(robotForm))
+            //    requiredRobots.Add(robotForm, 1);
 
             robot.GetComponent<EnemyObject>().deathEvent.AddListener(UpdateCurrentRobotsList);
         }
