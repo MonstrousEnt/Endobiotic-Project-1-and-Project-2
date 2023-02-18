@@ -259,6 +259,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd37f211605169542936cde24b32f4e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!58 &2034196810114675888
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -684,6 +687,10 @@ PrefabInstance:
     - target: {fileID: 7873717854024290039, guid: 41567144d915fc64cbea05ba5d99e492, type: 3}
       propertyPath: m_Name
       value: Enemy Settings
+      objectReference: {fileID: 0}
+    - target: {fileID: 7873717854024290039, guid: 41567144d915fc64cbea05ba5d99e492, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41567144d915fc64cbea05ba5d99e492, type: 3}

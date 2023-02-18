@@ -36,5 +36,11 @@ public class CharacterFormsController : MonoBehaviour
         formObjects[(int)newForm].GetComponent<SpriteRenderer>().color = formColours[(int)newForm];
 
         controllerAnimations.SetAnimator(formObjects[(int)newForm].GetComponent<Animator>());
-    } 
+    }
+
+    //private void OnValidate()
+    //{
+    //    if(TryGetComponent(out EnemyController enemyController))
+    //        ChangeForm(enemyController.GetForm());
+    //}
 }
