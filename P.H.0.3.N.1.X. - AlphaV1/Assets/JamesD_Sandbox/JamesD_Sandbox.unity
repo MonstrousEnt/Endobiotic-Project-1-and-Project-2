@@ -1291,11 +1291,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3822909757939837012, guid: 89ce67d46f79bc9449a3db1b86d641fa, type: 3}
       propertyPath: requiredRobotsForms.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3822909757939837012, guid: 89ce67d46f79bc9449a3db1b86d641fa, type: 3}
       propertyPath: requiredRobotAmounts.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3822909757939837012, guid: 89ce67d46f79bc9449a3db1b86d641fa, type: 3}
       propertyPath: userSpawnedRobots.Array.data[0]
@@ -1311,7 +1311,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3822909757939837012, guid: 89ce67d46f79bc9449a3db1b86d641fa, type: 3}
       propertyPath: requiredRobotsForms.Array.data[2]
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3822909757939837012, guid: 89ce67d46f79bc9449a3db1b86d641fa, type: 3}
       propertyPath: requiredRobotAmounts.Array.data[0]
@@ -1988,7 +1988,7 @@ PrefabInstance:
       objectReference: {fileID: 947874932}
     - target: {fileID: 5974273130741917466, guid: 4b38d9e6f99bf8d4ca9a9edd3eca816f, type: 3}
       propertyPath: intialForm
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5974273130741917467, guid: 4b38d9e6f99bf8d4ca9a9edd3eca816f, type: 3}
       propertyPath: m_RootOrder

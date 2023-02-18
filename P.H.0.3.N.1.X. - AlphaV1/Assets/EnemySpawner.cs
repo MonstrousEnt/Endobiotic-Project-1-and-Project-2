@@ -138,21 +138,18 @@ public class EnemySpawner : MonoBehaviour
 
         foreach (KeyValuePair<Form, int> value in requiredRobots)
         {
-            int currentAmount;
-            if (requiredRobots.ContainsKey(value.Key))
+            int currentAmount = 0;
+            if (currentRobots.ContainsKey(value.Key))
             {
                 currentAmount = currentRobots[value.Key];
-            }
-            else
-            {
-                currentAmount = 0;
             }
 
 
             int missingAmount = Mathf.Clamp(value.Value - currentAmount, 0, int.MaxValue);
             if (missingAmount > 0)
             {
-                tempDict[value.Key] = missingAmount;
+                tempDict.Add(value.Key, missingAmount);
+                //tempDict[value.Key] = missingAmount;
             }
         }
 
