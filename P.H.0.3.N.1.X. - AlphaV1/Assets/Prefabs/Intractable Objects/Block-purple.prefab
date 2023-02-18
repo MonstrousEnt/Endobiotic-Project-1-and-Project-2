@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 1040934144123929644}
   - component: {fileID: 1040934144123929619}
   - component: {fileID: 1040934144123929645}
+  - component: {fileID: 625285203799819643}
+  - component: {fileID: 5222209761152802724}
   m_Layer: 0
   m_Name: Block-purple
   m_TagString: Untagged
@@ -109,5 +111,41 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.8732968, y: 0.8946394}
   m_EdgeRadius: 0
+--- !u!50 &625285203799819643
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040934144123929618}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 10
+  m_LinearDrag: 10
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &5222209761152802724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040934144123929618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30d56d69c927b8141b163c46c5568daf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiredForm: 1
+  objectType: 0
+  destroyOnceUsed: 1

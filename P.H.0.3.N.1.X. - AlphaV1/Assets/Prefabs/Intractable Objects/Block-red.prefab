@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 8445007580383612672}
   - component: {fileID: 8445007580383612673}
   - component: {fileID: 8445007580383612687}
+  - component: {fileID: 8688659566423670383}
+  - component: {fileID: 6633160240165211193}
+  - component: {fileID: 2045173158}
   m_Layer: 0
   m_Name: Block-red
   m_TagString: Untagged
@@ -111,3 +114,47 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &8688659566423670383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8445007580383612674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1a29c6dca269fd4e9b88ef6d2eb50cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nonInteractableSprite: {fileID: 21300000, guid: 6203c6239fcec624cb50ec05606f9d30, type: 3}
+  isInteractableSprite: {fileID: 21300000, guid: 6203c6239fcec624cb50ec05606f9d30, type: 3}
+  hasInteractedSprite: {fileID: 0}
+--- !u!114 &6633160240165211193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8445007580383612674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d009865d7133ae44fb34cc672668f2a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiredForm: 0
+  onActivated:
+    m_PersistentCalls:
+      m_Calls: []
+  prerequisites: []
+--- !u!114 &2045173158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8445007580383612674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d4f02ab5e2af7e4da90fcfaa4710662, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
