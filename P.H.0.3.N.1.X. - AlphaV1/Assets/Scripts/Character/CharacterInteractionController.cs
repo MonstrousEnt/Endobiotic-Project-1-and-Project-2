@@ -13,7 +13,7 @@ public class CharacterInteractionController : MonoBehaviour
     [SerializeField] private ParticleSystem riseAgainParticles;
     [SerializeField] private SoundData soundDataPlayerDeath;
 
-    [SerializeField] private float invulTime = 0.5f;
+    [SerializeField] private float invulTime = 1f;
     private float invulTimer;
 
     private void Awake()

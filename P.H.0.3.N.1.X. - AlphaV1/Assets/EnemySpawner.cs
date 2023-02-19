@@ -113,6 +113,7 @@ public class EnemySpawner : MonoBehaviour
         newEnemy.GetComponent<CharacterFormsController>().ChangeForm(robot.m_form);
         newEnemy.GetComponent<EnemyObject>().deathEvent.AddListener(UpdateCurrentRobotsList);
         newEnemy.GetComponent<EnemyController>().UpdatePreferredPosition(robot.m_position);
+        StartCoroutine(newEnemy.GetComponent<EnemyController>().EnableCollider());
 
         //print(string.Format("Spawned {0} {1} robots", value.Value, value.Key));
 

@@ -14,6 +14,8 @@ public class EnemyController : MonoBehaviour
     private Rigidbody2D m_rigidbody2D;
     private Vector3 preferredPosition;
 
+    [SerializeField] Collider2D physicsCollider;
+
     private void Awake()
     {
         characterFormController = GetComponent<CharacterFormsController>();
@@ -25,11 +27,18 @@ public class EnemyController : MonoBehaviour
     {
         characterFormController.ChangeForm(intialForm);
         StartCoroutine(intelligence(aggroRadius, 0.5f));
+        StartCoroutine(EnableCollider());
     }
 
     public void UpdatePreferredPosition(Vector3 position)
     {
         preferredPosition = position;
+    }
+
+    public IEnumerator EnableCollider()
+    {
+        yield return new WaitForSeconds(0.1f);
+        physicsCollider.enabled = true;
     }
 
     private void Update()

@@ -5352,6 +5352,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character
       objectReference: {fileID: 0}
+    - target: {fileID: 759186879241046267, guid: 3a334dbb0c6f35d4e9db11017a66d16e, type: 3}
+      propertyPath: invulTime
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 759186879241046271, guid: 3a334dbb0c6f35d4e9db11017a66d16e, type: 3}
       propertyPath: m_RootOrder
       value: 5

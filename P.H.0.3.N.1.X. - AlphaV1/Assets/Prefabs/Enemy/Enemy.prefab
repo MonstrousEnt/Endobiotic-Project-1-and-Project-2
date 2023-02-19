@@ -64,6 +64,7 @@ MonoBehaviour:
   speed: 1.75
   intialForm: 0
   aggroRadius: 2
+  physicsCollider: {fileID: 1285730429124278010}
 --- !u!61 &5974273130741917412
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -286,7 +287,7 @@ CapsuleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5974273130741917464}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
