@@ -12,10 +12,10 @@ public class UIPiontSystem : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            DisplayPoints();
-        }
+        //if (Input.GetKeyDown(KeyCode.P))
+        //{
+        //    DisplayPoints();
+        //}
     }
 
     void DisplayPoints()

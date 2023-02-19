@@ -9,34 +9,25 @@ public class UITryAgainMenu : MonoBehaviour
 
     [SerializeField]  private GameObject mainWindowGameObject;
 
-
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        //GameMangerRootMaster.instance.settingsManager.ActivePause(true, 0f);
-        //activeTrigAgainMneu(true);
+        GameMangerRootMaster.instance.uIEvents.activeTryAgainMneuUnityEvent.AddListener(activeTryAgainMneu);
+    }
+    private void OnDestroy()
+    {
+        GameMangerRootMaster.instance.uIEvents.activeTryAgainMneuUnityEvent.RemoveListener(activeTryAgainMneu);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            GameMangerRootMaster.instance.settingsManager.ActivePause(false, 1f);
-            activeTrigAgainMneu(false);
-        }
-    }
-
-    private void activeTrigAgainMneu(bool activeFlag)
+    private void activeTryAgainMneu(bool activeFlag)
     {
         GameMangerRootMaster.instance.uIEvents.InvokeActiveFadeBackground(activeFlag);
+        GameMangerRootMaster.instance.uIEvents.tryAgainIsActive = activeFlag;
         mainWindowGameObject.SetActive(activeFlag);
     }
 
     public void TryAgin()
     {
-        activeTrigAgainMneu(false);
+        activeTryAgainMneu(false);
 
         GameMangerRootMaster.instance.settingsManager.ActivePause(false, 1f);
 

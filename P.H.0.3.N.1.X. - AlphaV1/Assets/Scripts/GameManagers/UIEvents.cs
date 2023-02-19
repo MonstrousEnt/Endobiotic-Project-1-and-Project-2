@@ -7,6 +7,7 @@ public class UIEvents : MonoBehaviour
 {
     [Header("Bool Flag Var Golabl")]
     public bool pauseMneuIsActive = false;
+    public bool tryAgainIsActive = false;
 
     [Header("Root")]
     public UnityEvent<bool> activeFadeBackgroundUnityEvents;
@@ -14,6 +15,7 @@ public class UIEvents : MonoBehaviour
     [Header("UI Menus")]
     public UnityEvent<bool> activePauseMenuUnityEvent;
     public UnityEvent<bool> activeGameInstructionMenuUnityEvent;
+    public UnityEvent<bool> activeTryAgainMneuUnityEvent;
 
     [Header("Other UI")]
     public UnityEvent<PopUpData> setPopUpDataUnityEvent;
@@ -36,6 +38,12 @@ public class UIEvents : MonoBehaviour
     {
         activeGameInstructionMenuUnityEvent.Invoke(activeFlag);
     }
+
+    public void InvokActiveTryAgainMneu(bool activeFlag)
+    {
+        activeTryAgainMneuUnityEvent.Invoke(activeFlag);
+    }
+
 
     public void InvokeSetPopUpData(PopUpData popUpData)
     {
