@@ -12,11 +12,13 @@ public class EnemyController : MonoBehaviour
 
     private CharacterFormsController characterFormController;
     private Rigidbody2D m_rigidbody2D;
+    private Vector3 preferredPosition;
 
     private void Awake()
     {
         characterFormController = GetComponent<CharacterFormsController>();
         m_rigidbody2D = GetComponent<Rigidbody2D>();
+        preferredPosition = transform.position;
     }
 
     private void Start()
@@ -25,22 +27,52 @@ public class EnemyController : MonoBehaviour
         StartCoroutine(intelligence(aggroRadius, 0.5f));
     }
 
+    public void UpdatePreferredPosition(Vector3 position)
+    {
+        preferredPosition = position;
+    }
+
     private void Update()
     {
         m_rigidbody2D.velocity = Vector2.zero;
-
-        if (!isAttacking)
-        {
-            return;
-        }
-
-        if (Vector3.Distance(transform.position, m_target.position) < 0.001f)
-        {
-            return;
-        }
-
         float step = speed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, m_target.position, step);
+
+        //if (!isAttacking)
+        //{
+        //    return;
+        //}
+
+        //if (Vector3.Distance(transform.position, m_target.position) < 0.001f)
+        //{
+        //    return;
+        //}
+
+        //float step = speed * Time.deltaTime;
+        //transform.position = Vector3.MoveTowards(transform.position, m_target.position, step);
+
+        if (isAttacking)
+        {
+            if (Vector3.Distance(transform.position, m_target.position) < 0.001f)
+            {
+                return;
+            }
+            else
+            {
+                transform.position = Vector3.MoveTowards(transform.position, m_target.position, step);
+            }
+
+        }
+        else
+        {
+            if (Vector3.Distance(transform.position, preferredPosition) < 0.001f)
+            {
+                return;
+            }
+            else
+            {
+                transform.position = Vector3.MoveTowards(transform.position, preferredPosition, step);
+            }
+        }
     }
 
     public Form GetForm()

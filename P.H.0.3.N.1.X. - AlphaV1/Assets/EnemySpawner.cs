@@ -5,17 +5,18 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private GameObject robotPrefab;
-    [SerializeField] private float spawnInterval = 3.5f;
+    [SerializeField] private float spawnInterval = 5.0f;
 
     [SerializeField] private float spawnDistanceX;
     [SerializeField] private float spawnDistanceY;
 
-    [SerializeField] private Form[] requiredRobotsForms;
-    [SerializeField] private int[] requiredRobotAmounts;
+    //[SerializeField] private Form[] requiredRobotsForms;
+    //[SerializeField] private int[] requiredRobotAmounts;
     [SerializeField] private List<GameObject> userSpawnedRobots = new List<GameObject>();
+    private Dictionary<GameObject, Robot> trackedRobots = new Dictionary<GameObject, Robot>();
 
-    private Dictionary<Form, int> requiredRobots = new Dictionary<Form, int>();
-    private Dictionary<Form, int> currentRobots = new Dictionary<Form, int>();
+    //private Dictionary<Form, int> requiredRobots = new Dictionary<Form, int>();
+    //private Dictionary<Form, int> currentRobots = new Dictionary<Form, int>();
 
     [SerializeField] private SoundData soundDataSpawner1;
     [SerializeField] private SoundData soundDataSpawner2;
@@ -32,18 +33,20 @@ public class EnemySpawner : MonoBehaviour
     /// </summary>
     /// <param name="form"></param>
     /// <param name="amount"></param>
-    public void UpdateCurrentRobotsList(Form form, int amount)
+    public void UpdateCurrentRobotsList(GameObject caller)
     {
+        StartCoroutine(SpawnRobot(new Robot(trackedRobots[caller].m_form, trackedRobots[caller].m_position)));
+        trackedRobots.Remove(caller);
         //print("robot list updated");
-        currentRobots[form] += amount;
+        //currentRobots[form] += amount;
     }
 
     private IEnumerator initialize()
     {
         yield return new WaitForEndOfFrame();
-        LoadRequiredRobots();
+        //LoadRequiredRobots();
         LoadUserSpawnedRobots();
-        InvokeRepeating("SpawnRobotsIfNeeded", 0.0f, spawnInterval);
+        //InvokeRepeating("SpawnRobotsIfNeeded", 0.0f, spawnInterval);
     }
 
     /// <summary>
@@ -51,61 +54,87 @@ public class EnemySpawner : MonoBehaviour
     /// </summary>
     /// <param name="robotsToSpawn"></param>
     /// <returns></returns>
-    private IEnumerator SpawnRobots(Dictionary<Form, int> robotsToSpawn)
+    //private IEnumerator SpawnRobots(Dictionary<Form, int> robotsToSpawn)
+    //{
+    //    foreach (KeyValuePair<Form, int> value in robotsToSpawn)
+    //    {
+    //        int amountToSpawn = value.Value;
+    //        while (amountToSpawn > 0)
+    //        {
+    //            GameObject newEnemy = Instantiate(
+    //                robotPrefab,
+    //                new Vector3(
+    //                    Random.Range(transform.position.x - spawnDistanceX, transform.position.x + spawnDistanceX) + 0.5f,
+    //                    Random.Range(transform.position.y - spawnDistanceY, transform.position.y + spawnDistanceY) + 0.5f,
+    //                    0
+    //                ),
+    //                Quaternion.identity
+    //            );
+
+    //            yield return 0;
+
+    //            newEnemy.GetComponent<CharacterFormsController>().ChangeForm(value.Key);
+    //            newEnemy.GetComponent<EnemyObject>().deathEvent.AddListener(UpdateCurrentRobotsList);
+
+    //            amountToSpawn--;
+
+    //            if (currentRobots.ContainsKey(value.Key))
+    //            {
+    //                currentRobots[value.Key] += 1;
+    //            }
+    //            else
+    //            {
+    //                currentRobots.Add(value.Key, 1);
+    //            }
+    //            //print(string.Format("Spawned {0} {1} robots", value.Value, value.Key));
+
+    //            RandomSpawnerSound();
+    //        }
+    //    }
+    //}
+
+    private IEnumerator SpawnRobot(Robot robot)
     {
-        foreach (KeyValuePair<Form, int> value in robotsToSpawn)
-        {
-            int amountToSpawn = value.Value;
-            while (amountToSpawn > 0)
-            {
-                GameObject newEnemy = Instantiate(
-                    robotPrefab,
-                    new Vector3(
-                        Random.Range(transform.position.x - spawnDistanceX, transform.position.x + spawnDistanceX) + 0.5f,
-                        Random.Range(transform.position.y - spawnDistanceY, transform.position.y + spawnDistanceY) + 0.5f,
-                        0
-                    ),
-                    Quaternion.identity
-                );
+        yield return new WaitForSeconds(spawnInterval);
 
-                yield return 0;
+        GameObject newEnemy = Instantiate(
+            robotPrefab,
+            new Vector3(
+                Random.Range(transform.position.x - spawnDistanceX, transform.position.x + spawnDistanceX) + 0.5f,
+                Random.Range(transform.position.y - spawnDistanceY, transform.position.y + spawnDistanceY) + 0.5f,
+                0
+            ),
+            Quaternion.identity
+        );
 
-                newEnemy.GetComponent<CharacterFormsController>().ChangeForm(value.Key);
-                newEnemy.GetComponent<EnemyObject>().deathEvent.AddListener(UpdateCurrentRobotsList);
+        trackedRobots.Add(newEnemy, robot);
+        yield return 0;
 
-                amountToSpawn--;
+        newEnemy.GetComponent<CharacterFormsController>().ChangeForm(robot.m_form);
+        newEnemy.GetComponent<EnemyObject>().deathEvent.AddListener(UpdateCurrentRobotsList);
+        newEnemy.GetComponent<EnemyController>().UpdatePreferredPosition(robot.m_position);
 
-                if (currentRobots.ContainsKey(value.Key))
-                {
-                    currentRobots[value.Key] += 1;
-                }
-                else
-                {
-                    currentRobots.Add(value.Key, 1);
-                }
-                //print(string.Format("Spawned {0} {1} robots", value.Value, value.Key));
+        //print(string.Format("Spawned {0} {1} robots", value.Value, value.Key));
 
-                RandomSpawnerSound();
-            }
-        }
+        RandomSpawnerSound();
     }
 
     /// <summary>
     /// Sets up dictionary from user settings
     /// </summary>
-    private void LoadRequiredRobots()
-    {
-        for (int i = 0; i < requiredRobotsForms.Length; i++)
-        {
-            requiredRobots.Add(requiredRobotsForms[i], requiredRobotAmounts[i]);
-        }
+    //private void LoadRequiredRobots()
+    //{
+    //    for (int i = 0; i < requiredRobotsForms.Length; i++)
+    //    {
+    //        requiredRobots.Add(requiredRobotsForms[i], requiredRobotAmounts[i]);
+    //    }
 
-        //print("Loaded required robots dictionary");
-        //foreach(KeyValuePair<Form, int> value in requiredRobots)
-        //{
-        //    print(string.Format("Requires {0} {1} robot", value.Value, value.Key));
-        //}
-    }
+    //    //print("Loaded required robots dictionary");
+    //    //foreach(KeyValuePair<Form, int> value in requiredRobots)
+    //    //{
+    //    //    print(string.Format("Requires {0} {1} robot", value.Value, value.Key));
+    //    //}
+    //}
 
     /// <summary>
     /// Puts any robots user had placed and assigned to this spawner into the currentRobots dictionary
@@ -116,23 +145,13 @@ public class EnemySpawner : MonoBehaviour
         {
             Form robotForm = robot.GetComponent<CharacterFormsController>().currForm;
 
-            if (currentRobots.ContainsKey(robotForm))
-            {
-                currentRobots[robotForm] += 1;
-            }
-            else
-            {
-                currentRobots.Add(robotForm, 1);
-            }
-
-            if (!requiredRobots.ContainsKey(robotForm))
-                requiredRobots.Add(robotForm, 1);
+            trackedRobots.Add(robot, new Robot(robotForm, robot.transform.position));
 
             robot.GetComponent<EnemyObject>().deathEvent.AddListener(UpdateCurrentRobotsList);
         }
 
         //print("Loaded user spawned robots");
-        //foreach (KeyValuePair<Form, int> value in currentRobots)
+        //foreach (KeyValuePair<GameObject, Robot> value in trackedRobots)
         //{
         //    print(string.Format("Found {0} {1} robots", value.Value, value.Key));
         //}
@@ -141,36 +160,36 @@ public class EnemySpawner : MonoBehaviour
     /// <summary>
     /// Compares requiredRobots dict to the currentRobots dict, and call the SpawnRobots coroutine.
     /// </summary>
-    private void SpawnRobotsIfNeeded()
-    {
-        Dictionary<Form, int> tempDict = new Dictionary<Form, int>();
+    //private void SpawnRobotsIfNeeded()
+    //{
+    //    Dictionary<Form, int> tempDict = new Dictionary<Form, int>();
 
-        foreach (KeyValuePair<Form, int> value in requiredRobots)
-        {
-            int currentAmount = 0;
-            if (currentRobots.ContainsKey(value.Key))
-            {
-                currentAmount = currentRobots[value.Key];
-            }
+    //    foreach (KeyValuePair<Form, int> value in requiredRobots)
+    //    {
+    //        int currentAmount = 0;
+    //        if (currentRobots.ContainsKey(value.Key))
+    //        {
+    //            currentAmount = currentRobots[value.Key];
+    //        }
 
 
-            int missingAmount = Mathf.Clamp(value.Value - currentAmount, 0, int.MaxValue);
-            if (missingAmount > 0)
-            {
-                tempDict.Add(value.Key, missingAmount);
-                //tempDict[value.Key] = missingAmount;
-            }
-        }
+    //        int missingAmount = Mathf.Clamp(value.Value - currentAmount, 0, int.MaxValue);
+    //        if (missingAmount > 0)
+    //        {
+    //            tempDict.Add(value.Key, missingAmount);
+    //            //tempDict[value.Key] = missingAmount;
+    //        }
+    //    }
 
-        //print("Finding robots if needed");
-        //foreach (KeyValuePair<Form, int> value in tempDict)
-        //{
-        //    print(string.Format("Found {0} {1} needing to be spawned", value.Value, value.Key));
-        //}
-        //print("----------");
+    //    //print("Finding robots if needed");
+    //    //foreach (KeyValuePair<Form, int> value in tempDict)
+    //    //{
+    //    //    print(string.Format("Found {0} {1} needing to be spawned", value.Value, value.Key));
+    //    //}
+    //    //print("----------");
 
-        StartCoroutine(SpawnRobots(tempDict));
-    }
+    //    StartCoroutine(SpawnRobots(tempDict));
+    //}
 
     private void RandomSpawnerSound()
     {
@@ -194,4 +213,16 @@ public class EnemySpawner : MonoBehaviour
                 break;
         }
     }
+}
+
+public struct Robot
+{
+    public Robot(Form form, Vector3 position)
+    {
+        m_form = form;
+        m_position = position;
+    }
+
+    public Form m_form;
+    public Vector3 m_position;
 }

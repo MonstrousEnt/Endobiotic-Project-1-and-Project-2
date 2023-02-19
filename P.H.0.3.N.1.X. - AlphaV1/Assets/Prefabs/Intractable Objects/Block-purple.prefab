@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1040934144123929645}
   - component: {fileID: 625285203799819643}
   - component: {fileID: 5222209761152802724}
+  - component: {fileID: 4802058066382241423}
   m_Layer: 0
   m_Name: Block-purple
   m_TagString: Untagged
@@ -94,7 +95,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1040934144123929618}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -150,3 +151,19 @@ MonoBehaviour:
   objectType: 0
   destroyOnceUsed: 1
   soundDataPush: {fileID: 11400000, guid: 85c86135453365142bdd9239f64ea281, type: 2}
+--- !u!70 &4802058066382241423
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040934144123929618}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.5, y: 0.5}
+  m_Size: {x: 1, y: 1}
+  m_Direction: 0
