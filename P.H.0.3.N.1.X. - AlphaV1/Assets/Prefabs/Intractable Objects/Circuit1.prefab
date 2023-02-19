@@ -192,3 +192,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 827d2d026522ff746b7a3caab61678fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  piontData: {fileID: 11400000, guid: dc47a236487b44b468935a480dc00c2b, type: 2}
+  pointList: {fileID: 11400000, guid: 4c7053bf12bd96f4892ad360aac32887, type: 2}
+  currPuzzlePointsList: 0

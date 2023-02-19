@@ -125,3 +125,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundDataSolvePuzzle: {fileID: 11400000, guid: 623be40336174cc4286318a2c9d626e2, type: 2}
+  piontDataDoors: {fileID: 11400000, guid: 094879545efa3564391b213baca8ac92, type: 2}
+  pointList: {fileID: 11400000, guid: 4c7053bf12bd96f4892ad360aac32887, type: 2}
+  currPuzzlePointsList: 0

@@ -8,7 +8,7 @@ public class UIPauseMenu : MonoBehaviour
 
     [SerializeField] private GameObject MainWindowGameObject;
 
-    private void Awake()
+    private void Start()
     {
         GameMangerRootMaster.instance.uIEvents.activePauseMenuUnityEvent.AddListener(activePauseMneu);
     }

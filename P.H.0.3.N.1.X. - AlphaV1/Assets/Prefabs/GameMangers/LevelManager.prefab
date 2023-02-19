@@ -45,3 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointList: {fileID: 11400000, guid: 4c7053bf12bd96f4892ad360aac32887, type: 2}
+  timerData: {fileID: 11400000, guid: 255fc27c64db2d341b6255bac2af23e8, type: 2}
+  loadNextLevelUnityEvent:
+    m_PersistentCalls:
+      m_Calls: []

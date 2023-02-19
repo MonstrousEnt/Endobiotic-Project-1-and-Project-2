@@ -5,8 +5,14 @@ public class GreenBlockObject : MonoBehaviour
 {
     [SerializeField] private float m_timeUnderColliderRemoved = 0.35f;
 
+    [SerializeField] private PiontData piontData;
+    [SerializeField] private PointList pointList;
+    [SerializeField] private PuzzlePointsList currPuzzlePointsList;
+
     public void BreakBlock()
     {
+        pointList.AddToTheCollectPointsList(piontData, currPuzzlePointsList);
+
         StartCoroutine(BreakBlockRoutine(m_timeUnderColliderRemoved));
     }
 

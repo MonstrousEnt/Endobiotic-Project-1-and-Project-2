@@ -10,6 +10,10 @@ public class TrapObject : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Collider2D trapCollider;
 
+    [SerializeField] private PiontData piontData;
+    [SerializeField] private PointList pointList;
+    [SerializeField] private PuzzlePointsList currPuzzlePointsList;
+
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -18,6 +22,8 @@ public class TrapObject : MonoBehaviour
 
     public void Interact()
     {
+        pointList.AddToTheCollectPointsList(piontData, currPuzzlePointsList);
+
         spriteRenderer.sprite = hasActivatedSprite;
         trapCollider.enabled = false;
     }

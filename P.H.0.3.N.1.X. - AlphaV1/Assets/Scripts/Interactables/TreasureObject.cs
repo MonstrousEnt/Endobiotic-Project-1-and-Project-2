@@ -9,6 +9,7 @@ public class TreasureObject : MonoBehaviour
 
     [SerializeField] private PiontData piontData;
     [SerializeField] private PointList pointList;
+    [SerializeField] private PuzzlePointsList currPuzzlePointsList;
 
     [SerializeField] private float animationTime;
 
@@ -21,7 +22,7 @@ public class TreasureObject : MonoBehaviour
 
     public void PickupTreasure()
     {
-        pointList.AddToTheCollectPointsList(pointList.treausresCollectedPointDatas, piontData);
+        pointList.AddToTheCollectPointsList(piontData, currPuzzlePointsList);
 
         GameMangerRootMaster.instance.audioManager.PlayAudio(soundDataPickUpItem);
 
