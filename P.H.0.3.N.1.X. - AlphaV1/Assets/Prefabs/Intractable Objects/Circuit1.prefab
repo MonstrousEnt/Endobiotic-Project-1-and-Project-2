@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1699063105}
   - component: {fileID: 6334992487962387125}
   - component: {fileID: 740769677755462641}
+  - component: {fileID: 1159820252163863323}
   m_Layer: 0
   m_Name: Circuit1
   m_TagString: Interactable
@@ -146,6 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1a29c6dca269fd4e9b88ef6d2eb50cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useInteractableSpriteController: 1
   nonInteractableSprite: {fileID: 21300000, guid: 72738edcf8b7286409bc78b8b578f75f, type: 3}
   isInteractableSprite: {fileID: 21300000, guid: 72738edcf8b7286409bc78b8b578f75f, type: 3}
   hasInteractedSprite: {fileID: 21300000, guid: 5fb14250fa230234da2e6b296c6fe2be, type: 3}
@@ -164,5 +166,29 @@ MonoBehaviour:
   requiredForm: 3
   onActivated:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1159820252163863323}
+        m_TargetAssemblyTypeName: PointObjective, Assembly-CSharp
+        m_MethodName: AddPoints
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   prerequisites: []
+--- !u!114 &1159820252163863323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5562528501051465912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 827d2d026522ff746b7a3caab61678fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
