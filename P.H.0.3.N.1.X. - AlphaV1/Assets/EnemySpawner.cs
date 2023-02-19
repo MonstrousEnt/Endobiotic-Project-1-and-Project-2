@@ -24,12 +24,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void Start()
     {
-        //StartCoroutine(spawnEnemy(SpawnInterval, robotPrefab));
-        LoadRequiredRobots();
-        //print("----------");
-        LoadUserSpawnedRobots();
-        //print("----------");
-        InvokeRepeating("SpawnRobotsIfNeeded", 0.0f, spawnInterval);
+        StartCoroutine(initialize());
     }
 
     /// <summary>
@@ -41,6 +36,14 @@ public class EnemySpawner : MonoBehaviour
     {
         //print("robot list updated");
         currentRobots[form] += amount;
+    }
+
+    private IEnumerator initialize()
+    {
+        yield return new WaitForEndOfFrame();
+        LoadRequiredRobots();
+        LoadUserSpawnedRobots();
+        InvokeRepeating("SpawnRobotsIfNeeded", 0.0f, spawnInterval);
     }
 
     /// <summary>
