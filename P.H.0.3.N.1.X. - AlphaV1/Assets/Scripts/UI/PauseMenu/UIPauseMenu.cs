@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class UIPauseMenu : MonoBehaviour
 {
     [SerializeField] private PopUpData popUpDataQuitPopUp;
 
     [SerializeField] private GameObject MainWindowGameObject;
+
+    [SerializeField] private GameObject pauseFirstButton;
 
     private void Start()
     {
@@ -17,6 +20,12 @@ public class UIPauseMenu : MonoBehaviour
     {
         GameMangerRootMaster.instance.uIEvents.InvokeActiveFadeBackground(activeFlag);
         MainWindowGameObject.SetActive(activeFlag);
+
+        //clear selected object
+        EventSystem.current.SetSelectedGameObject(null);
+
+        //set a new selected object
+        EventSystem.current.SetSelectedGameObject(pauseFirstButton);
 
         GameMangerRootMaster.instance.uIEvents.pauseMneuIsActive = activeFlag;
     }
@@ -40,6 +49,7 @@ public class UIPauseMenu : MonoBehaviour
 
         GameMangerRootMaster.instance.uIEvents.InvokeActivePopUp(true);
     }
+
 
     private void OnDestroy()
     {

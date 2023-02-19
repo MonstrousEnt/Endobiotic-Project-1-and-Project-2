@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.EventSystems;
 
 public class UIPopUp : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class UIPopUp : MonoBehaviour
     [SerializeField] private TextMeshProUGUI messgesTextBox;
     [SerializeField] private GameObject YesButtonGameObject;
     [SerializeField] private GameObject NoButtonGameObject;
+
+    [SerializeField] private GameObject popUpFirstButton;
 
     private void Start()
     {
@@ -60,6 +63,12 @@ public class UIPopUp : MonoBehaviour
 
             if (popUpData.isConfirm)
             {
+                //clear selected object
+                EventSystem.current.SetSelectedGameObject(null);
+
+                //set a new selected object
+                EventSystem.current.SetSelectedGameObject(popUpFirstButton);
+
                 YesButtonGameObject.SetActive(true);
                 NoButtonGameObject.SetActive(true);
             }
