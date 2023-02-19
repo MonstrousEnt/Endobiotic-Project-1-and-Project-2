@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 4972954114152376964}
   - component: {fileID: 4250956545374841043}
   - component: {fileID: 2034196810114675888}
+  - component: {fileID: 1285730429124278010}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -63,6 +64,7 @@ MonoBehaviour:
   speed: 1.75
   intialForm: 0
   aggroRadius: 2
+  physicsCollider: {fileID: 1285730429124278010}
 --- !u!61 &5974273130741917412
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -70,7 +72,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5974273130741917464}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -278,6 +280,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.1
+--- !u!70 &1285730429124278010
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5974273130741917464}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.03}
+  m_Size: {x: 0.45, y: 0.8}
+  m_Direction: 0
 --- !u!1001 &3260993472667266291
 PrefabInstance:
   m_ObjectHideFlags: 0
