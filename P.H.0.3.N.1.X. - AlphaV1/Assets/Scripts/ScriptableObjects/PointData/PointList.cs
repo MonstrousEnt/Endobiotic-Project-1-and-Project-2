@@ -6,10 +6,45 @@ using UnityEngine;
 public class PointList : ScriptableObject
 {
     public List<PiontData> treausresCollectedPointDatas = new List<PiontData>();
+    public List<PiontData> puzzleOnePointDatas = new List<PiontData>();
+    public List<PiontData> puzzleTwoPointDatas = new List<PiontData>();
+    public List<PiontData> puzzleThreePointDatas = new List<PiontData>();
+    public List<PiontData> puzzleFourPointDatas = new List<PiontData>();
 
-    public void AddToTheCollectPointsList(List<PiontData> piontDatas, PiontData piontData)
+    public void AddToTheCollectPointsList(PiontData piontData, PuzzlePointsList currPuzzlePointsList)
     {
-        piontDatas.Add(piontData);
+        if (PuzzlePointsList.puzzleOne == currPuzzlePointsList)
+        {
+            puzzleOnePointDatas.Add(piontData);
+        }
+        else if (PuzzlePointsList.puzzleTwo == currPuzzlePointsList)
+        {
+            puzzleTwoPointDatas.Add(piontData);
+        }
+        else if(PuzzlePointsList.puzzleThree == currPuzzlePointsList)
+        {
+            puzzleThreePointDatas.Add(piontData);
+        }
+        else if(PuzzlePointsList.puzzleFour == currPuzzlePointsList)
+        {
+            puzzleFourPointDatas.Add(piontData);
+        }
+        else if(PuzzlePointsList.treausres == currPuzzlePointsList)
+        {
+            treausresCollectedPointDatas.Add(piontData);
+        }
+    }
+
+    public int AddAllPointForAList(List<PiontData> piontDatas)
+    {
+        int total = 0;
+
+        for (int i = 0; i < piontDatas.Count; i++)
+        {
+            total += piontDatas[i].amount;
+        }
+
+        return total;
     }
 
     public void Reset()
