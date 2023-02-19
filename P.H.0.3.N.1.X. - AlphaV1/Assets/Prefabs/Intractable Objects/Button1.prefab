@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 1440339559}
   - component: {fileID: 7441334633731823956}
   - component: {fileID: 4129920993213651277}
+  - component: {fileID: 8708430737686561242}
+  - component: {fileID: 3535789042381489474}
   m_Layer: 0
   m_Name: Button1
   m_TagString: Interactable
@@ -146,6 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1a29c6dca269fd4e9b88ef6d2eb50cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useInteractableSpriteController: 1
   nonInteractableSprite: {fileID: 21300000, guid: e2f064414e5cf9545ada0a4df97eb9f0, type: 3}
   isInteractableSprite: {fileID: 21300000, guid: e2f064414e5cf9545ada0a4df97eb9f0, type: 3}
   hasInteractedSprite: {fileID: 21300000, guid: 0ea2254840f75df46b54ae6dc094f74d, type: 3}
@@ -164,5 +167,56 @@ MonoBehaviour:
   requiredForm: 0
   onActivated:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3535789042381489474}
+        m_TargetAssemblyTypeName: DisableColliderObjective, Assembly-CSharp
+        m_MethodName: DisableCollider
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   prerequisites: []
+--- !u!61 &8708430737686561242
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4631313539986442518}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.5, y: 0.40717626}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.55990684, y: 0.42537642}
+  m_EdgeRadius: 0
+--- !u!114 &3535789042381489474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4631313539986442518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01b23455ffd7e2d418ada919d5bbe296, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_collider: {fileID: 8708430737686561242}

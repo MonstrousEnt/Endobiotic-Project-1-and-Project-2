@@ -79,6 +79,7 @@ public class CharacterInteractionController : MonoBehaviour
 
     private void RespawnAsNewForm(Form newForm, Vector3 position)
     {
+        characterItemHolder.DropItem();
         GameMangerRootMaster.instance.playerManager.DisableCharacterControls();
         GameObject deathInstance = Instantiate(deathPrefab, transform.position, Quaternion.identity);
         deathInstance.GetComponent<CharacterFormsController>().ChangeForm(characterFormsController.currForm);  // These were firing before Start() on deathInstance.  Weird.
