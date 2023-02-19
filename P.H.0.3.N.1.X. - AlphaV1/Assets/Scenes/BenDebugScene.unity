@@ -2540,6 +2540,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2070380823}
     m_Modifications:
+    - target: {fileID: 1159820252163863323, guid: c0113d68b0de8874cad45f5a86ec0083, type: 3}
+      propertyPath: currPuzzlePointsList
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1361585333358869804, guid: c0113d68b0de8874cad45f5a86ec0083, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -5786,6 +5790,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2070380823}
     m_Modifications:
+    - target: {fileID: 1159820252163863323, guid: c0113d68b0de8874cad45f5a86ec0083, type: 3}
+      propertyPath: currPuzzlePointsList
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1361585333358869804, guid: c0113d68b0de8874cad45f5a86ec0083, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -7210,6 +7218,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2070380823}
     m_Modifications:
+    - target: {fileID: 1159820252163863323, guid: c0113d68b0de8874cad45f5a86ec0083, type: 3}
+      propertyPath: currPuzzlePointsList
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1361585333358869804, guid: c0113d68b0de8874cad45f5a86ec0083, type: 3}
       propertyPath: m_RootOrder
       value: 0
