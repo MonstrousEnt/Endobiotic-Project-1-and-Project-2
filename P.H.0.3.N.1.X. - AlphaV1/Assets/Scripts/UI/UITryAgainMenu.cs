@@ -9,6 +9,8 @@ public class UITryAgainMenu : MonoBehaviour
 
     [SerializeField]  private GameObject mainWindowGameObject;
 
+    [SerializeField] private UIPiontSystem piontSystem;
+
     private void Start()
     {
         GameMangerRootMaster.instance.uIEvents.activeTryAgainMneuUnityEvent.AddListener(activeTryAgainMneu);
@@ -22,6 +24,7 @@ public class UITryAgainMenu : MonoBehaviour
     {
         GameMangerRootMaster.instance.uIEvents.InvokeActiveFadeBackground(activeFlag);
         GameMangerRootMaster.instance.uIEvents.tryAgainIsActive = activeFlag;
+        piontSystem.DisplayPoints();
         mainWindowGameObject.SetActive(activeFlag);
     }
 
