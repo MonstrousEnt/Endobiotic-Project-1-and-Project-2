@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class UITryAgainMenu : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class UITryAgainMenu : MonoBehaviour
     [SerializeField]  private GameObject mainWindowGameObject;
 
     [SerializeField] private UIPiontSystem piontSystem;
+
+
+    [SerializeField] private GameObject tryAgainFirstButton;
 
     private void Start()
     {
@@ -24,6 +28,13 @@ public class UITryAgainMenu : MonoBehaviour
     {
         GameMangerRootMaster.instance.uIEvents.InvokeActiveFadeBackground(activeFlag);
         GameMangerRootMaster.instance.uIEvents.tryAgainIsActive = activeFlag;
+
+        //clear selected object
+        EventSystem.current.SetSelectedGameObject(null);
+
+        //set a new selected object
+        EventSystem.current.SetSelectedGameObject(tryAgainFirstButton);
+
         piontSystem.DisplayPoints();
         mainWindowGameObject.SetActive(activeFlag);
     }
