@@ -45,7 +45,7 @@ public class UIPiontSystem : MonoBehaviour
 
         pointsTextBox.text += "Treasure: ";
 
-        int ChestPoints = pointList.AddAllPointForAList(pointList.puzzleFourPointDatas);
+        int ChestPoints = pointList.AddAllPointForAList(pointList.treausresCollectedPointDatas);
 
         pointsTextBox.text += ChestPoints.ToString() + "\n";
 
