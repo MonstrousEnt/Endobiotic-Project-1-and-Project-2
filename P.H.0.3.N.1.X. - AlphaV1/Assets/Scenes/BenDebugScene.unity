@@ -243,6 +243,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block-green (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 6409998194036200798, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: currPuzzlePointsList
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
 --- !u!1001 &20844824
@@ -374,6 +378,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block-green (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 6409998194036200798, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: currPuzzlePointsList
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
 --- !u!4 &65851961 stripped
@@ -440,6 +448,10 @@ PrefabInstance:
     - target: {fileID: 188307105416807641, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
       propertyPath: m_Name
       value: Block-green (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409998194036200798, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: currPuzzlePointsList
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
@@ -581,6 +593,10 @@ PrefabInstance:
     - target: {fileID: 188307105416807641, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
       propertyPath: m_Name
       value: Block-green (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409998194036200798, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: currPuzzlePointsList
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
@@ -943,6 +959,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block-green (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 6409998194036200798, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: currPuzzlePointsList
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
 --- !u!4 &171170632 stripped
@@ -1004,6 +1024,10 @@ PrefabInstance:
     - target: {fileID: 188307105416807641, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
       propertyPath: m_Name
       value: Block-green (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409998194036200798, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: currPuzzlePointsList
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
@@ -1139,6 +1163,10 @@ PrefabInstance:
     - target: {fileID: 188307105416807641, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
       propertyPath: m_Name
       value: Block-green (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409998194036200798, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: currPuzzlePointsList
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
@@ -3201,6 +3229,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block-green (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 6409998194036200798, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: currPuzzlePointsList
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
 --- !u!4 &793016268 stripped
@@ -3579,6 +3611,10 @@ PrefabInstance:
     - target: {fileID: 188307105416807641, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
       propertyPath: m_Name
       value: Block-green (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409998194036200798, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: currPuzzlePointsList
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
@@ -4849,6 +4885,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block-green (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 6409998194036200798, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: currPuzzlePointsList
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
 --- !u!4 &1188673944 stripped
@@ -5635,6 +5675,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block-green (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 6409998194036200798, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: currPuzzlePointsList
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
 --- !u!4 &1345380213 stripped
@@ -5696,6 +5740,10 @@ PrefabInstance:
     - target: {fileID: 188307105416807641, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
       propertyPath: m_Name
       value: Block-green (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409998194036200798, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: currPuzzlePointsList
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
@@ -6120,6 +6168,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block-green (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 6409998194036200798, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: currPuzzlePointsList
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
 --- !u!4 &1462456667 stripped
@@ -6399,6 +6451,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block-green (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 6409998194036200798, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: currPuzzlePointsList
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
 --- !u!4 &1539749065 stripped
@@ -6489,11 +6545,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 188307105416807639, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11
+      value: -10.96
       objectReference: {fileID: 0}
     - target: {fileID: 188307105416807639, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -24
+      value: -23.96
       objectReference: {fileID: 0}
     - target: {fileID: 188307105416807639, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6530,6 +6586,10 @@ PrefabInstance:
     - target: {fileID: 188307105416807641, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
       propertyPath: m_Name
       value: Block-green (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409998194036200798, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: currPuzzlePointsList
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
@@ -8304,6 +8364,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block-green (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 6409998194036200798, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: currPuzzlePointsList
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
 --- !u!4 &1923427848 stripped
@@ -8751,6 +8815,10 @@ PrefabInstance:
     - target: {fileID: 188307105416807641, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
       propertyPath: m_Name
       value: Block-green (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409998194036200798, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: currPuzzlePointsList
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
@@ -9368,6 +9436,10 @@ PrefabInstance:
     - target: {fileID: 188307105416807641, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
       propertyPath: m_Name
       value: Block-green
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409998194036200798, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: currPuzzlePointsList
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}

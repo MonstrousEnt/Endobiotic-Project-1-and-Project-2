@@ -220,3 +220,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_timeUnderColliderRemoved: 0.25
+  piontData: {fileID: 11400000, guid: e84ac089f58157d4a8dfe725527d41ae, type: 2}
+  pointList: {fileID: 11400000, guid: 4c7053bf12bd96f4892ad360aac32887, type: 2}
+  currPuzzlePointsList: 0

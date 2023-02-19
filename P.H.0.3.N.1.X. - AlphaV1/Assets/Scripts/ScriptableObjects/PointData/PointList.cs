@@ -50,6 +50,10 @@ public class PointList : ScriptableObject
     public void Reset()
     {
         treausresCollectedPointDatas.Clear();
+        puzzleOnePointDatas.Clear();
+        puzzleTwoPointDatas.Clear();
+        puzzleThreePointDatas.Clear();
+        puzzleFourPointDatas.Clear();
     }
 
     private void OnEnable()
