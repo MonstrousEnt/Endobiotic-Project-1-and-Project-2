@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f4f3a06f9725de45b042acda1d1354a, type: 3}
+  m_Name: SoundDataEnemySpawner2
+  m_EditorClassIdentifier: 
+  soundName: Enemy Spawner 2
+  clip: {fileID: 8300000, guid: 879a5538c0340f44e928edc11a572dbb, type: 3}
+  volume: 0.5
+  pitch: 1
+  loop: 0
+  playOnAwake: 0
+  source: {fileID: 0}
