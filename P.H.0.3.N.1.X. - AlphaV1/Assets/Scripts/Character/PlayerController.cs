@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
             movement.y = Input.GetAxis("Vertical");
         }
 
-        if (Input.GetKeyUp(KeyCode.Mouse1) || Input.GetButton("Fire1"))
+        if (Input.GetButton("FormAction"))
         {
             Interact();
         }

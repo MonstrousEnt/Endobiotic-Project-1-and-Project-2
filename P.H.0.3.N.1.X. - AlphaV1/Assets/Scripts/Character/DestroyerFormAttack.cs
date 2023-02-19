@@ -11,7 +11,7 @@ public class DestroyerFormAttack : MonoBehaviour
         if (playerControllerAnimations == null)
             return;
 
-        if (Input.GetKeyUp(KeyCode.Mouse1) || Input.GetButton("Fire1"))
+        if (Input.GetButton("FormAction"))
         {
             playerControllerAnimations.DestroyerAttack();
 
