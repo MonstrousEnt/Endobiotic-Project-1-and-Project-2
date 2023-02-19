@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class UITryAgainMenu : MonoBehaviour
 {
@@ -47,7 +48,8 @@ public class UITryAgainMenu : MonoBehaviour
 
         GameMangerRootMaster.instance.levelManager.Level1Restart();
 
-        GameMangerRootMaster.instance.levelManager.InvokeLoadNextLevelUnityEvent(LevelName.BenDebugScene);
+        //GameMangerRootMaster.instance.levelManager.InvokeLoadNextLevelUnityEvent(LevelName.StartScreen);
+        SceneManager.LoadScene(LevelName.StartScreen.ToString());
     }
 
     public void OepnQuitPopUp()

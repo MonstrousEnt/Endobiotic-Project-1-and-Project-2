@@ -43,8 +43,10 @@ public class LevelLoaderGameManager : MonoBehaviour
         //Wait for a couple seconds
         yield return new WaitForSeconds(_transtionTime);
 
+        print("here");
         //Load the next scene
         SceneManager.LoadScene(sceneName);
+        
 	}
 
 }

@@ -9,6 +9,7 @@ public class UIStartScreen : MonoBehaviour
 
     private void Start()
     {
+        GameMangerRootMaster.instance.audioManager.ResetSound();
         GameMangerRootMaster.instance.audioManager.SetAudioLoop(soundDataTitleScreen, true);
         GameMangerRootMaster.instance.audioManager.PlayAudio(soundDataTitleScreen);
     }
