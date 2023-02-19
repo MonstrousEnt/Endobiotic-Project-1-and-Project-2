@@ -147,3 +147,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectType: 0
   hasActivatedSprite: {fileID: 21300000, guid: c0f0d111f2e0524449a56011e1bbd5f0, type: 3}
+  piontData: {fileID: 11400000, guid: 613f069fbd9c62b48b0cbb7d97515b8c, type: 2}
+  pointList: {fileID: 11400000, guid: 4c7053bf12bd96f4892ad360aac32887, type: 2}
+  currPuzzlePointsList: 0
