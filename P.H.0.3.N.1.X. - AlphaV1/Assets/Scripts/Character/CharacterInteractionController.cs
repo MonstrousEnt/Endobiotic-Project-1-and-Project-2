@@ -33,11 +33,11 @@ public class CharacterInteractionController : MonoBehaviour
         if (invulTimer > Time.time)
             return;
 
-        if (collision.collider.CompareTag("Enemy") && collision.collider.GetComponent<CharacterFormsController>().currForm == Form.Enemy && characterFormsController.currForm == Form.Destroyer)
+        if (collision.collider.CompareTag("Enemy") && collision.collider.GetComponent<CharacterFormsController>().currForm == Form.Crab && characterFormsController.currForm == Form.Destroyer)
         {
             return;
         }
-        else if (collision.collider.CompareTag("Enemy") && collision.collider.GetComponent<CharacterFormsController>().currForm == Form.Enemy)
+        else if (collision.collider.CompareTag("Enemy") && collision.collider.GetComponent<CharacterFormsController>().currForm == Form.Crab)
         {
             Respawn();
         }

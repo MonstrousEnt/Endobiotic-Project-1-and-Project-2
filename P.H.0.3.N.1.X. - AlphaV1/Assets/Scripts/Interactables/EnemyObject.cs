@@ -16,7 +16,7 @@ public class EnemyObject : MonoBehaviour
 
     public void KillEnemy()
     {
-        if (characterFormsController.currForm != Form.Enemy)
+        if (characterFormsController.currForm != Form.Crab)
             return;
 
         deathEvent?.Invoke(this.gameObject);
