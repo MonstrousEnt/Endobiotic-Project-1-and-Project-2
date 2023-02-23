@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PointObjective : MonoBehaviour
+public class EffectAddPoints : MonoBehaviour
 {
     [SerializeField] private PiontData piontData;
     [SerializeField] private PointList pointList;

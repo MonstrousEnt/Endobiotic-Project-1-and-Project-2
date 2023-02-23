@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DisableColliderObjective : MonoBehaviour
+public class EffectDisableCollider : MonoBehaviour
 {
     [SerializeField] private Collider2D m_collider;
 

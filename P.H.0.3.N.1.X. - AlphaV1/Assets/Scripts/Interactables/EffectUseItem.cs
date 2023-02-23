@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class UseItemObject : MonoBehaviour
+public class EffectUseItem : MonoBehaviour
 {
     [SerializeField] private PiontData piontData;
     [SerializeField] private PointList pointList;
