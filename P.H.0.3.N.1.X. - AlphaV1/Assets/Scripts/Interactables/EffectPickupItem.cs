@@ -1,12 +1,11 @@
 using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
-public class PickupObject : MonoBehaviour
+public class EffectPickupItem : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
     private Interactable interactable;
     private CharacterItemHolder characterItemHolder;
-    private Sprite itemSprite;
 
     private void Awake()
     {

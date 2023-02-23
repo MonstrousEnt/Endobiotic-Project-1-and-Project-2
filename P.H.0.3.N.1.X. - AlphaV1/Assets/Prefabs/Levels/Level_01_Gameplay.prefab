@@ -969,6 +969,10 @@ PrefabInstance:
       propertyPath: currPuzzlePointsList
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7507296298106502199, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: currPuzzlePointsList
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
 --- !u!4 &534582036026758296 stripped
@@ -1435,6 +1439,10 @@ PrefabInstance:
       propertyPath: currPuzzlePointsList
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7507296298106502199, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: currPuzzlePointsList
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
 --- !u!4 &534582036334919148 stripped
@@ -1625,6 +1633,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8234d5c1afd423743a1f0e3abb1c6d65, type: 3}
+--- !u!114 &3531768323250624774 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3816074202938730034, guid: 8234d5c1afd423743a1f0e3abb1c6d65, type: 3}
+  m_PrefabInstance: {fileID: 429592211402096436}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6266425715100403021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d009865d7133ae44fb34cc672668f2a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6266425715100403021 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5981034479987964537, guid: 8234d5c1afd423743a1f0e3abb1c6d65, type: 3}
@@ -1876,6 +1895,10 @@ PrefabInstance:
     - target: {fileID: 188307105416807641, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
       propertyPath: m_Name
       value: Block-green (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507296298106502199, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: currPuzzlePointsList
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
@@ -2134,6 +2157,10 @@ PrefabInstance:
       propertyPath: currPuzzlePointsList
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7507296298106502199, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: currPuzzlePointsList
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
 --- !u!4 &534582036637790084 stripped
@@ -2200,6 +2227,10 @@ PrefabInstance:
       propertyPath: currPuzzlePointsList
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7507296298106502199, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: currPuzzlePointsList
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
 --- !u!4 &534582036646518137 stripped
@@ -2263,6 +2294,10 @@ PrefabInstance:
       value: Block-green (10)
       objectReference: {fileID: 0}
     - target: {fileID: 6409998194036200798, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: currPuzzlePointsList
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507296298106502199, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
       propertyPath: currPuzzlePointsList
       value: 1
       objectReference: {fileID: 0}
@@ -2682,6 +2717,10 @@ PrefabInstance:
       propertyPath: currPuzzlePointsList
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7507296298106502199, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: currPuzzlePointsList
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
 --- !u!4 &534582036531662759 stripped
@@ -2745,6 +2784,10 @@ PrefabInstance:
       value: Block-green (19)
       objectReference: {fileID: 0}
     - target: {fileID: 6409998194036200798, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: currPuzzlePointsList
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507296298106502199, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
       propertyPath: currPuzzlePointsList
       value: 3
       objectReference: {fileID: 0}
@@ -2888,6 +2931,10 @@ PrefabInstance:
       propertyPath: currPuzzlePointsList
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7507296298106502199, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: currPuzzlePointsList
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
 --- !u!4 &534582036481066787 stripped
@@ -2954,6 +3001,10 @@ PrefabInstance:
       propertyPath: currPuzzlePointsList
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7507296298106502199, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: currPuzzlePointsList
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
 --- !u!4 &534582036451765982 stripped
@@ -2998,7 +3049,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4129920993213651277, guid: 1314260ab8ddb53429a3f376c7c2baae, type: 3}
       propertyPath: onActivated.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: DisableDoor
+      value: DisableObject
       objectReference: {fileID: 0}
     - target: {fileID: 4129920993213651277, guid: 1314260ab8ddb53429a3f376c7c2baae, type: 3}
       propertyPath: onActivated.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -3006,7 +3057,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4129920993213651277, guid: 1314260ab8ddb53429a3f376c7c2baae, type: 3}
       propertyPath: onActivated.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: DoorObjective, Assembly-CSharp
+      value: EffectDisableObject, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4129920993213651277, guid: 1314260ab8ddb53429a3f376c7c2baae, type: 3}
       propertyPath: onActivated.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -3941,6 +3992,10 @@ PrefabInstance:
       propertyPath: currPuzzlePointsList
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7507296298106502199, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: currPuzzlePointsList
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
 --- !u!4 &534582037474909648 stripped
@@ -3985,7 +4040,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4129920993213651277, guid: 1314260ab8ddb53429a3f376c7c2baae, type: 3}
       propertyPath: onActivated.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: DisableDoor
+      value: DisableObject
       objectReference: {fileID: 0}
     - target: {fileID: 4129920993213651277, guid: 1314260ab8ddb53429a3f376c7c2baae, type: 3}
       propertyPath: onActivated.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -3993,7 +4048,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4129920993213651277, guid: 1314260ab8ddb53429a3f376c7c2baae, type: 3}
       propertyPath: onActivated.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: DoorObjective, Assembly-CSharp
+      value: EffectDisableObject, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4129920993213651277, guid: 1314260ab8ddb53429a3f376c7c2baae, type: 3}
       propertyPath: onActivated.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -4184,7 +4239,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4129920993213651277, guid: 1314260ab8ddb53429a3f376c7c2baae, type: 3}
       propertyPath: onActivated.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: DisableDoor
+      value: DisableObject
       objectReference: {fileID: 0}
     - target: {fileID: 4129920993213651277, guid: 1314260ab8ddb53429a3f376c7c2baae, type: 3}
       propertyPath: onActivated.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -4192,7 +4247,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4129920993213651277, guid: 1314260ab8ddb53429a3f376c7c2baae, type: 3}
       propertyPath: onActivated.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: DoorObjective, Assembly-CSharp
+      value: EffectDisableObject, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4129920993213651277, guid: 1314260ab8ddb53429a3f376c7c2baae, type: 3}
       propertyPath: onActivated.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -4538,6 +4593,10 @@ PrefabInstance:
       value: Block-green (22)
       objectReference: {fileID: 0}
     - target: {fileID: 6409998194036200798, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: currPuzzlePointsList
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507296298106502199, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
       propertyPath: currPuzzlePointsList
       value: 3
       objectReference: {fileID: 0}
@@ -5009,7 +5068,7 @@ PrefabInstance:
     - target: {fileID: 3956143202205067925, guid: 0eb2abe8c14506946aa28b095a7d41c4, type: 3}
       propertyPath: prerequisites.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 3531768323250624774}
     - target: {fileID: 3956143202205067925, guid: 0eb2abe8c14506946aa28b095a7d41c4, type: 3}
       propertyPath: onActivated.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -5028,11 +5087,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3956143202205067925, guid: 0eb2abe8c14506946aa28b095a7d41c4, type: 3}
       propertyPath: onActivated.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: DisableDoor
+      value: DisableObject
       objectReference: {fileID: 0}
     - target: {fileID: 3956143202205067925, guid: 0eb2abe8c14506946aa28b095a7d41c4, type: 3}
       propertyPath: onActivated.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: DoorObjective, Assembly-CSharp
+      value: EffectDisableObject, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3956143202205067925, guid: 0eb2abe8c14506946aa28b095a7d41c4, type: 3}
       propertyPath: onActivated.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -5410,11 +5469,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3956143202205067925, guid: 0eb2abe8c14506946aa28b095a7d41c4, type: 3}
       propertyPath: onActivated.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: DisableDoor
+      value: DisableObject
       objectReference: {fileID: 0}
     - target: {fileID: 3956143202205067925, guid: 0eb2abe8c14506946aa28b095a7d41c4, type: 3}
       propertyPath: onActivated.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: DoorObjective, Assembly-CSharp
+      value: EffectDisableObject, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3956143202205067925, guid: 0eb2abe8c14506946aa28b095a7d41c4, type: 3}
       propertyPath: onActivated.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -5487,6 +5546,10 @@ PrefabInstance:
       value: Block-green (16)
       objectReference: {fileID: 0}
     - target: {fileID: 6409998194036200798, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: currPuzzlePointsList
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507296298106502199, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
       propertyPath: currPuzzlePointsList
       value: 2
       objectReference: {fileID: 0}
@@ -5810,6 +5873,10 @@ PrefabInstance:
       propertyPath: currPuzzlePointsList
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7507296298106502199, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: currPuzzlePointsList
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
 --- !u!4 &534582037964445595 stripped
@@ -5873,6 +5940,10 @@ PrefabInstance:
       value: Block-green (11)
       objectReference: {fileID: 0}
     - target: {fileID: 6409998194036200798, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: currPuzzlePointsList
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507296298106502199, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
       propertyPath: currPuzzlePointsList
       value: 1
       objectReference: {fileID: 0}
@@ -6042,11 +6113,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3956143202205067925, guid: 0eb2abe8c14506946aa28b095a7d41c4, type: 3}
       propertyPath: onActivated.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: DisableDoor
+      value: DisableObject
       objectReference: {fileID: 0}
     - target: {fileID: 3956143202205067925, guid: 0eb2abe8c14506946aa28b095a7d41c4, type: 3}
       propertyPath: onActivated.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: DoorObjective, Assembly-CSharp
+      value: EffectDisableObject, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3956143202205067925, guid: 0eb2abe8c14506946aa28b095a7d41c4, type: 3}
       propertyPath: onActivated.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -6427,6 +6498,10 @@ PrefabInstance:
       propertyPath: currPuzzlePointsList
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7507296298106502199, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: currPuzzlePointsList
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
 --- !u!4 &534582037889337461 stripped
@@ -6490,6 +6565,10 @@ PrefabInstance:
       value: Block-green (14)
       objectReference: {fileID: 0}
     - target: {fileID: 6409998194036200798, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: currPuzzlePointsList
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507296298106502199, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
       propertyPath: currPuzzlePointsList
       value: 1
       objectReference: {fileID: 0}
@@ -6621,6 +6700,10 @@ PrefabInstance:
       propertyPath: currPuzzlePointsList
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7507296298106502199, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: currPuzzlePointsList
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
 --- !u!4 &534582037772841481 stripped
@@ -6684,6 +6767,10 @@ PrefabInstance:
       value: Block-green
       objectReference: {fileID: 0}
     - target: {fileID: 6409998194036200798, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: currPuzzlePointsList
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507296298106502199, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
       propertyPath: currPuzzlePointsList
       value: 3
       objectReference: {fileID: 0}

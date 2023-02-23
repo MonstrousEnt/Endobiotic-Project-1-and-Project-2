@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
-public class ChangeSpriteObject : MonoBehaviour
+public class EffectChangeSprite : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
 

@@ -44,7 +44,7 @@ public class CharacterInteractionController : MonoBehaviour
         else if (collision.collider.CompareTag("Enemy") && characterFormsController.currForm != collision.collider.GetComponent<CharacterFormsController>().currForm)
         {
             RespawnAsNewForm(collision.collider.GetComponent<CharacterFormsController>().currForm, collision.collider.transform.position);
-            collision.collider.GetComponent<EnemyObject>().DestroyEnemy();
+            collision.collider.GetComponent<EnemyInteraction>().DestroyEnemy();
             invulTimer = Time.time + invulTime;
         }
     }

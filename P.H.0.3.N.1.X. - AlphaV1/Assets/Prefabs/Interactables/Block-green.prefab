@@ -15,7 +15,9 @@ GameObject:
   - component: {fileID: 1140174129068089872}
   - component: {fileID: 7922197815093173546}
   - component: {fileID: 8751380591369465611}
-  - component: {fileID: 6409998194036200798}
+  - component: {fileID: 5188705848550387876}
+  - component: {fileID: 6428471298059850956}
+  - component: {fileID: 7507296298106502199}
   m_Layer: 0
   m_Name: Block-green
   m_TagString: Interactable
@@ -168,9 +170,33 @@ MonoBehaviour:
   onActivated:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6409998194036200798}
-        m_TargetAssemblyTypeName: GreenBlockObject, Assembly-CSharp
-        m_MethodName: BreakBlock
+      - m_Target: {fileID: 6428471298059850956}
+        m_TargetAssemblyTypeName: EffectPlayAnimation, Assembly-CSharp
+        m_MethodName: PlayAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5188705848550387876}
+        m_TargetAssemblyTypeName: EffectDisableCollider, Assembly-CSharp
+        m_MethodName: DisableCollider
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7507296298106502199}
+        m_TargetAssemblyTypeName: EffectAddPoints, Assembly-CSharp
+        m_MethodName: AddPoints
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -207,7 +233,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5, y: 1.5}
   m_EdgeRadius: 0
---- !u!114 &6409998194036200798
+--- !u!114 &5188705848550387876
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -216,10 +242,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 188307105416807641}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6cdd659ce7e0eb49b13e7495e6b15df, type: 3}
+  m_Script: {fileID: 11500000, guid: 01b23455ffd7e2d418ada919d5bbe296, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_timeUnderColliderRemoved: 0.25
+  m_delay: 0.25
+  m_collider: {fileID: 8442441253338506551}
+--- !u!114 &6428471298059850956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188307105416807641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77bb48f589303404d918e93fad09dcef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_animationName: Green_Block_Destroyed
+--- !u!114 &7507296298106502199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188307105416807641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 827d2d026522ff746b7a3caab61678fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   piontData: {fileID: 11400000, guid: e84ac089f58157d4a8dfe725527d41ae, type: 2}
   pointList: {fileID: 11400000, guid: 4c7053bf12bd96f4892ad360aac32887, type: 2}
   currPuzzlePointsList: 0

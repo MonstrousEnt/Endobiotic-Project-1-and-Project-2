@@ -1,8 +1,10 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class EnemyObject : MonoBehaviour
+public class EnemyInteraction : MonoBehaviour
 {
+    // TODO this class is unfinished and unused
+
     private EnemyControllerAnimations enemyControllerAnimations;
     private CharacterFormsController characterFormsController;
 

@@ -1,13 +1,13 @@
 using UnityEngine;
 
-public class DoorObjective : MonoBehaviour
+public class EffectDisableObject : MonoBehaviour
 {
    [SerializeField] private SoundData soundDataSolvePuzzle;
    [SerializeField] private PiontData piontDataDoors;
    [SerializeField] private PointList pointList;
    [SerializeField] private PuzzlePointsList currPuzzlePointsList;
 
-    public void DisableDoor()
+    public void DisableObject()
     {
         GameMangerRootMaster.instance.audioManager.PlayAudio(soundDataSolvePuzzle);
 

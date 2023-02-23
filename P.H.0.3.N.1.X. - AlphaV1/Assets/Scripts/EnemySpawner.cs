@@ -75,7 +75,7 @@ public class EnemySpawner : MonoBehaviour
         trackedRobots.Add(newEnemy, robot);
         yield return 0;
 
-        newEnemy.GetComponent<EnemyObject>().deathEvent.AddListener(UpdateCurrentRobotsList);
+        newEnemy.GetComponent<EnemyInteraction>().deathEvent.AddListener(UpdateCurrentRobotsList);
         newEnemy.GetComponent<EnemyController>().UpdatePreferredPosition(robot.m_position);
 
         RandomSpawnerSound();
@@ -89,7 +89,7 @@ public class EnemySpawner : MonoBehaviour
 
             trackedRobots.Add(robot, new Robot(robotForm, robot.transform.position));
 
-            robot.GetComponent<EnemyObject>().deathEvent.AddListener(UpdateCurrentRobotsList);
+            robot.GetComponent<EnemyInteraction>().deathEvent.AddListener(UpdateCurrentRobotsList);
         }
     } 
 

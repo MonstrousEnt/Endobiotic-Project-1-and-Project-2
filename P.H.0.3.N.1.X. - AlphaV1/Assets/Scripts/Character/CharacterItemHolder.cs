@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CharacterItemHolder : MonoBehaviour
 {
-    private PickupObject m_currentPickupObject;
+    private EffectPickupItem m_currentPickupObject;
     [SerializeField] private SpriteRenderer m_itemSpriteRenderer;
 
     private void Start()
@@ -10,9 +10,9 @@ public class CharacterItemHolder : MonoBehaviour
         m_itemSpriteRenderer.sprite = null;
     }
 
-    public void AddItem(PickupObject pickupObject, Sprite itemSprite)
+    public void AddItem(EffectPickupItem pickupItem, Sprite itemSprite)
     {
-        m_currentPickupObject = pickupObject;
+        m_currentPickupObject = pickupItem;
         m_itemSpriteRenderer.sprite = itemSprite;
     }
 
