@@ -6,5 +6,5 @@ public enum Form
     Electronic,
     Destroyer,
     Battery,
-    Enemy
+    Crab
 }
