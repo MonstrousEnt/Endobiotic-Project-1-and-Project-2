@@ -1,5 +1,7 @@
 using UnityEngine;
 
+//Animation state machine based off of Lost Relic Games' tutorial: https://www.youtube.com/watch?v=nBkiSJ5z-hE
+
 public class EnemyControllerAnimations : BaseControllerAnimations
 {
     private string currentAnimaton;
@@ -25,19 +27,24 @@ public class EnemyControllerAnimations : BaseControllerAnimations
 
     private void Update()
     {
+        //enemy based movement detection
         Vector3 deltaMovement = transform.position - previousPosition;
         Vector2 changeInPosition = new Vector2(deltaMovement.x, deltaMovement.y);
         MovementAnimation(changeInPosition);
         previousPosition = transform.position;
     }
 
+    /// <summary>
+    /// Checking for movement to animate based on input, 
+    /// using turn threshold values to determine when the sprite will change direction on y axis
+    /// </summary>
+    /// <param name="movement"></param>
     private void MovementAnimation(Vector2 movement)
     {
         if(m_animator == null)
         {
             return;
         }
-
 
         if (movement.y <= -0.01f && Mathf.Abs(movement.x) < turnThresholdMoveY)
         {
@@ -76,11 +83,17 @@ public class EnemyControllerAnimations : BaseControllerAnimations
     }
 
     // mini animation manager
+    /// <summary>
+    /// Function to tell the animator to play the animation parameter we give it
+    /// </summary>
+    /// <param name="newAnimation"></param>
     private void ChangeAnimationState(string newAnimation)
     {
+        //prevent the animation from interrupting itself
         if (currentAnimaton == newAnimation) return;
-
+        //play the animation
         m_animator.Play(newAnimation);
+        //reassign the current state
         currentAnimaton = newAnimation;
     }
 }

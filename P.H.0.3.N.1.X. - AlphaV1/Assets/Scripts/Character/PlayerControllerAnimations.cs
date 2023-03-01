@@ -1,5 +1,7 @@
 using UnityEngine;
 
+//Animation state machine based off of Lost Relic Games' tutorial: https://www.youtube.com/watch?v=nBkiSJ5z-hE
+
 public class PlayerControllerAnimations : BaseControllerAnimations
 {
     [Header("Components")]
@@ -34,7 +36,7 @@ public class PlayerControllerAnimations : BaseControllerAnimations
     [SerializeField] private const string MAGNET_PULL_LEFT = "Pull_Left";
     [SerializeField] private const string MAGNET_PULL_RIGHT = "Pull_Right";
 
-    private float requiredTime;
+    private float requiredTime;// variable to delay before next attack
 
     private void Start()
     {
@@ -43,6 +45,11 @@ public class PlayerControllerAnimations : BaseControllerAnimations
 
     #region Animation Methods
 
+    /// <summary>
+    /// Checking for movement to animate based on input, 
+    /// using turn threshold values to determine when the sprite will change direction on y axis
+    /// </summary>
+    /// <param name="movement"></param>
     public void MovementAnimation(Vector2 movement)
     {
 
@@ -124,14 +131,20 @@ public class PlayerControllerAnimations : BaseControllerAnimations
     }
 
     // mini animation manager
+    /// <summary>
+    /// Function to tell the animator to play the animation parameter we give it
+    /// </summary>
+    /// <param name="newAnimation"></param>
     void ChangeAnimationState(string newAnimation)
     {
+        //check to see if the delay is in effect
         if (requiredTime > Time.time)
             return;
-
+        //prevent the animation from interrupting itself
         if (currentAnimaton == newAnimation) return;
-
+        //play the animation
         m_animator.Play(newAnimation);
+        //reassign the current state
         currentAnimaton = newAnimation;
     }
 
