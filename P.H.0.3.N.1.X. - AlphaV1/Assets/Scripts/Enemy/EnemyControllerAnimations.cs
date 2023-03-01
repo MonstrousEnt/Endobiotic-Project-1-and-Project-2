@@ -4,34 +4,34 @@ using UnityEngine;
 
 public class EnemyControllerAnimations : BaseControllerAnimations
 {
-    private string currentAnimaton;
-    private string LastMoveDir = "D";
-    private float turnThresholdMoveY = 0.71f;
+    private string m_currentAnimaton;
+    private string m_LastMoveDir = "D";
+    private float m_turnThresholdMoveY = 0.71f;
 
-    private const string IDLE_DOWN = "Idle_Down";
-    private const string IDLE_UP = "Idle_Up";
-    private const string IDLE_LEFT = "Idle_Left";
-    private const string IDLE_RIGHT = "Idle_Right";
+    private const string m_IDLE_DOWN = "Idle_Down";
+    private const string m_IDLE_UP = "Idle_Up";
+    private const string m_IDLE_LEFT = "Idle_Left";
+    private const string m_IDLE_RIGHT = "Idle_Right";
 
-    private const string WALK_DOWN = "Walk_Down";
-    private const string WALK_UP = "Walk_Up";
-    private const string WALK_LEFT = "Walk_Left";
-    private const string WALK_RIGHT = "Walk_Right";
+    private const string m_WALK_DOWN = "Walk_Down";
+    private const string m_WALK_UP = "Walk_Up";
+    private const string m_WALK_LEFT = "Walk_Left";
+    private const string m_WALK_RIGHT = "Walk_Right";
 
-    private Vector3 previousPosition;
+    private Vector3 m_previousPosition;
 
     private void Start()
     {
-        previousPosition = transform.position;
+        m_previousPosition = transform.position;
     }
 
     private void Update()
     {
         //enemy based movement detection
-        Vector3 deltaMovement = transform.position - previousPosition;
+        Vector3 deltaMovement = transform.position - m_previousPosition;
         Vector2 changeInPosition = new Vector2(deltaMovement.x, deltaMovement.y);
         MovementAnimation(changeInPosition);
-        previousPosition = transform.position;
+        m_previousPosition = transform.position;
     }
 
     /// <summary>
@@ -46,38 +46,38 @@ public class EnemyControllerAnimations : BaseControllerAnimations
             return;
         }
 
-        if (movement.y <= -0.01f && Mathf.Abs(movement.x) < turnThresholdMoveY)
+        if (movement.y <= -0.01f && Mathf.Abs(movement.x) < m_turnThresholdMoveY)
         {
-            ChangeAnimationState(WALK_DOWN);
-            LastMoveDir = "D";
+            ChangeAnimationState(m_WALK_DOWN);
+            m_LastMoveDir = "D";
         }
-        else if (movement.y >= 0.01f && Mathf.Abs(movement.x) < turnThresholdMoveY)
+        else if (movement.y >= 0.01f && Mathf.Abs(movement.x) < m_turnThresholdMoveY)
         {
-            ChangeAnimationState(WALK_UP);
-            LastMoveDir = "U";
+            ChangeAnimationState(m_WALK_UP);
+            m_LastMoveDir = "U";
         }
         else if (movement.x <= -0.01f)
         {
-            ChangeAnimationState(WALK_LEFT);
-            LastMoveDir = "L";
+            ChangeAnimationState(m_WALK_LEFT);
+            m_LastMoveDir = "L";
         }
         else if (movement.x >= 0.01f)
         {
-            ChangeAnimationState(WALK_RIGHT);
-            LastMoveDir = "R";
+            ChangeAnimationState(m_WALK_RIGHT);
+            m_LastMoveDir = "R";
         }
 
         //Idle
         else
         {
-            if (LastMoveDir == "D")
-                ChangeAnimationState(IDLE_DOWN);
-            else if (LastMoveDir == "U")
-                ChangeAnimationState(IDLE_UP);
-            else if (LastMoveDir == "L")
-                ChangeAnimationState(IDLE_LEFT);
-            else if (LastMoveDir == "R")
-                ChangeAnimationState(IDLE_RIGHT);
+            if (m_LastMoveDir == "D")
+                ChangeAnimationState(m_IDLE_DOWN);
+            else if (m_LastMoveDir == "U")
+                ChangeAnimationState(m_IDLE_UP);
+            else if (m_LastMoveDir == "L")
+                ChangeAnimationState(m_IDLE_LEFT);
+            else if (m_LastMoveDir == "R")
+                ChangeAnimationState(m_IDLE_RIGHT);
         }
 
     }
@@ -90,10 +90,10 @@ public class EnemyControllerAnimations : BaseControllerAnimations
     private void ChangeAnimationState(string newAnimation)
     {
         //prevent the animation from interrupting itself
-        if (currentAnimaton == newAnimation) return;
+        if (m_currentAnimaton == newAnimation) return;
         //play the animation
         m_animator.Play(newAnimation);
         //reassign the current state
-        currentAnimaton = newAnimation;
+        m_currentAnimaton = newAnimation;
     }
 }
