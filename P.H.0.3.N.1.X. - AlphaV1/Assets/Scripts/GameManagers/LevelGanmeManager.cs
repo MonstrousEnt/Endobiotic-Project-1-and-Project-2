@@ -7,7 +7,7 @@ public class LevelGanmeManager : MonoBehaviour
 {
     [SerializeField] private PointList pointList;
     [SerializeField] private TimerData timerData;
-    public UnityEvent <LevelName> loadNextLevelUnityEvent;
+    public UnityEvent<int> loadNextLevelUnityEvent;
 
     public void Level1Restart()
     {
@@ -17,8 +17,8 @@ public class LevelGanmeManager : MonoBehaviour
         timerData.Reset();
     }
 
-    public void InvokeLoadNextLevelUnityEvent(LevelName scene)
+    public void InvokeLoadNextLevelUnityEvent(int buildIndex)
     {
-        loadNextLevelUnityEvent.Invoke(scene);
+        loadNextLevelUnityEvent.Invoke(buildIndex);
     }
 }

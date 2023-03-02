@@ -27,7 +27,7 @@ public class SoundData : ScriptableObject
 
 #if UNITY_EDITOR
 [CustomEditor(typeof(SoundData), true)]
-public class LevelDataCustomEditor : Editor
+public class SoundDataCustomEditor : Editor
 {
     public override void OnInspectorGUI()
     {

@@ -16,6 +16,8 @@ public class UITryAgainMenu : MonoBehaviour
 
     [SerializeField] private GameObject tryAgainFirstButton;
 
+    [SerializeField] private LevelDataScriptableObject m_levelDataStartScreen;
+
     private void Start()
     {
         GameMangerRootMaster.instance.uIEvents.activeTryAgainMneuUnityEvent.AddListener(activeTryAgainMneu);
@@ -49,7 +51,7 @@ public class UITryAgainMenu : MonoBehaviour
         GameMangerRootMaster.instance.levelManager.Level1Restart();
 
         //GameMangerRootMaster.instance.levelManager.InvokeLoadNextLevelUnityEvent(LevelName.StartScreen);
-        SceneManager.LoadScene(LevelName.StartScreen.ToString());
+        SceneManager.LoadScene(m_levelDataStartScreen.buildindex);
     }
 
     public void OepnQuitPopUp()
