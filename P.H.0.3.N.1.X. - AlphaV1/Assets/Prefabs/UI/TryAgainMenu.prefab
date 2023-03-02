@@ -845,7 +845,7 @@ MonoBehaviour:
   mainWindowGameObject: {fileID: 8225104315876770247}
   piontSystem: {fileID: 8225104314088512471}
   tryAgainFirstButton: {fileID: 8225104314471126666}
-  m_levelDataStartScreen: {fileID: 11400000, guid: 7e9e67071774149418951f930db8760a, type: 2}
+  m_levelDataLevel01: {fileID: 11400000, guid: c46b664120bd968479e1a0324e645147, type: 2}
 --- !u!1 &8225104315221570443
 GameObject:
   m_ObjectHideFlags: 0
