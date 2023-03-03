@@ -19,7 +19,7 @@ public class UIGameInstructionMenu : MonoBehaviour
 
     private void Awake()
     {
-        GameMangerRootMaster.instance.uIEvents.activeGameInstructionMenuUnityEvent.AddListener(activeHowToPlay);
+
     }
 
     private void Start()
@@ -33,7 +33,7 @@ public class UIGameInstructionMenu : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             GameMangerRootMaster.instance.settingsManager.ActivePause(false, 1f);
-            activeHowToPlay(false);
+    
         }
 
         if (mainWindowGameObject.activeSelf)
@@ -60,16 +60,16 @@ public class UIGameInstructionMenu : MonoBehaviour
         }
     }
 
-    private void activeHowToPlay(bool activeFlag)
-    {
-        GameMangerRootMaster.instance.uIEvents.InvokeActiveFadeBackground(activeFlag);
-        mainWindowGameObject.SetActive(activeFlag);
+    //private void activeHowToPlay(bool activeFlag)
+    //{
+    //    GameMangerRootMaster.instance.uIEvents.InvokeActiveFadeBackground(activeFlag);
+    //    mainWindowGameObject.SetActive(activeFlag);
 
-        currentIndex = 0;
-        maxIndex = gameInstructionList.gameInstructionDatas.Count;
+    //    currentIndex = 0;
+    //    maxIndex = gameInstructionList.gameInstructionDatas.Count;
 
-        DisplayGameInstruction(gameInstructionList.gameInstructionDatas[currentIndex]);
-    }
+    //    DisplayGameInstruction(gameInstructionList.gameInstructionDatas[currentIndex]);
+    //}
 
     private void DisplayGameInstruction(GameInstructionData gameInstructionData)
     {
@@ -81,7 +81,7 @@ public class UIGameInstructionMenu : MonoBehaviour
 
     private void OnDestroy()
     {
-        GameMangerRootMaster.instance.uIEvents.activeGameInstructionMenuUnityEvent.RemoveListener(activeHowToPlay);
+  
     }
 
 }

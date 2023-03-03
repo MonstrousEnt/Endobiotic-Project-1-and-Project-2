@@ -23,7 +23,7 @@ public class UIMenuBase : MonoBehaviour
     {
         GameMangerRootMaster.instance.settingsManager.ActivePause(true, 0f);
 
-        GameMangerRootMaster.instance.uIEvents.InvokeActiveFadeBackground(true);
+        GameMangerRootMaster.instance.uIEvents.InvokeEnableFadeBackground();
 
         enableMainWindow();
 
@@ -33,7 +33,8 @@ public class UIMenuBase : MonoBehaviour
     protected virtual void DisableMenu()
     {
         GameMangerRootMaster.instance.settingsManager.ActivePause(false, 1f);
-        GameMangerRootMaster.instance.uIEvents.InvokeActiveFadeBackground(false);
+
+        GameMangerRootMaster.instance.uIEvents.InvokeDisableFadeBackground();
 
         disableMainWindow();
     }

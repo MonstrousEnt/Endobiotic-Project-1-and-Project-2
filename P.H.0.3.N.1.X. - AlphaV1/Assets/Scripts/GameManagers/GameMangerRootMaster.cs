@@ -15,7 +15,7 @@ public class GameMangerRootMaster : MonoBehaviour
 	public AudioManager audioManager;
 
 	[Header("Unity Events Managers")]
-	public UIEvents uIEvents;
+	public UIManager uIEvents;
 
 
 	private void Awake()

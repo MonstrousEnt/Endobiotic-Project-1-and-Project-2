@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2668102557140389883}
-  - component: {fileID: 2668102557140389880}
+  - component: {fileID: 904979189736408932}
   m_Layer: 5
-  m_Name: FadeGame
+  m_Name: FadeBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38,7 +38,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2668102557140389880
+--- !u!114 &904979189736408932
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa3f105e5f0b81c4daf2044d11a164a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FadeBackground: {fileID: 2668102558291526096}
+  m_fadeBackgroundGameObject: {fileID: 2668102558291526096}
 --- !u!1 &2668102558291526096
 GameObject:
   m_ObjectHideFlags: 0

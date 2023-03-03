@@ -3,14 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class UIEvents : MonoBehaviour
+public class UIManager : MonoBehaviour
 {
     [Header("Bool Flag Var Golabl")]
     public bool pauseMneuIsActive = false;
     public bool tryAgainIsActive = false;
-
-    [Header("Root")]
-    public UnityEvent<bool> activeFadeBackgroundUnityEvents;
 
     [Header("UI Menus")]
     public UnityEvent enablePauseMenuUnityEvent;
@@ -21,6 +18,9 @@ public class UIEvents : MonoBehaviour
 
 
     [Header("Other UI")]
+    public UnityEvent enableFadeBackgroundUnityEvent;
+    public UnityEvent disableFadeBackgroundUnityEvent;
+
     public UnityEvent<PopUpData> setPopUpDataUnityEvent;
     public UnityEvent<bool> activePopUpUnityEvent;
     public UnityEvent<DialogueData> setDialogueDataUnityEvent;
@@ -31,12 +31,9 @@ public class UIEvents : MonoBehaviour
     public void InvokeEnablePauseMenu() { enablePauseMenuUnityEvent.Invoke(); }
     public void InvokeDisablePauseMenu() { disablePauseMenuUnityEvent.Invoke(); }
     public void InvokeEnableTryAgainMneu() { enableTryAgainMneuUnityEvent.Invoke(); }
+    public void InvokeEnableFadeBackground() { enableFadeBackgroundUnityEvent.Invoke(); }
+    public void InvokeDisableFadeBackground() { disableFadeBackgroundUnityEvent.Invoke(); }
 
-
-    public void InvokeActiveFadeBackground(bool activeFlag)
-    {
-        activeFadeBackgroundUnityEvents.Invoke(activeFlag);
-    }
 
     public void InvokeActiveGameInstructionMenu(bool activeFlag)
     {
