@@ -262,6 +262,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58dcac0b34b160a44978d252f5604f1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_soundDataTitleScreen: {fileID: 11400000, guid: 5ef9b9fbbae2e374f984402b8f34b922, type: 2}
-  m_levelDataStartScreen: {fileID: 11400000, guid: 7e9e67071774149418951f930db8760a, type: 2}
+  audioDataStartScreenSooundtrack: {fileID: 11400000, guid: 0fc5629196f9b6b4aa43c070c2869da6, type: 2}
   m_levelDataLevel01: {fileID: 11400000, guid: c46b664120bd968479e1a0324e645147, type: 2}
