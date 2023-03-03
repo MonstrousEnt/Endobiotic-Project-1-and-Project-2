@@ -12,7 +12,7 @@ public class Cutscene : MonoBehaviour
     [SerializeField] private ParticleSystem rebirthParticles;
 
     [SerializeField] private SoundData soundDataGameMusic;
-    [SerializeField] private TimerData timeData;
+    [SerializeField] private TimerDataScriptableObject timeData;
 
     private void Awake()
     {
@@ -22,8 +22,8 @@ public class Cutscene : MonoBehaviour
     private void Start()
     {
         GameMangerRootMaster.instance.audioManager.ResetSound();
-        timeData.startTime = true;
-        timeData.UpdateUI = true;
+
+        timeData.EnableTime();
 
         StartCoroutine(IntroCutscene());
     }

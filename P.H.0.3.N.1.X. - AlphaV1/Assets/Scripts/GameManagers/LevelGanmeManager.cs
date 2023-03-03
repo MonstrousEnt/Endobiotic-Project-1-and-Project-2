@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class LevelGanmeManager : MonoBehaviour
 {
     [SerializeField] private PointList pointList;
-    [SerializeField] private TimerData timerData;
+    [SerializeField] private TimerDataScriptableObject timerData;
     public UnityEvent<int> loadNextLevelUnityEvent;
 
     public void Level1Restart()

@@ -6,30 +6,53 @@ using TMPro;
 
 public class UITimer : MonoBehaviour
 {
-    [SerializeField] private TimerData timerData;
+    [SerializeField] private TimerDataScriptableObject m_timerData;
+    [SerializeField] private TextMeshProUGUI m_timerText;
 
-    [SerializeField] private TextMeshProUGUI timerText;
-
-    void Update()
+    private void Update()
     {
-        if (timerData.startTime)
+        //When the time start, set it to a count up timer.
+        if (m_timerData.startTime)
         {
-            timerData.timeInseconds += Time.deltaTime;
+           countUpTimer(m_timerData);
         }
 
-        if (timerData.UpdateUI && timerData.startTime)
+        //Update the UI Timer every frame if the timer has started.
+        if (m_timerData.updateUI && m_timerData.startTime)
         {
-            DisplayTime(timerData.timeInseconds);
+            displayTime(m_timerData.timeInseconds);
         }
     }
 
-    void DisplayTime(float timeValue)
+    /// <summary>
+    /// Set the time to count up.
+    /// </summary>
+    /// <param name="timerData"></param>
+    private void countUpTimer(TimerDataScriptableObject timerData) 
+    {
+        timerData.timeInseconds += Time.deltaTime;
+    }
+
+    /// <summary>
+    /// Set the time to count down.
+    /// </summary>
+    /// <param name="timerData"></param>
+    private void countDownTimer(TimerDataScriptableObject timerData)
+    {
+        timerData.timeInseconds -= Time.deltaTime;
+    }
+
+    /// <summary>
+    /// Display the time in a minutes format.
+    /// </summary>
+    /// <param name="timeInSeconds"></param>
+    private void displayTime(float timeInSeconds)
     {
         string displayTime = "00:00";
 
-        TimeSpan timeSpan = TimeSpan.FromSeconds(timeValue);
+        TimeSpan timeSpan = TimeSpan.FromSeconds(timeInSeconds);
 
         displayTime = string.Format("{0:00}:{1:00}", (int)timeSpan.Minutes, (int)timeSpan.Seconds);
-        timerText.text = "Timer: " + displayTime;
+        m_timerText.text = "Timer: " + displayTime;
     }
 }
