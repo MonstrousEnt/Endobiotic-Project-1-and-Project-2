@@ -841,10 +841,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19b85a6d87b5b20449971df643e6ef89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popUpDataQuitPopUp: {fileID: 11400000, guid: 0af3184b15876264abddb016fcde85f8, type: 2}
-  mainWindowGameObject: {fileID: 8225104315876770247}
+  m_mainWindowGameObject: {fileID: 8225104315876770247}
+  m_firstButtonGameObject: {fileID: 8225104314471126666}
+  m_popUpDataQuitPopUp: {fileID: 11400000, guid: 0af3184b15876264abddb016fcde85f8, type: 2}
   piontSystem: {fileID: 8225104314088512471}
-  tryAgainFirstButton: {fileID: 8225104314471126666}
   m_levelDataLevel01: {fileID: 11400000, guid: c46b664120bd968479e1a0324e645147, type: 2}
 --- !u!1 &8225104315221570443
 GameObject:

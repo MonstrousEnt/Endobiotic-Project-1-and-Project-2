@@ -8,8 +8,7 @@ public class TryAgainMenuOpenTrigger : MonoBehaviour
     {
         if (GameMangerRootMaster.instance.uIEvents.tryAgainIsActive == false)
         {
-            GameMangerRootMaster.instance.settingsManager.ActivePause(true, 0f);
-            GameMangerRootMaster.instance.uIEvents.InvokActiveTryAgainMneu(true);
+            GameMangerRootMaster.instance.uIEvents.InvokeEnableTryAgainMneu();
         }
     }
 }

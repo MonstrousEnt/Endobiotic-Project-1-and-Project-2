@@ -15,9 +15,10 @@ public class UIEvents : MonoBehaviour
     [Header("UI Menus")]
     public UnityEvent enablePauseMenuUnityEvent;
     public UnityEvent disablePauseMenuUnityEvent;
+    public UnityEvent enableTryAgainMneuUnityEvent;
 
     public UnityEvent<bool> activeGameInstructionMenuUnityEvent;
-    public UnityEvent<bool> activeTryAgainMneuUnityEvent;
+
 
     [Header("Other UI")]
     public UnityEvent<PopUpData> setPopUpDataUnityEvent;
@@ -29,6 +30,7 @@ public class UIEvents : MonoBehaviour
 
     public void InvokeEnablePauseMenu() { enablePauseMenuUnityEvent.Invoke(); }
     public void InvokeDisablePauseMenu() { disablePauseMenuUnityEvent.Invoke(); }
+    public void InvokeEnableTryAgainMneu() { enableTryAgainMneuUnityEvent.Invoke(); }
 
 
     public void InvokeActiveFadeBackground(bool activeFlag)
@@ -40,12 +42,6 @@ public class UIEvents : MonoBehaviour
     {
         activeGameInstructionMenuUnityEvent.Invoke(activeFlag);
     }
-
-    public void InvokActiveTryAgainMneu(bool activeFlag)
-    {
-        activeTryAgainMneuUnityEvent.Invoke(activeFlag);
-    }
-
 
     public void InvokeSetPopUpData(PopUpData popUpData)
     {

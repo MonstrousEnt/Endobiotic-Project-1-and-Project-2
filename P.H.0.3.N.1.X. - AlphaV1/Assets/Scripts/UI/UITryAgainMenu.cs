@@ -4,61 +4,44 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
-public class UITryAgainMenu : MonoBehaviour
+public class UITryAgainMenu : UIMenuBase
 {
-
-    [SerializeField] private PopUpData popUpDataQuitPopUp;
-
-    [SerializeField]  private GameObject mainWindowGameObject;
-
     [SerializeField] private UIPiontSystem piontSystem;
-
-
-    [SerializeField] private GameObject tryAgainFirstButton;
-
     [SerializeField] private LevelDataScriptableObject m_levelDataLevel01;
 
     private void Start()
     {
-        GameMangerRootMaster.instance.uIEvents.activeTryAgainMneuUnityEvent.AddListener(activeTryAgainMneu);
+        GameMangerRootMaster.instance.uIEvents.enableTryAgainMneuUnityEvent.AddListener(EnableMenu);
     }
     private void OnDestroy()
     {
-        GameMangerRootMaster.instance.uIEvents.activeTryAgainMneuUnityEvent.RemoveListener(activeTryAgainMneu);
+        GameMangerRootMaster.instance.uIEvents.enableTryAgainMneuUnityEvent.RemoveListener(EnableMenu);
     }
 
-    private void activeTryAgainMneu(bool activeFlag)
+    protected override void EnableMenu()
     {
-        GameMangerRootMaster.instance.uIEvents.InvokeActiveFadeBackground(activeFlag);
-        GameMangerRootMaster.instance.uIEvents.tryAgainIsActive = activeFlag;
+        base.EnableMenu();
 
-        //clear selected object
-        EventSystem.current.SetSelectedGameObject(null);
-
-        //set a new selected object
-        EventSystem.current.SetSelectedGameObject(tryAgainFirstButton);
+        GameMangerRootMaster.instance.uIEvents.tryAgainIsActive = true;
 
         piontSystem.DisplayPoints();
-        mainWindowGameObject.SetActive(activeFlag);
+    }
+
+    protected override void DisableMenu()
+    {
+        base.DisableMenu();
+
+        GameMangerRootMaster.instance.uIEvents.tryAgainIsActive = false;
     }
 
     public void TryAgin()
     {
-        activeTryAgainMneu(false);
+        DisableMenu();
 
         GameMangerRootMaster.instance.settingsManager.ActivePause(false, 1f);
 
         GameMangerRootMaster.instance.levelManager.Level1Restart();
 
         GameMangerRootMaster.instance.levelManager.InvokeLoadNextLevelUnityEvent(m_levelDataLevel01.buildindex);
-    }
-
-    public void OepnQuitPopUp()
-    {
-        GameMangerRootMaster.instance.settingsManager.ActivePause(true, 0f);
-
-        GameMangerRootMaster.instance.uIEvents.InvokeSetPopUpData(popUpDataQuitPopUp);
-
-        GameMangerRootMaster.instance.uIEvents.InvokeActivePopUp(true);
     }
 }
