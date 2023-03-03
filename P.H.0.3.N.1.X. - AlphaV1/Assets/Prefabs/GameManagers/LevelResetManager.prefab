@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 509095874882430857}
-  - component: {fileID: 509095874882430856}
+  - component: {fileID: 5032422347135240498}
   m_Layer: 0
-  m_Name: LevelManager
+  m_Name: LevelResetManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &509095874882430856
+--- !u!114 &5032422347135240498
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,7 +41,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 509095874882430862}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77337c0722dc5004f9454b38ed6df4ab, type: 3}
+  m_Script: {fileID: 11500000, guid: 3e4bf7927ae6dff4c822aa446eeb6180, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pointList: {fileID: 11400000, guid: 4c7053bf12bd96f4892ad360aac32887, type: 2}

@@ -10,7 +10,7 @@ public class GameMangerRootMaster : MonoBehaviour
 
 	[Header("Game Mangers")]
 	public SettingsGameManager settingsManager;
-	public LevelGanmeManager levelManager;
+	public LevelResetManager levelManager;
 	public PlayerManager playerManager;
 	public AudioManager audioManager;
 

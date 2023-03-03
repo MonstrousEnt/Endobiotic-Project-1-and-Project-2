@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class LevelGanmeManager : MonoBehaviour
+public class LevelResetManager : MonoBehaviour
 {
     [SerializeField] private PointList pointList;
     [SerializeField] private TimerDataScriptableObject timerData;
@@ -13,6 +13,7 @@ public class LevelGanmeManager : MonoBehaviour
     {
         //Any thing we want the game to restart
 
+        //Reset the unity scriptable objects data containers
         pointList.Reset();
         timerData.Reset();
     }

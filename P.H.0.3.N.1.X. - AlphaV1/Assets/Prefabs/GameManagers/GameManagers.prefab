@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settingsManager: {fileID: 6408850795554491908}
-  levelManager: {fileID: 1281981357}
+  levelManager: {fileID: 4811653606776853783}
   playerManager: {fileID: 6702961966432706159}
   audioManager: {fileID: 8117561945647159494}
   uIEvents: {fileID: 4692461290769467909}
@@ -254,7 +254,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 509095874882430862, guid: 1fac10c7a28da5c45abfa6c3908ab351, type: 3}
       propertyPath: m_Name
-      value: LevelManager
+      value: LevelResetManager
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fac10c7a28da5c45abfa6c3908ab351, type: 3}
@@ -263,15 +263,15 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 509095874882430857, guid: 1fac10c7a28da5c45abfa6c3908ab351, type: 3}
   m_PrefabInstance: {fileID: 509095875882163237}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1281981357 stripped
+--- !u!114 &4811653606776853783 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 509095874882430856, guid: 1fac10c7a28da5c45abfa6c3908ab351, type: 3}
+  m_CorrespondingSourceObject: {fileID: 5032422347135240498, guid: 1fac10c7a28da5c45abfa6c3908ab351, type: 3}
   m_PrefabInstance: {fileID: 509095875882163237}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77337c0722dc5004f9454b38ed6df4ab, type: 3}
+  m_Script: {fileID: 11500000, guid: 3e4bf7927ae6dff4c822aa446eeb6180, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &730553988791864611
