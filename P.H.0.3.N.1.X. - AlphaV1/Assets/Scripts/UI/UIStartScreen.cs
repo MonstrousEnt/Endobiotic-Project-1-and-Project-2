@@ -7,10 +7,13 @@ public class UIStartScreen : MonoBehaviour
     [SerializeField] private AudioDataScriptableObject audioDataStartScreenSooundtrack;
     [SerializeField] private LevelDataScriptableObject m_levelDataLevel01;
 
+    [SerializeField] private AudioSource m_audioSourceStartScreenSoundTrack;
+
+
     private void Start()
     {
         audioDataStartScreenSooundtrack.EnableLoop();
-        audioDataStartScreenSooundtrack.PlaySound();
+        audioDataStartScreenSooundtrack.PlaySound(m_audioSourceStartScreenSoundTrack);
     }
 
     void Update()
@@ -19,7 +22,7 @@ public class UIStartScreen : MonoBehaviour
         if (Input.anyKeyDown)
         {
 
-            audioDataStartScreenSooundtrack.StopSound();
+            audioDataStartScreenSooundtrack.StopSound(m_audioSourceStartScreenSoundTrack);
 
             GameMangerRootMaster.instance.levelManager.InvokeLoadNextLevelUnityEvent(m_levelDataLevel01.buildindex);
         }

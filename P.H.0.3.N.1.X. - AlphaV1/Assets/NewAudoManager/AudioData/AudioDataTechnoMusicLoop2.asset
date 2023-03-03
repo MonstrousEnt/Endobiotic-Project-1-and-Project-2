@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: b1fe26b0b42be2f4f9ed65f2962b8b6f, type: 3}
   audioName: Techno Music Loop 2 - Audio Game Object
-  volume: 1
-  pitch: 1
+  volume: 0
+  pitch: 0
   loop: 1
-  source: {fileID: 0}

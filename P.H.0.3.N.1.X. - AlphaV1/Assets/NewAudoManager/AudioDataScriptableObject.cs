@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
-
+#endif
 
 [CreateAssetMenu(fileName = "AudioData", menuName = "Scriptable Objects/Audio Data")]
 public class AudioDataScriptableObject : ScriptableObject
@@ -19,50 +20,18 @@ public class AudioDataScriptableObject : ScriptableObject
 
 	public bool loop;
 
-	[HideInInspector]
-	private AudioSource source;
-
-	public void PlayPreview(AudioSource source)
+	public void PlaySound(AudioSource source)
 	{
 		source.clip = clip;
 		source.volume = volume;
 		source.pitch = pitch;
+		source.loop = loop;
 		source.Play();
 	}
 
-	public void StopPreview(AudioSource source)
+	public void StopSound(AudioSource source)
     {
 		source.Stop();
-	}
-
-	public void PlaySound()
-    {
-		if (source == null) 
-		{
-			GameObject audioGameObject = new GameObject(audioName);
-			AudioSource audioSource = audioGameObject.AddComponent<AudioSource>();
-
-			audioSource.clip = clip;
-			audioSource.volume = volume;
-			audioSource.pitch = pitch;
-			audioSource.loop = loop;
-			source = audioSource;
-		}
-
-		if (source != null)
-        {
-			source.Play();
-        }
-
-	}
-
-	public void StopSound()
-	{
-		if (source != null)
-		{
-			source.loop = false;
-			source.Stop();
-		}
 	}
 
 	public void EnableLoop()
@@ -71,6 +40,7 @@ public class AudioDataScriptableObject : ScriptableObject
 	}
 }
 
+#if UNITY_EDITOR
 [CustomEditor(typeof(AudioDataScriptableObject), true)]
 public class AudioEventEditor : Editor
 {
@@ -94,12 +64,13 @@ public class AudioEventEditor : Editor
 
 		if (GUILayout.Button("Play Preview"))
 		{
-			((AudioDataScriptableObject)target).PlayPreview(m_previewer);
+			((AudioDataScriptableObject)target).PlaySound(m_previewer);
 		}
 
 		if (GUILayout.Button("Stop Preview"))
 		{
-			((AudioDataScriptableObject)target).StopPreview(m_previewer);
+			((AudioDataScriptableObject)target).StopSound(m_previewer);
 		}
 	}
 }
+#endif
