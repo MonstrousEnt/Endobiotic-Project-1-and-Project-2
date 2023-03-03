@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class UIBase : MonoBehaviour
 {
+    [Header("Main Window Data")]
     [SerializeField] protected GameObject m_mainWindowGameObject;
 
     protected void EnableMainWindow()

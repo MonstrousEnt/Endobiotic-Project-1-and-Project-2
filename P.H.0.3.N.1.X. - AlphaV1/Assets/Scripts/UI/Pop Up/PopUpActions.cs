@@ -6,7 +6,7 @@ public class PopUpActions : MonoBehaviour
 {
     public void QuitGame()
     {
-        GameMangerRootMaster.instance.uIEvents.InvokeActivePopUp(false);
+        GameMangerRootMaster.instance.uIEvents.InvokeDisablePopUp();
 
         Debug.Log("Quiting Game...");
         Application.Quit();

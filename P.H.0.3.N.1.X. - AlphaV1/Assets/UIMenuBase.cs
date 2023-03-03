@@ -34,6 +34,6 @@ public class UIMenuBase : UIBase
 
         GameMangerRootMaster.instance.uIEvents.InvokeSetPopUpData(m_popUpDataQuitPopUp);
 
-        GameMangerRootMaster.instance.uIEvents.InvokeActivePopUp(true);
+        GameMangerRootMaster.instance.uIEvents.InvokeEnablePopUp();
     }
 }

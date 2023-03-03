@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class UIManager : MonoBehaviour
 {
-    [Header("Bool Flag Var Golabl")]
+    [Header("Boolean Flag Global Variables")]
     public bool pauseMneuIsActive = false;
     public bool tryAgainIsActive = false;
 
@@ -20,19 +20,21 @@ public class UIManager : MonoBehaviour
     [Header("Other UI")]
     public UnityEvent enableFadeBackgroundUnityEvent;
     public UnityEvent disableFadeBackgroundUnityEvent;
-
     public UnityEvent<PopUpData> setPopUpDataUnityEvent;
-    public UnityEvent<bool> activePopUpUnityEvent;
+    public UnityEvent enablePopUpUnityEvent;
+    public UnityEvent disablePopUpUnityEvent;
+
     public UnityEvent<DialogueData> setDialogueDataUnityEvent;
     public UnityEvent<bool> activeDialogueBoxUnityEvent;
     public UnityEvent displayGameCreditsUnityEvent;
-
 
     public void InvokeEnablePauseMenu() { enablePauseMenuUnityEvent.Invoke(); }
     public void InvokeDisablePauseMenu() { disablePauseMenuUnityEvent.Invoke(); }
     public void InvokeEnableTryAgainMneu() { enableTryAgainMneuUnityEvent.Invoke(); }
     public void InvokeEnableFadeBackground() { enableFadeBackgroundUnityEvent.Invoke(); }
     public void InvokeDisableFadeBackground() { disableFadeBackgroundUnityEvent.Invoke(); }
+    public void InvokeEnablePopUp() { enablePopUpUnityEvent.Invoke(); }
+    public void InvokeDisablePopUp() { disablePopUpUnityEvent.Invoke(); }
 
 
     public void InvokeActiveGameInstructionMenu(bool activeFlag)
@@ -43,11 +45,6 @@ public class UIManager : MonoBehaviour
     public void InvokeSetPopUpData(PopUpData popUpData)
     {
         setPopUpDataUnityEvent.Invoke(popUpData);
-    }
-
-    public void InvokeActivePopUp(bool activeFlag)
-    {
-        activePopUpUnityEvent.Invoke(activeFlag);
     }
 
     public void InvokeSetDialogueDataUnityEvent(DialogueData dialogueData)
