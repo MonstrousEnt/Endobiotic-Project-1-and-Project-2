@@ -13,7 +13,9 @@ public class UIEvents : MonoBehaviour
     public UnityEvent<bool> activeFadeBackgroundUnityEvents;
 
     [Header("UI Menus")]
-    public UnityEvent<bool> activePauseMenuUnityEvent;
+    public UnityEvent enablePauseMenuUnityEvent;
+    public UnityEvent disablePauseMenuUnityEvent;
+
     public UnityEvent<bool> activeGameInstructionMenuUnityEvent;
     public UnityEvent<bool> activeTryAgainMneuUnityEvent;
 
@@ -24,14 +26,14 @@ public class UIEvents : MonoBehaviour
     public UnityEvent<bool> activeDialogueBoxUnityEvent;
     public UnityEvent displayGameCreditsUnityEvent;
 
+
+    public void InvokeEnablePauseMenu() { enablePauseMenuUnityEvent.Invoke(); }
+    public void InvokeDisablePauseMenu() { disablePauseMenuUnityEvent.Invoke(); }
+
+
     public void InvokeActiveFadeBackground(bool activeFlag)
     {
         activeFadeBackgroundUnityEvents.Invoke(activeFlag);
-    }
-
-    public void InvokeActivePauseMenu(bool activeFlag)
-    {
-        activePauseMenuUnityEvent.Invoke(activeFlag);
     }
 
     public void InvokeActiveGameInstructionMenu(bool activeFlag)

@@ -3,56 +3,44 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class UIPauseMenu : MonoBehaviour
+public class UIPauseMenu : UIMenuBase
 {
-    [SerializeField] private PopUpData popUpDataQuitPopUp;
-
     [SerializeField] private GameObject MainWindowGameObject;
-
-    [SerializeField] private GameObject pauseFirstButton;
 
     private void Start()
     {
-        GameMangerRootMaster.instance.uIEvents.activePauseMenuUnityEvent.AddListener(activePauseMneu);
+        GameMangerRootMaster.instance.uIEvents.enablePauseMenuUnityEvent.AddListener(EnableMenu);
+        GameMangerRootMaster.instance.uIEvents.disablePauseMenuUnityEvent.AddListener(DisableMenu);
     }
 
-    private void activePauseMneu(bool activeFlag)
+    private void OnDestroy()
     {
-        GameMangerRootMaster.instance.uIEvents.InvokeActiveFadeBackground(activeFlag);
-        MainWindowGameObject.SetActive(activeFlag);
+        GameMangerRootMaster.instance.uIEvents.enablePauseMenuUnityEvent.RemoveListener(EnableMenu);
+        GameMangerRootMaster.instance.uIEvents.disablePauseMenuUnityEvent.RemoveListener(DisableMenu);
+    }
 
-        //clear selected object
-        EventSystem.current.SetSelectedGameObject(null);
+    protected override void EnableMenu()
+    {
+        base.EnableMenu();
 
-        //set a new selected object
-        EventSystem.current.SetSelectedGameObject(pauseFirstButton);
+        GameMangerRootMaster.instance.uIEvents.pauseMneuIsActive = true;
+    }
 
-        GameMangerRootMaster.instance.uIEvents.pauseMneuIsActive = activeFlag;
+    protected override void DisableMenu()
+    {
+        base.DisableMenu();
+
+        GameMangerRootMaster.instance.uIEvents.pauseMneuIsActive = false;
     }
 
     public void ResumeGame()
     {
-        activePauseMneu(false);
+        DisableMenu();
     }
 
     public void OpenHowToPlayMenu()
     {
-        activePauseMneu(false);
+        DisableMenu();
         GameMangerRootMaster.instance.uIEvents.InvokeActiveGameInstructionMenu(true);
-    }
-
-    public void OepnQuitPopUp()
-    {
-        GameMangerRootMaster.instance.settingsManager.ActivePause(true, 0f);
-
-        GameMangerRootMaster.instance.uIEvents.InvokeSetPopUpData(popUpDataQuitPopUp);
-
-        GameMangerRootMaster.instance.uIEvents.InvokeActivePopUp(true);
-    }
-
-
-    private void OnDestroy()
-    {
-        GameMangerRootMaster.instance.uIEvents.activePauseMenuUnityEvent.RemoveListener(activePauseMneu);
     }
 }

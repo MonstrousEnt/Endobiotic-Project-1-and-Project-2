@@ -11,13 +11,11 @@ public class PlayerControllerUI : MonoBehaviour
         {
             if (GameMangerRootMaster.instance.uIEvents.pauseMneuIsActive)
             {
-                GameMangerRootMaster.instance.settingsManager.ActivePause(false, 1f);
-                GameMangerRootMaster.instance.uIEvents.InvokeActivePauseMenu(false);
+                GameMangerRootMaster.instance.uIEvents.InvokeDisablePauseMenu();
             }
             else if (!GameMangerRootMaster.instance.uIEvents.pauseMneuIsActive)
             {
-                GameMangerRootMaster.instance.settingsManager.ActivePause(true, 0f);
-                GameMangerRootMaster.instance.uIEvents.InvokeActivePauseMenu(true);
+                GameMangerRootMaster.instance.uIEvents.InvokeEnablePauseMenu();
             }
         }
     }

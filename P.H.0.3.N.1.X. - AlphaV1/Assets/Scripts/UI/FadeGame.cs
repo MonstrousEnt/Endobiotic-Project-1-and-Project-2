@@ -6,7 +6,7 @@ public class FadeGame : MonoBehaviour
 {
    [SerializeField] private  GameObject FadeBackground;
 
-    private void Awake()
+    private void Start()
     {
         GameMangerRootMaster.instance.uIEvents.activeFadeBackgroundUnityEvents.AddListener(activeFadeBackground);
     }
