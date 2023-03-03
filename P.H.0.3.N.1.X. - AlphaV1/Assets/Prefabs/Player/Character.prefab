@@ -106,9 +106,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a0b30bcd3f68424788ba969aa77838d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentAnimaton: 
-  LastMoveDir: D
-  turnThresholdMoveY: 0.71
+  m_currentAnimaton: 
+  m_LastMoveDir: D
+  m_turnThresholdMoveY: 0.71
 --- !u!114 &759186879241046267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,11 +137,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 166a1ba85fe282d48b859f0ae901f7d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidBody2D: {fileID: 759186879241046264}
-  animator: {fileID: 0}
-  playerAnimation: {fileID: 4398488082201832907}
-  moveSpeed: 3
-  movement: {x: 0, y: 0}
+  m_rigidBody2D: {fileID: 0}
+  m_playerAnimation: {fileID: 4398488082201832907}
+  m_moveSpeed: 3
+  m_movement: {x: 0, y: 0}
 --- !u!114 &1972234326682734799
 MonoBehaviour:
   m_ObjectHideFlags: 0

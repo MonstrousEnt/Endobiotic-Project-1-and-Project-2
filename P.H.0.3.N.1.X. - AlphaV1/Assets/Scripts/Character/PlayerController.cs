@@ -5,61 +5,75 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [Header("Components")]
-    [SerializeField] private Rigidbody2D rigidBody2D;
-    [SerializeField] private Animator animator;
-    [SerializeField] private PlayerControllerAnimations playerAnimation;
-    private CharacterInteractionController characterInteractionController;
+    [SerializeField] private Rigidbody2D m_rigidBody2D;
+    [SerializeField] private PlayerControllerAnimations m_playerAnimation;
+    private CharacterInteractionController m_characterInteractionController;
 
     [Header("Move")]
-    [SerializeField] private float moveSpeed = 5;
-    [SerializeField] private Vector2 movement;
+    [SerializeField] private float m_moveSpeed = 5;
+    [SerializeField] private Vector2 m_movement;
 
-
-    void Start()
+    private void Start()
     {
-        rigidBody2D = GetComponent<Rigidbody2D>(); //For move functions
-        characterInteractionController = GetComponent<CharacterInteractionController>();
+        m_rigidBody2D = GetComponent<Rigidbody2D>(); 
+        m_characterInteractionController = GetComponent<CharacterInteractionController>();
     }
 
-    void Update()
+    private void Update()
     {
-        if (GameMangerRootMaster.instance.playerManager.CanMove())
-        {
-            //Get the move directions (Up (y +1), Down (y -1), Left (x +1), and Right (x -1))
-            movement.x = Input.GetAxis("Horizontal");
-            movement.y = Input.GetAxis("Vertical");
-        }
-
-        if (Input.GetButton("FormAction"))
-        {
-            Interact();
-        }
+        inputs();
     }
 
     private void FixedUpdate()
     {
-        if (GameMangerRootMaster.instance.playerManager.CanMove())
+        //If the player can't move
+        if (!GameMangerRootMaster.instance.playerManager.CanMove())
         {
-            rigidBody2D.velocity = new Vector2(movement.x * moveSpeed, movement.y * moveSpeed);
-
+            //Stop the movement
+            m_rigidBody2D.velocity = Vector2.zero;
+        }
+        //Otherwise move the player
+        else if (GameMangerRootMaster.instance.playerManager.CanMove())
+        {
             Move();
         }
-        else if (!GameMangerRootMaster.instance.playerManager.CanMove())
+    }
+
+    /// <summary>
+    /// The player inputs for moving and form action.
+    /// </summary>
+    private void inputs()
+    {
+        //If the player can move.
+        if (GameMangerRootMaster.instance.playerManager.CanMove())
         {
-            rigidBody2D.velocity = Vector2.zero;
+            //Get the move directions (Up (y +1), Down (y -1), Left (x +1), and Right (x -1)) for user input.
+            m_movement.x = Input.GetAxis("Horizontal");
+            m_movement.y = Input.GetAxis("Vertical");
+
+            //When the user press e or X on Xbox. 
+            if (Input.GetButton("FormAction"))
+            {
+                //Interact with the maze blocks.
+                Interact();
+            }
         }
     }
 
+    /// <summary>
+    /// Move the player.
+    /// </summary>
     private void Move()
     {
-        //if player can move:
-        playerAnimation.MovementAnimation(movement);
+        m_rigidBody2D.velocity = new Vector2(m_movement.x * m_moveSpeed, m_movement.y * m_moveSpeed);
+        m_playerAnimation.MovementAnimation(m_movement);
     }
 
+    /// <summary>
+    /// Interact with the maze blocks
+    /// </summary>
     private void Interact()
     {
-        characterInteractionController.Interact();
-    }
-
-        
+        m_characterInteractionController.Interact();
+    }       
 }
