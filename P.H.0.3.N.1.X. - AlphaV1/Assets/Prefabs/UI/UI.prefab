@@ -213,6 +213,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6016740889052284729}
     m_Modifications:
+    - target: {fileID: 904979189736408932, guid: 5f8ce553e7be8d64fb1cc6d12c00c335, type: 3}
+      propertyPath: m_mainWindowGameObject
+      value: 
+      objectReference: {fileID: 264129743925526357}
     - target: {fileID: 2668102557140389882, guid: 5f8ce553e7be8d64fb1cc6d12c00c335, type: 3}
       propertyPath: m_Name
       value: FadeBackground
@@ -306,6 +310,11 @@ PrefabInstance:
 --- !u!224 &264129742773858686 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2668102557140389883, guid: 5f8ce553e7be8d64fb1cc6d12c00c335, type: 3}
+  m_PrefabInstance: {fileID: 2786991194596228741}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &264129743925526357 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2668102558291526096, guid: 5f8ce553e7be8d64fb1cc6d12c00c335, type: 3}
   m_PrefabInstance: {fileID: 2786991194596228741}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6016740887531517554

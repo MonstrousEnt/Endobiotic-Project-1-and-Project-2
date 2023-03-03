@@ -3,21 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class UIMenuBase : MonoBehaviour
+public class UIMenuBase : UIBase
 {
-    [SerializeField] protected GameObject m_mainWindowGameObject;
     [SerializeField] protected GameObject m_firstButtonGameObject;
     [SerializeField] protected PopUpData m_popUpDataQuitPopUp;
-
-    private void enableMainWindow()
-    {
-        m_mainWindowGameObject.SetActive(true);
-    }
-
-    private void disableMainWindow()
-    {
-        m_mainWindowGameObject.SetActive(false);
-    }
 
     protected virtual void EnableMenu()
     {
@@ -25,7 +14,7 @@ public class UIMenuBase : MonoBehaviour
 
         GameMangerRootMaster.instance.uIEvents.InvokeEnableFadeBackground();
 
-        enableMainWindow();
+        EnableMainWindow();
 
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(m_firstButtonGameObject);
@@ -36,7 +25,7 @@ public class UIMenuBase : MonoBehaviour
 
         GameMangerRootMaster.instance.uIEvents.InvokeDisableFadeBackground();
 
-        disableMainWindow();
+        DisableMainWindow();
     }
 
     public void OepnQuitPopUp()
