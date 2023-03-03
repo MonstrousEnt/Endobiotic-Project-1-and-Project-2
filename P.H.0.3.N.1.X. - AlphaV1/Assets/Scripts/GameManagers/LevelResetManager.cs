@@ -18,8 +18,8 @@ public class LevelResetManager : MonoBehaviour
         timerData.Reset();
     }
 
-    public void InvokeLoadNextLevelUnityEvent(int buildIndex)
+    public void InvokeLoadNextLevelUnityEvent(int nextScene)
     {
-        loadNextLevelUnityEvent.Invoke(buildIndex);
+        loadNextLevelUnityEvent.Invoke(nextScene);
     }
 }

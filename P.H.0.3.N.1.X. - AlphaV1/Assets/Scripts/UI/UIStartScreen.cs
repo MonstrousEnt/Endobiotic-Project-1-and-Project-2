@@ -5,7 +5,7 @@ using UnityEngine;
 public class UIStartScreen : MonoBehaviour
 {
     [SerializeField] private SoundData m_soundDataTitleScreen;
-    [SerializeField] private LevelDataScriptableObject m_levelDataLeveel01;
+    [SerializeField] private LevelDataScriptableObject m_levelDataLevel01;
 
     private void Start()
     {
@@ -21,7 +21,7 @@ public class UIStartScreen : MonoBehaviour
         {
             GameMangerRootMaster.instance.audioManager.SetAudioLoop(m_soundDataTitleScreen, false);
             GameMangerRootMaster.instance.audioManager.StopAudio(m_soundDataTitleScreen);
-            GameMangerRootMaster.instance.levelManager.InvokeLoadNextLevelUnityEvent(m_levelDataLeveel01.buildindex);
+            GameMangerRootMaster.instance.levelManager.InvokeLoadNextLevelUnityEvent(m_levelDataLevel01.buildindex);
         }
     }
 }
