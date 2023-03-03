@@ -7,7 +7,7 @@ public class PushableObject : MonoBehaviour
     [SerializeField] private InteractableOjbects objectType;
     [SerializeField] private bool destroyOnceUsed;
 
-    [SerializeField] private SoundData soundDataPush;
+    //[SerializeField] private SoundData soundDataPush;
 
     private Rigidbody2D rigidBody2D;
 
@@ -36,7 +36,7 @@ public class PushableObject : MonoBehaviour
             {
                 rigidBody2D.mass = 10;
 
-                GameMangerRootMaster.instance.audioManager.PlayAudio(soundDataPush);
+                //GameMangerRootMaster.instance.audioManager.PlayAudio(soundDataPush);
             }
             else
             {

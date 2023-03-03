@@ -4,7 +4,7 @@ public class DestroyerFormAttack : MonoBehaviour
 {
     [SerializeField] PlayerControllerAnimations playerControllerAnimations;
 
-    [SerializeField] private SoundData soundDataPlayerAttack; 
+    //[SerializeField] private SoundData soundDataPlayerAttack; 
 
     private void Update()
     {
@@ -15,7 +15,7 @@ public class DestroyerFormAttack : MonoBehaviour
         {
             playerControllerAnimations.DestroyerAttack();
 
-            GameMangerRootMaster.instance.audioManager.PlayAudio(soundDataPlayerAttack);
+            //GameMangerRootMaster.instance.audioManager.PlayAudio(soundDataPlayerAttack);
         }
     }
 }

@@ -20,9 +20,9 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private List<GameObject> userSpawnedRobots = new List<GameObject>();
     private Dictionary<GameObject, Robot> trackedRobots = new Dictionary<GameObject, Robot>();
 
-    [SerializeField] private SoundData soundDataSpawner1;
-    [SerializeField] private SoundData soundDataSpawner2;
-    [SerializeField] private SoundData soundDataSpawner3;
+    //[SerializeField] private SoundData soundDataSpawner1;
+    //[SerializeField] private SoundData soundDataSpawner2;
+    //[SerializeField] private SoundData soundDataSpawner3;
 
     private List<GameObject> EnemyFormList;
 
@@ -91,7 +91,7 @@ public class EnemySpawner : MonoBehaviour
 
             robot.GetComponent<EnemyInteraction>().deathEvent.AddListener(UpdateCurrentRobotsList);
         }
-    } 
+    }
 
     private void RandomSpawnerSound()
     {
@@ -99,21 +99,22 @@ public class EnemySpawner : MonoBehaviour
         int randNum = Random.Range(1, 4);
 
         //Pick a jump sound
-        switch (randNum)
-        {
-            case 1:
-                //Play the jump sound 1
-                GameMangerRootMaster.instance.audioManager.PlayAudio(soundDataSpawner1);
-                break;
-            case 2:
-                //Play the jump sound 2
-                GameMangerRootMaster.instance.audioManager.PlayAudio(soundDataSpawner2);
-                break;
-            case 3:
-                //Play the jump sound 3
-                GameMangerRootMaster.instance.audioManager.PlayAudio(soundDataSpawner3);
-                break;
-        }
+        //    switch (randNum)
+        //    {
+        //        case 1:
+        //            //Play the jump sound 1
+        //            GameMangerRootMaster.instance.audioManager.PlayAudio(soundDataSpawner1);
+        //            break;
+        //        case 2:
+        //            //Play the jump sound 2
+        //            GameMangerRootMaster.instance.audioManager.PlayAudio(soundDataSpawner2);
+        //            break;
+        //        case 3:
+        //            //Play the jump sound 3
+        //            GameMangerRootMaster.instance.audioManager.PlayAudio(soundDataSpawner3);
+        //            break;
+        //    }
+        //}
     }
 }
 

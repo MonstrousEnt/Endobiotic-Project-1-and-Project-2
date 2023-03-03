@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class EffectPlaySound : MonoBehaviour
 {
-    [SerializeField] private SoundData soundDataPickUpItem;
+    //[SerializeField] private SoundData soundDataPickUpItem;
 
     public void PlaySound()
     {
-        GameMangerRootMaster.instance.audioManager.PlayAudio(soundDataPickUpItem);
+        //GameMangerRootMaster.instance.audioManager.PlayAudio(soundDataPickUpItem);
     }
 }
