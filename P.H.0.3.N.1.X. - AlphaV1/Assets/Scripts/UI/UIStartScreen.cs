@@ -1,19 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class UIStartScreen : MonoBehaviour
 {
-    [SerializeField] private AudioDataScriptableObject audioDataStartScreenSooundtrack;
-    [SerializeField] private LevelDataScriptableObject m_levelDataLevel01;
-
-    [SerializeField] private AudioSource m_audioSourceStartScreenSoundTrack;
+   [SerializeField] private UnityEvent m_unityEventStartSoundtrack;
+   [SerializeField] private UnityEvent m_unityEventStartGame;
 
 
     private void Start()
     {
-        audioDataStartScreenSooundtrack.EnableLoop();
-        audioDataStartScreenSooundtrack.PlaySound(m_audioSourceStartScreenSoundTrack);
+        m_unityEventStartSoundtrack.Invoke();
     }
 
     void Update()
@@ -21,10 +19,7 @@ public class UIStartScreen : MonoBehaviour
         //stop the start screen soundtrack and load next level when the user press any key
         if (Input.anyKeyDown)
         {
-
-            audioDataStartScreenSooundtrack.StopSound(m_audioSourceStartScreenSoundTrack);
-
-            GameMangerRootMaster.instance.levelManager.InvokeLoadNextLevelUnityEvent(m_levelDataLevel01.buildindex);
+            m_unityEventStartGame.Invoke();
         }
     }
 }

@@ -31,12 +31,9 @@ public class AudioDataScriptableObject : ScriptableObject
 
 	public void StopSound(AudioSource source)
     {
-		source.Stop();
-	}
+		source.loop = false;
 
-	public void EnableLoop()
-	{
-		loop = true;
+		source.Stop();
 	}
 }
 
