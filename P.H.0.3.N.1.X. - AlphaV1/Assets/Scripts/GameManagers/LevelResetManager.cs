@@ -9,7 +9,7 @@ public class LevelResetManager : MonoBehaviour
     [SerializeField] private TimerDataScriptableObject timerData;
     public UnityEvent<int> loadNextLevelUnityEvent;
 
-    public void Level1Restart()
+    public void RestartLevel()
     {
         //Any thing we want the game to restart
 

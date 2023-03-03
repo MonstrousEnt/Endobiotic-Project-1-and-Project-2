@@ -7,7 +7,6 @@ public class UIManager : MonoBehaviour
 {
     [Header("Boolean Flag Global Variables")]
     public bool pauseMneuIsActive = false;
-    public bool tryAgainIsActive = false;
 
     [Header("UI Menus")]
     public UnityEvent enablePauseMenuUnityEvent;
@@ -15,7 +14,6 @@ public class UIManager : MonoBehaviour
     public UnityEvent enableTryAgainMneuUnityEvent;
 
     public UnityEvent<bool> activeGameInstructionMenuUnityEvent;
-
 
     [Header("Other UI")]
     public UnityEvent enableFadeBackgroundUnityEvent;

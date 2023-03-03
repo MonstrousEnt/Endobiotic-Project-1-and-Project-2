@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerControllerUI : MonoBehaviour
 {
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
+        //When the user press tab or start button, it open or close the menu.
         if (Input.GetButtonDown("Menu"))
         {
             if (GameMangerRootMaster.instance.uIEvents.pauseMneuIsActive)

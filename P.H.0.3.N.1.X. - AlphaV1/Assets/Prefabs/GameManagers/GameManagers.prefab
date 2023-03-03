@@ -64,7 +64,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2869723214565644682, guid: d1ef42c3b1a70b441a9a870b85d15572, type: 3}
       propertyPath: m_Name
-      value: UIEevnts
+      value: UIManager
       objectReference: {fileID: 0}
     - target: {fileID: 7971565967904138378, guid: d1ef42c3b1a70b441a9a870b85d15572, type: 3}
       propertyPath: m_RootOrder

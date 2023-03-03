@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7971565967904138378}
   - component: {fileID: 4878542544376427857}
   m_Layer: 0
-  m_Name: UIEvents
+  m_Name: UIManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,12 +45,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMneuIsActive: 0
-  activeFadeBackgroundUnityEvents:
+  enablePauseMenuUnityEvent:
     m_PersistentCalls:
       m_Calls: []
-  activePauseMenuUnityEvents:
+  disablePauseMenuUnityEvent:
     m_PersistentCalls:
       m_Calls: []
-  activeHowToPlayMenuUnityEvents:
+  enableTryAgainMneuUnityEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  activeGameInstructionMenuUnityEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  enableFadeBackgroundUnityEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  disableFadeBackgroundUnityEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  setPopUpDataUnityEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  enablePopUpUnityEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  disablePopUpUnityEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  setDialogueDataUnityEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  activeDialogueBoxUnityEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  displayGameCreditsUnityEvent:
     m_PersistentCalls:
       m_Calls: []
