@@ -5,8 +5,6 @@ using UnityEngine.EventSystems;
 
 public class UIPauseMenu : UIMenuBase
 {
-    [SerializeField] private GameObject MainWindowGameObject;
-
     private void Start()
     {
         GameMangerRootMaster.instance.uIEvents.enablePauseMenuUnityEvent.AddListener(EnableMenu);
@@ -19,6 +17,9 @@ public class UIPauseMenu : UIMenuBase
         GameMangerRootMaster.instance.uIEvents.disablePauseMenuUnityEvent.RemoveListener(DisableMenu);
     }
 
+    /// <summary>
+    /// Enable the menu and set the global scriptable object variable to true for the UI object.
+    /// </summary>
     protected override void EnableMenu()
     {
         base.EnableMenu();
@@ -26,6 +27,9 @@ public class UIPauseMenu : UIMenuBase
         GameMangerRootMaster.instance.uIEvents.pauseMneuIsActive = true;
     }
 
+    /// <summary>
+    /// Disable the menu and set the global scriptable object variable to false for the UI object.
+    /// </summary>
     protected override void DisableMenu()
     {
         base.DisableMenu();
@@ -33,6 +37,9 @@ public class UIPauseMenu : UIMenuBase
         GameMangerRootMaster.instance.uIEvents.pauseMneuIsActive = false;
     }
 
+    /// <summary>
+    /// Resume the game and disable the menu
+    /// </summary>
     public void ResumeGame()
     {
         DisableMenu();
