@@ -39,6 +39,8 @@ public class AudioDataScriptableObject : ScriptableObject
 		}
 		else if (source != null)
 		{
+			source.loop = loop;
+
 			source.Play();
 		}
 	}
