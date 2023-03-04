@@ -6,10 +6,12 @@ public class EffectUseItem : MonoBehaviour
     [SerializeField] private PointList pointList;
     [SerializeField] private PuzzlePointsList currPuzzlePointsList;
 
+    [SerializeField] private TagDataScriptableObject tagDataPlayer;
+
     public void UseItem()
     {
         pointList.AddToTheCollectPointsList(piontData, currPuzzlePointsList);
 
-        GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterItemHolder>().UseItem();
+        GameObject.FindGameObjectWithTag(tagDataPlayer.tagName).GetComponent<CharacterItemHolder>().UseItem();
     }
 }

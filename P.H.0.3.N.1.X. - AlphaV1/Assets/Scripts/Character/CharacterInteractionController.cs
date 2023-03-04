@@ -16,6 +16,9 @@ public class CharacterInteractionController : MonoBehaviour
     [SerializeField] private float invulTime = 1f;
     private float invulTimer;
 
+    [SerializeField] private TagDataScriptableObject tagDataEnemy;
+    [SerializeField] private TagDataScriptableObject tagDataInteractable;
+
     private void Awake()
     {
         characterFormsController = GetComponent<CharacterFormsController>();
@@ -33,15 +36,15 @@ public class CharacterInteractionController : MonoBehaviour
         if (invulTimer > Time.time)
             return;
 
-        if (collision.collider.CompareTag("Enemy") && collision.collider.GetComponent<CharacterFormsController>().currForm == Form.Crab && characterFormsController.currForm == Form.Destroyer)
+        if (collision.collider.CompareTag(tagDataEnemy.tagName) && collision.collider.GetComponent<CharacterFormsController>().currForm == Form.Crab && characterFormsController.currForm == Form.Destroyer)
         {
             return;
         }
-        else if (collision.collider.CompareTag("Enemy") && collision.collider.GetComponent<CharacterFormsController>().currForm == Form.Crab)
+        else if (collision.collider.CompareTag(tagDataEnemy.tagName) && collision.collider.GetComponent<CharacterFormsController>().currForm == Form.Crab)
         {
             Respawn();
         }
-        else if (collision.collider.CompareTag("Enemy") && characterFormsController.currForm != collision.collider.GetComponent<CharacterFormsController>().currForm)
+        else if (collision.collider.CompareTag(tagDataEnemy.tagName) && characterFormsController.currForm != collision.collider.GetComponent<CharacterFormsController>().currForm)
         {
             RespawnAsNewForm(collision.collider.GetComponent<CharacterFormsController>().currForm, collision.collider.transform.position);
             collision.collider.GetComponent<EnemyInteraction>().DestroyEnemy();
@@ -50,7 +53,7 @@ public class CharacterInteractionController : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Interactable") || collision.CompareTag("Enemy"))
+        if (collision.CompareTag(tagDataInteractable.tagName) || collision.CompareTag(tagDataEnemy.tagName))
         {
             if(collision.TryGetComponent(out Interactable interactable))
             {

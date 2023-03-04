@@ -14,6 +14,8 @@ public class EnemyController : MonoBehaviour
     private Rigidbody2D m_rigidbody2D;
     private Vector3 preferredPosition;
 
+    [SerializeField] private TagDataScriptableObject tagDataPlayer;
+
     private void Awake()
     {
         characterFormController = GetComponent<CharacterFormsController>();
@@ -86,7 +88,7 @@ public class EnemyController : MonoBehaviour
 
         foreach(Collider2D hit in hits)
         {
-            if (hit.gameObject.CompareTag("Player"))
+            if (hit.gameObject.CompareTag(tagDataPlayer.tagName))
             {
                 return hit.gameObject;
             }

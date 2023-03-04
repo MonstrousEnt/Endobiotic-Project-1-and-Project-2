@@ -125,6 +125,8 @@ MonoBehaviour:
   riseAgainParticles: {fileID: 4648500904063570242}
   soundDataPlayerDeath: {fileID: 11400000, guid: 9c262e3b02875eb43b93d5e01b543c18, type: 2}
   invulTime: 0.5
+  tagDataEnemy: {fileID: 11400000, guid: 94bd01555d6c0a64aa892d4ecc40bd7a, type: 2}
+  tagDataInteractable: {fileID: 11400000, guid: 0d1e0d57ef54aa54fac70f955397111c, type: 2}
 --- !u!114 &759186879241046266
 MonoBehaviour:
   m_ObjectHideFlags: 0
