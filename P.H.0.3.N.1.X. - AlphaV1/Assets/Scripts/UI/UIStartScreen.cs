@@ -5,13 +5,15 @@ using UnityEngine.Events;
 
 public class UIStartScreen : MonoBehaviour
 {
-   [SerializeField] private UnityEvent m_unityEventStartSoundtrack;
+
+    [SerializeField] private AudioDataScriptableObject audioDataStartScreenSoundtrack;
+
    [SerializeField] private UnityEvent m_unityEventStartGame;
 
 
     private void Start()
     {
-        m_unityEventStartSoundtrack.Invoke();
+        audioDataStartScreenSoundtrack.PlaySound();
     }
 
     void Update()

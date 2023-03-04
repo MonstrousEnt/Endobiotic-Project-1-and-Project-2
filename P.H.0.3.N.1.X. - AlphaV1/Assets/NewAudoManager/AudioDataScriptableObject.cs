@@ -68,16 +68,16 @@ public class AudioDataScriptableObject : ScriptableObject
 [CustomEditor(typeof(AudioDataScriptableObject), true)]
 public class AudioEventEditor : Editor
 {
-	[SerializeField] private AudioSource m_previewer;
+	private AudioSource m_audioPreviewer;
 
 	public void OnEnable()
 	{
-		m_previewer = EditorUtility.CreateGameObjectWithHideFlags("Audio preview", HideFlags.HideAndDontSave, typeof(AudioSource)).GetComponent<AudioSource>();
+		m_audioPreviewer = EditorUtility.CreateGameObjectWithHideFlags("Audio preview", HideFlags.HideAndDontSave, typeof(AudioSource)).GetComponent<AudioSource>();
 	}
 
 	public void OnDisable()
 	{
-		DestroyImmediate(m_previewer.gameObject);
+		DestroyImmediate(m_audioPreviewer.gameObject);
 	}
 
 	public override void OnInspectorGUI()
@@ -90,12 +90,12 @@ public class AudioEventEditor : Editor
 
 		if (GUILayout.Button("Play Preview"))
 		{
-			playPreview(m_previewer, audioData);
+			playPreview(m_audioPreviewer, audioData);
 		}
 
 		if (GUILayout.Button("Stop Preview"))
 		{
-			stopPreview(m_previewer);
+			stopPreview(m_audioPreviewer);
 		}
 	}
 

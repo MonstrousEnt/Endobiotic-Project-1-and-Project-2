@@ -20,9 +20,9 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private List<GameObject> userSpawnedRobots = new List<GameObject>();
     private Dictionary<GameObject, Robot> trackedRobots = new Dictionary<GameObject, Robot>();
 
-    //[SerializeField] private SoundData soundDataSpawner1;
-    //[SerializeField] private SoundData soundDataSpawner2;
-    //[SerializeField] private SoundData soundDataSpawner3;
+    [SerializeField] private AudioDataScriptableObject audioDataSpawner1;
+    [SerializeField] private AudioDataScriptableObject audioDataSpawner2;
+    [SerializeField] private AudioDataScriptableObject audioDataSpawner3;
 
     private List<GameObject> EnemyFormList;
 
@@ -99,24 +99,24 @@ public class EnemySpawner : MonoBehaviour
         int randNum = Random.Range(1, 4);
 
         //Pick a jump sound
-        //    switch (randNum)
-        //    {
-        //        case 1:
-        //            //Play the jump sound 1
-        //            GameMangerRootMaster.instance.audioManager.PlayAudio(soundDataSpawner1);
-        //            break;
-        //        case 2:
-        //            //Play the jump sound 2
-        //            GameMangerRootMaster.instance.audioManager.PlayAudio(soundDataSpawner2);
-        //            break;
-        //        case 3:
-        //            //Play the jump sound 3
-        //            GameMangerRootMaster.instance.audioManager.PlayAudio(soundDataSpawner3);
-        //            break;
-        //    }
-        //}
+        switch (randNum)
+        {
+            case 1:
+                //Play the jump sound 1
+                audioDataSpawner1.PlaySound();
+                break;
+            case 2:
+                //Play the jump sound 2
+                audioDataSpawner2.PlaySound();
+                break;
+            case 3:
+                //Play the jump sound 3
+                audioDataSpawner3.PlaySound();
+                break;
+        }
     }
 }
+
 
 public struct Robot
 {

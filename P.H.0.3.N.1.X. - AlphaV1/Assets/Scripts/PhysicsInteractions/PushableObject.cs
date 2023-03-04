@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PushableObject : MonoBehaviour
@@ -7,7 +8,7 @@ public class PushableObject : MonoBehaviour
     [SerializeField] private InteractableOjbects objectType;
     [SerializeField] private bool destroyOnceUsed;
 
-    //[SerializeField] private SoundData soundDataPush;
+    [SerializeField] private UnityEvent soundEffectUnityEvent;
 
     private Rigidbody2D rigidBody2D;
 
@@ -36,7 +37,7 @@ public class PushableObject : MonoBehaviour
             {
                 rigidBody2D.mass = 10;
 
-                //GameMangerRootMaster.instance.audioManager.PlayAudio(soundDataPush);
+                soundEffectUnityEvent.Invoke();
             }
             else
             {
