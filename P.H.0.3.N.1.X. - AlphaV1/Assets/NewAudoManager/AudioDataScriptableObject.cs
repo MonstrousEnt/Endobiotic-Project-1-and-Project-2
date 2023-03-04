@@ -22,27 +22,35 @@ public class AudioDataScriptableObject : ScriptableObject
 
 	private AudioSource source;
 
+
+	private void initailizeGameObject()
+    {
+		GameObject audioGameObject = new GameObject(audioName);
+		AudioSource audioSource = audioGameObject.AddComponent<AudioSource>();
+		source = audioSource;
+	}
+
+	private void initailizeAudioData()
+    {
+		if (source != null)
+        {
+			source.clip = clip;
+			source.volume = volume;
+			source.pitch = pitch;
+			source.loop = loop;
+		}
+	}
+
 	public void PlaySound()
 	{
 		if (source == null)
 		{
-			GameObject audioGameObject = new GameObject(audioName);
-			AudioSource audioSource = audioGameObject.AddComponent<AudioSource>();
-
-			audioSource.clip = clip;
-			audioSource.volume = volume;
-			audioSource.pitch = pitch;
-			audioSource.loop = loop;
-			source = audioSource;
-
-			source.Play();
+			initailizeGameObject();
 		}
-		else if (source != null)
-		{
-			source.loop = loop;
+		
+		initailizeAudioData();
 
-			source.Play();
-		}
+		source.Play();
 	}
 
 	public void StopSound()
