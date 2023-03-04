@@ -20,20 +20,43 @@ public class AudioDataScriptableObject : ScriptableObject
 
 	public bool loop;
 
-	public void PlaySound(AudioSource source)
+	private AudioSource source;
+
+	public void PlaySound()
 	{
-		source.clip = clip;
-		source.volume = volume;
-		source.pitch = pitch;
-		source.loop = loop;
-		source.Play();
+		if (source == null)
+		{
+			GameObject audioGameObject = new GameObject(audioName);
+			AudioSource audioSource = audioGameObject.AddComponent<AudioSource>();
+
+			audioSource.clip = clip;
+			audioSource.volume = volume;
+			audioSource.pitch = pitch;
+			audioSource.loop = loop;
+			source = audioSource;
+		}
+
+		if (source != null)
+		{
+			source.loop = loop;
+
+			source.Play();
+		}
 	}
 
-	public void StopSound(AudioSource source)
-    {
-		source.loop = false;
+	public void StopSound()
+	{
+		if (source != null)
+		{
+			source.loop = false;
 
-		source.Stop();
+			source.Stop();
+		}
+	}
+
+	public void EnableLoop()
+	{
+		loop = true;
 	}
 }
 
@@ -55,19 +78,35 @@ public class AudioEventEditor : Editor
 
 	public override void OnInspectorGUI()
 	{
+		AudioDataScriptableObject audioData = (AudioDataScriptableObject)target;
+
 		DrawDefaultInspector();
 
 		EditorGUILayout.Space();
 
 		if (GUILayout.Button("Play Preview"))
 		{
-			((AudioDataScriptableObject)target).PlaySound(m_previewer);
+			playPreview(m_previewer, audioData);
 		}
 
 		if (GUILayout.Button("Stop Preview"))
 		{
-			((AudioDataScriptableObject)target).StopSound(m_previewer);
+			stopPreview(m_previewer);
 		}
+	}
+
+	private void playPreview(AudioSource source, AudioDataScriptableObject audioData)
+	{
+		source.clip = audioData.clip;
+		source.volume = audioData.volume;
+		source.pitch = audioData.pitch;
+
+		source.Play();
+	}
+
+	private void stopPreview(AudioSource source)
+	{
+		source.Stop();
 	}
 }
 #endif
