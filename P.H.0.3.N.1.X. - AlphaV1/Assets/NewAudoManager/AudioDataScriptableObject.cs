@@ -34,12 +34,11 @@ public class AudioDataScriptableObject : ScriptableObject
 			audioSource.pitch = pitch;
 			audioSource.loop = loop;
 			source = audioSource;
+
+			source.Play();
 		}
-
-		if (source != null)
+		else if (source != null)
 		{
-			source.loop = loop;
-
 			source.Play();
 		}
 	}
@@ -52,11 +51,6 @@ public class AudioDataScriptableObject : ScriptableObject
 
 			source.Stop();
 		}
-	}
-
-	public void EnableLoop()
-	{
-		loop = true;
 	}
 }
 

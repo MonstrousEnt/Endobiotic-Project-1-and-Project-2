@@ -13,9 +13,4 @@ public class EffectAudioData : MonoBehaviour
     {
         audioData.StopSound();
     }
-
-    public void EnableLoop()
-    {
-        audioData.EnableLoop();
-    }
 }
