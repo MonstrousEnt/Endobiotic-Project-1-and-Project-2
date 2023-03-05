@@ -106,9 +106,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a0b30bcd3f68424788ba969aa77838d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_currentAnimaton: 
-  m_LastMoveDir: D
-  m_turnThresholdMoveY: 0.71
 --- !u!114 &759186879241046267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,13 +123,13 @@ MonoBehaviour:
   soundEffectUnityEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 9a37966d337736947ac6058a11abb821, type: 2}
-        m_TargetAssemblyTypeName: AudioDataScriptableObject, Assembly-CSharp
-        m_MethodName: PlaySound
-        m_Mode: 1
+      - m_Target: {fileID: 11400000, guid: 6618bbfd17f8eee41b477713af5522cb, type: 2}
+        m_TargetAssemblyTypeName: AudioDataGameEventScriptableObject, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: 9a37966d337736947ac6058a11abb821, type: 2}
+          m_ObjectArgumentAssemblyTypeName: AudioDataScriptableObject, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

@@ -9,11 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4a10f16f260860408c21abc03705a6e, type: 3}
-  m_Name: AudioDataTechnoMusicLoopV2
+  m_Script: {fileID: 11500000, guid: 3dd260d3294cddc4ba013598206b946e, type: 3}
+  m_Name: AudioDataGameEventPlaySound
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: ad31878e2d6d25040ac0c12a4fed5ca8, type: 3}
-  audioName: Techno Music Loop v2 Soundtrack - Audio Game Object
-  volume: 0.3
-  pitch: 1
-  loop: 0

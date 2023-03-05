@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b4a10f16f260860408c21abc03705a6e, type: 3}
-  m_Name: AudioDataPlayerDeath
+  m_Name: AudioDataTechnoMusicLoop2
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 5926719b29fc61c48b352bf2f5e301f5, type: 3}
-  audioName: Player Death - Audio Game Object
-  volume: 1
+  clip: {fileID: 8300000, guid: b1fe26b0b42be2f4f9ed65f2962b8b6f, type: 3}
+  audioName: Techno Music Loop 2 Soundtrack - Audio Game Object
+  volume: 0.3
   pitch: 1
-  loop: 0
+  loop: 1
+  source: {fileID: 0}

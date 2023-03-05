@@ -112,6 +112,7 @@ MonoBehaviour:
   audioDataSpawner1: {fileID: 11400000, guid: 3fe347f48ddd32f47a9d688df82d57ac, type: 2}
   audioDataSpawner2: {fileID: 11400000, guid: a8c7db1bbccc83e43a2057ca092e3baf, type: 2}
   audioDataSpawner3: {fileID: 11400000, guid: da7a107a75e96104fb9d2f016ed01db4, type: 2}
+  audioDataGameEventPlaySound: {fileID: 11400000, guid: 6618bbfd17f8eee41b477713af5522cb, type: 2}
 --- !u!70 &1409934623893708137
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

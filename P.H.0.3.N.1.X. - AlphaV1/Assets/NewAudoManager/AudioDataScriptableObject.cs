@@ -20,48 +20,12 @@ public class AudioDataScriptableObject : ScriptableObject
 
 	public bool loop;
 
-	private AudioSource source;
+	[HideInInspector] public AudioSource source;
 
-
-	private void initailizeGameObject()
+    private void OnEnable()
     {
-		GameObject audioGameObject = new GameObject(audioName);
-		AudioSource audioSource = audioGameObject.AddComponent<AudioSource>();
-		source = audioSource;
-	}
-
-	private void initailizeAudioData()
-    {
-		if (source != null)
-        {
-			source.clip = clip;
-			source.volume = volume;
-			source.pitch = pitch;
-			source.loop = loop;
-		}
-	}
-
-	public void PlaySound()
-	{
-		if (source == null)
-		{
-			initailizeGameObject();
-		}
-		
-		initailizeAudioData();
-
-		source.Play();
-	}
-
-	public void StopSound()
-	{
-		if (source != null)
-		{
-			source.loop = false;
-
-			source.Stop();
-		}
-	}
+		source = null;
+    }
 }
 
 #if UNITY_EDITOR

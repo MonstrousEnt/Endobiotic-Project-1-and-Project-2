@@ -24,6 +24,8 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private AudioDataScriptableObject audioDataSpawner2;
     [SerializeField] private AudioDataScriptableObject audioDataSpawner3;
 
+    [SerializeField] private AudioDataGameEventScriptableObject audioDataGameEventPlaySound;
+
     private List<GameObject> EnemyFormList;
 
 
@@ -103,15 +105,15 @@ public class EnemySpawner : MonoBehaviour
         {
             case 1:
                 //Play the jump sound 1
-                audioDataSpawner1.PlaySound();
+                audioDataGameEventPlaySound.Raise(audioDataSpawner1);
                 break;
             case 2:
                 //Play the jump sound 2
-                audioDataSpawner2.PlaySound();
+                audioDataGameEventPlaySound.Raise(audioDataSpawner2);
                 break;
             case 3:
                 //Play the jump sound 3
-                audioDataSpawner3.PlaySound();
+                audioDataGameEventPlaySound.Raise(audioDataSpawner3);
                 break;
         }
     }

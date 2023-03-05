@@ -153,13 +153,13 @@ MonoBehaviour:
   soundEffectUnityEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: d4fd75bdfc9ca5845bb6e1c5bc8cd01c, type: 2}
-        m_TargetAssemblyTypeName: AudioDataScriptableObject, Assembly-CSharp
-        m_MethodName: PlaySound
-        m_Mode: 1
+      - m_Target: {fileID: 11400000, guid: 6618bbfd17f8eee41b477713af5522cb, type: 2}
+        m_TargetAssemblyTypeName: AudioDataGameEventScriptableObject, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: d4fd75bdfc9ca5845bb6e1c5bc8cd01c, type: 2}
+          m_ObjectArgumentAssemblyTypeName: AudioDataScriptableObject, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
