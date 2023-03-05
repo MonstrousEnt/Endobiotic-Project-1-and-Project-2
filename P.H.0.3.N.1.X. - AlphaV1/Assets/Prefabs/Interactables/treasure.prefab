@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 7831489366631050728}
   - component: {fileID: 6387407614147305317}
   - component: {fileID: 5820486581826931271}
-  - component: {fileID: 3036227082308520775}
   - component: {fileID: 7739919537562318578}
   - component: {fileID: 7922416232471737029}
   m_Layer: 0
@@ -150,8 +149,8 @@ MonoBehaviour:
   onActivated:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3036227082308520775}
-        m_TargetAssemblyTypeName: EffectPlaySound, Assembly-CSharp
+      - m_Target: {fileID: 11400000, guid: ae1ef5c3177806243b573fda307e1204, type: 2}
+        m_TargetAssemblyTypeName: AudioDataScriptableObject, Assembly-CSharp
         m_MethodName: PlaySound
         m_Mode: 1
         m_Arguments:
@@ -213,19 +212,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.65, y: 0.65}
   m_EdgeRadius: 0
---- !u!114 &3036227082308520775
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8573741446981851647}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcc0f3a5989966e4bb428a65db2e4226, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundDataPickUpItem: {fileID: 11400000, guid: 60981b7cc18765b4c8f51aed43b58cb9, type: 2}
 --- !u!114 &7739919537562318578
 MonoBehaviour:
   m_ObjectHideFlags: 0

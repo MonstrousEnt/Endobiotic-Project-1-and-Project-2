@@ -9,13 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f4f3a06f9725de45b042acda1d1354a, type: 3}
-  m_Name: SoundDataEnemySpawner2
+  m_Script: {fileID: 11500000, guid: b4a10f16f260860408c21abc03705a6e, type: 3}
+  m_Name: AudioDataPuzzleSolve
   m_EditorClassIdentifier: 
-  soundName: Enemy Spawner 2
-  clip: {fileID: 8300000, guid: 879a5538c0340f44e928edc11a572dbb, type: 3}
-  volume: 0.5
+  clip: {fileID: 8300000, guid: 66a26657728b1e042a6355fd4f9bdb1f, type: 3}
+  audioName: Puzzle Solve Sound Effect - Audio Game Object
+  volume: 1
   pitch: 1
   loop: 0
-  playOnAwake: 0
-  source: {fileID: 0}

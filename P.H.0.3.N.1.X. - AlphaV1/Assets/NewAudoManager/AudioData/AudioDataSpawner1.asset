@@ -9,13 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f4f3a06f9725de45b042acda1d1354a, type: 3}
-  m_Name: SoundDataTechnoMusicLoopV2
+  m_Script: {fileID: 11500000, guid: b4a10f16f260860408c21abc03705a6e, type: 3}
+  m_Name: AudioDataSpawner1
   m_EditorClassIdentifier: 
-  soundName: Technmo Music Loop V2
-  clip: {fileID: 8300000, guid: ad31878e2d6d25040ac0c12a4fed5ca8, type: 3}
-  volume: 0.2
+  clip: {fileID: 8300000, guid: 6473e660bbdfde945ab1dc4337aaa945, type: 3}
+  audioName: Spawner Sound Effect 1 - Audio Game Object
+  volume: 1
   pitch: 1
-  loop: 1
-  playOnAwake: 0
-  source: {fileID: 0}
+  loop: 0

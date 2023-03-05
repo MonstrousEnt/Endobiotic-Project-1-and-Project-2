@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(CharacterFormsController))]
 public class CharacterInteractionController : MonoBehaviour
@@ -11,7 +12,7 @@ public class CharacterInteractionController : MonoBehaviour
 
     [SerializeField] private GameObject deathPrefab;
     [SerializeField] private ParticleSystem riseAgainParticles;
-    [SerializeField] private SoundData soundDataPlayerDeath;
+    [SerializeField] private UnityEvent soundEffectUnityEvent;
 
     [SerializeField] private float invulTime = 1f;
     private float invulTimer;
@@ -88,7 +89,9 @@ public class CharacterInteractionController : MonoBehaviour
         deathInstance.GetComponent<CharacterFormsController>().ChangeForm(characterFormsController.currForm);  // These were firing before Start() on deathInstance.  Weird.
         deathInstance.GetComponent<CharacterDeathController>().Die();
         riseAgainParticles.Play();
-        GameMangerRootMaster.instance.audioManager.PlayAudio(soundDataPlayerDeath);
+
+        soundEffectUnityEvent.Invoke();
+
         characterFormsController.ChangeForm(newForm);
         transform.position = position;
         StartCoroutine(WaitWhileDead(2));
