@@ -14,12 +14,4 @@ public class CharacterDeathController : BaseControllerAnimations
     {
         ChangeAnimationState(DEATH);
     }
-
-    private void ChangeAnimationState(string newAnimation)
-    {
-        if (currentAnimaton == newAnimation) return;
-
-        m_animator.Play(newAnimation);
-        currentAnimaton = newAnimation;
-    }
 }

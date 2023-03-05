@@ -66,7 +66,7 @@ public class PlayerController : MonoBehaviour
     private void Move()
     {
         m_rigidBody2D.velocity = new Vector2(m_movement.x * m_moveSpeed, m_movement.y * m_moveSpeed);
-        m_playerAnimation.MovementAnimation(m_movement);
+        m_playerAnimation.CallMovementAnimation(m_movement);
     }
 
     /// <summary>
