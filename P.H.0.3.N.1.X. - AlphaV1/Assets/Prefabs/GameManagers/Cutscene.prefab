@@ -45,3 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rebirthParticles: {fileID: 0}
+  m_booleanFlagGlobalVariablePlayerCanMove: {fileID: 11400000, guid: 47bfe7755f71d7043863b3c6c09a0d19, type: 2}

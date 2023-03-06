@@ -20,6 +20,8 @@ public class CharacterInteractionController : MonoBehaviour
     [SerializeField] private TagDataScriptableObject tagDataEnemy;
     [SerializeField] private TagDataScriptableObject tagDataInteractable;
 
+    [SerializeField] private BooleanFlagGlobalScriptableObjectVariable m_booleanFlagGlobalVariablePlayerCanMove;
+
     private void Awake()
     {
         characterFormsController = GetComponent<CharacterFormsController>();
@@ -84,7 +86,7 @@ public class CharacterInteractionController : MonoBehaviour
     private void RespawnAsNewForm(Form newForm, Vector3 position)
     {
         characterItemHolder.DropItem();
-        GameMangerRootMaster.instance.playerManager.DisableCharacterControls();
+        m_booleanFlagGlobalVariablePlayerCanMove.DisableBooleanFlag();
         GameObject deathInstance = Instantiate(deathPrefab, transform.position, Quaternion.identity);
         deathInstance.GetComponent<CharacterFormsController>().ChangeForm(characterFormsController.currForm);  // These were firing before Start() on deathInstance.  Weird.
         deathInstance.GetComponent<CharacterDeathController>().Die();
@@ -113,6 +115,6 @@ public class CharacterInteractionController : MonoBehaviour
     private IEnumerator WaitWhileDead(float duration)
     {
         yield return new WaitForSeconds(duration);
-        GameMangerRootMaster.instance.playerManager.EnableCharacterControls();
+        m_booleanFlagGlobalVariablePlayerCanMove.EnableBoolFlag();
     }
 }

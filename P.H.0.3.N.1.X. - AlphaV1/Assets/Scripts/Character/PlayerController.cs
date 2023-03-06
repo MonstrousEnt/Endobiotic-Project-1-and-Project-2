@@ -9,9 +9,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private PlayerControllerAnimations m_playerAnimation;
     private CharacterInteractionController m_characterInteractionController;
 
+    [Header("Global Scriptable Object Variable")]
+    [SerializeField] private BooleanFlagGlobalScriptableObjectVariable m_booleanFlagGlobalVariablePlayerCanMove;
+
     [Header("Move")]
     [SerializeField] private float m_moveSpeed = 5;
     [SerializeField] private Vector2 m_movement;
+
 
     private void Start()
     {
@@ -27,13 +31,13 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         //If the player can't move
-        if (!GameMangerRootMaster.instance.playerManager.CanMove())
+        if (!m_booleanFlagGlobalVariablePlayerCanMove.GetBooleanFlag())
         {
             //Stop the movement
             m_rigidBody2D.velocity = Vector2.zero;
         }
         //Otherwise move the player
-        else if (GameMangerRootMaster.instance.playerManager.CanMove())
+        else if (m_booleanFlagGlobalVariablePlayerCanMove.GetBooleanFlag())
         {
             Move();
         }
@@ -45,7 +49,7 @@ public class PlayerController : MonoBehaviour
     private void inputs()
     {
         //If the player can move.
-        if (GameMangerRootMaster.instance.playerManager.CanMove())
+        if (m_booleanFlagGlobalVariablePlayerCanMove.GetBooleanFlag())
         {
             //Get the move directions (Up (y +1), Down (y -1), Left (x +1), and Right (x -1)) for user input.
             m_movement.x = Input.GetAxis("Horizontal");

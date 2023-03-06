@@ -11,6 +11,8 @@ public class Cutscene : MonoBehaviour
 
     [SerializeField] private ParticleSystem rebirthParticles;
 
+    [SerializeField] private BooleanFlagGlobalScriptableObjectVariable m_booleanFlagGlobalVariablePlayerCanMove;
+
     private void Start()
     {
         StartCoroutine(IntroCutscene());
@@ -18,12 +20,12 @@ public class Cutscene : MonoBehaviour
 
     private IEnumerator IntroCutscene()
     {
-        GameMangerRootMaster.instance.playerManager.DisableCharacterControls();
+        m_booleanFlagGlobalVariablePlayerCanMove.DisableBooleanFlag();
 
         rebirthParticles.Play();
 
         yield return new WaitForSeconds(2.0f);
 
-        GameMangerRootMaster.instance.playerManager.EnableCharacterControls();
+        m_booleanFlagGlobalVariablePlayerCanMove.EnableBoolFlag();
     }
 }

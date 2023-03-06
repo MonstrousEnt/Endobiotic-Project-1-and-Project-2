@@ -32,7 +32,6 @@ Transform:
   - {fileID: 7785132990723447774}
   - {fileID: 1281981356}
   - {fileID: 2766623771554141320}
-  - {fileID: 5740181024713167606}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -48,9 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28af386474b95f54ab4480e7da859406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settingsManager: {fileID: 0}
   levelManager: {fileID: 4811653606776853783}
-  playerManager: {fileID: 6702961966432706159}
+  playerManager: {fileID: 0}
   uIEvents: {fileID: 4692461290769467909}
 --- !u!1001 &192221253107072852
 PrefabInstance:
@@ -260,76 +258,3 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4191360487840563639, guid: 4b869478c8300644e8645f47cc47cb74, type: 3}
   m_PrefabInstance: {fileID: 2040044325206398271}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &3925949749448810264
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 7356713128686940363}
-    m_Modifications:
-    - target: {fileID: 5132940372527266479, guid: e5482a6a9aa300641ae6a35166c94502, type: 3}
-      propertyPath: m_Name
-      value: PlayerManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 8778358198984330734, guid: e5482a6a9aa300641ae6a35166c94502, type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8778358198984330734, guid: e5482a6a9aa300641ae6a35166c94502, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8778358198984330734, guid: e5482a6a9aa300641ae6a35166c94502, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8778358198984330734, guid: e5482a6a9aa300641ae6a35166c94502, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8778358198984330734, guid: e5482a6a9aa300641ae6a35166c94502, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8778358198984330734, guid: e5482a6a9aa300641ae6a35166c94502, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8778358198984330734, guid: e5482a6a9aa300641ae6a35166c94502, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8778358198984330734, guid: e5482a6a9aa300641ae6a35166c94502, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8778358198984330734, guid: e5482a6a9aa300641ae6a35166c94502, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8778358198984330734, guid: e5482a6a9aa300641ae6a35166c94502, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8778358198984330734, guid: e5482a6a9aa300641ae6a35166c94502, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e5482a6a9aa300641ae6a35166c94502, type: 3}
---- !u!4 &5740181024713167606 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8778358198984330734, guid: e5482a6a9aa300641ae6a35166c94502, type: 3}
-  m_PrefabInstance: {fileID: 3925949749448810264}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &6702961966432706159 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7745753865483633015, guid: e5482a6a9aa300641ae6a35166c94502, type: 3}
-  m_PrefabInstance: {fileID: 3925949749448810264}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd2afb16480352c49ab919e17300a10a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
