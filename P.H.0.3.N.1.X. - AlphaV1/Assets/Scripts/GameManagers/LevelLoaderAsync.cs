@@ -7,30 +7,25 @@ using UnityEngine.SceneManagement;
 
 public class LevelLoaderAsync : MonoBehaviour
 {
+    #region class Variables
     private List<AsyncOperation> scenesLoading = new List<AsyncOperation>();
+    #endregion
 
-    private void Start()
-    {
-        GameMangerRootMaster.instance.levelManager.loadNextLevelUnityEvent.AddListener(loadNextScene);
-    }
-
-    private void OnDestroy()
-    {
-        GameMangerRootMaster.instance.levelManager.loadNextLevelUnityEvent.RemoveListener(loadNextScene);
-    }
-
+    #region Level Loader Game Event
     /// <summary>
     /// Added the async operation to the list
     /// Afterwards Load or unload the scene
     /// </summary>
-    /// <param name="nextScene"></param>
-    private void loadNextScene(int nextScene)
+    /// <param name="levelData"></param>
+    public void LoadNextScene(LevelDataScriptableObject levelData)
     {
-        scenesLoading.Add(SceneManager.LoadSceneAsync(nextScene));
+        scenesLoading.Add(SceneManager.LoadSceneAsync(levelData.buildindex));
 
         StartCoroutine(getScenceLoadProgress());
     }
+    #endregion
 
+    #region Private Level Load Methods
     /// <summary>
     /// Unload the current scene async and load the next scene async once it has finished loading.
     /// </summary>
@@ -46,4 +41,5 @@ public class LevelLoaderAsync : MonoBehaviour
             }
         }
     }
+    #endregion
 }

@@ -47,8 +47,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28af386474b95f54ab4480e7da859406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelManager: {fileID: 4811653606776853783}
-  playerManager: {fileID: 0}
   uIEvents: {fileID: 4692461290769467909}
 --- !u!1001 &192221253107072852
 PrefabInstance:
@@ -185,17 +183,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 509095874882430857, guid: 1fac10c7a28da5c45abfa6c3908ab351, type: 3}
   m_PrefabInstance: {fileID: 509095875882163237}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4811653606776853783 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5032422347135240498, guid: 1fac10c7a28da5c45abfa6c3908ab351, type: 3}
-  m_PrefabInstance: {fileID: 509095875882163237}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e4bf7927ae6dff4c822aa446eeb6180, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2040044325206398271
 PrefabInstance:
   m_ObjectHideFlags: 0

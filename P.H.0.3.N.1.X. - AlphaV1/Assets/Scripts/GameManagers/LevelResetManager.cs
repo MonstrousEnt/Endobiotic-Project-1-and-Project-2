@@ -7,7 +7,6 @@ public class LevelResetManager : MonoBehaviour
 {
     [SerializeField] private PointList pointList;
     [SerializeField] private TimerDataScriptableObject timerData;
-    public UnityEvent<int> loadNextLevelUnityEvent;
 
     public void RestartLevel()
     {
@@ -16,10 +15,5 @@ public class LevelResetManager : MonoBehaviour
         //Reset the unity scriptable objects data containers
         pointList.Reset();
         timerData.Reset();
-    }
-
-    public void InvokeLoadNextLevelUnityEvent(int nextScene)
-    {
-        loadNextLevelUnityEvent.Invoke(nextScene);
     }
 }

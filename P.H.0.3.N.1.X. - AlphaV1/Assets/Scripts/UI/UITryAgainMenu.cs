@@ -8,7 +8,6 @@ using UnityEngine.SceneManagement;
 public class UITryAgainMenu : UIMenuBase
 {
     [SerializeField] private UIPiontSystem m_piontSystem;
-    [SerializeField] private LevelDataScriptableObject m_levelDataLevel01;
 
     [SerializeField] private UnityEvent m_tryAgainunityEvent;
 
@@ -39,9 +38,5 @@ public class UITryAgainMenu : UIMenuBase
         DisableMenu();
 
         m_tryAgainunityEvent.Invoke();
-
-        GameMangerRootMaster.instance.levelManager.RestartLevel();
-
-        GameMangerRootMaster.instance.levelManager.InvokeLoadNextLevelUnityEvent(m_levelDataLevel01.buildindex);
     }
 }

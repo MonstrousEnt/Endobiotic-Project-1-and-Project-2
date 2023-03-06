@@ -8,9 +8,6 @@ public class GameMangerRootMaster : MonoBehaviour
 	[Header("Roots")]
 	public static GameMangerRootMaster instance;
 
-	[Header("Game Mangers")]
-	public LevelResetManager levelManager;
-
 	[Header("Unity Events Managers")]
 	public UIManager uIEvents;
 

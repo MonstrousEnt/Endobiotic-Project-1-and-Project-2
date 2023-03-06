@@ -863,7 +863,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_piontSystem: {fileID: 8225104314088512471}
-  m_levelDataLevel01: {fileID: 11400000, guid: c46b664120bd968479e1a0324e645147, type: 2}
   m_tryAgainunityEvent:
     m_PersistentCalls:
       m_Calls:
@@ -874,6 +873,30 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 19a964f1f6283a64fa4f3b3681ca4fe5, type: 2}
+        m_TargetAssemblyTypeName: VoidGameEventScriptableObject, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: ce2f301b6fb0a0844879a5b3b48a84b7, type: 2}
+        m_TargetAssemblyTypeName: LevelDataGameEventScriptableObject, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: c46b664120bd968479e1a0324e645147, type: 2}
+          m_ObjectArgumentAssemblyTypeName: LevelDataScriptableObject, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
