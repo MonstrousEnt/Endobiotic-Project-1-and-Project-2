@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6235512265262423350}
   - component: {fileID: 3822909757939837012}
   - component: {fileID: 1409934623893708137}
+  - component: {fileID: 8811389482519414962}
   m_Layer: 0
   m_Name: Enemy Spawner
   m_TagString: Untagged
@@ -109,10 +110,21 @@ MonoBehaviour:
   spawnDistanceX: 0.5
   spawnDistanceY: 0.5
   userSpawnedRobots: []
-  audioDataSpawner1: {fileID: 11400000, guid: 3fe347f48ddd32f47a9d688df82d57ac, type: 2}
-  audioDataSpawner2: {fileID: 11400000, guid: a8c7db1bbccc83e43a2057ca092e3baf, type: 2}
-  audioDataSpawner3: {fileID: 11400000, guid: da7a107a75e96104fb9d2f016ed01db4, type: 2}
-  audioDataGameEventPlaySound: {fileID: 11400000, guid: 6618bbfd17f8eee41b477713af5522cb, type: 2}
+  soundEffectUnityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8811389482519414962}
+        m_TargetAssemblyTypeName: EffectAudioManagerGameEvent, Assembly-CSharp
+        m_MethodName: PlayRandomSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!70 &1409934623893708137
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -129,3 +141,22 @@ CapsuleCollider2D:
   m_Offset: {x: 0.5, y: 0.5}
   m_Size: {x: 0.88, y: 0.88}
   m_Direction: 0
+--- !u!114 &8811389482519414962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3847802261881520632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21cc3a77b669d3649978a271e3c0e00d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_audioData: {fileID: 0}
+  m_audioList: {fileID: 11400000, guid: a1b5b983cf7649f4ebed01335ffa49d5, type: 2}
+  m_audioManagerGameEventPlaySound: {fileID: 11400000, guid: 6618bbfd17f8eee41b477713af5522cb, type: 2}
+  m_audioManagerGameEventPlayRandomSound: {fileID: 11400000, guid: e24001ae93e8c2f4596ea861f7deadab, type: 2}
+  m_audioManagerGameEventStopSound: {fileID: 11400000, guid: af88926902e244844bbedcd2da002f06, type: 2}
+  m_audioManagerGameEventEnableLoop: {fileID: 11400000, guid: d1badcf1f4061724f8c8685fe1161557, type: 2}
+  m_audioManagerGameEventDisableLoop: {fileID: 11400000, guid: 55d52c95cb4b6c147aa8fd97814dfc01, type: 2}

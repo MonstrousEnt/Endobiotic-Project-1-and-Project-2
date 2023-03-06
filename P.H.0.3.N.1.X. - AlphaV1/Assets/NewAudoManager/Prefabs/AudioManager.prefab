@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2355017275591425010}
   - component: {fileID: 2355017275591425011}
   - component: {fileID: 2355017275591425012}
+  - component: {fileID: 1606642508960293088}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -157,6 +158,34 @@ MonoBehaviour:
       - m_Target: {fileID: 2355017275591425013}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: DisableLoop
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1606642508960293088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2355017275591425015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9009130d065d1b14b970fabc14febb23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: e24001ae93e8c2f4596ea861f7deadab, type: 2}
+  respone:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2355017275591425013}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlayRandomSound
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

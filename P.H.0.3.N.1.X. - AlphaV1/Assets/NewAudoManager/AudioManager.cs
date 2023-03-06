@@ -46,10 +46,15 @@ public class AudioManager : MonoBehaviour
 	{
 		if (audioData.source != null)
 		{
-			audioData.source.enabled = true;
 			audioData.source.Play();
 		}
 	}
+
+	public void PlayRandomSound(AudioListScriptableObject audioList)
+    {
+		int randomIndex = Random.Range(1, audioList.audioDatas.Count - 1);
+		PlaySound(audioList.audioDatas[randomIndex]);
+    }
 
 	public void StopSound(AudioDataScriptableObject audioData)
 	{

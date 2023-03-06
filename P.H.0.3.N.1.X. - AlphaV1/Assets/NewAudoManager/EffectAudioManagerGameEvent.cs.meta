@@ -3,7 +3,14 @@ guid: 21cc3a77b669d3649978a271e3c0e00d
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - m_audioData: {instanceID: 0}
+  - m_audioList: {instanceID: 0}
+  - m_audioManagerGameEventPlaySound: {fileID: 11400000, guid: 6618bbfd17f8eee41b477713af5522cb, type: 2}
+  - m_audioManagerGameEventPlayRandomSound: {fileID: 11400000, guid: e24001ae93e8c2f4596ea861f7deadab, type: 2}
+  - m_audioManagerGameEventStopSound: {fileID: 11400000, guid: af88926902e244844bbedcd2da002f06, type: 2}
+  - m_audioManagerGameEventEnableLoop: {fileID: 11400000, guid: d1badcf1f4061724f8c8685fe1161557, type: 2}
+  - m_audioManagerGameEventDisableLoop: {fileID: 11400000, guid: 55d52c95cb4b6c147aa8fd97814dfc01, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
