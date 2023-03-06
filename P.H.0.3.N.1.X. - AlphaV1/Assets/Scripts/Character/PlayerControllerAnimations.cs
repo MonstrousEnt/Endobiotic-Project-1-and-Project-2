@@ -17,7 +17,18 @@ public class PlayerControllerAnimations : BaseControllerAnimations
     [SerializeField] private const string m_MAGNET_PULL_RIGHT = "Pull_Right";
 
     [Header("Delay or Time")]
-    private float m_requiredTime; 
+    private float m_requiredTime;
+    #endregion
+
+    #region Override Methods
+    protected override void ChangeAnimationState(string newAnimation)
+    {
+        //check to see if the delay is in effect
+        if (m_requiredTime > Time.time)
+            return;
+
+        base.ChangeAnimationState(newAnimation);
+    }
     #endregion
 
     #region Unity Methods

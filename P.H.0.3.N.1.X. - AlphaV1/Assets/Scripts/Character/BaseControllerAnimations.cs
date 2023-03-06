@@ -43,7 +43,7 @@ public class BaseControllerAnimations : MonoBehaviour
     /// Function to tell the animator to play the animation parameter we give it.
     /// </summary>
     /// <param name="newAnimation"></param>
-    public void ChangeAnimationState(string newAnimation)
+    protected virtual void ChangeAnimationState(string newAnimation)
     {
         if (m_currentAnimaton == newAnimation) return;
         m_animator.Play(newAnimation);
