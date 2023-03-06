@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class UITryAgainMenuOpenTrigger : MonoBehaviour
 {
+    [SerializeField] private VoidGameEventScriptableObject m_voidGameEventUIManagerEnableTryMenu;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        GameMangerRootMaster.instance.uIEvents.InvokeEnableTryAgainMneu();
+        m_voidGameEventUIManagerEnableTryMenu.Raise();
     }
 }

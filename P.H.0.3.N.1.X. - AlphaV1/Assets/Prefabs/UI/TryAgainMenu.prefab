@@ -801,6 +801,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8225104314968284490}
   - component: {fileID: 8225104314968284485}
+  - component: {fileID: 404076638557545}
   m_Layer: 5
   m_Name: TryAgainMenu
   m_TagString: Untagged
@@ -859,10 +860,61 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 846d08271bdc6324bb0a952dfc6e4178, type: 2}
+        m_TargetAssemblyTypeName: VoidGameEventScriptableObject, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_disableMenuUnityEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: 251ebfd62673e5f479fbb25228817a72, type: 2}
+        m_TargetAssemblyTypeName: VoidGameEventScriptableObject, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 6a9e7aff25c264844ab9bbc0308fcdd2, type: 2}
+        m_TargetAssemblyTypeName: VoidGameEventScriptableObject, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_openQuitPopUpUnityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 29a6c36849ca25a40b9c666c995382c3, type: 2}
+        m_TargetAssemblyTypeName: PopUpDataGameEventScriptableObject, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 0af3184b15876264abddb016fcde85f8, type: 2}
+          m_ObjectArgumentAssemblyTypeName: PopUpData, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 7ef7add07fa35104bbed2ad203302e7f, type: 2}
         m_TargetAssemblyTypeName: VoidGameEventScriptableObject, Assembly-CSharp
         m_MethodName: Raise
         m_Mode: 1
@@ -897,6 +949,34 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: c46b664120bd968479e1a0324e645147, type: 2}
           m_ObjectArgumentAssemblyTypeName: LevelDataScriptableObject, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &404076638557545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8225104314968284491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 754b8f215484b2546b48331b8f4cd2f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 4865a33ad2bab7d4288f4c5e45aa3129, type: 2}
+  respone:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8225104314968284485}
+        m_TargetAssemblyTypeName: UITryAgainMenu, Assembly-CSharp
+        m_MethodName: EnableMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

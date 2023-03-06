@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class PopUpActions : MonoBehaviour
 {
+    [SerializeField] private VoidGameEventScriptableObject m_voidGameEventUIManagerDisablePopUp;
+
     public void QuitGame()
     {
-        GameMangerRootMaster.instance.uIEvents.InvokeDisablePopUp();
+        m_voidGameEventUIManagerDisablePopUp.Raise();
 
         Debug.Log("Quiting Game...");
         Application.Quit();

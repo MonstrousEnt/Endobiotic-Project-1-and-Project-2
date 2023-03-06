@@ -5,36 +5,27 @@ using UnityEngine.EventSystems;
 
 public class UIPauseMenu : UIMenuBase
 {
-    private void Start()
-    {
-        GameMangerRootMaster.instance.uIEvents.enablePauseMenuUnityEvent.AddListener(EnableMenu);
-        GameMangerRootMaster.instance.uIEvents.disablePauseMenuUnityEvent.AddListener(DisableMenu);
-    }
-
-    private void OnDestroy()
-    {
-        GameMangerRootMaster.instance.uIEvents.enablePauseMenuUnityEvent.RemoveListener(EnableMenu);
-        GameMangerRootMaster.instance.uIEvents.disablePauseMenuUnityEvent.RemoveListener(DisableMenu);
-    }
+    [Header("Boolean Flag Global Variable Scriptable Object - UI Manager")]
+    [SerializeField] private BooleanFlagGlobalScriptableObjectVariable m_booleanFlagGlobalVariableUIManagerPauseMenuIsActive;
 
     /// <summary>
     /// Enable the menu and set the global scriptable object variable to true for the UI object.
     /// </summary>
-    protected override void EnableMenu()
+    public override void EnableMenu()
     {
         base.EnableMenu();
 
-        GameMangerRootMaster.instance.uIEvents.pauseMneuIsActive = true;
+        m_booleanFlagGlobalVariableUIManagerPauseMenuIsActive.EnableBoolFlag();
     }
 
     /// <summary>
     /// Disable the menu and set the global scriptable object variable to false for the UI object.
     /// </summary>
-    protected override void DisableMenu()
+    public override void DisableMenu()
     {
         base.DisableMenu();
 
-        GameMangerRootMaster.instance.uIEvents.pauseMneuIsActive = false;
+        m_booleanFlagGlobalVariableUIManagerPauseMenuIsActive.DisableBooleanFlag();
     }
 
     /// <summary>
@@ -45,9 +36,9 @@ public class UIPauseMenu : UIMenuBase
         DisableMenu();
     }
 
-    public void OpenHowToPlayMenu()
-    {
-        DisableMenu();
-        GameMangerRootMaster.instance.uIEvents.InvokeActiveGameInstructionMenu(true);
-    }
+    //public void OpenHowToPlayMenu()
+    //{
+    //    DisableMenu();
+    //    GameMangerRootMaster.instance.uIEvents.InvokeActiveGameInstructionMenu(true);
+    //}
 }

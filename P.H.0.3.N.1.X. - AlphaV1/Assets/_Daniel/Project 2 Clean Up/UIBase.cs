@@ -10,7 +10,7 @@ public class UIBase : MonoBehaviour
     /// <summary>
     /// Enable the main window.
     /// </summary>
-    protected void EnableMainWindow()
+    public void EnableMainWindow()
     {
         m_mainWindowGameObject.SetActive(true);
     }
@@ -18,7 +18,7 @@ public class UIBase : MonoBehaviour
     /// <summary>
     /// Disable the main window.
     /// </summary>
-    protected void DisableMainWindow()
+    public void DisableMainWindow()
     {
         m_mainWindowGameObject.SetActive(false);
     }

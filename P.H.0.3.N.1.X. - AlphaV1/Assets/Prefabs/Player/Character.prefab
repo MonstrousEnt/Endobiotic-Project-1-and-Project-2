@@ -181,6 +181,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feaf9d92baa47484897f4d470659bd41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_booleanFlagGlobalVariableUIManagerPauseMenuIsActive: {fileID: 11400000, guid: 5ab18ef0d5fb1aa4a8233cc4cc56f120, type: 2}
+  m_voidGameEventUIManagerEnablePauseMneu: {fileID: 11400000, guid: 3a9c2d3ee6753434db02fa6ba38d6ef7, type: 2}
+  m_voidGameEventUIManagerDisablePauseMneu: {fileID: 11400000, guid: 800d4c1c926b244459fde588e65ab6ff, type: 2}
 --- !u!70 &580835355768018660
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

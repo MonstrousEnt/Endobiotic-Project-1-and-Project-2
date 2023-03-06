@@ -19,20 +19,13 @@ public class UIPopUp : UIBase
     [SerializeField] private GameObject m_popUpFirstButton;
 
     #region Setters and Getters
-    private void setPopUpData(PopUpData popUpData)
+    public void SetPopUpData(PopUpData popUpData)
     {
         this.m_popUpData = null;
 
         this.m_popUpData = popUpData;
     }
     #endregion
-
-    private void Start()
-    {
-        GameMangerRootMaster.instance.uIEvents.setPopUpDataUnityEvent.AddListener(setPopUpData);
-        GameMangerRootMaster.instance.uIEvents.enablePopUpUnityEvent.AddListener(enablePopUp);
-        GameMangerRootMaster.instance.uIEvents.disablePopUpUnityEvent.AddListener(displayPopUpData);
-    }
 
     private void Update()
     {
@@ -43,22 +36,16 @@ public class UIPopUp : UIBase
             {
                 if (m_popUpData.isReadyToClose)
                 {
-                    disablePopUp();
+                    DisablePopUp();
                 }
             }
         }
-    }
-    private void OnDestroy()
-    {
-        GameMangerRootMaster.instance.uIEvents.setPopUpDataUnityEvent.RemoveListener(setPopUpData);
-        GameMangerRootMaster.instance.uIEvents.enablePopUpUnityEvent.RemoveListener(enablePopUp);
-        GameMangerRootMaster.instance.uIEvents.disablePopUpUnityEvent.RemoveListener(displayPopUpData);
     }
 
     /// <summary>
     /// Enable the pop up and Display Data for the pop up.
     /// </summary>
-    private void enablePopUp()
+    public void EnablePopUp()
     {
         displayPopUpData();
         EnableMainWindow();
@@ -67,7 +54,7 @@ public class UIPopUp : UIBase
     /// <summary>
     /// Disable the pop up.
     /// </summary>
-    private void disablePopUp()
+    public void DisablePopUp()
     {
         DisableMainWindow();
     }

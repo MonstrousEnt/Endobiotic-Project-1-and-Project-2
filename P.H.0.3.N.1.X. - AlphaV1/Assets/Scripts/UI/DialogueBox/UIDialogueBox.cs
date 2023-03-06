@@ -21,8 +21,8 @@ public class UIDialogueBox : MonoBehaviour
 
     private void Awake()
     {
-        GameMangerRootMaster.instance.uIEvents.setDialogueDataUnityEvent.AddListener(setDialogueData);
-        GameMangerRootMaster.instance.uIEvents.activeDialogueBoxUnityEvent.AddListener(activeDialogueBox);
+        //GameMangerRootMaster.instance.uIEvents.setDialogueDataUnityEvent.AddListener(setDialogueData);
+        //GameMangerRootMaster.instance.uIEvents.activeDialogueBoxUnityEvent.AddListener(activeDialogueBox);
     }
 
     private void Update()
@@ -46,8 +46,8 @@ public class UIDialogueBox : MonoBehaviour
 
     private void OnDestroy()
     {
-        GameMangerRootMaster.instance.uIEvents.setDialogueDataUnityEvent.RemoveListener(setDialogueData);
-        GameMangerRootMaster.instance.uIEvents.activeDialogueBoxUnityEvent.RemoveListener(activeDialogueBox);
+        //GameMangerRootMaster.instance.uIEvents.setDialogueDataUnityEvent.RemoveListener(setDialogueData);
+       //GameMangerRootMaster.instance.uIEvents.activeDialogueBoxUnityEvent.RemoveListener(activeDialogueBox);
     }
 
     private void setDialogueData(DialogueData dialogueData)

@@ -4,19 +4,30 @@ using UnityEngine;
 
 public class PlayerControllerUI : MonoBehaviour
 {
+    #region Class Variables 
+    [Header("Boolean Flag Global Variable Scriptable Object - UI Manager")]
+    [SerializeField] private BooleanFlagGlobalScriptableObjectVariable m_booleanFlagGlobalVariableUIManagerPauseMenuIsActive;
+
+    [Header("Void Game Event Scriptable Object - UI Manager")]
+    [SerializeField] private VoidGameEventScriptableObject m_voidGameEventUIManagerEnablePauseMneu;
+    [SerializeField] private VoidGameEventScriptableObject m_voidGameEventUIManagerDisablePauseMneu;
+    #endregion
+
+    #region Unity Methods
     private void Update()
     {
         //When the user press tab or start button, it open or close the menu.
         if (Input.GetButtonDown("Menu"))
         {
-            if (GameMangerRootMaster.instance.uIEvents.pauseMneuIsActive)
+            if (m_booleanFlagGlobalVariableUIManagerPauseMenuIsActive.GetBooleanFlag())
             {
-                GameMangerRootMaster.instance.uIEvents.InvokeDisablePauseMenu();
+                m_voidGameEventUIManagerDisablePauseMneu.Raise();
             }
-            else if (!GameMangerRootMaster.instance.uIEvents.pauseMneuIsActive)
+            else if (!m_booleanFlagGlobalVariableUIManagerPauseMenuIsActive.GetBooleanFlag())
             {
-                GameMangerRootMaster.instance.uIEvents.InvokeEnablePauseMenu();
+                m_voidGameEventUIManagerEnablePauseMneu.Raise();
             }
         }
     }
+    #endregion
 }

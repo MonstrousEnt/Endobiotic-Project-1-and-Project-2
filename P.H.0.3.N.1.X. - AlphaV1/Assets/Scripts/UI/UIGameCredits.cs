@@ -13,7 +13,7 @@ public class UIGameCredits : MonoBehaviour
 
     private void Awake()
     {
-        GameMangerRootMaster.instance.uIEvents.displayGameCreditsUnityEvent.AddListener(displayGameCredits);
+        //GameMangerRootMaster.instance.uIEvents.displayGameCreditsUnityEvent.AddListener(displayGameCredits);
     }
 
     private void Start()
@@ -23,7 +23,7 @@ public class UIGameCredits : MonoBehaviour
 
     private void OnDestroy()
     {
-        GameMangerRootMaster.instance.uIEvents.displayGameCreditsUnityEvent.RemoveListener(displayGameCredits);
+        //GameMangerRootMaster.instance.uIEvents.displayGameCreditsUnityEvent.RemoveListener(displayGameCredits);
     }
 
     private void displayGameCredits()
