@@ -4,30 +4,46 @@ using UnityEngine;
 
 public class SettingsGameManager : MonoBehaviour
 {
-	[SerializeField] private int fps;
-	[SerializeField] bool gameIsPause = false;
+    #region Class Variables
+	[Header("Pause Data")]
+	[SerializeField] private bool m_gameIsPause = false;
 
-	private void Start()
+	[Header("FPS Data")]
+	[SerializeField] private int m_lockFps = 60;
+	[SerializeField] private int m_fps;
+	#endregion
+
+	#region Getters and Setters
+	private void setFPS(int fps)
 	{
-		//Unpause the game
-		ActivePause(false, 1f);
-
-		//Locks FPS to 60.
-		FPSLock();
-	}
-
-	private void FPSLock()
-	{
-		//Disable vSync.
-		QualitySettings.vSyncCount = 0;
-
-		//Setting application frame rate.
 		Application.targetFrameRate = fps;
 	}
-
-	public void ActivePause(bool flag, float timeScale)
+	private void disableVsync()
 	{
-		gameIsPause = flag;
-		Time.timeScale = timeScale;
+		QualitySettings.vSyncCount = 0;
 	}
+	#endregion
+
+	#region Settings Game Events
+	public void EnablePause()
+	{
+		m_gameIsPause = true;
+		Time.timeScale = 0f;
+	}
+	public void DisablePause()
+	{
+		m_gameIsPause = false;
+		Time.timeScale = 1f;
+	}
+	#endregion
+
+	#region Unity Methods
+	private void Start()
+	{
+		DisablePause();
+		disableVsync();
+		setFPS(m_lockFps);
+	}
+    #endregion
+
 }

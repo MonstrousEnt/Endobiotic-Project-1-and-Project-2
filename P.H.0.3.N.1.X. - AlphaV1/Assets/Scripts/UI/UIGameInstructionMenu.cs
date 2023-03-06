@@ -32,7 +32,7 @@ public class UIGameInstructionMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            GameMangerRootMaster.instance.settingsManager.ActivePause(false, 1f);
+            //GameMangerRootMaster.instance.settingsManager.ActivePause(false, 1f);
     
         }
 

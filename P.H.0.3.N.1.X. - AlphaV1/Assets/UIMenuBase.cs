@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
 public class UIMenuBase : UIBase
@@ -9,12 +10,15 @@ public class UIMenuBase : UIBase
     [SerializeField] protected GameObject m_firstButtonGameObject;
     [SerializeField] protected PopUpData m_popUpDataQuitPopUp;
 
+    [SerializeField] protected UnityEvent m_enableMenuUnityEvent;
+    [SerializeField] protected UnityEvent m_disableMenuUnityEvent;
+
     /// <summary>
     /// Pause the game. The enable the fade background. Afterwards set the first button for keyboard controls and controller controls. Finally enable the menu.
     /// </summary>
     protected virtual void EnableMenu()
     {
-        GameMangerRootMaster.instance.settingsManager.ActivePause(true, 0f);
+        m_enableMenuUnityEvent.Invoke();
 
         GameMangerRootMaster.instance.uIEvents.InvokeEnableFadeBackground();
 
@@ -29,7 +33,7 @@ public class UIMenuBase : UIBase
     /// </summary>
     protected virtual void DisableMenu()
     {
-        GameMangerRootMaster.instance.settingsManager.ActivePause(false, 1f);
+        m_disableMenuUnityEvent.Invoke();
 
         GameMangerRootMaster.instance.uIEvents.InvokeDisableFadeBackground();
 

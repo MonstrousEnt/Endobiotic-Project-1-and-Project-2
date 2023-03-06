@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
@@ -8,6 +9,8 @@ public class UITryAgainMenu : UIMenuBase
 {
     [SerializeField] private UIPiontSystem m_piontSystem;
     [SerializeField] private LevelDataScriptableObject m_levelDataLevel01;
+
+    [SerializeField] private UnityEvent m_tryAgainunityEvent;
 
     private void Start()
     {
@@ -28,7 +31,6 @@ public class UITryAgainMenu : UIMenuBase
         m_piontSystem.DisplayPoints();
     }
 
-
     /// <summary>
     /// Disable the menu and reset the level.
     /// </summary>
@@ -36,7 +38,7 @@ public class UITryAgainMenu : UIMenuBase
     {
         DisableMenu();
 
-        GameMangerRootMaster.instance.settingsManager.ActivePause(false, 1f);
+        m_tryAgainunityEvent.Invoke();
 
         GameMangerRootMaster.instance.levelManager.RestartLevel();
 
