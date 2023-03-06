@@ -861,10 +861,6 @@ MonoBehaviour:
         m_CallState: 2
   m_disableMenuUnityEvent:
     m_PersistentCalls:
-      m_Calls: []
-  m_piontSystem: {fileID: 8225104314088512471}
-  m_tryAgainunityEvent:
-    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: 251ebfd62673e5f479fbb25228817a72, type: 2}
         m_TargetAssemblyTypeName: VoidGameEventScriptableObject, Assembly-CSharp
@@ -878,6 +874,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  m_piontSystem: {fileID: 8225104314088512471}
+  m_tryAgainunityEvent:
+    m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 11400000, guid: 19a964f1f6283a64fa4f3b3681ca4fe5, type: 2}
         m_TargetAssemblyTypeName: VoidGameEventScriptableObject, Assembly-CSharp
         m_MethodName: Raise

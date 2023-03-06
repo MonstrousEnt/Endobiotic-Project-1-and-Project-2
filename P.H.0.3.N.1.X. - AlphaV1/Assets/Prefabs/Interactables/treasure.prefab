@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5820486581826931271}
   - component: {fileID: 7739919537562318578}
   - component: {fileID: 7922416232471737029}
+  - component: {fileID: 1813868330237192204}
   m_Layer: 0
   m_Name: treasure
   m_TagString: Interactable
@@ -149,13 +150,13 @@ MonoBehaviour:
   onActivated:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 6618bbfd17f8eee41b477713af5522cb, type: 2}
-        m_TargetAssemblyTypeName: AudioDataGameEventScriptableObject, Assembly-CSharp
-        m_MethodName: Raise
-        m_Mode: 2
+      - m_Target: {fileID: 1813868330237192204}
+        m_TargetAssemblyTypeName: EffectAudioManagerGameEvent, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: ae1ef5c3177806243b573fda307e1204, type: 2}
-          m_ObjectArgumentAssemblyTypeName: AudioDataScriptableObject, Assembly-CSharp
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -241,6 +242,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_objectPrefab: {fileID: 6101398282372632630, guid: 542f95653ed99b44d85df43b4d7cd4c3, type: 3}
   m_locationOffset: {x: 0, y: 0, z: 0}
+--- !u!114 &1813868330237192204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8573741446981851647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21cc3a77b669d3649978a271e3c0e00d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_audioData: {fileID: 11400000, guid: ae1ef5c3177806243b573fda307e1204, type: 2}
+  m_audioManagerGameEventPlaySound: {fileID: 11400000, guid: 6618bbfd17f8eee41b477713af5522cb, type: 2}
+  m_audioManagerGameEventStopSound: {fileID: 11400000, guid: af88926902e244844bbedcd2da002f06, type: 2}
+  m_audioManagerGameEventEnableLoop: {fileID: 11400000, guid: d1badcf1f4061724f8c8685fe1161557, type: 2}
+  m_audioManagerGameEventDisableLoop: {fileID: 11400000, guid: 55d52c95cb4b6c147aa8fd97814dfc01, type: 2}
 --- !u!1001 &6868229139060964738
 PrefabInstance:
   m_ObjectHideFlags: 0
