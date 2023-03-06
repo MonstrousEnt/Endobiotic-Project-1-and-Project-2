@@ -16,7 +16,7 @@ public class SettingsGameManager : MonoBehaviour
 	#region Getters and Setters
 	private void setFPS(int fps)
 	{
-		Application.targetFrameRate = fps;
+		m_fps = Application.targetFrameRate = fps;
 	}
 	private void disableVsync()
 	{
