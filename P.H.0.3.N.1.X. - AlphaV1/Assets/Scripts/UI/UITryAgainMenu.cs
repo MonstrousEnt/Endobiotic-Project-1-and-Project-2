@@ -7,10 +7,15 @@ using UnityEngine.SceneManagement;
 
 public class UITryAgainMenu : UIMenuBase
 {
+    #region Class Varietals
+    [Header("Point System")]
     [SerializeField] private UIPiontSystem m_piontSystem;
 
+    [Header("Unity Event")]
     [SerializeField] private UnityEvent m_tryAgainunityEvent;
+    #endregion
 
+    #region UI Base - Over Methods - Try Again Menu
     /// <summary>
     /// Enable the menu and display the points,
     /// </summary>
@@ -20,7 +25,9 @@ public class UITryAgainMenu : UIMenuBase
 
         m_piontSystem.DisplayPoints();
     }
+    #endregion
 
+    #region UI Methods
     /// <summary>
     /// Disable the menu and reset the level.
     /// </summary>
@@ -30,4 +37,5 @@ public class UITryAgainMenu : UIMenuBase
 
         m_tryAgainunityEvent.Invoke();
     }
+    #endregion
 }

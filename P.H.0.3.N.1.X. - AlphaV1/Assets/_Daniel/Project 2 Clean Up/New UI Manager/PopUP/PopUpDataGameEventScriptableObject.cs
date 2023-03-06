@@ -7,7 +7,7 @@ public class PopUpDataGameEventScriptableObject : ScriptableObject
 {
     private List<PopUpDataGameEventListener> listeners = new List<PopUpDataGameEventListener>();
 
-    public void Raise(PopUpData popUpData)
+    public void Raise(PopUpDataScriptableObject popUpData)
     {
         for (int i = listeners.Count - 1; i >= 0; i--)
         {

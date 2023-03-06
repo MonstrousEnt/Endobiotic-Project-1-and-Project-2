@@ -7,19 +7,19 @@ using UnityEngine.EventSystems;
 
 public class UIPopUp : UIBase
 {
-    [Header("PopUpData Info")]
-    [SerializeField] private PopUpData m_popUpData;
-
-    [Header("UI Data")]
-    [SerializeField] private TextMeshProUGUI m_messgesTextBox;
-
+    #region Class Variables
     [Header("UI Components")]
+    [SerializeField] private TextMeshProUGUI m_messgesTextBox;
     [SerializeField] private GameObject m_yesButtonGameObject;
     [SerializeField] private GameObject m_NoButtonGameObject;
     [SerializeField] private GameObject m_popUpFirstButton;
 
+    [Header("Pop Up Data")]
+    [SerializeField] private PopUpDataScriptableObject m_popUpData;
+    #endregion
+
     #region Setters and Getters
-    public void SetPopUpData(PopUpData popUpData)
+    public void SetPopUpData(PopUpDataScriptableObject popUpData)
     {
         this.m_popUpData = null;
 
@@ -27,6 +27,7 @@ public class UIPopUp : UIBase
     }
     #endregion
 
+    #region Unity Methods
     private void Update()
     {
         //When the pop is ready to close, and if the user press any key, close the pop up.
@@ -41,7 +42,9 @@ public class UIPopUp : UIBase
             }
         }
     }
+    #endregion
 
+    #region UI Pop Up Methods
     /// <summary>
     /// Enable the pop up and Display Data for the pop up.
     /// </summary>
@@ -101,4 +104,5 @@ public class UIPopUp : UIBase
             m_popUpData.popUpActionUnityEvent.Invoke();
         }
     }
+    #endregion
 }

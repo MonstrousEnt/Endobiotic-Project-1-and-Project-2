@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class UIBase : MonoBehaviour
 {
+    #region Class Variables 
     [Header("Main Window Data")]
     [SerializeField] protected GameObject m_mainWindowGameObject;
+    #endregion
 
+    #region UI Base - UI Main Window Methods
     /// <summary>
     /// Enable the main window.
     /// </summary>
@@ -22,4 +25,5 @@ public class UIBase : MonoBehaviour
     {
         m_mainWindowGameObject.SetActive(false);
     }
+    #endregion
 }

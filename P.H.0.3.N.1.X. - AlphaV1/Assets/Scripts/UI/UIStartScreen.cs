@@ -5,14 +5,19 @@ using UnityEngine.Events;
 
 public class UIStartScreen : MonoBehaviour
 {
+    #region Class Variables 
+    [Header("Audio Data")]
     [SerializeField] private AudioDataScriptableObject m_audioDataStartScreenSoundtrack;
 
+    [Header("Audio Data Game Event - Audio Manager")]
     [SerializeField] private AudioDataGameEventScriptableObject m_audioDataGameEventEnableLoop;
     [SerializeField] private AudioDataGameEventScriptableObject m_audioDataGameEventPlaySound;
 
+    [Header("Unity Event")]
     [SerializeField] private UnityEvent m_unityEventStartGame;
+    #endregion
 
-
+    #region Unity Methods
     private void Start()
     {
         m_audioDataGameEventEnableLoop.Raise(m_audioDataStartScreenSoundtrack);
@@ -27,4 +32,5 @@ public class UIStartScreen : MonoBehaviour
             m_unityEventStartGame.Invoke();
         }
     }
+    #endregion
 }

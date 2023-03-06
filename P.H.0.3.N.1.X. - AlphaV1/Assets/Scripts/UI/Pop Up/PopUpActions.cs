@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class PopUpActions : MonoBehaviour
 {
+    #region Class Variables 
+    [Header("Void Game Event - UI Manager")]
     [SerializeField] private VoidGameEventScriptableObject m_voidGameEventUIManagerDisablePopUp;
+    #endregion
 
+    #region Pop Up Action Methods - Quit Game
     public void QuitGame()
     {
         m_voidGameEventUIManagerDisablePopUp.Raise();
@@ -13,4 +17,5 @@ public class PopUpActions : MonoBehaviour
         Debug.Log("Quiting Game...");
         Application.Quit();
     }
+    #endregion
 }

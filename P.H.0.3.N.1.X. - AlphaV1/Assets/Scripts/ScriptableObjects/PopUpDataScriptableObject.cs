@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [CreateAssetMenu(fileName = "PopUpData", menuName = "Scriptable Objects/Pop Up Data")]
-public class PopUpData : ScriptableObject
+public class PopUpDataScriptableObject : ScriptableObject
 {
     public string message;
     public bool isConfirm = false;

@@ -6,14 +6,28 @@ using UnityEngine.EventSystems;
 
 public class UIMenuBase : UIBase
 {
-    [Header("UI Menu Data")]
+    #region Class Variables
+    [Header("UI Menu Base Data - UI Components")]
     [SerializeField] protected GameObject m_firstButtonGameObject;
-    [SerializeField] protected PopUpData m_popUpDataQuitPopUp;
 
+    [Header("UI Menu Base Data - Pop Up Data")]
+    [SerializeField] protected PopUpDataScriptableObject m_popUpDataQuitPopUp;
+
+    [Header("UI Menu Base Data - Unity Event")]
     [SerializeField] protected UnityEvent m_enableMenuUnityEvent;
     [SerializeField] protected UnityEvent m_disableMenuUnityEvent;
     [SerializeField] protected UnityEvent m_openQuitPopUpUnityEvent;
+    #endregion
 
+    #region Getters and Setters
+    protected void SetFirstButton()
+    {
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(m_firstButtonGameObject);
+    }
+    #endregion
+
+    #region UI Menu Base - UI Menu Methods 
     /// <summary>
     /// Pause the game. The enable the fade background. Afterwards set the first button for keyboard controls and controller controls. Finally enable the menu.
     /// </summary>
@@ -21,8 +35,7 @@ public class UIMenuBase : UIBase
     {
         m_enableMenuUnityEvent.Invoke();
 
-        EventSystem.current.SetSelectedGameObject(null);
-        EventSystem.current.SetSelectedGameObject(m_firstButtonGameObject);
+        SetFirstButton();
 
         EnableMainWindow();
     }
@@ -44,4 +57,5 @@ public class UIMenuBase : UIBase
     {
         m_openQuitPopUpUnityEvent.Invoke();
     }
+    #endregion
 }

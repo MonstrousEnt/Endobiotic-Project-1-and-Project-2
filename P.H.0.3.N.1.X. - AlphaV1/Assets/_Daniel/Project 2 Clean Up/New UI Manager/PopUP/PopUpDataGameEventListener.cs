@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class PopUpDataGameEventListener : MonoBehaviour
 {
     public PopUpDataGameEventScriptableObject gameEvent;
-    public UnityEvent<PopUpData> respone;
+    public UnityEvent<PopUpDataScriptableObject> respone;
 
     private void OnEnable()
     {
@@ -19,7 +19,7 @@ public class PopUpDataGameEventListener : MonoBehaviour
         gameEvent.UnregisterListener(this);
     }
 
-    public void OnEventRaised(PopUpData popUpData)
+    public void OnEventRaised(PopUpDataScriptableObject popUpData)
     {
         respone.Invoke(popUpData);
     }
