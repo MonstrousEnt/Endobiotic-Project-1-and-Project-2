@@ -54,112 +54,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_mainWindowGameObject: {fileID: 3831578487425469746}
   m_firstButtonGameObject: {fileID: 3831578486534077266}
+  m_booleanFlagGlobalVariablePlayerManagerPlayerCanMove: {fileID: 11400000, guid: cb6522342c9d38243a7fb7bfc803cb25, type: 2}
+  m_voidGameEventSettingsManagerEnablePause: {fileID: 11400000, guid: 2d576d7a71be9a543952c7487094620b, type: 2}
+  m_voidGameEventSettingsManagerDisablePause: {fileID: 11400000, guid: 251ebfd62673e5f479fbb25228817a72, type: 2}
+  M_voidGameEventUIManagerEnableFadeBackground: {fileID: 11400000, guid: 846d08271bdc6324bb0a952dfc6e4178, type: 2}
+  m_voidGameEventUIManagerDisableFadeBackground: {fileID: 11400000, guid: 6a9e7aff25c264844ab9bbc0308fcdd2, type: 2}
   m_popUpDataQuitPopUp: {fileID: 11400000, guid: 0af3184b15876264abddb016fcde85f8, type: 2}
-  m_enableMenuUnityEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: 2d576d7a71be9a543952c7487094620b, type: 2}
-        m_TargetAssemblyTypeName: VoidGameEventScriptableObject, Assembly-CSharp
-        m_MethodName: Raise
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: cb6522342c9d38243a7fb7bfc803cb25, type: 2}
-        m_TargetAssemblyTypeName: BooleanFlagGlobalVariableScriptableObject, Assembly-CSharp
-        m_MethodName: DisableBooleanFlag
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: 846d08271bdc6324bb0a952dfc6e4178, type: 2}
-        m_TargetAssemblyTypeName: VoidGameEventScriptableObject, Assembly-CSharp
-        m_MethodName: Raise
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_disableMenuUnityEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: 251ebfd62673e5f479fbb25228817a72, type: 2}
-        m_TargetAssemblyTypeName: VoidGameEventScriptableObject, Assembly-CSharp
-        m_MethodName: Raise
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: cb6522342c9d38243a7fb7bfc803cb25, type: 2}
-        m_TargetAssemblyTypeName: BooleanFlagGlobalVariableScriptableObject, Assembly-CSharp
-        m_MethodName: EnableBoolFlag
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: 6a9e7aff25c264844ab9bbc0308fcdd2, type: 2}
-        m_TargetAssemblyTypeName: VoidGameEventScriptableObject, Assembly-CSharp
-        m_MethodName: Raise
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_openQuitPopUpUnityEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: 29a6c36849ca25a40b9c666c995382c3, type: 2}
-        m_TargetAssemblyTypeName: PopUpDataGameEventScriptableObject, Assembly-CSharp
-        m_MethodName: Raise
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 0af3184b15876264abddb016fcde85f8, type: 2}
-          m_ObjectArgumentAssemblyTypeName: PopUpDataScriptableObject, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: 7ef7add07fa35104bbed2ad203302e7f, type: 2}
-        m_TargetAssemblyTypeName: VoidGameEventScriptableObject, Assembly-CSharp
-        m_MethodName: Raise
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  m_popUpDataGameEventUIMangerSetPopUpData: {fileID: 11400000, guid: 29a6c36849ca25a40b9c666c995382c3, type: 2}
+  m_voidGameEventUIManagerEanblePopUp: {fileID: 11400000, guid: 7ef7add07fa35104bbed2ad203302e7f, type: 2}
   m_booleanFlagGlobalVariableUIManagerPauseMenuIsActive: {fileID: 11400000, guid: 5ab18ef0d5fb1aa4a8233cc4cc56f120, type: 2}
 --- !u!114 &1438165659876197922
 MonoBehaviour:
