@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "LevelDataGameEvent", menuName = "Game Events/Level Data Game Event")]
+[CreateAssetMenu(fileName = "LevelDataGameEvent", menuName = "Scriptable Objects/Game Events/Game Managers/Level Loader Manager/Level Data Game Event")]
 public class LevelDataGameEventScriptableObject : ScriptableObject
 {
     private List<LevelDataGameEventListener> listeners = new List<LevelDataGameEventListener>();

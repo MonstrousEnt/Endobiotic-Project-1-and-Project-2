@@ -11,7 +11,7 @@ public class Cutscene : MonoBehaviour
 
     [SerializeField] private ParticleSystem rebirthParticles;
 
-    [SerializeField] private BooleanFlagGlobalScriptableObjectVariable m_booleanFlagGlobalVariablePlayerCanMove;
+    [SerializeField] private BooleanFlagGlobalVariableScriptableObject m_booleanFlagGlobalVariablePlayerCanMove;
 
     private void Start()
     {

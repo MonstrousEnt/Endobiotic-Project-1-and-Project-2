@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     private CharacterInteractionController m_characterInteractionController;
 
     [Header("Global Scriptable Object Variable")]
-    [SerializeField] private BooleanFlagGlobalScriptableObjectVariable m_booleanFlagGlobalVariablePlayerCanMove;
+    [SerializeField] private BooleanFlagGlobalVariableScriptableObject m_booleanFlagGlobalVariablePlayerCanMove;
 
     [Header("Move")]
     [SerializeField] private float m_moveSpeed = 5;

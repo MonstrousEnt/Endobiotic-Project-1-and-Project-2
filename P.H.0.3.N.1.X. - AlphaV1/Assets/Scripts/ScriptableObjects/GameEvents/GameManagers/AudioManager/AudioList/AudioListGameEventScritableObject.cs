@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu(fileName = "AudioListGameEvent", menuName = "Game Events/Audio List Game Event")]
+[CreateAssetMenu(fileName = "AudioListGameEvent", menuName = "Scriptable Objects/Game Events/Game Managers/Audio Manager/Audio List Game Event")]
 public class AudioListGameEventScritableObject : ScriptableObject
 {
     private List<AudioListGameEventListener> listeners = new List<AudioListGameEventListener>();

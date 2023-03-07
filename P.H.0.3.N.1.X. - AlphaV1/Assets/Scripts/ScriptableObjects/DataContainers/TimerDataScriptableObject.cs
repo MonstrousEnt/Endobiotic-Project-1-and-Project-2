@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "TimerData", menuName = "Scriptable Objects/Timer Data")]
+[CreateAssetMenu(fileName = "TimerData", menuName = "Scriptable Objects/Data Containers/Timer Data")]
 public class TimerDataScriptableObject : ScriptableObject
 {
     public float timeInseconds;

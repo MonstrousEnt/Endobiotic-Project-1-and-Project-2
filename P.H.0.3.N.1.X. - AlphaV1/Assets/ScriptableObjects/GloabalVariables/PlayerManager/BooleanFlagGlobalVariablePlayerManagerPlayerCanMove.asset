@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aac254499d3114f4bb87d3079b4e2b8c, type: 3}
-  m_Name: BooleanFlagGlobalVariablePlayerCanMove
+  m_Script: {fileID: 11500000, guid: e928ed87fd5d0a44abb68a0696049f59, type: 3}
+  m_Name: BooleanFlagGlobalVariablePlayerManagerPlayerCanMove
   m_EditorClassIdentifier: 
   m_boolFag: 1

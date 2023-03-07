@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
-[CreateAssetMenu(fileName = "AudioData", menuName = "Scriptable Objects/Audio Data")]
+[CreateAssetMenu(fileName = "AudioData", menuName = "Scriptable Objects/Data Containers/Audio Data")]
 public class AudioDataScriptableObject : ScriptableObject
 {
 	public AudioClip clip;

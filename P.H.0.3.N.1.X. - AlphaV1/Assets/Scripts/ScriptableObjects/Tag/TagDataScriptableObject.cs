@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
-[CreateAssetMenu(fileName = "TagData", menuName = "Scriptable Objects/Tag Data")]
+[CreateAssetMenu(fileName = "TagData", menuName = "Scriptable Objects/Tag/Tag Data")]
 public class TagDataScriptableObject : ScriptableObject
 {
     public string tagName;

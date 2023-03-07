@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "PointList", menuName = "Scriptable Objects/Point List")]
+[CreateAssetMenu(fileName = "PointList", menuName = "Scriptable Objects/Lists/Point List - OLD")]
 public class PointList : ScriptableObject
 {
     public List<PiontData> treausresCollectedPointDatas = new List<PiontData>();

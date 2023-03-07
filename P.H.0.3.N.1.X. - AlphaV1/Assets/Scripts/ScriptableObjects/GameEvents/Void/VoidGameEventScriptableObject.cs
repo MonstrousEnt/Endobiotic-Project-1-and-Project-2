@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "VoidGameEvent", menuName = "Game Events/Void Game Event")]
+[CreateAssetMenu(fileName = "VoidGameEvent", menuName = "Scriptable Objects/Game Events/Void Game Event")]
 public class VoidGameEventScriptableObject : ScriptableObject
 {
     private List<VoidGameEventListener> listeners = new List<VoidGameEventListener>();

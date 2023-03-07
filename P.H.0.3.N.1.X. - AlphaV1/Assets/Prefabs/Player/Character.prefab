@@ -138,7 +138,7 @@ MonoBehaviour:
   invulTime: 0.5
   tagDataEnemy: {fileID: 11400000, guid: 94bd01555d6c0a64aa892d4ecc40bd7a, type: 2}
   tagDataInteractable: {fileID: 11400000, guid: 0d1e0d57ef54aa54fac70f955397111c, type: 2}
-  m_booleanFlagGlobalVariablePlayerCanMove: {fileID: 11400000, guid: 47bfe7755f71d7043863b3c6c09a0d19, type: 2}
+  m_booleanFlagGlobalVariablePlayerCanMove: {fileID: 11400000, guid: cb6522342c9d38243a7fb7bfc803cb25, type: 2}
 --- !u!114 &759186879241046266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,7 +153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_rigidBody2D: {fileID: 0}
   m_playerAnimation: {fileID: 4398488082201832907}
-  m_booleanFlagGlobalVariablePlayerCanMove: {fileID: 11400000, guid: 47bfe7755f71d7043863b3c6c09a0d19, type: 2}
+  m_booleanFlagGlobalVariablePlayerCanMove: {fileID: 11400000, guid: cb6522342c9d38243a7fb7bfc803cb25, type: 2}
   m_moveSpeed: 3
   m_movement: {x: 0, y: 0}
 --- !u!114 &1972234326682734799

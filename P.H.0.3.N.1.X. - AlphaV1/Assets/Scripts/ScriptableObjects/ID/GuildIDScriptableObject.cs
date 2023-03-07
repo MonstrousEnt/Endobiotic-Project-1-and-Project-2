@@ -6,7 +6,7 @@ using System;
 using UnityEditor;
 #endif
 
-[CreateAssetMenu(fileName = "GuildID", menuName = "Scriptable Objects/GuildID")]
+[CreateAssetMenu(fileName = "GuildID", menuName = "Scriptable Objects/ID/GuildID")]
 public class GuildIDScriptableObject : ScriptableObject
 {
     public string id;

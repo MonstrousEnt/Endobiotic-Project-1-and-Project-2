@@ -20,7 +20,7 @@ public class CharacterInteractionController : MonoBehaviour
     [SerializeField] private TagDataScriptableObject tagDataEnemy;
     [SerializeField] private TagDataScriptableObject tagDataInteractable;
 
-    [SerializeField] private BooleanFlagGlobalScriptableObjectVariable m_booleanFlagGlobalVariablePlayerCanMove;
+    [SerializeField] private BooleanFlagGlobalVariableScriptableObject m_booleanFlagGlobalVariablePlayerCanMove;
 
     private void Awake()
     {

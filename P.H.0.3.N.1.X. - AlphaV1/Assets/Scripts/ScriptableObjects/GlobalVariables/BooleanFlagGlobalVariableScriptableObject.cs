@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "BooleanFlagGlobalVariable", menuName = "Scriptable Objects/Global Variables/Boolean Flag")]
-public class BooleanFlagGlobalScriptableObjectVariable : ScriptableObject
+public class BooleanFlagGlobalVariableScriptableObject : ScriptableObject
 {
     #region Class Variables
     [Header("Boolean Flag Data")]

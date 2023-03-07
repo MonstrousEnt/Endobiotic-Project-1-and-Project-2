@@ -7,7 +7,7 @@ public class UIPauseMenu : UIMenuBase
 {
     #region Class Variables 
     [Header("Boolean Flag Global Variable Scriptable Object - UI Manager")]
-    [SerializeField] private BooleanFlagGlobalScriptableObjectVariable m_booleanFlagGlobalVariableUIManagerPauseMenuIsActive;
+    [SerializeField] private BooleanFlagGlobalVariableScriptableObject m_booleanFlagGlobalVariableUIManagerPauseMenuIsActive;
     #endregion
 
     #region UI Base - Over Methods - Pause Menu
