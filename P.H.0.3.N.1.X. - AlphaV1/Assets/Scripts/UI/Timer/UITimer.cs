@@ -18,13 +18,13 @@ public class UITimer : MonoBehaviour
     private void Update()
     {
         //When the time start, set it to a count up timer.
-        if (m_timerData.startTime)
+        if (m_timerData.startTimer)
         {
            countUpTimer(m_timerData);
         }
 
         //Update the UI Timer every frame if the timer has started.
-        if (m_timerData.updateUI && m_timerData.startTime)
+        if (m_timerData.updateUI && m_timerData.startTimer)
         {
             displayTime(m_timerData.timeInseconds);
         }

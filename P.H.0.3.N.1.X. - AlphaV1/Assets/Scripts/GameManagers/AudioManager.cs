@@ -26,7 +26,7 @@ public class AudioManager : MonoBehaviour
 	#region Initialize Methods
 	private void intializeGameObject(AudioDataScriptableObject audioData, GameObject parentGameObject)
 	{
-		GameObject audioGameObject = new GameObject(audioData.audioName);
+		GameObject audioGameObject = new GameObject(audioData.audioGameObjectName);
 		audioGameObject.transform.parent = parentGameObject.transform;
 		AudioSource audioSource = audioGameObject.AddComponent<AudioSource>();
 		audioData.source = audioSource;

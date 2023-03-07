@@ -9,5 +9,6 @@ public class PopUpDataScriptableObject : ScriptableObject
     public string message;
     public bool isConfirm = false;
     public bool isReadyToClose = false;
-    public UnityEvent popUpActionUnityEvent;
+	public UnityEvent popUpActionUnityEvent;
 }
+

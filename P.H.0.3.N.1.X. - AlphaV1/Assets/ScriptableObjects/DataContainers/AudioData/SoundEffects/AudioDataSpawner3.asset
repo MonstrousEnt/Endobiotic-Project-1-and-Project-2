@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: AudioDataSpawner3
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: bc87389d2ce3769419f1e3d786072e80, type: 3}
-  audioName: 'Spawner Sound Effect 3 - Audio Game Object '
+  audioGameObjectName: EnemySpawner3SoundEffect
   volume: 1
   pitch: 1
   loop: 0
+  source: {fileID: 0}

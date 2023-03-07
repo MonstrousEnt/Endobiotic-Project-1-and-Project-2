@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AudioDataPlayerDeath
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 5926719b29fc61c48b352bf2f5e301f5, type: 3}
-  audioName: Player Death Sound Effect - Audio Game Object
+  audioGameObjectName: PlayerDeathSoundEffect
   volume: 1
   pitch: 1
   loop: 0
