@@ -3,38 +3,30 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-[CustomEditor(typeof(GuildIDScriptableObject), true)]
-public class GuildIDEditor : Editor
+[CustomEditor(typeof(BooleanFlagGlobalVariableScriptableObject), true)]
+public class BooleanFlagGlobalVariableEditor : Editor
 {
     public override void OnInspectorGUI()
     {
         //Load Variables
-        GuildIDScriptableObject guildID = (GuildIDScriptableObject)target;
+        BooleanFlagGlobalVariableScriptableObject booleanFlagGlobalVariable = (BooleanFlagGlobalVariableScriptableObject)target;
 
         //Update the serialized object in the inspector
         serializedObject.Update();
 
         //Script reference
         GUI.enabled = false;
-        EditorGUILayout.ObjectField("Script", MonoScript.FromScriptableObject((GuildIDScriptableObject)target), typeof(GuildIDScriptableObject), false);
+        EditorGUILayout.ObjectField("Script", MonoScript.FromScriptableObject((BooleanFlagGlobalVariableScriptableObject)target), typeof(BooleanFlagGlobalVariableScriptableObject), false);
         GUI.enabled = true;
 
         //Make a space in the editor
         EditorGUILayout.Space();
 
         //Create a tile section 
-        GUILayout.Label("Guild Id", EditorStyles.boldLabel);
+        GUILayout.Label("Boolean Flag Global Variable", EditorStyles.boldLabel);
 
         //User Input
-        guildID.id = EditorGUILayout.TextField("Id", guildID.id);
-
-        EditorGUILayout.Space();
-
-        //Buttons
-        if (GUILayout.Button("Gen ID"))
-        {
-            guildID.GenId();
-        }
+        booleanFlagGlobalVariable.booleanFlag = EditorGUILayout.Toggle("Boolean Flag", booleanFlagGlobalVariable.booleanFlag);
 
         //Apply changes
         serializedObject.ApplyModifiedProperties();

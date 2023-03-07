@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38dc298b3fe87a949a7baf8c0e98b87c, type: 3}
   m_Name: TimerDataPlayerTime
   m_EditorClassIdentifier: 
-  timeInseconds: 600
-  startTime: 0
-  UpdateUI: 0
+  timeInseconds: 0
+  startTimer: 0
+  updateUI: 0
