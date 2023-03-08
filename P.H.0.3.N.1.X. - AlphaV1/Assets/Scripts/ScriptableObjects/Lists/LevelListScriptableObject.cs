@@ -5,13 +5,16 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "LevelList", menuName = "Scriptable Objects/Lists/Level List")]
 public class LevelListScriptableObject : ScriptableObject
 {
-    public List<LevelDataScriptableObject> levelDatas = new List<LevelDataScriptableObject>();
+    [SerializeField] private List<LevelDataScriptableObject> m_levelDatas = new List<LevelDataScriptableObject>();
+
+    #region Getters and Setters
+    public List<LevelDataScriptableObject> levelDatas { get { return m_levelDatas; } set { m_levelDatas = value; } }
 
     public int getLevelById(string id)
     {
-        for (int i = 0; i < levelDatas.Count; i++)
+        for (int i = 0; i < m_levelDatas.Count; i++)
         {
-            if (levelDatas[i].id == id)
+            if (m_levelDatas[i].id == id)
             {
                 return i;
             }
@@ -19,4 +22,5 @@ public class LevelListScriptableObject : ScriptableObject
 
         return 0;
     }
+    #endregion
 }

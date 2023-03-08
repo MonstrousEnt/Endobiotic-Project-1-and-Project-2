@@ -13,7 +13,7 @@ public class PopUpDataEditor : Editor
 	#region Unity Methods
 	private void OnEnable()
 	{
-		#region Find Serialized Property
+		#region Find Serialized Properties
 		m_popUpAction = serializedObject.FindProperty("popUpActionUnityEvent");
 		#endregion
 	}

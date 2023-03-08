@@ -5,5 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "AudioList", menuName = "Scriptable Objects/Lists/Audio List")]
 public class AudioListScriptableObject : ScriptableObject
 {
-    public List<AudioDataScriptableObject> audioDatas = new List<AudioDataScriptableObject>();
+    [SerializeField] private List<AudioDataScriptableObject> m_audioDatas = new List<AudioDataScriptableObject>();
+
+    public List<AudioDataScriptableObject> audioDatas { get { return m_audioDatas; } set { audioDatas = value; } } 
 }

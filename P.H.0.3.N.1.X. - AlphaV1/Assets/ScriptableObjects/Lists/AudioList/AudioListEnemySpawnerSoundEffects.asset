@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 804a68e5c947d4843b0190e8ef38bfec, type: 3}
   m_Name: AudioListEnemySpawnerSoundEffects
   m_EditorClassIdentifier: 
-  audioDatas:
+  m_audioDatas:
   - {fileID: 11400000, guid: 3fe347f48ddd32f47a9d688df82d57ac, type: 2}
   - {fileID: 11400000, guid: a8c7db1bbccc83e43a2057ca092e3baf, type: 2}
   - {fileID: 11400000, guid: da7a107a75e96104fb9d2f016ed01db4, type: 2}
