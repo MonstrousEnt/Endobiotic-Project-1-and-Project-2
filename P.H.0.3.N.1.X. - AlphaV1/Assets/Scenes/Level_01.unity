@@ -283,7 +283,7 @@ GameObject:
   m_Component:
   - component: {fileID: 749314248}
   m_Layer: 0
-  m_Name: ---CutScenes---
+  m_Name: ---Cutscenes---
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -661,17 +661,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6472927905493773485, guid: e71a8a8c6651de64ab0bdd56f75918c3, type: 3}
-      propertyPath: timeData
-      value: 
-      objectReference: {fileID: 11400000, guid: 255fc27c64db2d341b6255bac2af23e8, type: 2}
-    - target: {fileID: 6472927905493773485, guid: e71a8a8c6651de64ab0bdd56f75918c3, type: 3}
       propertyPath: rebirthParticles
       value: 
       objectReference: {fileID: 1700413185}
-    - target: {fileID: 6472927905493773485, guid: e71a8a8c6651de64ab0bdd56f75918c3, type: 3}
-      propertyPath: soundDataGameMusic
-      value: 
-      objectReference: {fileID: 11400000, guid: e6d52d08566e84d4f88374892a010b70, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e71a8a8c6651de64ab0bdd56f75918c3, type: 3}
 --- !u!1001 &429592211704211332
