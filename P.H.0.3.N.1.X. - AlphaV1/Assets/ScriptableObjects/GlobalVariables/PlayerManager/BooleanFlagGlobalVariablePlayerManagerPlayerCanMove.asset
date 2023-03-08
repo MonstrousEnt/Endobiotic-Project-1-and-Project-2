@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e928ed87fd5d0a44abb68a0696049f59, type: 3}
   m_Name: BooleanFlagGlobalVariablePlayerManagerPlayerCanMove
   m_EditorClassIdentifier: 
-  booleanFlag: 1
+  m_booleanFlag: 1

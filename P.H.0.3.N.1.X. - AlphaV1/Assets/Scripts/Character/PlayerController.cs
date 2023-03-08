@@ -31,13 +31,13 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         //If the player can't move
-        if (!m_booleanFlagGlobalVariablePlayerCanMove.GetBooleanFlag())
+        if (!m_booleanFlagGlobalVariablePlayerCanMove.booleanFlag)
         {
             //Stop the movement
             m_rigidBody2D.velocity = Vector2.zero;
         }
         //Otherwise move the player
-        else if (m_booleanFlagGlobalVariablePlayerCanMove.GetBooleanFlag())
+        else if (m_booleanFlagGlobalVariablePlayerCanMove.booleanFlag)
         {
             Move();
         }
@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
     private void inputs()
     {
         //If the player can move.
-        if (m_booleanFlagGlobalVariablePlayerCanMove.GetBooleanFlag())
+        if (m_booleanFlagGlobalVariablePlayerCanMove.booleanFlag)
         {
             //Get the move directions (Up (y +1), Down (y -1), Left (x +1), and Right (x -1)) for user input.
             m_movement.x = Input.GetAxis("Horizontal");

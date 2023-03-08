@@ -5,22 +5,19 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "BooleanFlagGlobalVariable", menuName = "Scriptable Objects/Global Variables/Boolean Flag")]
 public class BooleanFlagGlobalVariableScriptableObject : ScriptableObject
 {
-    public bool booleanFlag;
+    [SerializeField] private bool m_booleanFlag;
 
     #region Getters and Setters
+    public bool booleanFlag { get { return m_booleanFlag; } }
+
     public void EnableBoolFlag()
     {
-        booleanFlag = true;
+        m_booleanFlag = true;
     }
 
     public void DisableBooleanFlag()
     {
-        booleanFlag = false;
-    }
-
-    public bool GetBooleanFlag()
-    {
-        return booleanFlag;
+        m_booleanFlag = false;
     }
     #endregion
 }

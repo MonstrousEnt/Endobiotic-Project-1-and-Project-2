@@ -6,11 +6,22 @@ using UnityEngine;
 [CustomEditor(typeof(BooleanFlagGlobalVariableScriptableObject), true)]
 public class BooleanFlagGlobalVariableEditor : Editor
 {
+    #region Serialized Property
+    private SerializedProperty m_booleanFlagSerializedProperty;
+    #endregion
+
+    #region Unity Methods
+    private void OnEnable()
+    {
+        #region Find Serialized Properties
+        m_booleanFlagSerializedProperty = serializedObject.FindProperty("m_booleanFlag");
+        #endregion
+    }
+    #endregion
+
+    #region Custom Editor View
     public override void OnInspectorGUI()
     {
-        //Load Variables
-        BooleanFlagGlobalVariableScriptableObject booleanFlagGlobalVariable = (BooleanFlagGlobalVariableScriptableObject)target;
-
         //Update the serialized object in the inspector
         serializedObject.Update();
 
@@ -25,16 +36,14 @@ public class BooleanFlagGlobalVariableEditor : Editor
         //Create a tile section 
         GUILayout.Label("Boolean Flag Global Variable", EditorStyles.boldLabel);
 
-        //User Input
-        booleanFlagGlobalVariable.booleanFlag = EditorGUILayout.Toggle("Boolean Flag", booleanFlagGlobalVariable.booleanFlag);
+        //User Inputs
+        EditorGUILayout.PropertyField(m_booleanFlagSerializedProperty, new GUIContent("Boolean Flag"));
 
         //Apply changes
         serializedObject.ApplyModifiedProperties();
 
-        //Save data when using press save project 
-        EditorUtility.SetDirty(target);
-
         //Draws default ui (testing only)
         //base.OnInspectorGUI();
     }
+    #endregion
 }

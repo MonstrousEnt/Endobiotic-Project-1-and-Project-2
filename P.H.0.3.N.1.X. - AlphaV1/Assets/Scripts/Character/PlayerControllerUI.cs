@@ -19,11 +19,11 @@ public class PlayerControllerUI : MonoBehaviour
         //When the user press tab or start button, it open or close the menu.
         if (Input.GetButtonDown("Menu"))
         {
-            if (m_booleanFlagGlobalVariableUIManagerPauseMenuIsActive.GetBooleanFlag())
+            if (m_booleanFlagGlobalVariableUIManagerPauseMenuIsActive.booleanFlag)
             {
                 m_voidGameEventUIManagerDisablePauseMneu.Raise();
             }
-            else if (!m_booleanFlagGlobalVariableUIManagerPauseMenuIsActive.GetBooleanFlag())
+            else if (!m_booleanFlagGlobalVariableUIManagerPauseMenuIsActive.booleanFlag)
             {
                 m_voidGameEventUIManagerEnablePauseMneu.Raise();
             }

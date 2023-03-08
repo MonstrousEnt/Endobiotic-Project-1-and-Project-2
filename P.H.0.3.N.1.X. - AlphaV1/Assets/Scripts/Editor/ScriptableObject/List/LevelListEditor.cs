@@ -36,6 +36,7 @@ public class LevelListEditor : Editor
 		//Create a tile section
 		GUILayout.Label("Level List Data", EditorStyles.boldLabel);
 
+		//User Inputs
 		EditorGUILayout.PropertyField(m_levelDatasSerializedProperty, new GUIContent("Level Datas"));
 
 		//Apply changes
