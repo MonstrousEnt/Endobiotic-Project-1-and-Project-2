@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4a10f16f260860408c21abc03705a6e, type: 3}
   m_Name: AudioDataPlayerAttack
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 8f4a2388d81b9b14abe2919f03f42927, type: 3}
-  audioGameObjectName: PlayerAttackSoundEffect
-  volume: 1
-  pitch: 1
-  loop: 0
-  source: {fileID: 0}
+  m_clip: {fileID: 8300000, guid: 8f4a2388d81b9b14abe2919f03f42927, type: 3}
+  m_audioGameObjectName: PLayerAttcakSoundEffect
+  m_volume: 1
+  m_pitch: 1
+  m_loop: 0

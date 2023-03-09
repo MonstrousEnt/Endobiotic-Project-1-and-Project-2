@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f84e0768ec0838b47b20c70c9875226b, type: 3}
   m_Name: LevelDataLevel01
   m_EditorClassIdentifier: 
-  id: b89d61fe-bd9f-4592-bf70-e526d872ba45
-  levelName: Level 01
-  buildindex: 1
-  unlockLevel: 1
+  m_levelID: ac126c16-d463-407c-8ba5-4f14edf01990
+  m_levelName: Level 01
+  m_buildIndex: 1
+  m_unlockLevel: 1

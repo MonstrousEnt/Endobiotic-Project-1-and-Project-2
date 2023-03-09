@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4a10f16f260860408c21abc03705a6e, type: 3}
   m_Name: AudioDatacollectItem
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 0805b9e9090158a489553d6efe6e239a, type: 3}
-  audioGameObjectName: CollectItemSoundEffect
-  volume: 1
-  pitch: 1
-  loop: 0
-  source: {fileID: 0}
+  m_clip: {fileID: 8300000, guid: 0805b9e9090158a489553d6efe6e239a, type: 3}
+  m_audioGameObjectName: CollectItemSoundEffect
+  m_volume: 1
+  m_pitch: 1
+  m_loop: 0

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86ef5b441475afd44bdb7da684ee01cf, type: 3}
   m_Name: GuildID
   m_EditorClassIdentifier: 
-  m_id: 0a5e266f-c91e-434c-97db-f27b8b29d065
+  m_guildID: 43e40422-b8ea-47e4-9065-a4a1d99146cb

@@ -39,7 +39,7 @@ public class TagDataCustomEditor : Editor
         //Create a tile section the Data Variables
         EditorGUILayout.LabelField("Tag Data", EditorStyles.boldLabel);
 
-        //User Input 
+        //User Inputs 
         EditorGUILayout.PropertyField(m_tagNameSerializedProperty, new GUIContent("Name")); //Tag Name
 
         //Apply changes

@@ -5,9 +5,15 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "TimerData", menuName = "Scriptable Objects/Data Containers/Timer Data")]
 public class TimerDataScriptableObject : ScriptableObject
 {
-    public float timeInseconds;
-    public bool startTimer = false;
-    public bool updateUI = false;
+    [SerializeField] private float m_timeInSeconds;
+    [SerializeField] private bool m_startTimer = false;
+    [SerializeField] private bool m_UpdateUI = false;
+
+    #region Getters and Setters
+    public float timeInseconds { get { return m_timeInSeconds; } set { m_timeInSeconds = value; } }
+    public bool startTimer { get { return m_startTimer; } set { m_startTimer = value; } }
+    public bool updateUI { get { return m_UpdateUI; } set { m_UpdateUI = value; } }
+    #endregion
 
     #region Start Timer Methods
     /// <summary>
@@ -15,8 +21,8 @@ public class TimerDataScriptableObject : ScriptableObject
     /// </summary>
     public void EnableTime()
     {
-        startTimer = true;
-        updateUI = true;
+        m_startTimer = true;
+        m_UpdateUI = true;
     }
     #endregion
 
@@ -26,9 +32,9 @@ public class TimerDataScriptableObject : ScriptableObject
     /// </summary>
     public void Reset()
     {
-        timeInseconds = 0.00f;
-        startTimer = false;
-        updateUI = false;
+        m_timeInSeconds = 0.00f;
+        m_startTimer = false;
+        m_UpdateUI = false;
     }
     #endregion
 

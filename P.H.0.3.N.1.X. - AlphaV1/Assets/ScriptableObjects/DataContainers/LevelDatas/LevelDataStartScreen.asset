@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f84e0768ec0838b47b20c70c9875226b, type: 3}
   m_Name: LevelDataStartScreen
   m_EditorClassIdentifier: 
-  id: d3804add-6986-47bd-8e71-0256301380e4
-  levelName: Start Screen
-  buildindex: 0
-  unlockLevel: 1
+  m_levelID: 43e40422-b8ea-47e4-9065-a4a1d99146cb
+  m_levelName: Start Screen
+  m_buildIndex: 0
+  m_unlockLevel: 1

@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4a10f16f260860408c21abc03705a6e, type: 3}
   m_Name: AudioDataTechnoMusicLoopV2
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: ad31878e2d6d25040ac0c12a4fed5ca8, type: 3}
-  audioGameObjectName: TechnoMusicLoopV2Soundtrack
-  volume: 0.3
-  pitch: 1
-  loop: 1
-  source: {fileID: 0}
+  m_clip: {fileID: 8300000, guid: ad31878e2d6d25040ac0c12a4fed5ca8, type: 3}
+  m_audioGameObjectName: TechnoMusicLoopV2Soundtrack
+  m_volume: 0.3
+  m_pitch: 1
+  m_loop: 1

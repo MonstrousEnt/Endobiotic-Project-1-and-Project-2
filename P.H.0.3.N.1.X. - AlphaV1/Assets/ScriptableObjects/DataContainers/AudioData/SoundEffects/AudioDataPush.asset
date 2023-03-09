@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4a10f16f260860408c21abc03705a6e, type: 3}
   m_Name: AudioDataPush
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 67259e29f4780004980767b066caacf9, type: 3}
-  audioGameObjectName: PushSoundEffect
-  volume: 1
-  pitch: 1
-  loop: 0
-  source: {fileID: 0}
+  m_clip: {fileID: 8300000, guid: 67259e29f4780004980767b066caacf9, type: 3}
+  m_audioGameObjectName: PushSoundEffect
+  m_volume: 1
+  m_pitch: 1
+  m_loop: 0

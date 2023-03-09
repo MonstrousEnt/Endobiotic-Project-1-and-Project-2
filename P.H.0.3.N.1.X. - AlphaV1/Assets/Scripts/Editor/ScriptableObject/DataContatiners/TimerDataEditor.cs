@@ -6,6 +6,24 @@ using UnityEngine;
 [CustomEditor(typeof(TimerDataScriptableObject), true)]
 public class TimerDataEditor : Editor
 {
+    #region Serialized Property
+    private SerializedProperty m_timeInSecondsSerializedProperty;
+    private SerializedProperty m_startTimerSerializedProperty;
+    private SerializedProperty m_UpdateUISerializedProperty;
+    #endregion
+
+    #region Unity Methods
+    private void OnEnable()
+    {
+        #region Find Serialized Properties
+        m_timeInSecondsSerializedProperty = serializedObject.FindProperty("m_timeInSeconds");
+        m_startTimerSerializedProperty = serializedObject.FindProperty("m_startTimer");
+        m_UpdateUISerializedProperty = serializedObject.FindProperty("m_UpdateUI");
+        #endregion
+    }
+    #endregion
+
+    #region Custom Editor View
     public override void OnInspectorGUI()
     {
         //Load Variables
@@ -25,10 +43,10 @@ public class TimerDataEditor : Editor
         //Create a tile section
         GUILayout.Label("Timer Data", EditorStyles.boldLabel);
 
-        //User Input 
-        timerData.timeInseconds = EditorGUILayout.FloatField("Time In Seconds", timerData.timeInseconds);
-        timerData.startTimer = EditorGUILayout.Toggle("Start Timer", timerData.startTimer);
-        timerData.updateUI = EditorGUILayout.Toggle("Update UI", timerData.updateUI);
+        //User Inputs 
+        EditorGUILayout.PropertyField(m_timeInSecondsSerializedProperty, new GUIContent("Time In Seconds"));
+        EditorGUILayout.PropertyField(m_startTimerSerializedProperty, new GUIContent("Start Timer"));
+        EditorGUILayout.PropertyField(m_UpdateUISerializedProperty, new GUIContent("Update UI"));
 
         //Apply changes
         serializedObject.ApplyModifiedProperties();
@@ -39,4 +57,5 @@ public class TimerDataEditor : Editor
         //Draws default ui (testing only)
         //base.OnInspectorGUI();
     }
+    #endregion
 }

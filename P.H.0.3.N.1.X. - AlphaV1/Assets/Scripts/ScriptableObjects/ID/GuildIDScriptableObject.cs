@@ -6,10 +6,10 @@ using System;
 [CreateAssetMenu(fileName = "GuildID", menuName = "Scriptable Objects/ID/Guild ID")]
 public class GuildIDScriptableObject : ScriptableObject
 {
-    [SerializeField] private string m_id;
+    [SerializeField] private string m_guildID;
 
     public void GenId()
     {
-        m_id = Guid.NewGuid().ToString();
+        m_guildID = Guid.NewGuid().ToString();
     }
 }

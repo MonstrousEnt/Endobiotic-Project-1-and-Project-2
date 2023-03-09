@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4a10f16f260860408c21abc03705a6e, type: 3}
   m_Name: AudioDataSpawner2
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 879a5538c0340f44e928edc11a572dbb, type: 3}
-  audioGameObjectName: EnemySpawner2SoundEffect
-  volume: 1
-  pitch: 1
-  loop: 0
-  source: {fileID: 0}
+  m_clip: {fileID: 8300000, guid: 879a5538c0340f44e928edc11a572dbb, type: 3}
+  m_audioGameObjectName: Spawner2SoundEffect
+  m_volume: 1
+  m_pitch: 1
+  m_loop: 0

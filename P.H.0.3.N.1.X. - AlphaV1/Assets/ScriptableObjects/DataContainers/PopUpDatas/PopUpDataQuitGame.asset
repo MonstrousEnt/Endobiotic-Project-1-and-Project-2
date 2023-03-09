@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a854f23de9b3f54d81a8cff8d006637, type: 3}
   m_Name: PopUpDataQuitGame
   m_EditorClassIdentifier: 
-  message: Do you want to quit the game?
-  isConfirm: 1
-  isReadyToClose: 0
-  popUpActionUnityEvent:
+  m_message: Do you want to quit the game?
+  m_isConfrim: 1
+  m_isReadyToClose: 0
+  m_popUpActionUnityEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2649427723563795383, guid: 168c02a914d52dc4cbcf6f84c9f7a5c7, type: 3}
