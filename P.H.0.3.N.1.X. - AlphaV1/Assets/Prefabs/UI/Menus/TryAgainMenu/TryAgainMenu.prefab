@@ -892,8 +892,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 754b8f215484b2546b48331b8f4cd2f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 4865a33ad2bab7d4288f4c5e45aa3129, type: 2}
-  respone:
+  m_gameEvent: {fileID: 11400000, guid: 4865a33ad2bab7d4288f4c5e45aa3129, type: 2}
+  m_respone:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8225104314968284485}

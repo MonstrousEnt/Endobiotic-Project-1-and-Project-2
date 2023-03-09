@@ -67,12 +67,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dd2bab259ce097459f1b99fad2b4847, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 6618bbfd17f8eee41b477713af5522cb, type: 2}
-  respone:
+  m_gameEvent: {fileID: 11400000, guid: 6618bbfd17f8eee41b477713af5522cb, type: 2}
+  m_respone:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2355017275591425013}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_TargetAssemblyTypeName: AudioGameManager, Assembly-CSharp
         m_MethodName: PlaySound
         m_Mode: 0
         m_Arguments:
@@ -95,12 +95,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dd2bab259ce097459f1b99fad2b4847, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: af88926902e244844bbedcd2da002f06, type: 2}
-  respone:
+  m_gameEvent: {fileID: 11400000, guid: af88926902e244844bbedcd2da002f06, type: 2}
+  m_respone:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2355017275591425013}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_TargetAssemblyTypeName: AudioGameManager, Assembly-CSharp
         m_MethodName: StopSound
         m_Mode: 0
         m_Arguments:
@@ -123,12 +123,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dd2bab259ce097459f1b99fad2b4847, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: d1badcf1f4061724f8c8685fe1161557, type: 2}
-  respone:
+  m_gameEvent: {fileID: 11400000, guid: d1badcf1f4061724f8c8685fe1161557, type: 2}
+  m_respone:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2355017275591425013}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_TargetAssemblyTypeName: AudioGameManager, Assembly-CSharp
         m_MethodName: EnableLoop
         m_Mode: 0
         m_Arguments:
@@ -151,12 +151,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dd2bab259ce097459f1b99fad2b4847, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 55d52c95cb4b6c147aa8fd97814dfc01, type: 2}
-  respone:
+  m_gameEvent: {fileID: 11400000, guid: 55d52c95cb4b6c147aa8fd97814dfc01, type: 2}
+  m_respone:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2355017275591425013}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_TargetAssemblyTypeName: AudioGameManager, Assembly-CSharp
         m_MethodName: DisableLoop
         m_Mode: 0
         m_Arguments:
@@ -179,12 +179,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9009130d065d1b14b970fabc14febb23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: e24001ae93e8c2f4596ea861f7deadab, type: 2}
-  respone:
+  m_gameEvent: {fileID: 11400000, guid: e24001ae93e8c2f4596ea861f7deadab, type: 2}
+  m_respone:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2355017275591425013}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_TargetAssemblyTypeName: AudioGameManager, Assembly-CSharp
         m_MethodName: PlayRandomSound
         m_Mode: 0
         m_Arguments:

@@ -5,21 +5,21 @@ using UnityEngine.Events;
 
 public class VoidGameEventListener : MonoBehaviour
 {
-    public VoidGameEventScriptableObject gameEvent;
-    public UnityEvent respone;
+    [SerializeField] private VoidGameEventScriptableObject m_gameEvent;
+    [SerializeField] private UnityEvent m_respone;
 
     private void OnEnable()
     {
-        gameEvent.RegisterListener(this);
+        m_gameEvent.RegisterListener(this);
     }
 
     private void OnDisable()
     {
-        gameEvent.UnregisterListener(this);
+        m_gameEvent.UnregisterListener(this);
     }
 
     public void OnEventRaised()
     {
-        respone.Invoke();
+        m_respone.Invoke();
     }
 }

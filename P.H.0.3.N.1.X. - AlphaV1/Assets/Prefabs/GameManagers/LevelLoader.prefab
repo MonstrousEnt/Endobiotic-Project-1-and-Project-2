@@ -57,12 +57,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32911a5dbed277f41b76242ac749767c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: ce2f301b6fb0a0844879a5b3b48a84b7, type: 2}
-  respone:
+  m_gameEvent: {fileID: 11400000, guid: ce2f301b6fb0a0844879a5b3b48a84b7, type: 2}
+  m_respone:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6408917135300849956}
-        m_TargetAssemblyTypeName: LevelLoaderAsync, Assembly-CSharp
+        m_TargetAssemblyTypeName: LevelLoaderAsyncGameManager, Assembly-CSharp
         m_MethodName: LoadNextScene
         m_Mode: 0
         m_Arguments:

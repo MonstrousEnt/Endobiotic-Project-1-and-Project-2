@@ -65,8 +65,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 754b8f215484b2546b48331b8f4cd2f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 846d08271bdc6324bb0a952dfc6e4178, type: 2}
-  respone:
+  m_gameEvent: {fileID: 11400000, guid: 846d08271bdc6324bb0a952dfc6e4178, type: 2}
+  m_respone:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 904979189736408932}
@@ -93,8 +93,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 754b8f215484b2546b48331b8f4cd2f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 6a9e7aff25c264844ab9bbc0308fcdd2, type: 2}
-  respone:
+  m_gameEvent: {fileID: 11400000, guid: 6a9e7aff25c264844ab9bbc0308fcdd2, type: 2}
+  m_respone:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 904979189736408932}

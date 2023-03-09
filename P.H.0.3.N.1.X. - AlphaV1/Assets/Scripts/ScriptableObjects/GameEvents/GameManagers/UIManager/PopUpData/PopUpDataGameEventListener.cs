@@ -6,21 +6,21 @@ using UnityEngine.Events;
 
 public class PopUpDataGameEventListener : MonoBehaviour
 {
-    public PopUpDataGameEventScriptableObject gameEvent;
-    public UnityEvent<PopUpDataScriptableObject> respone;
+    [SerializeField] private PopUpDataGameEventScriptableObject m_gameEvent;
+    [SerializeField] private UnityEvent<PopUpDataScriptableObject> m_respone;
 
     private void OnEnable()
     {
-        gameEvent.RegisterListener(this);
+        m_gameEvent.RegisterListener(this);
     }
 
     private void OnDisable()
     {
-        gameEvent.UnregisterListener(this);
+        m_gameEvent.UnregisterListener(this);
     }
 
     public void OnEventRaised(PopUpDataScriptableObject popUpData)
     {
-        respone.Invoke(popUpData);
+        m_respone.Invoke(popUpData);
     }
 }

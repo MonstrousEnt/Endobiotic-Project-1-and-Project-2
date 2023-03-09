@@ -5,21 +5,21 @@ using UnityEngine.Events;
 
 public class AudioDataGameEventListener : MonoBehaviour
 {
-    public AudioDataGameEventScriptableObject gameEvent;
-    public UnityEvent<AudioDataScriptableObject> respone;
+    [SerializeField] private AudioDataGameEventScriptableObject m_gameEvent;
+    [SerializeField] private UnityEvent<AudioDataScriptableObject> m_respone;
 
     private void OnEnable()
     {
-        gameEvent.RegisterListener(this);
+        m_gameEvent.RegisterListener(this);
     }
 
     private void OnDisable()
     {
-        gameEvent.UnregisterListener(this);
+        m_gameEvent.UnregisterListener(this);
     }
 
     public void OnEventRaised(AudioDataScriptableObject audioData)
     {
-        respone.Invoke(audioData);
+        m_respone.Invoke(audioData);
     }
 }

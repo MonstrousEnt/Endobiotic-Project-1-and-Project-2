@@ -59,12 +59,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 754b8f215484b2546b48331b8f4cd2f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 19a964f1f6283a64fa4f3b3681ca4fe5, type: 2}
-  respone:
+  m_gameEvent: {fileID: 11400000, guid: 19a964f1f6283a64fa4f3b3681ca4fe5, type: 2}
+  m_respone:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5032422347135240498}
-        m_TargetAssemblyTypeName: LevelResetManager, Assembly-CSharp
+        m_TargetAssemblyTypeName: LevelResetGameManager, Assembly-CSharp
         m_MethodName: RestartLevel
         m_Mode: 1
         m_Arguments:
