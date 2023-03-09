@@ -3,20 +3,34 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-[CustomEditor(typeof(GuildIDScriptableObject), true)]
-public class GuildIDEditor : Editor
+[CustomEditor(typeof(GuildIdScriptableObject), true)]
+public class GuildIdEditor : Editor
 {
+    #region Serialized Property
+    private SerializedProperty m_guildIdSerializedProperty;
+    #endregion
+
+    #region Unity Methods
+    private void OnEnable()
+    {
+        #region Find Serialized Properties
+        m_guildIdSerializedProperty = serializedObject.FindProperty("m_id");
+        #endregion
+    }
+    #endregion
+
+    #region Custom Editor View
     public override void OnInspectorGUI()
     {
-        //Load Variables
-        GuildIDScriptableObject guildID = (GuildIDScriptableObject)target;
+        //Load Variables 
+        GuildIdScriptableObject guildId = (GuildIdScriptableObject)target;
 
         //Update the serialized object in the inspector
         serializedObject.Update();
 
         //Script reference
         GUI.enabled = false;
-        EditorGUILayout.ObjectField("Script", MonoScript.FromScriptableObject((GuildIDScriptableObject)target), typeof(GuildIDScriptableObject), false);
+        EditorGUILayout.ObjectField("Script", MonoScript.FromScriptableObject((GuildIdScriptableObject)target), typeof(GuildIdScriptableObject), false);
         GUI.enabled = true;
 
         //Make a space in the editor
@@ -26,23 +40,24 @@ public class GuildIDEditor : Editor
         GUILayout.Label("Guild Id", EditorStyles.boldLabel);
 
         //User Input
-        guildID.id = EditorGUILayout.TextField("Id", guildID.id);
+        EditorGUILayout.PropertyField(m_guildIdSerializedProperty, new GUIContent("Id"));
 
         EditorGUILayout.Space();
 
         //Buttons
         if (GUILayout.Button("Gen ID"))
         {
-            guildID.GenId();
+            guildId.GenId();
         }
 
         //Apply changes
         serializedObject.ApplyModifiedProperties();
 
-        //Save data when using press save project 
+        //Save data when using press save project from file dropdown menu in the menutool bar
         EditorUtility.SetDirty(target);
 
         //Draws default ui (testing only)
         //base.OnInspectorGUI();
     }
+    #endregion
 }

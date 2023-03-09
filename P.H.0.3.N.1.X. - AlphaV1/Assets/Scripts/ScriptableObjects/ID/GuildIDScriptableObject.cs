@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-[CreateAssetMenu(fileName = "GuildID", menuName = "Scriptable Objects/ID/GuildID")]
-public class GuildIDScriptableObject : ScriptableObject
+[CreateAssetMenu(fileName = "GuildId", menuName = "Scriptable Objects/ID/Guild Id")]
+public class GuildIdScriptableObject : ScriptableObject
 {
-    public string id;
+    [SerializeField] private string m_id;
 
     public void GenId()
     {
-        id = Guid.NewGuid().ToString();
+        m_id = Guid.NewGuid().ToString();
     }
 }
