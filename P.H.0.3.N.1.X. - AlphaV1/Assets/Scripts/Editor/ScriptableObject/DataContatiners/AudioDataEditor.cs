@@ -57,7 +57,6 @@ public class AudioDataEditor : Editor
 	#region Custom Editor View
 	public override void OnInspectorGUI()
 	{
-		//Load Variables
 		AudioDataScriptableObject audioData = (AudioDataScriptableObject)target;
 
 		//Update the serialized object in the inspector

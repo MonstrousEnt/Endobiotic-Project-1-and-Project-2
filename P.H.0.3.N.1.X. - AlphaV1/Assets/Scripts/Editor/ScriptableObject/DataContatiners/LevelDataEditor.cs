@@ -27,7 +27,6 @@ public class LevelDataEditor : Editor
 
 	public override void OnInspectorGUI()
 	{
-		//Load Variables
 		LevelDataScriptableObject levelData = (LevelDataScriptableObject)target;
 
 		//Update the serialized object in the inspector

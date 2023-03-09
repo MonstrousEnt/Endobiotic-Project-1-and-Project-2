@@ -4,26 +4,11 @@ using UnityEditor;
 using UnityEngine;
 
 [CustomEditor(typeof(TagDataScriptableObject), true)]
-public class TagDataCustomEditor : Editor
+public class TagDataEditor : Editor
 {
-    #region Serialized Property
-    private SerializedProperty m_tagNameSerializedProperty;
-    #endregion
-
-    #region Unity Methods
-    private void OnEnable()
-    {
-        #region Find Serialized Properties
-        m_tagNameSerializedProperty = serializedObject.FindProperty("m_tagName");
-        #endregion
-    }
-    #endregion
-
-    #region Custom Editor View
     public override void OnInspectorGUI()
     {
-        //Load Variables
-        TagDataScriptableObject tagData = (TagDataScriptableObject)target; //Get Scriptable Object Inspector
+        TagDataScriptableObject tagData = (TagDataScriptableObject)target; 
 
         //Update the serialized object in the inspector
         serializedObject.Update();
@@ -40,16 +25,15 @@ public class TagDataCustomEditor : Editor
         EditorGUILayout.LabelField("Tag Data", EditorStyles.boldLabel);
 
         //User Inputs 
-        EditorGUILayout.PropertyField(m_tagNameSerializedProperty, new GUIContent("Name")); //Tag Name
+        tagData.tagName = EditorGUILayout.TagField(new GUIContent("Name"), tagData.tagName);
 
         //Apply changes
         serializedObject.ApplyModifiedProperties();
 
-        //Save data when using press save project from file dropdown menu in the menutool bar
+        //Save data when using press save project 
         EditorUtility.SetDirty(target);
 
         //Draws default ui(testing only)
         //base.OnInspectorGUI();
     }
-    #endregion
 }

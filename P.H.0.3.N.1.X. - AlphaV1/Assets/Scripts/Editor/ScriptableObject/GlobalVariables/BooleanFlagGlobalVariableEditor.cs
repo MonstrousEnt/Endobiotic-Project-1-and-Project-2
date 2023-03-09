@@ -22,7 +22,6 @@ public class BooleanFlagGlobalVariableEditor : Editor
     #region Custom Editor View
     public override void OnInspectorGUI()
     {
-        //Load Variables 
         BooleanFlagGlobalVariableScriptableObject booleanFlagGlobalVariable = (BooleanFlagGlobalVariableScriptableObject)target;
 
         //Update the serialized object in the inspector
@@ -45,7 +44,7 @@ public class BooleanFlagGlobalVariableEditor : Editor
         //Apply changes
         serializedObject.ApplyModifiedProperties();
 
-        //Save data when using press save project from file dropdown menu in the menutool bar
+        //Save data when using press save project
         EditorUtility.SetDirty(target);
 
         //Draws default ui (testing only)

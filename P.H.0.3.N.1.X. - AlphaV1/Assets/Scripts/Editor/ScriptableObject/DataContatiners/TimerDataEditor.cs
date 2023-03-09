@@ -26,7 +26,6 @@ public class TimerDataEditor : Editor
     #region Custom Editor View
     public override void OnInspectorGUI()
     {
-        //Load Variables
         TimerDataScriptableObject timerData = (TimerDataScriptableObject)target;
 
         //Update the serialized object in the inspector

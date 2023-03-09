@@ -22,7 +22,6 @@ public class AudioListEditor : Editor
 	#region Custom Editor View
 	public override void OnInspectorGUI()
     {
-		//Load Variables 
 		AudioListScriptableObject audioList = (AudioListScriptableObject)target;
 
 		//Update the serialized object in the inspector
@@ -45,7 +44,7 @@ public class AudioListEditor : Editor
 		//Apply changes
 		serializedObject.ApplyModifiedProperties();
 
-		//Save data when using press save project from file dropdown menu in the menutool bar
+		//Save data when using press save project 
 		EditorUtility.SetDirty(target);
 
 		//Draws default ui (testing only)

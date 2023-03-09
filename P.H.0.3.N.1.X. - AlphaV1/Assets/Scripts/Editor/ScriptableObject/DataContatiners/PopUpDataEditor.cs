@@ -28,7 +28,6 @@ public class PopUpDataEditor : Editor
 	#region Custom Editor View
 	public override void OnInspectorGUI()
 	{
-		//Load Variables
 		PopUpDataScriptableObject popUpData = (PopUpDataScriptableObject)target;
 
 		//Update the serialized object in the inspector
