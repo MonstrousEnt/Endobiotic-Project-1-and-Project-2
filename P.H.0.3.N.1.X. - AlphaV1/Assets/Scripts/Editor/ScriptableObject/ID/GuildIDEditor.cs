@@ -7,14 +7,14 @@ using UnityEngine;
 public class GuildIdEditor : Editor
 {
     #region Serialized Property
-    private SerializedProperty m_guildIdSerializedProperty;
+    private SerializedProperty m_guildIDSerializedProperty;
     #endregion
 
     #region Unity Methods
     private void OnEnable()
     {
         #region Find Serialized Properties
-        m_guildIdSerializedProperty = serializedObject.FindProperty("m_id");
+        m_guildIDSerializedProperty = serializedObject.FindProperty("m_id");
         #endregion
     }
     #endregion
@@ -37,10 +37,10 @@ public class GuildIdEditor : Editor
         EditorGUILayout.Space();
 
         //Create a tile section 
-        GUILayout.Label("Guild Id", EditorStyles.boldLabel);
+        GUILayout.Label("Guild ID", EditorStyles.boldLabel);
 
         //User Input
-        EditorGUILayout.PropertyField(m_guildIdSerializedProperty, new GUIContent("ID"));
+        EditorGUILayout.PropertyField(m_guildIDSerializedProperty, new GUIContent("ID"));
 
         EditorGUILayout.Space();
 

@@ -5,5 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "TagData", menuName = "Scriptable Objects/Tag/Tag Data")]
 public class TagDataScriptableObject : ScriptableObject
 {
-    public string tagName;
+    [SerializeField] private string m_tagName;
+
+    public string tagName { get { return m_tagName; } set { m_tagName = value; } }
 }
