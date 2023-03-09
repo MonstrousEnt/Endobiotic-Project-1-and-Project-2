@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class PlayerControllerAnimations : BaseControllerAnimations
 {
-    #region Class Variables
     //To Do create these animations states into Unity Scriptable Object data container
     [Header("Animation States - Destroyer")]
     [SerializeField] private const string m_DEST_ATK_DOWN = "Atk_Down";
@@ -18,9 +17,8 @@ public class PlayerControllerAnimations : BaseControllerAnimations
 
     [Header("Delay or Time")]
     private float m_requiredTime;
-    #endregion
 
-    #region Override Methods
+    #region Base Controller Animations Override Methods - Player Controller Animations
     protected override void ChangeAnimationState(string newAnimation)
     {
         //check to see if the delay is in effect

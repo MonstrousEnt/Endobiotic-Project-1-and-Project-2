@@ -7,13 +7,11 @@ using UnityEngine.SceneManagement;
 
 public class UITryAgainMenu : UIMenuBase
 {
-    #region Class Varietals
     [Header("Point System")]
     [SerializeField] private UIPiontSystem m_piontSystem;
 
     [Header("Unity Event")]
     [SerializeField] private UnityEvent m_tryAgainunityEvent;
-    #endregion
 
     #region UI Base - Over Methods - Try Again Menu
     /// <summary>

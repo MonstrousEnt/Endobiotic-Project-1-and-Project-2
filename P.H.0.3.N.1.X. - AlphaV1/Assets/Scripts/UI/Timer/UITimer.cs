@@ -6,13 +6,11 @@ using TMPro;
 
 public class UITimer : MonoBehaviour
 {
-    #region Class Variables 
     [Header("UI Components")]
     [SerializeField] private TextMeshProUGUI m_timerText;
 
     [Header("Time Data Scriptable Object")]
     [SerializeField] private TimerDataScriptableObject m_timerData;
-    #endregion
 
     #region Unity Methods
     private void Update()

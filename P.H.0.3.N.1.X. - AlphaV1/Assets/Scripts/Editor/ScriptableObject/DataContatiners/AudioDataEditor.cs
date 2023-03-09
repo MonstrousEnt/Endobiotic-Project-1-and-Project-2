@@ -14,6 +14,7 @@ public class AudioDataEditor : Editor
 	private SerializedProperty m_volumeSerializedProperty;
 	private SerializedProperty m_pitchSerializedProperty;
 	private SerializedProperty m_loopSerializedProperty;
+	private SerializedProperty m_playOnAwakeSerializedProperty;
 	#endregion
 
 	#region Custom Editor Methods - Buttons
@@ -43,6 +44,7 @@ public class AudioDataEditor : Editor
 		m_volumeSerializedProperty = serializedObject.FindProperty("m_volume");
 		m_pitchSerializedProperty = serializedObject.FindProperty("m_pitch");
 		m_loopSerializedProperty = serializedObject.FindProperty("m_loop");
+		m_playOnAwakeSerializedProperty = serializedObject.FindProperty("m_playOnAwake");
 		#endregion
 	}
 
@@ -78,6 +80,7 @@ public class AudioDataEditor : Editor
 		EditorGUILayout.PropertyField(m_volumeSerializedProperty, new GUIContent("Volume"));
 		EditorGUILayout.PropertyField(m_pitchSerializedProperty, new GUIContent("Pitch"));
 		EditorGUILayout.PropertyField(m_loopSerializedProperty, new GUIContent("Loop"));
+		EditorGUILayout.PropertyField(m_playOnAwakeSerializedProperty, new GUIContent("Play On Awake"));
 
 		EditorGUILayout.Space();
 

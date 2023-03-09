@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class EnemyControllerAnimations : BaseControllerAnimations
 {
-    #region Class Variables 
     private Vector3 m_previousPosition;
-    #endregion
 
     #region Unity Methods
     private void Start()

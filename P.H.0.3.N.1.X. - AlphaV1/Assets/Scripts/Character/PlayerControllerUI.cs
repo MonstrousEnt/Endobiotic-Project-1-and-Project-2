@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class PlayerControllerUI : MonoBehaviour
 {
-    #region Class Variables 
     [Header("Boolean Flag Global Variable Scriptable Object - UI Manager")]
     [SerializeField] private BooleanFlagGlobalVariableScriptableObject m_booleanFlagGlobalVariableUIManagerPauseMenuIsActive;
 
     [Header("Void Game Event Scriptable Object - UI Manager")]
     [SerializeField] private VoidGameEventScriptableObject m_voidGameEventUIManagerEnablePauseMneu;
     [SerializeField] private VoidGameEventScriptableObject m_voidGameEventUIManagerDisablePauseMneu;
-    #endregion
 
     #region Unity Methods
     private void Update()

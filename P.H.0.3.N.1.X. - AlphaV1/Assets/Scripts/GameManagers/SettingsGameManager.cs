@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class SettingsGameManager : MonoBehaviour
 {
-    #region Class Variables
 	[Header("Pause Data")]
 	[SerializeField] private bool m_gameIsPause = false;
 
 	[Header("FPS Data")]
 	[SerializeField] private int m_lockFps = 60;
 	[SerializeField] private int m_fps;
-	#endregion
 
 	#region Getters and Setters
 	private void setFPS(int fps)

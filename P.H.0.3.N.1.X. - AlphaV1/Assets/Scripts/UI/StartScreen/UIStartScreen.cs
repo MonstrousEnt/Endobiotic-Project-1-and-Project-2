@@ -5,7 +5,6 @@ using UnityEngine.Events;
 
 public class UIStartScreen : MonoBehaviour
 {
-    #region Class Variables 
     [Header("Audio Data")]
     [SerializeField] private AudioDataScriptableObject m_audioDataStartScreenSoundtrack;
 
@@ -15,7 +14,6 @@ public class UIStartScreen : MonoBehaviour
 
     [Header("Unity Event")]
     [SerializeField] private UnityEvent m_unityEventStartGame;
-    #endregion
 
     #region Unity Methods
     private void Start()

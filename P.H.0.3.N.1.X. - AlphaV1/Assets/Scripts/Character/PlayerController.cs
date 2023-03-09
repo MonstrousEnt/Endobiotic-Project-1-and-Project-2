@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     [Header("Components")]
     [SerializeField] private Rigidbody2D m_rigidBody2D;
     [SerializeField] private PlayerControllerAnimations m_playerAnimation;
+
     private CharacterInteractionController m_characterInteractionController;
 
     [Header("Global Scriptable Object Variable")]
@@ -16,9 +17,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float m_moveSpeed = 5;
     [SerializeField] private Vector2 m_movement;
 
-
+    #region Unity Methods
     private void Start()
     {
+        //Initialize Components
         m_rigidBody2D = GetComponent<Rigidbody2D>(); 
         m_characterInteractionController = GetComponent<CharacterInteractionController>();
     }
@@ -39,10 +41,12 @@ public class PlayerController : MonoBehaviour
         //Otherwise move the player
         else if (m_booleanFlagGlobalVariablePlayerCanMove.booleanFlag)
         {
-            Move();
+            move();
         }
     }
+    #endregion
 
+    #region C# Methods
     /// <summary>
     /// The player inputs for moving and form action.
     /// </summary>
@@ -59,7 +63,7 @@ public class PlayerController : MonoBehaviour
             if (Input.GetButton("FormAction"))
             {
                 //Interact with the maze blocks.
-                Interact();
+                interact();
             }
         }
     }
@@ -67,7 +71,7 @@ public class PlayerController : MonoBehaviour
     /// <summary>
     /// Move the player.
     /// </summary>
-    private void Move()
+    private void move()
     {
         m_rigidBody2D.velocity = new Vector2(m_movement.x * m_moveSpeed, m_movement.y * m_moveSpeed);
         m_playerAnimation.CallMovementAnimation(m_movement);
@@ -76,8 +80,9 @@ public class PlayerController : MonoBehaviour
     /// <summary>
     /// Interact with the maze blocks
     /// </summary>
-    private void Interact()
+    private void interact()
     {
         m_characterInteractionController.Interact();
-    }       
+    }
+    #endregion
 }

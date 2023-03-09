@@ -6,28 +6,26 @@ using UnityEngine.EventSystems;
 
 public class UIMenuBase : UIBase
 {
-    #region Class Variables
-    [Header("UI Menu Base Data - UI Components")]
+    [Header("UI Components")]
     [SerializeField] protected GameObject m_firstButtonGameObject;
 
-    [Header("UI Menu Base Data - Global Variable Scriptable Object - Player Manager")]
+    [Header(" Global Variable Scriptable Object - Player Manager")]
     [SerializeField] protected BooleanFlagGlobalVariableScriptableObject m_booleanFlagGlobalVariablePlayerManagerPlayerCanMove;
 
-    [Header("UI Menu Base Data - Game Events Scriptable Object - Settings Manager")]
+    [Header(" Game Events Scriptable Object - Settings Manager")]
     [SerializeField] protected VoidGameEventScriptableObject m_voidGameEventSettingsManagerEnablePause;
     [SerializeField] protected VoidGameEventScriptableObject m_voidGameEventSettingsManagerDisablePause;
 
-    [Header("UI Menu Base Data -Game Events Scriptable Object - UI Manager - Fade Background")]
+    [Header("Game Events Scriptable Object - UI Manager - Fade Background")]
     [SerializeField] protected VoidGameEventScriptableObject M_voidGameEventUIManagerEnableFadeBackground;
     [SerializeField] protected VoidGameEventScriptableObject m_voidGameEventUIManagerDisableFadeBackground;
 
-    [Header("UI Menu Base Data- Pop Up Data Scriptable Object")]
+    [Header("Pop Up Data Scriptable Object")]
     [SerializeField] protected PopUpDataScriptableObject m_popUpDataQuitPopUp;
 
-    [Header("UI Menu Base Data - Game Events Scriptable Object - UI Manger - Pop Up")]
+    [Header("Game Events Scriptable Object - UI Manger - Pop Up")]
     [SerializeField] protected PopUpDataGameEventScriptableObject m_popUpDataGameEventUIMangerSetPopUpData;
     [SerializeField] protected VoidGameEventScriptableObject m_voidGameEventUIManagerEanblePopUp;
-    #endregion
 
     #region Getters and Setters
     protected void SetFirstButton()
@@ -39,11 +37,7 @@ public class UIMenuBase : UIBase
 
     #region UI Menu Base - UI Menu Methods 
     /// <summary>
-    /// Pause the game. 
-    /// Then disable Player Can Move.
-    /// Next, enable the fade background. 
-    /// Afterwards set the first button for keyboard controls and controller controls. 
-    /// Finally enable the menu.
+    /// Enable the menu, default functionally 
     /// </summary>
     public virtual void EnableMenu()
     {
@@ -55,10 +49,7 @@ public class UIMenuBase : UIBase
     }
 
     /// <summary>
-    /// Un-pause the game. 
-    /// Then enable Player Can Move.
-    /// Next, disbale the fade background. 
-    /// Finally disable the menu.
+    /// Disable the menu, default functionally 
     /// </summary>
     public virtual void DisableMenu()
     {
@@ -69,7 +60,7 @@ public class UIMenuBase : UIBase
     }
 
     /// <summary>
-    /// Open the quit pop up and set the data for this pop up.
+    /// Open the quit pop up and set the data.
     /// </summary>
     public void OepnQuitPopUp()
     {

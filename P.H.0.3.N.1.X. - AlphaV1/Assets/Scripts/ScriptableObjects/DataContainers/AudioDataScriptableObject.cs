@@ -16,6 +16,8 @@ public class AudioDataScriptableObject : ScriptableObject
 
     [SerializeField] private bool m_loop;
 
+    [SerializeField] private bool m_playOnAwake = false;
+
     private AudioSource m_source;
 
     #region Getters and Setters
@@ -24,6 +26,7 @@ public class AudioDataScriptableObject : ScriptableObject
     public float volume { get { return m_volume; } set { m_volume = value; } }
     public float pitch { get { return m_pitch; } set { m_pitch = value; } }
     public bool loop { get { return m_loop; } set { m_loop = value; } }
+    public bool playOnAwake { get { return m_playOnAwake; } set { m_playOnAwake = value; } }
     public AudioSource source { get { return m_source; } set { m_source = value; } }
     #endregion
 

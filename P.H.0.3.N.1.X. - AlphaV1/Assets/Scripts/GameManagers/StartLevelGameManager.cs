@@ -3,21 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class StartLevel : MonoBehaviour
+public class StartLevelGameManager : MonoBehaviour
 {
+    [Header("Time Data")]
     [SerializeField] private TimerDataScriptableObject m_timeData;
 
-    [SerializeField] private UnityEvent SoundEffectUnityEvent;
+    [Header("Unity Event")]
+    [SerializeField] private UnityEvent m_soundEffectUnityEvent;
 
+    #region unity Methods
     private void Start()
     {
         startlevel();
     }
+    #endregion
 
+    #region Private Start Level Methods
     private void startlevel()
     {
-        SoundEffectUnityEvent.Invoke();
+        m_soundEffectUnityEvent.Invoke();
 
         m_timeData.EnableTime();
     }
+    #endregion
 }

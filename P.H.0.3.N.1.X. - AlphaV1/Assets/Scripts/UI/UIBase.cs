@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class UIBase : MonoBehaviour
 {
-    #region Class Variables 
     [Header("Main Window Data")]
     [SerializeField] protected GameObject m_mainWindowGameObject;
-    #endregion
 
     #region UI Base - UI Main Window Methods
     /// <summary>

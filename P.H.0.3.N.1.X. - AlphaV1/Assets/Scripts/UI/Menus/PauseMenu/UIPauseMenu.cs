@@ -5,10 +5,8 @@ using UnityEngine.EventSystems;
 
 public class UIPauseMenu : UIMenuBase
 {
-    #region Class Variables 
     [Header("Boolean Flag Global Variable Scriptable Object - UI Manager")]
     [SerializeField] private BooleanFlagGlobalVariableScriptableObject m_booleanFlagGlobalVariableUIManagerPauseMenuIsActive;
-    #endregion
 
     #region UI Base - Over Methods - Pause Menu
     /// <summary>

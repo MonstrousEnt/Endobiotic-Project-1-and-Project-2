@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour
+public class AudioGameManager : MonoBehaviour
 {
-    #region Class Variables 
     [Header("Audio List")]
 	[SerializeField] private AudioListScriptableObject m_audioListSoundEffects;
 	[SerializeField] private AudioListScriptableObject m_audioListSoundtracks;
@@ -12,7 +11,6 @@ public class AudioManager : MonoBehaviour
 	[Header("Game Objects")]
 	[SerializeField] private GameObject SoundEffectsGameObject;
 	[SerializeField] private GameObject SoundtrackGameObject;
-    #endregion
 
     #region Getters and Setters
     private void setAudioScource(AudioDataScriptableObject audioData)
@@ -20,6 +18,8 @@ public class AudioManager : MonoBehaviour
 		audioData.source.clip = audioData.clip;
 		audioData.source.volume = audioData.volume;
 		audioData.source.pitch = audioData.pitch;
+		audioData.source.loop = audioData.loop;
+		audioData.source.playOnAwake = audioData.playOnAwake;
 	}
 	#endregion
 

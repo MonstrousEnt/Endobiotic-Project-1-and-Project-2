@@ -5,11 +5,9 @@ using UnityEngine.SceneManagement;
 
 //Note: Feel free to add a loading screen.
 
-public class LevelLoaderAsync : MonoBehaviour
+public class LevelLoaderAsyncGameManager : MonoBehaviour
 {
-    #region class Variables
     private List<AsyncOperation> scenesLoading = new List<AsyncOperation>();
-    #endregion
 
     #region Level Loader Game Event
     /// <summary>
