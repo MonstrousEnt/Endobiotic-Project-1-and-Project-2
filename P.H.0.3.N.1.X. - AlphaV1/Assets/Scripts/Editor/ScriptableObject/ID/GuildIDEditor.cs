@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-[CustomEditor(typeof(GuildIdScriptableObject), true)]
+[CustomEditor(typeof(GuildIDScriptableObject), true)]
 public class GuildIdEditor : Editor
 {
     #region Serialized Property
@@ -23,14 +23,14 @@ public class GuildIdEditor : Editor
     public override void OnInspectorGUI()
     {
         //Load Variables 
-        GuildIdScriptableObject guildId = (GuildIdScriptableObject)target;
+        GuildIDScriptableObject guildID = (GuildIDScriptableObject)target;
 
         //Update the serialized object in the inspector
         serializedObject.Update();
 
         //Script reference
         GUI.enabled = false;
-        EditorGUILayout.ObjectField("Script", MonoScript.FromScriptableObject((GuildIdScriptableObject)target), typeof(GuildIdScriptableObject), false);
+        EditorGUILayout.ObjectField("Script", MonoScript.FromScriptableObject((GuildIDScriptableObject)target), typeof(GuildIDScriptableObject), false);
         GUI.enabled = true;
 
         //Make a space in the editor
@@ -40,14 +40,14 @@ public class GuildIdEditor : Editor
         GUILayout.Label("Guild Id", EditorStyles.boldLabel);
 
         //User Input
-        EditorGUILayout.PropertyField(m_guildIdSerializedProperty, new GUIContent("Id"));
+        EditorGUILayout.PropertyField(m_guildIdSerializedProperty, new GUIContent("ID"));
 
         EditorGUILayout.Space();
 
         //Buttons
         if (GUILayout.Button("Gen ID"))
         {
-            guildId.GenId();
+            guildID.GenId();
         }
 
         //Apply changes

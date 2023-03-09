@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-[CreateAssetMenu(fileName = "GuildId", menuName = "Scriptable Objects/ID/Guild Id")]
-public class GuildIdScriptableObject : ScriptableObject
+[CreateAssetMenu(fileName = "GuildID", menuName = "Scriptable Objects/ID/Guild ID")]
+public class GuildIDScriptableObject : ScriptableObject
 {
     [SerializeField] private string m_id;
 
