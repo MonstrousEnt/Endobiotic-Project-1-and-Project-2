@@ -7,15 +7,9 @@ public class AudioDataScriptableObject : ScriptableObject
 {
     [SerializeField] private AudioClip m_clip;
     [SerializeField] private string m_audioGameObjectName;
-
-    [Range(0f, 1f)]
     [SerializeField] private float m_volume;
-
-    [Range(0f, 3f)]
     [SerializeField] private float m_pitch;
-
     [SerializeField] private bool m_loop;
-
     [SerializeField] private bool m_playOnAwake = false;
 
     private AudioSource m_source;

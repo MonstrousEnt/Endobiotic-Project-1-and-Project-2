@@ -17,3 +17,4 @@ MonoBehaviour:
   m_volume: 1
   m_pitch: 1
   m_loop: 0
+  m_playOnAwake: 0

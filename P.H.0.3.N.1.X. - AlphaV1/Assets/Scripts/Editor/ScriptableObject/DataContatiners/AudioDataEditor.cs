@@ -8,15 +8,6 @@ public class AudioDataEditor : Editor
 {
 	private AudioSource m_audioPreviewer;
 
-	#region Serialized Property
-	private SerializedProperty m_clipSerializedProperty;
-	private SerializedProperty m_audioGameObjectNameSerializedProperty;
-	private SerializedProperty m_volumeSerializedProperty;
-	private SerializedProperty m_pitchSerializedProperty;
-	private SerializedProperty m_loopSerializedProperty;
-	private SerializedProperty m_playOnAwakeSerializedProperty;
-	#endregion
-
 	#region Custom Editor Methods - Buttons
 	private void playPreview(AudioSource source, AudioDataScriptableObject audioData)
 	{
@@ -38,14 +29,6 @@ public class AudioDataEditor : Editor
 	{ 
 		m_audioPreviewer = EditorUtility.CreateGameObjectWithHideFlags("Audio preview", HideFlags.HideAndDontSave, typeof(AudioSource)).GetComponent<AudioSource>();
 
-		#region Find Serialized Properties
-		m_clipSerializedProperty = serializedObject.FindProperty("m_clip");
-		m_audioGameObjectNameSerializedProperty = serializedObject.FindProperty("m_audioGameObjectName");
-		m_volumeSerializedProperty = serializedObject.FindProperty("m_volume");
-		m_pitchSerializedProperty = serializedObject.FindProperty("m_pitch");
-		m_loopSerializedProperty = serializedObject.FindProperty("m_loop");
-		m_playOnAwakeSerializedProperty = serializedObject.FindProperty("m_playOnAwake");
-		#endregion
 	}
 
 	public void OnDisable()
@@ -74,12 +57,12 @@ public class AudioDataEditor : Editor
 		GUILayout.Label("Audio Data", EditorStyles.boldLabel);
 
 		//User Inputs 
-		EditorGUILayout.PropertyField(m_clipSerializedProperty, new GUIContent("Clip"));
-		EditorGUILayout.PropertyField(m_audioGameObjectNameSerializedProperty, new GUIContent("Game Object Name"));
-		EditorGUILayout.PropertyField(m_volumeSerializedProperty, new GUIContent("Volume"));
-		EditorGUILayout.PropertyField(m_pitchSerializedProperty, new GUIContent("Pitch"));
-		EditorGUILayout.PropertyField(m_loopSerializedProperty, new GUIContent("Loop"));
-		EditorGUILayout.PropertyField(m_playOnAwakeSerializedProperty, new GUIContent("Play On Awake"));
+		audioData.clip = (AudioClip)EditorGUILayout.ObjectField("Clip", audioData.clip, typeof(AudioClip), true);
+		audioData.audioGameObjectName = EditorGUILayout.TextField("Game Object Name", audioData.audioGameObjectName);
+		audioData.volume = EditorGUILayout.Slider("Volume", audioData.volume, 0f, 1f);
+		audioData.pitch = EditorGUILayout.Slider("Pitch", audioData.pitch, 0f, 3f);
+		audioData.loop = EditorGUILayout.Toggle("Loop", audioData.loop);
+		audioData.playOnAwake = EditorGUILayout.Toggle("Play On Awake", audioData.playOnAwake);
 
 		EditorGUILayout.Space();
 

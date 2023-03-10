@@ -7,9 +7,6 @@ using UnityEngine;
 public class PopUpDataEditor : Editor
 {
 	#region Serialized Property
-	SerializedProperty m_messageSerializedProperty;
-	SerializedProperty m_isConfrimSerializedProperty;
-	SerializedProperty m_isReadyToCloseSerializedProperty;
 	SerializedProperty m_popUpActionUnityEventSerializedProperty;
 	#endregion
 
@@ -17,9 +14,6 @@ public class PopUpDataEditor : Editor
 	private void OnEnable()
 	{
 		#region Find Serialized Properties
-		m_messageSerializedProperty = serializedObject.FindProperty("m_message");
-		m_isConfrimSerializedProperty = serializedObject.FindProperty("m_isConfrim");
-		m_isReadyToCloseSerializedProperty = serializedObject.FindProperty("m_isReadyToClose");
 		m_popUpActionUnityEventSerializedProperty = serializedObject.FindProperty("m_popUpActionUnityEvent");
 		#endregion
 	}
@@ -45,9 +39,9 @@ public class PopUpDataEditor : Editor
 		GUILayout.Label("Pop Up Data", EditorStyles.boldLabel);
 
 		//User Inputs 
-		EditorGUILayout.PropertyField(m_messageSerializedProperty ,new GUIContent("Message"));
-		EditorGUILayout.PropertyField(m_isConfrimSerializedProperty, new GUIContent("Is Confirm"));
-		EditorGUILayout.PropertyField(m_isReadyToCloseSerializedProperty, new GUIContent("Is Ready To Close"));
+		popUpData.message = EditorGUILayout.TextField("Message", popUpData.message);
+		popUpData.isConfirm = EditorGUILayout.Toggle("Is Confirm", popUpData.isConfirm);
+		popUpData.isReadyToClose = EditorGUILayout.Toggle("Is Ready To Close", popUpData.isReadyToClose);
 
 		EditorGUILayout.Space();
 
