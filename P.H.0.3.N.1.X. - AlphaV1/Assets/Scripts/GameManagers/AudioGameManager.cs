@@ -9,8 +9,8 @@ public class AudioGameManager : MonoBehaviour
 	[SerializeField] private AudioListScriptableObject m_audioListSoundtracks;
 
 	[Header("Game Objects")]
-	[SerializeField] private GameObject SoundEffectsGameObject;
-	[SerializeField] private GameObject SoundtrackGameObject;
+	[SerializeField] private GameObject m_soundEffectsGameObject;
+	[SerializeField] private GameObject m_soundtrackGameObject;
 
     #region Getters and Setters
     private void setAudioScource(AudioDataScriptableObject audioData)
@@ -86,8 +86,8 @@ public class AudioGameManager : MonoBehaviour
     #region Unity Methods
     private void Awake()
     {
-		intializeGameObjects(m_audioListSoundEffects, SoundEffectsGameObject);
-		intializeGameObjects(m_audioListSoundtracks, SoundtrackGameObject);
+		intializeGameObjects(m_audioListSoundEffects, m_soundEffectsGameObject);
+		intializeGameObjects(m_audioListSoundtracks, m_soundtrackGameObject);
     }
     #endregion
 }

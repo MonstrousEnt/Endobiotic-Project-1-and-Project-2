@@ -5,9 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [Header("Components")]
-    [SerializeField] private Rigidbody2D m_rigidBody2D;
     [SerializeField] private PlayerControllerAnimations m_playerAnimation;
-
+    private Rigidbody2D m_rigidBody2D;
     private CharacterInteractionController m_characterInteractionController;
 
     [Header("Global Scriptable Object Variable")]
@@ -18,7 +17,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Vector2 m_movement;
 
     #region Unity Methods
-    private void Start()
+    private void Awake()
     {
         //Initialize Components
         m_rigidBody2D = GetComponent<Rigidbody2D>(); 
