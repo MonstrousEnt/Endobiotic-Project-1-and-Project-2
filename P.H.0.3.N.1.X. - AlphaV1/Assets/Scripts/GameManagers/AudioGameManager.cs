@@ -1,9 +1,22 @@
+/* Project Name: Endobiotic - Project 2: Preparation for Galaxy Edition
+ * Team Name: Monstrous Entertainment - Vex Team
+ * Authors: Daniel Cox
+ * Created Date: February 15, 2023
+ * Last Updated: Match 12, 2023
+ * Description: This is the game manager class for audio.
+ * Notes:
+ * Resources: 
+ *	Unite 2016:  https://youtu.be/6vmRwLYWNRo
+ *	How To Use Scriptable Objects in Unity: https://youtu.be/lJxy3oTZeCs
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioGameManager : MonoBehaviour
 {
+    #region Class Variables 
     [Header("Audio List")]
 	[SerializeField] private AudioListScriptableObject m_audioListSoundEffects;
 	[SerializeField] private AudioListScriptableObject m_audioListSoundtracks;
@@ -11,6 +24,7 @@ public class AudioGameManager : MonoBehaviour
 	[Header("Game Objects")]
 	[SerializeField] private GameObject m_soundEffectsGameObject;
 	[SerializeField] private GameObject m_soundtrackGameObject;
+    #endregion
 
     #region Getters and Setters
     private void setAudioScource(AudioDataScriptableObject audioData)
@@ -28,6 +42,7 @@ public class AudioGameManager : MonoBehaviour
 	{
 		GameObject audioGameObject = new GameObject(audioData.audioGameObjectName);
 		audioGameObject.transform.parent = parentGameObject.transform;
+
 		AudioSource audioSource = audioGameObject.AddComponent<AudioSource>();
 		audioData.source = audioSource;
 	}

@@ -1,7 +1,18 @@
+/* Project Name: Endobiotic - Project 2: Preparation for Galaxy Edition
+ * Team Name: Monstrous Entertainment - Vex Team
+ * Authors: Ben Topple, James Dalziel, Daniel Cox
+ * Created Date: February 13, 2023
+ * Last Updated: Match 12, 2023
+ * Description: This is the class for player animations.
+ * Notes:
+ * Resources: 
+ */
+
 using UnityEngine;
 
 public class PlayerControllerAnimations : BaseControllerAnimations
 {
+    #region Class Variables 
     //To Do create these animations states into Unity Scriptable Object data container
     [Header("Animation States - Destroyer")]
     [SerializeField] private const string m_DEST_ATK_DOWN = "Atk_Down";
@@ -17,6 +28,7 @@ public class PlayerControllerAnimations : BaseControllerAnimations
 
     [Header("Delay or Time")]
     private float m_requiredTime;
+    #endregion
 
     #region Base Controller Animations Override Methods - Player Controller Animations
     protected override void ChangeAnimationState(string newAnimation)
@@ -37,7 +49,6 @@ public class PlayerControllerAnimations : BaseControllerAnimations
     #endregion
 
     #region Animation Methods
-
     /// <summary>
     /// Destroyer Attack animation.
     /// </summary>

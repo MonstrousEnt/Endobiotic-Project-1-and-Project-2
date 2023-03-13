@@ -1,3 +1,15 @@
+/* Project Name: Endobiotic - Project 2: Preparation for Galaxy Edition
+ * Team Name: Monstrous Entertainment - Vex Team
+ * Authors: Daniel Cox
+ * Created Date: March 7, 2023
+ * Last Updated: March 12, 2023
+ * Description: This is the editor class for Scriptable Object ID guild id.
+ * Notes: 
+ * Resources: 
+ *	Fight That OCD (CUSTOM INSPECTOR Unity): https://youtu.be/xFtFWmiW7IE
+ *  
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -6,8 +18,10 @@ using UnityEngine;
 [CustomEditor(typeof(GuildIDScriptableObject), true)]
 public class GuildIdEditor : Editor
 {
-    #region Serialized Property
-    private SerializedProperty m_guilDIDSerializedProperty;
+    #region Class Variables
+        #region Serialized Property
+        private SerializedProperty m_guilDIDSerializedProperty;
+        #endregion
     #endregion
 
     #region Unity Methods
@@ -22,6 +36,7 @@ public class GuildIdEditor : Editor
     #region Custom Editor View
     public override void OnInspectorGUI()
     {
+        //Local Variables
         GuildIDScriptableObject guildID = (GuildIDScriptableObject)target;
 
         //Update the serialized object in the inspector

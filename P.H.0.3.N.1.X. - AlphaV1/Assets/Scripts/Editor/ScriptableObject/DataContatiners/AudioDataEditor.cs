@@ -1,3 +1,15 @@
+/* Project Name: Endobiotic - Project 2: Preparation for Galaxy Edition
+ * Team Name: Monstrous Entertainment - Vex Team
+ * Authors: Daniel Cox
+ * Created Date: March 7, 2023
+ * Last Updated: March 12, 2023
+ * Description: This is the editor class for Scriptable Object data container audio data.
+ * Notes: 
+ * Resources: 
+ *	Fight That OCD (CUSTOM INSPECTOR Unity): https://youtu.be/xFtFWmiW7IE
+ *  
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -6,10 +18,12 @@ using UnityEngine;
 [CustomEditor(typeof(AudioDataScriptableObject), true)]
 public class AudioDataEditor : Editor
 {
-	private AudioSource m_audioPreviewer;
+    #region Class Variables
+    private AudioSource m_audioPreviewer;
+    #endregion
 
-	#region Custom Editor Methods - Buttons
-	private void playPreview(AudioSource source, AudioDataScriptableObject audioData)
+    #region Custom Editor Methods - Buttons
+    private void playPreview(AudioSource source, AudioDataScriptableObject audioData)
 	{
 		source.clip = audioData.clip;
 		source.volume = audioData.volume;
@@ -40,6 +54,7 @@ public class AudioDataEditor : Editor
 	#region Custom Editor View
 	public override void OnInspectorGUI()
 	{
+		//Local Variables
 		AudioDataScriptableObject audioData = (AudioDataScriptableObject)target;
 
 		//Update the serialized object in the inspector

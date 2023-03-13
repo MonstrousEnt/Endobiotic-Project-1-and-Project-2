@@ -1,3 +1,13 @@
+/* Project Name: Endobiotic - Project 2: Preparation for Galaxy Edition
+ * Team Name: Monstrous Entertainment - Vex Team
+ * Authors: James Dalziel, Ben Topple, Daniel Cox
+ * Created Date: February 17, 2023
+ * Last Updated: Match 12, 2023
+ * Description: This is the base class for player and enemy animations.
+ * Notes:
+ * Resources: 
+ */
+
 using UnityEngine;
 
 public class BaseControllerAnimations : MonoBehaviour
@@ -35,10 +45,10 @@ public class BaseControllerAnimations : MonoBehaviour
     #endregion
 
     #region Getters and Setters
-    public void SetAnimator(Animator newAnimator) { m_animator = newAnimator; }
+    public Animator Animator { set { m_animator = value; } }
     #endregion
 
-    #region mini animation manager
+    #region Mini Animation Manager
     /// <summary>
     /// Function to tell the animator to play the animation parameter we give it.
     /// </summary>

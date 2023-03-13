@@ -1,3 +1,14 @@
+/* Project Name: Endobiotic - Project 2: Preparation for Galaxy Edition
+ * Team Name: Monstrous Entertainment - Vex Team
+ * Authors: Daniel Cox
+ * Created Date: March 2, 2023
+ * Last Updated: Match 12, 2023
+ * Description: This is the UI Base class for menus.
+ * Notes: 
+ * Resources: 
+ *  
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +17,7 @@ using UnityEngine.EventSystems;
 
 public class UIMenuBase : UIBase
 {
+    #region Class Variables
     [Header("UI Components")]
     [SerializeField] protected GameObject m_firstButtonGameObject;
 
@@ -26,6 +38,7 @@ public class UIMenuBase : UIBase
     [Header("Game Events Scriptable Object - UI Manger - Pop Up")]
     [SerializeField] protected PopUpDataGameEventScriptableObject m_popUpDataGameEventUIMangerSetPopUpData;
     [SerializeField] protected VoidGameEventScriptableObject m_voidGameEventUIManagerEanblePopUp;
+    #endregion
 
     #region Getters and Setters
     protected void SetFirstButton()

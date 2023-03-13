@@ -1,3 +1,15 @@
+/* Project Name: Endobiotic - Project 2: Preparation for Galaxy Edition
+ * Team Name: Monstrous Entertainment - Vex Team
+ * Authors: Daniel Cox
+ * Created Date: March 7, 2023
+ * Last Updated: March 12, 2023
+ * Description: This is the editor class for Scriptable Object data container pop up data.
+ * Notes: 
+ * Resources: 
+ *	Fight That OCD (CUSTOM INSPECTOR Unity): https://youtu.be/xFtFWmiW7IE
+ *  
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -6,12 +18,14 @@ using UnityEngine;
 [CustomEditor(typeof(PopUpDataScriptableObject), true)]
 public class PopUpDataEditor : Editor
 {
-	#region Serialized Property
-	SerializedProperty m_popUpActionUnityEventSerializedProperty;
-	#endregion
+	#region Class Variables
+		#region Serialized Property
+		SerializedProperty m_popUpActionUnityEventSerializedProperty;
+		#endregion
+    #endregion
 
-	#region Unity Methods
-	private void OnEnable()
+    #region Unity Methods
+    private void OnEnable()
 	{
 		#region Find Serialized Properties
 		m_popUpActionUnityEventSerializedProperty = serializedObject.FindProperty("m_popUpActionUnityEvent");
@@ -22,6 +36,7 @@ public class PopUpDataEditor : Editor
 	#region Custom Editor View
 	public override void OnInspectorGUI()
 	{
+		//Local Variables
 		PopUpDataScriptableObject popUpData = (PopUpDataScriptableObject)target;
 
 		//Update the serialized object in the inspector

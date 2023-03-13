@@ -1,3 +1,14 @@
+/* Project Name: Endobiotic - Project 2: Preparation for Galaxy Edition
+ * Team Name: Monstrous Entertainment - Vex Team
+ * Authors: Daniel Cox
+ * Created Date: March 8, 2023
+ * Last Updated: March 12, 2023
+ * Description: This is the editor class for Scriptable Object List level list.
+ * Notes: 
+ * Resources: 
+ *	Fight That OCD (CUSTOM INSPECTOR Unity): https://youtu.be/xFtFWmiW7IE
+ *  
+ */
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -6,12 +17,14 @@ using UnityEngine;
 [CustomEditor(typeof(LevelListScriptableObject), true)]
 public class LevelListEditor : Editor
 {
-	#region Serialized Property
-	private SerializedProperty m_levelDatasSerializedProperty;
-	#endregion
+    #region Class Variables
+		#region Serialized Property
+		private SerializedProperty m_levelDatasSerializedProperty;
+		#endregion
+    #endregion
 
-	#region Unity Methods
-	private void OnEnable()
+    #region Unity Methods
+    private void OnEnable()
 	{
 		#region Find Serialized Properties
 		m_levelDatasSerializedProperty = serializedObject.FindProperty("m_levelDatas");
@@ -22,6 +35,7 @@ public class LevelListEditor : Editor
 	#region Custom Editor View
 	public override void OnInspectorGUI()
 	{
+		//Local Variables
 		LevelListScriptableObject levelList = (LevelListScriptableObject)target;
 
 		//Update the serialized object in the inspector

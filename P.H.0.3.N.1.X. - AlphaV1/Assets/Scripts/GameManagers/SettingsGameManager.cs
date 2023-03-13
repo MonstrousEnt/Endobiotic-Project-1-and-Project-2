@@ -1,18 +1,31 @@
+/* Project Name: Endobiotic - Project 2: Preparation for Galaxy Edition
+ * Team Name: Monstrous Entertainment - Vex Team
+ * Authors: Daniel Cox
+ * Created Date: February 12, 2023
+ * Last Updated: Match 12, 2023
+ * Description: This is the game manager class for game settings.
+ * Notes: 
+ * Resources: 
+ *	PAUSE MENU in Unity: https://youtu.be/JivuXdrIHK0
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SettingsGameManager : MonoBehaviour
 {
-	[Header("Pause Data")]
+    #region Class Variables
+    [Header("Pause Data")]
 	[SerializeField] private bool m_gameIsPause = false;
 
 	[Header("FPS Data")]
 	[SerializeField] private int m_lockFps = 60;
 	[SerializeField] private int m_fps;
+    #endregion
 
-	#region Getters and Setters
-	private void setFPS(int fps)
+    #region Getters and Setters
+    private void setFPS(int fps)
 	{
 		m_fps = Application.targetFrameRate = fps;
 	}

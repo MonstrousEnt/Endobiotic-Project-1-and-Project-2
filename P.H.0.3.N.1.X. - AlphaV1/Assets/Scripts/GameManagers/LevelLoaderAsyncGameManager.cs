@@ -3,13 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-//Note: Feel free to add a loading screen.
+/* Project Name: Endobiotic - Project 2: Preparation for Galaxy Edition
+ * Team Name: Monstrous Entertainment - Vex Team
+ * Authors: Daniel Cox
+ * Created Date: February 12, 2023
+ * Last Updated: Match 12, 2023
+ * Description: This is the game manager class for level loader async.
+ * Notes: Feel free to add a loading screen.
+ * Resources: 
+ *	Designing a Loading Screen in Unity:https://youtu.be/iXWFTgFNRdM
+ *	How to make a LOADING BAR in Unity: https://youtu.be/YMj2qPq9CP8
+ */
 
 public class LevelLoaderAsyncGameManager : MonoBehaviour
 {
+    #region Class Variables 
+    //Async Operation
     private List<AsyncOperation> scenesLoading = new List<AsyncOperation>();
+    #endregion
 
-    #region Level Loader Game Event
+    #region Level Loader Game Events
     /// <summary>
     /// Added the async operation to the list
     /// Afterwards Load or unload the scene

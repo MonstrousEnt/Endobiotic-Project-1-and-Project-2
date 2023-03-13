@@ -1,9 +1,20 @@
+/* Project Name: Endobiotic - Project 2: Preparation for Galaxy Edition
+ * Team Name: Monstrous Entertainment - Vex Team
+ * Authors: Daniel Cox, James Dalziel,
+ * Created Date: February 12, 2023
+ * Last Updated: Match 12, 2023
+ * Description: This is the class for player controls.
+ * Notes:
+ * Resources: 
+ */
+
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(CharacterInteractionController))]
 public class PlayerController : MonoBehaviour
 {
+    #region Class Variables 
     [Header("Components")]
     [SerializeField] private PlayerControllerAnimations m_playerAnimation;
     private Rigidbody2D m_rigidBody2D;
@@ -15,6 +26,7 @@ public class PlayerController : MonoBehaviour
     [Header("Move")]
     [SerializeField] private float m_moveSpeed = 5;
     [SerializeField] private Vector2 m_movement;
+    #endregion
 
     #region Unity Methods
     private void Awake()

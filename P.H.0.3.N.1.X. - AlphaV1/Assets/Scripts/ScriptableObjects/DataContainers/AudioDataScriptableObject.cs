@@ -1,3 +1,14 @@
+/* Project Name: Endobiotic - Project 2: Preparation for Galaxy Edition
+ * Team Name: Monstrous Entertainment - Vex Team
+ * Authors: Daniel Cox
+ * Created Date: March 3, 2023
+ * Last Updated: Match 12, 2023
+ * Description: This is the scriptable object data container class for audio data.
+ * Notes: 
+ * Resources: 
+ *  Unite Austin 2017 - Game Architecture with Scriptable Objects: https://youtu.be/raQ3iHhE_Kk
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,12 +16,14 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "AudioData", menuName = "Scriptable Objects/Data Containers/Audio Data")]
 public class AudioDataScriptableObject : ScriptableObject
 {
+    #region Class Variables 
     [SerializeField] private AudioClip m_clip;
     [SerializeField] private string m_audioGameObjectName;
     [SerializeField] private float m_volume;
     [SerializeField] private float m_pitch;
     [SerializeField] private bool m_loop;
     [SerializeField] private bool m_playOnAwake = false;
+    #endregion
 
     private AudioSource m_source;
 

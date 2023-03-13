@@ -1,3 +1,15 @@
+/* Project Name: Endobiotic - Project 2: Preparation for Galaxy Edition
+ * Team Name: Monstrous Entertainment - Vex Team
+ * Authors: Daniel Cox
+ * Created Date: March 7, 2023
+ * Last Updated: March 12, 2023
+ * Description: This is the editor class for Scriptable Object Global Variables boolean flags.
+ * Notes: 
+ * Resources: 
+ *	Fight That OCD (CUSTOM INSPECTOR Unity): https://youtu.be/xFtFWmiW7IE
+ *  
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -6,8 +18,10 @@ using UnityEngine;
 [CustomEditor(typeof(BooleanFlagGlobalVariableScriptableObject), true)]
 public class BooleanFlagGlobalVariableEditor : Editor
 {
-    #region Serialized Property
-    private SerializedProperty m_booleanFlagSerializedProperty;
+    #region Class Variables
+        #region Serialized Property
+        private SerializedProperty m_booleanFlagSerializedProperty;
+        #endregion
     #endregion
 
     #region Unity Methods
@@ -22,9 +36,9 @@ public class BooleanFlagGlobalVariableEditor : Editor
     #region Custom Editor View
     public override void OnInspectorGUI()
     {
+        //Local Varabiles
         BooleanFlagGlobalVariableScriptableObject booleanFlagGlobalVariable = (BooleanFlagGlobalVariableScriptableObject)target;
 
-        //Update the serialized object in the inspector
         serializedObject.Update();
 
         //Script reference
