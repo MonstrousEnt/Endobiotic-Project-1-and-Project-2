@@ -53,7 +53,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a030b7d74a9c21a48a431dbce89617dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 2
+  m_duration: 2
 --- !u!114 &2436050613240456567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,13 +78,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f74a8284aa31fa9498d8819a05bbffb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  formColours:
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 0.78961587, b: 0, a: 1}
   formObjects:
   - {fileID: 8008747214219758970}
   - {fileID: 5805144852400396636}
