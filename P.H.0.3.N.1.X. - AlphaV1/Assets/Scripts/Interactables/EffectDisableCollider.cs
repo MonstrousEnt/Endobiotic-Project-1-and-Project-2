@@ -1,11 +1,21 @@
 using System.Collections;
 using UnityEngine;
 
+/// <summary>
+/// This effect class is for disable a Collier 2D of any game object.
+/// </summary>
+
 public class EffectDisableCollider : MonoBehaviour
 {
+    #region Class Variables
+    [Header("Delay")]
     [SerializeField] private float m_delay = 0;
-    [SerializeField] private Collider2D m_collider;
 
+    [Header("Collier 2D")]
+    [SerializeField] private Collider2D m_collider;
+    #endregion
+
+    #region Disable Collier Methods
     public void DisableCollider()
     {
         if(m_collider != null)
@@ -20,4 +30,5 @@ public class EffectDisableCollider : MonoBehaviour
 
         m_collider.enabled = false;
     }
+    #endregion
 }

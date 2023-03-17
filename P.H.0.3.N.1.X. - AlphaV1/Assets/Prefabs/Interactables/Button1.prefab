@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 4129920993213651277}
   - component: {fileID: 8708430737686561242}
   - component: {fileID: 3535789042381489474}
+  - component: {fileID: 5651518603595754347}
+  - component: {fileID: 4175312059011287921}
   m_Layer: 0
   m_Name: Button1
   m_TagString: Interactable
@@ -168,9 +170,45 @@ MonoBehaviour:
   onActivated:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: EffectDisableObject, Assembly-CSharp
+        m_MethodName: DisableObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 3535789042381489474}
         m_TargetAssemblyTypeName: DisableColliderObjective, Assembly-CSharp
         m_MethodName: DisableCollider
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5651518603595754347}
+        m_TargetAssemblyTypeName: EffectAddPoints, Assembly-CSharp
+        m_MethodName: AddPoints
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4175312059011287921}
+        m_TargetAssemblyTypeName: EffectAudioManagerGameEvent, Assembly-CSharp
+        m_MethodName: PlaySound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -219,4 +257,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01b23455ffd7e2d418ada919d5bbe296, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_delay: 0
   m_collider: {fileID: 8708430737686561242}
+--- !u!114 &5651518603595754347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4631313539986442518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 827d2d026522ff746b7a3caab61678fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  piontData: {fileID: 11400000, guid: 094879545efa3564391b213baca8ac92, type: 2}
+  pointList: {fileID: 11400000, guid: 4c7053bf12bd96f4892ad360aac32887, type: 2}
+  currPuzzlePointsList: 0
+--- !u!114 &4175312059011287921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4631313539986442518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21cc3a77b669d3649978a271e3c0e00d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_audioData: {fileID: 11400000, guid: bd82d0058d6ec124998be356bb9408bf, type: 2}
+  m_audioList: {fileID: 0}
+  m_audioManagerGameEventPlaySound: {fileID: 11400000, guid: 6618bbfd17f8eee41b477713af5522cb, type: 2}
+  m_audioManagerGameEventPlayRandomSound: {fileID: 11400000, guid: e24001ae93e8c2f4596ea861f7deadab, type: 2}
+  m_audioManagerGameEventStopSound: {fileID: 11400000, guid: af88926902e244844bbedcd2da002f06, type: 2}
+  m_audioManagerGameEventEnableLoop: {fileID: 11400000, guid: d1badcf1f4061724f8c8685fe1161557, type: 2}
+  m_audioManagerGameEventDisableLoop: {fileID: 11400000, guid: 55d52c95cb4b6c147aa8fd97814dfc01, type: 2}
