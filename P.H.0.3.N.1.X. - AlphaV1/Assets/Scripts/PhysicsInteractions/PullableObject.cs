@@ -6,10 +6,13 @@ public class PullableObject : MonoBehaviour
     private Rigidbody2D rigidBody2D;
     private GameObject character;
 
+    [SerializeField] private TagDataScriptableObject tagDataPlayer;
+
     private void Awake()
     {
         rigidBody2D = GetComponent<Rigidbody2D>();
-        character = GameObject.FindGameObjectWithTag("Player");
+        Debug.Log("Here");
+        character = GameObject.FindGameObjectWithTag(tagDataPlayer.tagName);
     }
 
     public void AddForce()

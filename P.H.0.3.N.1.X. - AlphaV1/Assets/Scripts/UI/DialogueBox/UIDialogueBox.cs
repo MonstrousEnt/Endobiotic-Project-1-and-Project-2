@@ -21,8 +21,8 @@ public class UIDialogueBox : MonoBehaviour
 
     private void Awake()
     {
-        GameMangerRootMaster.instance.uIEvents.setDialogueDataUnityEvent.AddListener(setDialogueData);
-        GameMangerRootMaster.instance.uIEvents.activeDialogueBoxUnityEvent.AddListener(activeDialogueBox);
+        //GameMangerRootMaster.instance.uIEvents.setDialogueDataUnityEvent.AddListener(setDialogueData);
+        //GameMangerRootMaster.instance.uIEvents.activeDialogueBoxUnityEvent.AddListener(activeDialogueBox);
     }
 
     private void Update()
@@ -46,8 +46,8 @@ public class UIDialogueBox : MonoBehaviour
 
     private void OnDestroy()
     {
-        GameMangerRootMaster.instance.uIEvents.setDialogueDataUnityEvent.RemoveListener(setDialogueData);
-        GameMangerRootMaster.instance.uIEvents.activeDialogueBoxUnityEvent.RemoveListener(activeDialogueBox);
+        //GameMangerRootMaster.instance.uIEvents.setDialogueDataUnityEvent.RemoveListener(setDialogueData);
+       //GameMangerRootMaster.instance.uIEvents.activeDialogueBoxUnityEvent.RemoveListener(activeDialogueBox);
     }
 
     private void setDialogueData(DialogueData dialogueData)
@@ -60,7 +60,7 @@ public class UIDialogueBox : MonoBehaviour
 
     private void activeDialogueBox(bool activeFlag)
     {
-        GameMangerRootMaster.instance.playerManager.DisableCharacterControls();
+        //GameMangerRootMaster.instance.playerManager.DisableCharacterControls();
 
         mainWindowGameObject.SetActive(activeFlag);
 
@@ -142,6 +142,6 @@ public class UIDialogueBox : MonoBehaviour
     {
         mainWindowGameObject.SetActive(false);
 
-        GameMangerRootMaster.instance.playerManager.EnableCharacterControls();
+        //GameMangerRootMaster.instance.playerManager.EnableCharacterControls();
     }
 }

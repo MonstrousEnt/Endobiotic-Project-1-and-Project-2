@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(CharacterFormsController))]
 public class CharacterInteractionController : MonoBehaviour
@@ -11,10 +12,15 @@ public class CharacterInteractionController : MonoBehaviour
 
     [SerializeField] private GameObject deathPrefab;
     [SerializeField] private ParticleSystem riseAgainParticles;
-    [SerializeField] private SoundData soundDataPlayerDeath;
+    [SerializeField] private UnityEvent soundEffectUnityEvent;
 
     [SerializeField] private float invulTime = 1f;
     private float invulTimer;
+
+    [SerializeField] private TagDataScriptableObject tagDataEnemy;
+    [SerializeField] private TagDataScriptableObject tagDataInteractable;
+
+    [SerializeField] private BooleanFlagGlobalVariableScriptableObject m_booleanFlagGlobalVariablePlayerCanMove;
 
     private void Awake()
     {
@@ -33,15 +39,15 @@ public class CharacterInteractionController : MonoBehaviour
         if (invulTimer > Time.time)
             return;
 
-        if (collision.collider.CompareTag("Enemy") && collision.collider.GetComponent<CharacterFormsController>().currForm == Form.Crab && characterFormsController.currForm == Form.Destroyer)
+        if (collision.collider.CompareTag(tagDataEnemy.tagName) && collision.collider.GetComponent<CharacterFormsController>().currForm == Form.Crab && characterFormsController.currForm == Form.Destroyer)
         {
             return;
         }
-        else if (collision.collider.CompareTag("Enemy") && collision.collider.GetComponent<CharacterFormsController>().currForm == Form.Crab)
+        else if (collision.collider.CompareTag(tagDataEnemy.tagName) && collision.collider.GetComponent<CharacterFormsController>().currForm == Form.Crab)
         {
             Respawn();
         }
-        else if (collision.collider.CompareTag("Enemy") && characterFormsController.currForm != collision.collider.GetComponent<CharacterFormsController>().currForm)
+        else if (collision.collider.CompareTag(tagDataEnemy.tagName) && characterFormsController.currForm != collision.collider.GetComponent<CharacterFormsController>().currForm)
         {
             RespawnAsNewForm(collision.collider.GetComponent<CharacterFormsController>().currForm, collision.collider.transform.position);
             collision.collider.GetComponent<EnemyInteraction>().DestroyEnemy();
@@ -50,7 +56,7 @@ public class CharacterInteractionController : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Interactable") || collision.CompareTag("Enemy"))
+        if (collision.CompareTag(tagDataInteractable.tagName) || collision.CompareTag(tagDataEnemy.tagName))
         {
             if(collision.TryGetComponent(out Interactable interactable))
             {
@@ -80,12 +86,14 @@ public class CharacterInteractionController : MonoBehaviour
     private void RespawnAsNewForm(Form newForm, Vector3 position)
     {
         characterItemHolder.DropItem();
-        GameMangerRootMaster.instance.playerManager.DisableCharacterControls();
+        m_booleanFlagGlobalVariablePlayerCanMove.DisableBooleanFlag();
         GameObject deathInstance = Instantiate(deathPrefab, transform.position, Quaternion.identity);
         deathInstance.GetComponent<CharacterFormsController>().ChangeForm(characterFormsController.currForm);  // These were firing before Start() on deathInstance.  Weird.
         deathInstance.GetComponent<CharacterDeathController>().Die();
         riseAgainParticles.Play();
-        GameMangerRootMaster.instance.audioManager.PlayAudio(soundDataPlayerDeath);
+
+        soundEffectUnityEvent.Invoke();
+
         characterFormsController.ChangeForm(newForm);
         transform.position = position;
         StartCoroutine(WaitWhileDead(2));
@@ -107,6 +115,6 @@ public class CharacterInteractionController : MonoBehaviour
     private IEnumerator WaitWhileDead(float duration)
     {
         yield return new WaitForSeconds(duration);
-        GameMangerRootMaster.instance.playerManager.EnableCharacterControls();
+        m_booleanFlagGlobalVariablePlayerCanMove.EnableBoolFlag();
     }
 }

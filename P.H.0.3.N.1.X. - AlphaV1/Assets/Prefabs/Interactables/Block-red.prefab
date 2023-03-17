@@ -159,7 +159,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d4f02ab5e2af7e4da90fcfaa4710662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundDataSolvePuzzle: {fileID: 11400000, guid: 623be40336174cc4286318a2c9d626e2, type: 2}
   piontDataDoors: {fileID: 11400000, guid: 094879545efa3564391b213baca8ac92, type: 2}
   pointList: {fileID: 11400000, guid: 4c7053bf12bd96f4892ad360aac32887, type: 2}
   currPuzzlePointsList: 0
+  soundEffectUnityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 6618bbfd17f8eee41b477713af5522cb, type: 2}
+        m_TargetAssemblyTypeName: AudioDataGameEventScriptableObject, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: bd82d0058d6ec124998be356bb9408bf, type: 2}
+          m_ObjectArgumentAssemblyTypeName: AudioDataScriptableObject, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

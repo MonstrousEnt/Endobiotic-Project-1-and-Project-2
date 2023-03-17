@@ -106,9 +106,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a0b30bcd3f68424788ba969aa77838d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentAnimaton: 
-  LastMoveDir: D
-  turnThresholdMoveY: 0.71
 --- !u!114 &759186879241046267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,8 +120,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathPrefab: {fileID: 8873812475364736337, guid: 6d221463cad3d3848b72662c2a44a771, type: 3}
   riseAgainParticles: {fileID: 4648500904063570242}
-  soundDataPlayerDeath: {fileID: 11400000, guid: 9c262e3b02875eb43b93d5e01b543c18, type: 2}
+  soundEffectUnityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 6618bbfd17f8eee41b477713af5522cb, type: 2}
+        m_TargetAssemblyTypeName: AudioDataGameEventScriptableObject, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 9a37966d337736947ac6058a11abb821, type: 2}
+          m_ObjectArgumentAssemblyTypeName: AudioDataScriptableObject, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   invulTime: 0.5
+  tagDataEnemy: {fileID: 11400000, guid: 94bd01555d6c0a64aa892d4ecc40bd7a, type: 2}
+  tagDataInteractable: {fileID: 11400000, guid: 0d1e0d57ef54aa54fac70f955397111c, type: 2}
+  m_booleanFlagGlobalVariablePlayerCanMove: {fileID: 11400000, guid: cb6522342c9d38243a7fb7bfc803cb25, type: 2}
 --- !u!114 &759186879241046266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,11 +151,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 166a1ba85fe282d48b859f0ae901f7d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidBody2D: {fileID: 759186879241046264}
-  animator: {fileID: 0}
-  playerAnimation: {fileID: 4398488082201832907}
-  moveSpeed: 3
-  movement: {x: 0, y: 0}
+  m_rigidBody2D: {fileID: 0}
+  m_playerAnimation: {fileID: 4398488082201832907}
+  m_booleanFlagGlobalVariablePlayerCanMove: {fileID: 11400000, guid: cb6522342c9d38243a7fb7bfc803cb25, type: 2}
+  m_moveSpeed: 3
+  m_movement: {x: 0, y: 0}
 --- !u!114 &1972234326682734799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,6 +181,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feaf9d92baa47484897f4d470659bd41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_booleanFlagGlobalVariableUIManagerPauseMenuIsActive: {fileID: 11400000, guid: 5ab18ef0d5fb1aa4a8233cc4cc56f120, type: 2}
+  m_voidGameEventUIManagerEnablePauseMneu: {fileID: 11400000, guid: 3a9c2d3ee6753434db02fa6ba38d6ef7, type: 2}
+  m_voidGameEventUIManagerDisablePauseMneu: {fileID: 11400000, guid: 800d4c1c926b244459fde588e65ab6ff, type: 2}
 --- !u!70 &580835355768018660
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

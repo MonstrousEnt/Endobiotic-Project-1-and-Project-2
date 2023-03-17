@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -20,9 +21,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private List<GameObject> userSpawnedRobots = new List<GameObject>();
     private Dictionary<GameObject, Robot> trackedRobots = new Dictionary<GameObject, Robot>();
 
-    [SerializeField] private SoundData soundDataSpawner1;
-    [SerializeField] private SoundData soundDataSpawner2;
-    [SerializeField] private SoundData soundDataSpawner3;
+    [SerializeField] private UnityEvent soundEffectUnityEvent;
 
     private List<GameObject> EnemyFormList;
 
@@ -78,7 +77,7 @@ public class EnemySpawner : MonoBehaviour
         newEnemy.GetComponent<EnemyInteraction>().deathEvent.AddListener(UpdateCurrentRobotsList);
         newEnemy.GetComponent<EnemyController>().UpdatePreferredPosition(robot.m_position);
 
-        RandomSpawnerSound();
+        soundEffectUnityEvent.Invoke();
     }
 
     private void LoadUserSpawnedRobots()
@@ -91,31 +90,9 @@ public class EnemySpawner : MonoBehaviour
 
             robot.GetComponent<EnemyInteraction>().deathEvent.AddListener(UpdateCurrentRobotsList);
         }
-    } 
-
-    private void RandomSpawnerSound()
-    {
-        //Get a random number
-        int randNum = Random.Range(1, 4);
-
-        //Pick a jump sound
-        switch (randNum)
-        {
-            case 1:
-                //Play the jump sound 1
-                GameMangerRootMaster.instance.audioManager.PlayAudio(soundDataSpawner1);
-                break;
-            case 2:
-                //Play the jump sound 2
-                GameMangerRootMaster.instance.audioManager.PlayAudio(soundDataSpawner2);
-                break;
-            case 3:
-                //Play the jump sound 3
-                GameMangerRootMaster.instance.audioManager.PlayAudio(soundDataSpawner3);
-                break;
-        }
     }
 }
+
 
 public struct Robot
 {

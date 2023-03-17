@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec367c84a7961349af0c8b3cfceb089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_voidGameEventUIManagerEnableTryMenu: {fileID: 11400000, guid: 4865a33ad2bab7d4288f4c5e45aa3129, type: 2}
 --- !u!61 &4026330894242901037
 BoxCollider2D:
   m_ObjectHideFlags: 0

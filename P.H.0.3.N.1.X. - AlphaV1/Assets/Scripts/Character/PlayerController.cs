@@ -1,65 +1,99 @@
+/* Project Name: Endobiotic - Project 2: Preparation for Galaxy Edition
+ * Team Name: Monstrous Entertainment - Vex Team
+ * Authors: Daniel Cox, James Dalziel,
+ * Created Date: February 12, 2023
+ * Last Updated: Match 12, 2023
+ * Description: This is the class for player controls.
+ * Notes:
+ * Resources: 
+ */
+
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(CharacterInteractionController))]
 public class PlayerController : MonoBehaviour
 {
+    #region Class Variables 
     [Header("Components")]
-    [SerializeField] private Rigidbody2D rigidBody2D;
-    [SerializeField] private Animator animator;
-    [SerializeField] private PlayerControllerAnimations playerAnimation;
-    private CharacterInteractionController characterInteractionController;
+    [SerializeField] private PlayerControllerAnimations m_playerAnimation;
+    private Rigidbody2D m_rigidBody2D;
+    private CharacterInteractionController m_characterInteractionController;
+
+    [Header("Global Scriptable Object Variable")]
+    [SerializeField] private BooleanFlagGlobalVariableScriptableObject m_booleanFlagGlobalVariablePlayerCanMove;
 
     [Header("Move")]
-    [SerializeField] private float moveSpeed = 5;
-    [SerializeField] private Vector2 movement;
+    [SerializeField] private float m_moveSpeed = 5;
+    [SerializeField] private Vector2 m_movement;
+    #endregion
 
-
-    void Start()
+    #region Unity Methods
+    private void Awake()
     {
-        rigidBody2D = GetComponent<Rigidbody2D>(); //For move functions
-        characterInteractionController = GetComponent<CharacterInteractionController>();
+        //Initialize Components
+        m_rigidBody2D = GetComponent<Rigidbody2D>(); 
+        m_characterInteractionController = GetComponent<CharacterInteractionController>();
     }
 
-    void Update()
+    private void Update()
     {
-        if (GameMangerRootMaster.instance.playerManager.CanMove())
-        {
-            //Get the move directions (Up (y +1), Down (y -1), Left (x +1), and Right (x -1))
-            movement.x = Input.GetAxis("Horizontal");
-            movement.y = Input.GetAxis("Vertical");
-        }
-
-        if (Input.GetButton("FormAction"))
-        {
-            Interact();
-        }
+        inputs();
     }
 
     private void FixedUpdate()
     {
-        if (GameMangerRootMaster.instance.playerManager.CanMove())
+        //If the player can't move
+        if (!m_booleanFlagGlobalVariablePlayerCanMove.booleanFlag)
         {
-            rigidBody2D.velocity = new Vector2(movement.x * moveSpeed, movement.y * moveSpeed);
-
-            Move();
+            //Stop the movement
+            m_rigidBody2D.velocity = Vector2.zero;
         }
-        else if (!GameMangerRootMaster.instance.playerManager.CanMove())
+        //Otherwise move the player
+        else if (m_booleanFlagGlobalVariablePlayerCanMove.booleanFlag)
         {
-            rigidBody2D.velocity = Vector2.zero;
+            move();
+        }
+    }
+    #endregion
+
+    #region C# Methods
+    /// <summary>
+    /// The player inputs for moving and form action.
+    /// </summary>
+    private void inputs()
+    {
+        //If the player can move.
+        if (m_booleanFlagGlobalVariablePlayerCanMove.booleanFlag)
+        {
+            //Get the move directions (Up (y +1), Down (y -1), Left (x +1), and Right (x -1)) for user input.
+            m_movement.x = Input.GetAxis("Horizontal");
+            m_movement.y = Input.GetAxis("Vertical");
+
+            //When the user press e or X on Xbox. 
+            if (Input.GetButton("FormAction"))
+            {
+                //Interact with the maze blocks.
+                interact();
+            }
         }
     }
 
-    private void Move()
+    /// <summary>
+    /// Move the player.
+    /// </summary>
+    private void move()
     {
-        //if player can move:
-        playerAnimation.MovementAnimation(movement);
+        m_rigidBody2D.velocity = new Vector2(m_movement.x * m_moveSpeed, m_movement.y * m_moveSpeed);
+        m_playerAnimation.CallMovementAnimation(m_movement);
     }
 
-    private void Interact()
+    /// <summary>
+    /// Interact with the maze blocks
+    /// </summary>
+    private void interact()
     {
-        characterInteractionController.Interact();
+        m_characterInteractionController.Interact();
     }
-
-        
+    #endregion
 }

@@ -280,6 +280,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4866575524029180366}
   - component: {fileID: 4866575524029180367}
+  - component: {fileID: 8838083921143418719}
+  - component: {fileID: 7917671090807509783}
+  - component: {fileID: 672316369287964556}
   m_Layer: 5
   m_Name: Pop Up
   m_TagString: Untagged
@@ -321,12 +324,96 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f98ea85e01dc084db79ef56b46594e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popUpData: {fileID: 0}
-  MainWindowGameObject: {fileID: 4866575525421341017}
-  messgesTextBox: {fileID: 4866575524196978899}
-  YesButtonGameObject: {fileID: 4866575525028407531}
-  NoButtonGameObject: {fileID: 4866575524669948298}
-  popUpFirstButton: {fileID: 4866575525028407531}
+  m_mainWindowGameObject: {fileID: 4866575525421341017}
+  m_messgesTextBox: {fileID: 4866575524196978899}
+  m_yesButtonGameObject: {fileID: 4866575525028407531}
+  m_NoButtonGameObject: {fileID: 4866575524669948298}
+  m_popUpFirstButton: {fileID: 4866575525028407531}
+  m_popUpData: {fileID: 0}
+--- !u!114 &8838083921143418719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4866575524029180353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5fe667223692364a879c86229195665, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_gameEvent: {fileID: 11400000, guid: 29a6c36849ca25a40b9c666c995382c3, type: 2}
+  m_respone:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4866575524029180367}
+        m_TargetAssemblyTypeName: UIPopUp, Assembly-CSharp
+        m_MethodName: SetPopUpData
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7917671090807509783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4866575524029180353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 754b8f215484b2546b48331b8f4cd2f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_gameEvent: {fileID: 11400000, guid: 7ef7add07fa35104bbed2ad203302e7f, type: 2}
+  m_respone:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4866575524029180367}
+        m_TargetAssemblyTypeName: UIPopUp, Assembly-CSharp
+        m_MethodName: EnablePopUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &672316369287964556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4866575524029180353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 754b8f215484b2546b48331b8f4cd2f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_gameEvent: {fileID: 11400000, guid: 9c47f84585b9fe74ba72decc290dbc3e, type: 2}
+  m_respone:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4866575524029180367}
+        m_TargetAssemblyTypeName: UIPopUp, Assembly-CSharp
+        m_MethodName: DisablePopUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4866575524185407149
 GameObject:
   m_ObjectHideFlags: 0

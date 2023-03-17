@@ -1,33 +1,60 @@
+/* Project Name: Endobiotic - Project 2: Preparation for Galaxy Edition
+ * Team Name: Monstrous Entertainment - Vex Team
+ * Authors: Daniel Cox
+ * Created Date: February 12, 2023
+ * Last Updated: Match 12, 2023
+ * Description: This is the game manager class for game settings.
+ * Notes: 
+ * Resources: 
+ *	PAUSE MENU in Unity: https://youtu.be/JivuXdrIHK0
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SettingsGameManager : MonoBehaviour
 {
-	[SerializeField] private int fps;
-	[SerializeField] bool gameIsPause = false;
+    #region Class Variables
+    [Header("Pause Data")]
+	[SerializeField] private bool m_gameIsPause = false;
 
+	[Header("FPS Data")]
+	[SerializeField] private int m_lockFps = 60;
+	[SerializeField] private int m_fps;
+    #endregion
+
+    #region Getters and Setters
+    private void setFPS(int fps)
+	{
+		m_fps = Application.targetFrameRate = fps;
+	}
+	private void disableVsync()
+	{
+		QualitySettings.vSyncCount = 0;
+	}
+	#endregion
+
+	#region Settings Game Events
+	public void EnablePause()
+	{
+		m_gameIsPause = true;
+		Time.timeScale = 0f;
+	}
+	public void DisablePause()
+	{
+		m_gameIsPause = false;
+		Time.timeScale = 1f;
+	}
+	#endregion
+
+	#region Unity Methods
 	private void Start()
 	{
-		//Unpause the game
-		ActivePause(false, 1f);
-
-		//Locks FPS to 60.
-		FPSLock();
+		DisablePause();
+		disableVsync();
+		setFPS(m_lockFps);
 	}
+    #endregion
 
-	private void FPSLock()
-	{
-		//Disable vSync.
-		QualitySettings.vSyncCount = 0;
-
-		//Setting application frame rate.
-		Application.targetFrameRate = fps;
-	}
-
-	public void ActivePause(bool flag, float timeScale)
-	{
-		gameIsPause = flag;
-		Time.timeScale = timeScale;
-	}
 }

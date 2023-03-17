@@ -8,8 +8,8 @@ public class UITriggerDialogueBox : MonoBehaviour
 
     private void triggerDialogueBox()
     {
-        GameMangerRootMaster.instance.uIEvents.InvokeSetDialogueDataUnityEvent(dialogueData);
-        GameMangerRootMaster.instance.uIEvents.InvokeActiveDialogueBoxUnityEvent(true);
+        //GameMangerRootMaster.instance.uIEvents.InvokeSetDialogueDataUnityEvent(dialogueData);
+        //GameMangerRootMaster.instance.uIEvents.InvokeActiveDialogueBoxUnityEvent(true);
     }
 
     private void Update()

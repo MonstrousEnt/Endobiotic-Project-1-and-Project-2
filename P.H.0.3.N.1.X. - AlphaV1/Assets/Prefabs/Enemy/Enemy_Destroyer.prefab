@@ -23,6 +23,10 @@ PrefabInstance:
       propertyPath: intialForm
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 5974273130741917466, guid: 59f54ee31f9c77142b6ecf369dd23689, type: 3}
+      propertyPath: tagDataPlayer
+      value: 
+      objectReference: {fileID: 11400000, guid: 97e23a7b4f500024ca057a7b4d55d00c, type: 2}
     - target: {fileID: 5974273130741917467, guid: 59f54ee31f9c77142b6ecf369dd23689, type: 3}
       propertyPath: m_RootOrder
       value: 0
