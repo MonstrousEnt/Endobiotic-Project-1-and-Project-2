@@ -15,16 +15,16 @@ public class PlayerControllerAnimations : BaseControllerAnimations
     #region Class Variables 
     //To Do create these animations states into Unity Scriptable Object data container
     [Header("Animation States - Destroyer")]
-    [SerializeField] private const string m_DEST_ATK_DOWN = "Atk_Down";
-    [SerializeField] private const string m_DEST_ATK_UP = "Atk_Up";
-    [SerializeField] private const string m_DEST_ATK_LEFT = "Atk_Left";
-    [SerializeField] private const string m_DEST_ATK_RIGHT = "Atk_Right";
+    [SerializeField] private string m_DEST_ATK_DOWN = "Atk_Down";
+    [SerializeField] private string m_DEST_ATK_UP = "Atk_Up";
+    [SerializeField] private string m_DEST_ATK_LEFT = "Atk_Left";
+    [SerializeField] private string m_DEST_ATK_RIGHT = "Atk_Right";
 
     [Header("Animation States - Magnetic")]
-    [SerializeField] private const string m_MAGNET_PULL_DOWN = "Pull_Down";
-    [SerializeField] private const string m_MAGNET_PULL_UP = "Pull_Up";
-    [SerializeField] private const string m_MAGNET_PULL_LEFT = "Pull_Left";
-    [SerializeField] private const string m_MAGNET_PULL_RIGHT = "Pull_Right";
+    [SerializeField] private string m_MAGNET_PULL_DOWN = "Pull_Down";
+    [SerializeField] private string m_MAGNET_PULL_UP = "Pull_Up";
+    [SerializeField] private string m_MAGNET_PULL_LEFT = "Pull_Left";
+    [SerializeField] private string m_MAGNET_PULL_RIGHT = "Pull_Right";
 
     [Header("Delay or Time")]
     private float m_requiredTime;
@@ -35,7 +35,9 @@ public class PlayerControllerAnimations : BaseControllerAnimations
     {
         //check to see if the delay is in effect
         if (m_requiredTime > Time.time)
+        {
             return;
+        }
 
         base.ChangeAnimationState(newAnimation);
     }

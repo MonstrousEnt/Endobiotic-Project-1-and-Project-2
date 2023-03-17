@@ -32,16 +32,16 @@ public class BaseControllerAnimations : MonoBehaviour
 
     //To Do create these animations states into Unity Scriptable Object data container
     [Header("Animation States - Idle")] 
-    [SerializeField] protected const string m_IDLE_DOWN = "Idle_Down";
-    [SerializeField] protected const string m_IDLE_UP = "Idle_Up";
-    [SerializeField] protected const string m_IDLE_LEFT = "Idle_Left";
-    [SerializeField] protected const string m_IDLE_RIGHT = "Idle_Right";
+    [SerializeField] protected string m_IDLE_DOWN = "Idle_Down";
+    [SerializeField] protected string m_IDLE_UP = "Idle_Up";
+    [SerializeField] protected string m_IDLE_LEFT = "Idle_Left";
+    [SerializeField] protected string m_IDLE_RIGHT = "Idle_Right";
 
     [Header("Animation States - Walk")]
-    [SerializeField] protected const string m_WALK_DOWN = "Walk_Down";
-    [SerializeField] protected const string m_WALK_UP = "Walk_Up";
-    [SerializeField] protected const string m_WALK_LEFT = "Walk_Left";
-    [SerializeField] protected const string m_WALK_RIGHT = "Walk_Right";
+    [SerializeField] protected string m_WALK_DOWN = "Walk_Down";
+    [SerializeField] protected string m_WALK_UP = "Walk_Up";
+    [SerializeField] protected string m_WALK_LEFT = "Walk_Left";
+    [SerializeField] protected string m_WALK_RIGHT = "Walk_Right";
     #endregion
 
     #region Getters and Setters
