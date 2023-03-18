@@ -6358,6 +6358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad778b445965c9d43b87c2b61ebb37cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tagDataPlayer: {fileID: 11400000, guid: 97e23a7b4f500024ca057a7b4d55d00c, type: 2}
 --- !u!4 &6131118129839637682 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5827706996579929666, guid: fccefa9843e890d4cbac830b8d889f74, type: 3}

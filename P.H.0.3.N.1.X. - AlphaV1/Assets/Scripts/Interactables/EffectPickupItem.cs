@@ -9,6 +9,9 @@ using UnityEngine;
 public class EffectPickupItem : MonoBehaviour
 {
     #region Class Variables
+    [Header("Tag Scriptable Object")]
+    [SerializeField] private TagDataScriptableObject tagDataPlayer;
+
     //Components
     private SpriteRenderer spriteRenderer;
     private Interactable interactable;
@@ -20,7 +23,8 @@ public class EffectPickupItem : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         interactable = GetComponent<Interactable>();
-        characterItemHolder = FindObjectOfType<CharacterItemHolder>(); //hard-core reference, this could be a Singleton or direct input form a game event
+
+        characterItemHolder = GameObject.FindGameObjectWithTag(tagDataPlayer.tagName).GetComponent<CharacterItemHolder>();  
     }
     #endregion
 
