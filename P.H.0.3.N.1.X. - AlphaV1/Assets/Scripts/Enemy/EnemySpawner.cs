@@ -5,6 +5,8 @@ using UnityEngine.Events;
 
 public class EnemySpawner : MonoBehaviour
 {
+    #region Class Variables
+    [Header("Form Prefab")]
     [SerializeField] private GameObject ManipulatorPrefab;
     [SerializeField] private GameObject TransportPrefab;
     [SerializeField] private GameObject MagneticPrefab;
@@ -13,25 +15,46 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private GameObject BatteryPrefab;
     [SerializeField] private GameObject CrabPrefab;
 
-    [SerializeField] private float spawnInterval = 5.0f;
+    //Prefab List
+    private List<GameObject> EnemyFormList;
 
+    [Header("Spawner Data")]
+    [SerializeField] private float spawnInterval = 5.0f;
     [SerializeField] private float spawnDistanceX;
     [SerializeField] private float spawnDistanceY;
 
+    [Header("Robots List")]
     [SerializeField] private List<GameObject> userSpawnedRobots = new List<GameObject>();
     private Dictionary<GameObject, Robot> trackedRobots = new Dictionary<GameObject, Robot>();
 
+    [Header("Sound Unity Event")]
     [SerializeField] private UnityEvent soundEffectUnityEvent;
 
-    private List<GameObject> EnemyFormList;
+    #region Struts
+    public struct Robot
+    {
+        public Robot(Form form, Vector3 position)
+        {
+            m_form = form;
+            m_position = position;
+        }
 
+        public Form m_form;
+        public Vector3 m_position;
+    }
+    #endregion
 
+    #endregion
+
+    #region Unity Methods
     private void Start()
     {
         StartCoroutine(initialize());
         LoadRobotList();
     }
+    #endregion
 
+    #region AI Methods
     public void UpdateCurrentRobotsList(GameObject caller)
     {
         StartCoroutine(SpawnRobot(new Robot(trackedRobots[caller].m_form, trackedRobots[caller].m_position)));
@@ -60,6 +83,8 @@ public class EnemySpawner : MonoBehaviour
     private IEnumerator SpawnRobot(Robot robot)
     {
         yield return new WaitForSeconds(spawnInterval);
+
+        //TO DO: Might need a pool system
 
         GameObject newEnemy = Instantiate(
             EnemyFormList[(int)robot.m_form],
@@ -91,17 +116,5 @@ public class EnemySpawner : MonoBehaviour
             robot.GetComponent<EnemyInteraction>().deathEvent.AddListener(UpdateCurrentRobotsList);
         }
     }
-}
-
-
-public struct Robot
-{
-    public Robot(Form form, Vector3 position)
-    {
-        m_form = form;
-        m_position = position;
-    }
-
-    public Form m_form;
-    public Vector3 m_position;
+    #endregion
 }
