@@ -117,7 +117,7 @@ public class Interactable : MonoBehaviour, IPrerequisite
     /// <returns></returns>
     private bool CheckIfPrerequisitesMet()
     {
-        if(prerequisites.Count <= 0)
+        if(prerequisites.Length <= 0)
         {
             return true;
         }
@@ -125,7 +125,7 @@ public class Interactable : MonoBehaviour, IPrerequisite
         {
             bool returnValue = true;
 
-            for (int i = 0; i < prerequisites.Count; i++)
+            for (int i = 0; i < prerequisites.Length; i++)
             {
                 if (!prerequisites[i].IsComplete())
                 {
@@ -142,9 +142,9 @@ public class Interactable : MonoBehaviour, IPrerequisite
     /// </summary>
     private void SubscribeToPrerequisites()
     {
-        if(prerequisites.Count > 0)
+        if(prerequisites.Length > 0)
         {
-            for (int i = 0; i < prerequisites.Count; i++)
+            for (int i = 0; i < prerequisites.Length; i++)
             {
                 prerequisites[i].onActivated.AddListener(SetPrerequisiteComplete);
             }

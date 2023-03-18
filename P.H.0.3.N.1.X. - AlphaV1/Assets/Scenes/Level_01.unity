@@ -601,9 +601,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1694704759526668045, guid: e71a8a8c6651de64ab0bdd56f75918c3, type: 3}
+      propertyPath: m_rebirthParticles
+      value: 
+      objectReference: {fileID: 1700413185}
     - target: {fileID: 6472927905493773474, guid: e71a8a8c6651de64ab0bdd56f75918c3, type: 3}
       propertyPath: m_Name
-      value: Cutscene
+      value: RebirthCutscene
       objectReference: {fileID: 0}
     - target: {fileID: 6472927905493773484, guid: e71a8a8c6651de64ab0bdd56f75918c3, type: 3}
       propertyPath: m_RootOrder
