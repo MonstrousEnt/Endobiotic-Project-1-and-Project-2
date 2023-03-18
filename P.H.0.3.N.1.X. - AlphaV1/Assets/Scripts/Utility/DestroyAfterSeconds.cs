@@ -1,6 +1,10 @@
 using System.Collections;
 using UnityEngine;
 
+/// <summary>
+/// This utility class is for Destroy any game object after couple of seconds.
+//// </summary>
+
 public class DestroyAfterSeconds : MonoBehaviour
 {
     #region Class Variables
@@ -16,7 +20,7 @@ public class DestroyAfterSeconds : MonoBehaviour
     }
     #endregion
 
-    #region C# Methods
+    #region Destroy After Methods
     /// <summary>
     /// Destroy the game object after a certain amount of seconds.
     /// </summary>
