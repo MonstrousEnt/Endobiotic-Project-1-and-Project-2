@@ -11,7 +11,6 @@ public class PullableObject : MonoBehaviour
     private void Awake()
     {
         rigidBody2D = GetComponent<Rigidbody2D>();
-        Debug.Log("Here");
         character = GameObject.FindGameObjectWithTag(tagDataPlayer.tagName);
     }
 

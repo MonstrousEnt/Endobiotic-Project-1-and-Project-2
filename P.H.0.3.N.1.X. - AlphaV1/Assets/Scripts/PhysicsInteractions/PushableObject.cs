@@ -4,14 +4,22 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PushableObject : MonoBehaviour
 {
-    [SerializeField] private Form requiredForm;
-    [SerializeField] private InteractableOjbects objectType;
-    [SerializeField] private bool destroyOnceUsed;
-
-    [SerializeField] private UnityEvent soundEffectUnityEvent;
-
+    //Components
     private Rigidbody2D rigidBody2D;
 
+    [Header("Form")]
+    [SerializeField] private Form requiredForm;
+
+    [Header("Intractable")]
+    [SerializeField] private InteractableOjbects objectType;
+
+    [Header("Pit Trap Data")]
+    [SerializeField] private bool destroyOnceUsed;
+
+    [Header("Unity Events")]
+    [SerializeField] private UnityEvent soundEffectUnityEvent;
+
+    #region Unity Methods
     private void Awake()
     {
         rigidBody2D = GetComponent<Rigidbody2D>();
@@ -19,6 +27,7 @@ public class PushableObject : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //Pit Trap
         if (collision.collider.gameObject.TryGetComponent(out TrapObject trapObject))
         {
             if (trapObject.GetObjectType() == objectType)
@@ -31,6 +40,8 @@ public class PushableObject : MonoBehaviour
                 }
             }
         }
+
+        //Movement the block
         else if (collision.gameObject.TryGetComponent(out CharacterFormsController formController))
         {
             if (formController.currForm == requiredForm)
@@ -45,4 +56,5 @@ public class PushableObject : MonoBehaviour
             }
         }
     }
+    #endregion
 }

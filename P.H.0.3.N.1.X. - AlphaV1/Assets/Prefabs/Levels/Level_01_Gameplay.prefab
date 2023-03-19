@@ -1721,6 +1721,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6088498514434314332, guid: d1eda0a6ff742ea47b979ded52fafacd, type: 3}
+      propertyPath: currPuzzlePointsList
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6550843989936047529, guid: d1eda0a6ff742ea47b979ded52fafacd, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -2562,6 +2566,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6088498514434314332, guid: d1eda0a6ff742ea47b979ded52fafacd, type: 3}
+      propertyPath: currPuzzlePointsList
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6550843989936047529, guid: d1eda0a6ff742ea47b979ded52fafacd, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -3189,6 +3197,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pit panel (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 6088498514434314332, guid: d1eda0a6ff742ea47b979ded52fafacd, type: 3}
+      propertyPath: currPuzzlePointsList
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6550843989936047529, guid: d1eda0a6ff742ea47b979ded52fafacd, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -3254,6 +3266,10 @@ PrefabInstance:
     - target: {fileID: 3525225213443287836, guid: d1eda0a6ff742ea47b979ded52fafacd, type: 3}
       propertyPath: m_Name
       value: pit panel (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6088498514434314332, guid: d1eda0a6ff742ea47b979ded52fafacd, type: 3}
+      propertyPath: currPuzzlePointsList
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6550843989936047529, guid: d1eda0a6ff742ea47b979ded52fafacd, type: 3}
       propertyPath: m_RootOrder
@@ -3841,6 +3857,10 @@ PrefabInstance:
     - target: {fileID: 3525225213443287836, guid: d1eda0a6ff742ea47b979ded52fafacd, type: 3}
       propertyPath: m_Name
       value: pit panel (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6088498514434314332, guid: d1eda0a6ff742ea47b979ded52fafacd, type: 3}
+      propertyPath: currPuzzlePointsList
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6550843989936047529, guid: d1eda0a6ff742ea47b979ded52fafacd, type: 3}
       propertyPath: m_RootOrder
@@ -5187,6 +5207,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pit panel (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 6088498514434314332, guid: d1eda0a6ff742ea47b979ded52fafacd, type: 3}
+      propertyPath: currPuzzlePointsList
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6550843989936047529, guid: d1eda0a6ff742ea47b979ded52fafacd, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -5893,6 +5917,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pit panel (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 6088498514434314332, guid: d1eda0a6ff742ea47b979ded52fafacd, type: 3}
+      propertyPath: currPuzzlePointsList
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6550843989936047529, guid: d1eda0a6ff742ea47b979ded52fafacd, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -6102,6 +6130,10 @@ PrefabInstance:
     - target: {fileID: 3525225213443287836, guid: d1eda0a6ff742ea47b979ded52fafacd, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6088498514434314332, guid: d1eda0a6ff742ea47b979ded52fafacd, type: 3}
+      propertyPath: currPuzzlePointsList
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6550843989936047529, guid: d1eda0a6ff742ea47b979ded52fafacd, type: 3}
       propertyPath: m_RootOrder
@@ -7977,6 +8009,10 @@ PrefabInstance:
     - target: {fileID: 6795955360767451340, guid: d1eda0a6ff742ea47b979ded52fafacd, type: 3}
       propertyPath: currPuzzlePointsList
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6795955360767451340, guid: d1eda0a6ff742ea47b979ded52fafacd, type: 3}
+      propertyPath: m_addPointUnityEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1eda0a6ff742ea47b979ded52fafacd, type: 3}
