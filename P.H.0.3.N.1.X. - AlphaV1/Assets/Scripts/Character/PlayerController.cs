@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Move")]
     [SerializeField] private float m_moveSpeed = 5;
-    [SerializeField] private Vector2 m_movement;\
+    [SerializeField] private Vector2 m_movement;
 
     //Components (Initializes in Awake)
     private Rigidbody2D m_rigidBody2D;
