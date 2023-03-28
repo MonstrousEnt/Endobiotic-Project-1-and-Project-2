@@ -1,18 +1,27 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(InteractableSpriteController))]
 public class Interactable : MonoBehaviour, IPrerequisite
 {
+    #region Class Variables
+    [Header("Required Form")]
     [SerializeField] private Form requiredForm = Form.Manipulator;
 
+    [Header("Unity Events")]
+    [SerializeField] private UnityEvent onActivated;
+
+    [Header("Lists")]
+    [SerializeField] private Interactable[] prerequisites;
+
+    //Intractable
     private bool isInteractable;
     private bool hasInteracted;
     private InteractableSpriteController interactableSpriteController;
+    #endregion
 
-    public UnityEvent onActivated;
-    public Interactable[] prerequisites;
-
+    #region Unity Methods
     private void Awake()
     {
         interactableSpriteController = GetComponent<InteractableSpriteController>();
@@ -27,11 +36,45 @@ public class Interactable : MonoBehaviour, IPrerequisite
 
         hasInteracted = false;        
 
-        SubscriteToPrerequisites();
+        SubscribeToPrerequisites();
 
         CheckSetActive();
     }
+    #endregion
 
+    #region Getters and Setters
+    public void SetPrerequisiteComplete()
+    {
+        CheckSetActive();
+    }
+
+    private void CheckSetActive()
+    {
+        if (CheckIfPrerequisitesMet())
+        {
+            isInteractable = true;
+            UpdateSprite();
+        }
+        else
+        {
+            isInteractable = false;
+            UpdateSprite();
+        }
+    }
+    #endregion
+
+    #region Interface Methods
+    public bool IsComplete()
+    {
+        return hasInteracted;
+    }
+    #endregion
+
+    #region Intractable Methods
+    /// <summary>
+    /// Interact with the object if there is interaction.
+    /// </summary>
+    /// <param name="currForm"></param>
     public void Interact(Form currForm)
     {
         if (!isInteractable)
@@ -54,41 +97,24 @@ public class Interactable : MonoBehaviour, IPrerequisite
         UpdateSprite();
     }
 
-    public bool IsComplete()
-    {
-        return hasInteracted;
-    }
-
-    public void SetPrerequisiteComplete()
-    {
-        CheckSetActive();
-    }
-
     public void Reenable()
     {
         hasInteracted = false;
         UpdateSprite();
     }
 
-    private void CheckSetActive()
-    {
-        if (CheckIfPrerequisitesMet())
-        {
-            isInteractable = true;
-            UpdateSprite();
-        }
-        else
-        {
-            isInteractable = false;
-            UpdateSprite();
-        }
-    }
-
+    /// <summary>
+    /// Update the sprite.
+    /// </summary>
     private void UpdateSprite()
     {
         interactableSpriteController.ChangeSprite(isInteractable, hasInteracted);
     }
 
+    /// <summary>
+    /// Check to see if the prerequisite were met or not.
+    /// </summary>
+    /// <returns></returns>
     private bool CheckIfPrerequisitesMet()
     {
         if(prerequisites.Length <= 0)
@@ -111,7 +137,10 @@ public class Interactable : MonoBehaviour, IPrerequisite
         }
     }    
 
-    private void SubscriteToPrerequisites()
+    /// <summary>
+    /// Subscribe to Prerequisites Unity Events
+    /// </summary>
+    private void SubscribeToPrerequisites()
     {
         if(prerequisites.Length > 0)
         {
@@ -121,4 +150,5 @@ public class Interactable : MonoBehaviour, IPrerequisite
             }
         }
     }
+    #endregion
 }

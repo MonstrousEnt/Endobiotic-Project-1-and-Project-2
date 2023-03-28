@@ -1,35 +1,46 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(Collider2D))]
 public class TrapObject : MonoBehaviour
 {
+    #region Class Variables
+    [Header("Intractable")]
     [SerializeField] private InteractableOjbects objectType;
-    [SerializeField] private Sprite hasActivatedSprite;
 
+    [Header("Sprite")]
+    [SerializeField] private Sprite hasActivatedSprite;
     private SpriteRenderer spriteRenderer;
+
+    //Trap
     private Collider2D trapCollider;
 
-    [SerializeField] private PiontData piontData;
-    [SerializeField] private PointList pointList;
-    [SerializeField] private PuzzlePointsList currPuzzlePointsList;
+    //Unity Events
+    [SerializeField] private UnityEvent m_addPointUnityEvent;
+    #endregion
 
+    #region Unity Methods 
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         trapCollider = GetComponent<Collider2D>();
     }
+    #endregion
 
+    #region Intractable Methods
     public void Interact()
     {
-        pointList.AddToTheCollectPointsList(piontData, currPuzzlePointsList);
-
         spriteRenderer.sprite = hasActivatedSprite;
         trapCollider.enabled = false;
+
+        m_addPointUnityEvent?.Invoke();
     }
 
     public InteractableOjbects GetObjectType()
     {
         return objectType;
     }
+
+    #endregion
 }

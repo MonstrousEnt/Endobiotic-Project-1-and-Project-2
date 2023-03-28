@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This effect class is for control in game audio of any game object.
+/// </summary>
+
 public class EffectAudioManagerGameEvent : MonoBehaviour
 {
     #region Class Variables

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5178241087735411156}
   - component: {fileID: 4226223}
   - component: {fileID: 6795955360767451340}
+  - component: {fileID: 6088498514434314332}
   m_Layer: 0
   m_Name: pit panel
   m_TagString: Untagged
@@ -147,6 +148,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectType: 0
   hasActivatedSprite: {fileID: 21300000, guid: c0f0d111f2e0524449a56011e1bbd5f0, type: 3}
+  m_addPointUnityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6088498514434314332}
+        m_TargetAssemblyTypeName: EffectAddPoints, Assembly-CSharp
+        m_MethodName: AddPoints
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6088498514434314332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3525225213443287836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 827d2d026522ff746b7a3caab61678fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   piontData: {fileID: 11400000, guid: 613f069fbd9c62b48b0cbb7d97515b8c, type: 2}
   pointList: {fileID: 11400000, guid: 4c7053bf12bd96f4892ad360aac32887, type: 2}
   currPuzzlePointsList: 0

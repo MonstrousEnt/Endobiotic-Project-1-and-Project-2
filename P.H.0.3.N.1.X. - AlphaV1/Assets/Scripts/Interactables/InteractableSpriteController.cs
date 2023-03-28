@@ -3,14 +3,18 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 public class InteractableSpriteController : MonoBehaviour
 {
+    [Header("Intractable Boolean Flag for Sprite")]
     [SerializeField] private bool useInteractableSpriteController = true;
 
+    [Header("Intractable Sprite")]
     [SerializeField] Sprite nonInteractableSprite;
     [SerializeField] Sprite isInteractableSprite;
     [SerializeField] Sprite hasInteractedSprite;
 
+    //Components
     private SpriteRenderer spriteRenderer;
 
+    #region Unity Methods
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -19,13 +23,24 @@ public class InteractableSpriteController : MonoBehaviour
     private void Start()
     {
         if (useInteractableSpriteController)
+        {
             DisableAnimatorIfNeeded();
+        }
     }
+    #endregion
 
+    #region Sprite Methods
+    /// <summary>
+    /// Change Sprite based on Intractable State
+    /// </summary>
+    /// <param name="isActive"></param>
+    /// <param name="hasActivated"></param>
     public void ChangeSprite(bool isActive, bool hasActivated)
     {
         if (!useInteractableSpriteController)
+        {
             return;
+        }
 
         if (hasActivated)
         {
@@ -40,7 +55,12 @@ public class InteractableSpriteController : MonoBehaviour
             spriteRenderer.sprite = nonInteractableSprite;
         }
     }
+    #endregion
 
+    #region Animation Methods
+    /// <summary>
+    /// Disable Animator
+    /// </summary>
     private void DisableAnimatorIfNeeded()
     {
         if(TryGetComponent(out Animator animator))
@@ -49,4 +69,5 @@ public class InteractableSpriteController : MonoBehaviour
                 animator.enabled = false;
         }
     }
+    #endregion
 }

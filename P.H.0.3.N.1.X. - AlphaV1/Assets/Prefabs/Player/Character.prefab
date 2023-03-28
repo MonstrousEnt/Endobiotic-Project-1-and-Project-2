@@ -80,13 +80,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f74a8284aa31fa9498d8819a05bbffb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  formColours:
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 0.78961587, b: 0, a: 1}
   formObjects:
   - {fileID: 1164270147615847811}
   - {fileID: 8031198080295446753}
@@ -151,7 +144,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 166a1ba85fe282d48b859f0ae901f7d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_rigidBody2D: {fileID: 0}
   m_playerAnimation: {fileID: 4398488082201832907}
   m_booleanFlagGlobalVariablePlayerCanMove: {fileID: 11400000, guid: cb6522342c9d38243a7fb7bfc803cb25, type: 2}
   m_moveSpeed: 3
@@ -301,6 +293,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4840284929821758753, guid: 17263d9fcb644b84a8139cf218a42617, type: 3}
       propertyPath: playerControllerAnimations
+      value: 
+      objectReference: {fileID: 4398488082201832907}
+    - target: {fileID: 4840284929821758753, guid: 17263d9fcb644b84a8139cf218a42617, type: 3}
+      propertyPath: m_playerControllerAnimations
       value: 
       objectReference: {fileID: 4398488082201832907}
     - target: {fileID: 5533012925616265177, guid: 17263d9fcb644b84a8139cf218a42617, type: 3}

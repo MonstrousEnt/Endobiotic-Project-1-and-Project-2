@@ -1,17 +1,20 @@
 using UnityEngine;
 
+/// <summary>
+/// This effect class is for using a item.
+/// </summary>
+
 public class EffectUseItem : MonoBehaviour
 {
-    [SerializeField] private PiontData piontData;
-    [SerializeField] private PointList pointList;
-    [SerializeField] private PuzzlePointsList currPuzzlePointsList;
-
+    #region Class Variables
+    [Header("Tag Scriptabe Object")]
     [SerializeField] private TagDataScriptableObject tagDataPlayer;
+    #endregion
 
+    #region Item Methods
     public void UseItem()
     {
-        pointList.AddToTheCollectPointsList(piontData, currPuzzlePointsList);
-
         GameObject.FindGameObjectWithTag(tagDataPlayer.tagName).GetComponent<CharacterItemHolder>().UseItem();
     }
+    #endregion
 }

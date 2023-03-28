@@ -3,19 +3,66 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    [SerializeField] private float speed;
-    [SerializeField] private Form intialForm = Form.Manipulator;
+    #region Class Variables
+    [Header("Form")]
+    [SerializeField] private Form m_intialForm = Form.Manipulator;
+
+    [Header("AI")]
+    [SerializeField] private float moveSpeed;
     [SerializeField] private float aggroRadius = 5;
 
+    //Attack 
     private bool isAttacking = false;
-    private Transform m_target = null;
 
+    //Target
+    private Transform m_target = null;
     private CharacterFormsController characterFormController;
+
+    //Movement
     private Rigidbody2D m_rigidbody2D;
     private Vector3 preferredPosition;
 
-    [SerializeField] private TagDataScriptableObject tagDataPlayer;
+    [Header("Tag")]
+    [SerializeField] private TagDataScriptableObject m_tagDataPlayer;
+    #endregion
 
+    #region Getters and Setters
+    public Form Form { get { return m_intialForm; } }
+
+    private void SetBehaviour(GameObject target)
+    {
+        if (target != null && target.TryGetComponent(out CharacterFormsController formController) && formController.currForm != characterFormController.currForm)
+        {
+            m_target = target.transform;
+            isAttacking = true;
+        }
+        else
+        {
+            m_target = null;
+            isAttacking = false;
+        }
+
+    }
+    #endregion
+
+    #region Find Methods
+    private GameObject FindTargetsInRange(float range)
+    {
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, range);
+
+        foreach (Collider2D hit in hits)
+        {
+            if (hit.gameObject.CompareTag(m_tagDataPlayer.tagName))
+            {
+                return hit.gameObject;
+            }
+        }
+
+        return null;
+    }
+    #endregion
+
+    #region Unity Methods
     private void Awake()
     {
         characterFormController = GetComponent<CharacterFormsController>();
@@ -25,7 +72,7 @@ public class EnemyController : MonoBehaviour
 
     private void Start()
     {
-        characterFormController.ChangeForm(intialForm);
+        characterFormController.ChangeForm(m_intialForm);
         StartCoroutine(intelligence(aggroRadius, 0.5f));
     }
 
@@ -36,21 +83,15 @@ public class EnemyController : MonoBehaviour
 
     private void Update()
     {
+        move();
+    }
+    #endregion
+
+    #region AI Methods
+    private void move()
+    {
         m_rigidbody2D.velocity = Vector2.zero;
-        float step = speed * Time.deltaTime;
-
-        //if (!isAttacking)
-        //{
-        //    return;
-        //}
-
-        //if (Vector3.Distance(transform.position, m_target.position) < 0.001f)
-        //{
-        //    return;
-        //}
-
-        //float step = speed * Time.deltaTime;
-        //transform.position = Vector3.MoveTowards(transform.position, m_target.position, step);
+        float step = moveSpeed * Time.deltaTime;
 
         if (isAttacking)
         {
@@ -77,47 +118,13 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    public Form GetForm()
-    {
-        return intialForm;
-    }
-
-    private GameObject FindTargetsInRange(float range)
-    {
-        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, range);  // Layermask doesn't seem to work
-
-        foreach(Collider2D hit in hits)
-        {
-            if (hit.gameObject.CompareTag(tagDataPlayer.tagName))
-            {
-                return hit.gameObject;
-            }
-        }
-
-        return null;
-    }
-
-    private void SetBehaviour(GameObject target)
-    {
-        if(target != null && target.TryGetComponent(out CharacterFormsController formController) && formController.currForm != characterFormController.currForm)
-        {
-            m_target = target.transform;
-            isAttacking = true;
-        }
-        else
-        {
-            m_target = null;
-            isAttacking = false;
-        }
-
-    }
-
     private IEnumerator intelligence(float range, float updateSpeed)
     {
         while (true)
         {
             SetBehaviour(FindTargetsInRange(range));
-            yield return new WaitForSeconds(updateSpeed);       // could cache this WaitForSeconds
+            yield return new WaitForSeconds(updateSpeed);      
         }
     }
+    #endregion
 }

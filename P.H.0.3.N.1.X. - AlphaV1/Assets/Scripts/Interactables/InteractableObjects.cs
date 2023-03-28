@@ -1,4 +1,4 @@
 public enum InteractableOjbects
 {
-    MagentaBox
+    Pit
 }
