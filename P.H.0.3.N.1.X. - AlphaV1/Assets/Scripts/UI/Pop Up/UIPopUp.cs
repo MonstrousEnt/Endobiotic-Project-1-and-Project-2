@@ -56,26 +56,16 @@ public class UIPopUp : UIBase
     #endregion
 
     #region UI Pop Up Methods
-    /// <summary>
-    /// Enable the pop up and Display Data for the pop up.
-    /// </summary>
     public void EnablePopUp()
     {
         displayPopUpData();
         EnableMainWindow();
     }
 
-    /// <summary>
-    /// Disable the pop up.
-    /// </summary>
     public void DisablePopUp()
     {
         DisableMainWindow();
     }
-
-    /// <summary>
-    /// Clean the UI data. Then Display Pop Data
-    /// </summary>
     private void displayPopUpData()
     {
         if (m_popUpData != null)
@@ -95,9 +85,6 @@ public class UIPopUp : UIBase
         }
     }
 
-    /// <summary>
-    /// Clean the UI Data elements
-    /// </summary>
     private void cleanUIData()
     {
         m_messgesTextBox.text = "";
@@ -105,9 +92,6 @@ public class UIPopUp : UIBase
         m_NoButtonGameObject.SetActive(false);
     }
 
-    /// <summary>
-    /// When the user click the yes button, invoke the unity event pop up action
-    /// </summary>
     public void YesActionPopUpOnClick()
     {
         if (m_popUpData != null)

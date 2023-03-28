@@ -22,9 +22,6 @@ public class EnemyControllerAnimations : BaseControllerAnimations
     #endregion
 
     #region Animations Methods
-    /// <summary>
-    ///  Enemy based movement detection.
-    /// </summary>
     private void movementDetection()
     {
         Vector3 deltaMovement = transform.position - m_previousPosition;

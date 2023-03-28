@@ -15,18 +15,12 @@ public class DestroyAfterSeconds : MonoBehaviour
     #region Unity Methods
     void Start()
     {
-        //run the Destroy After IEnumerator 
-        StartCoroutine(DestroyAfter(m_duration));
+        StartCoroutine(destroyAfter(m_duration));
     }
     #endregion
 
     #region Destroy After Methods
-    /// <summary>
-    /// Destroy the game object after a certain amount of seconds.
-    /// </summary>
-    /// <param name="duration"></param>
-    /// <returns></returns>
-    IEnumerator DestroyAfter(float duration)
+    private IEnumerator destroyAfter(float duration)
     {
         //Wait for a certain amount of seconds 
         yield return new WaitForSeconds(duration);

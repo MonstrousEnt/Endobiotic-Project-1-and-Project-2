@@ -13,11 +13,12 @@ public class TrapObject : MonoBehaviour
     [SerializeField] private Sprite hasActivatedSprite;
     private SpriteRenderer spriteRenderer;
 
+    [Header("Unity Events")]
+    [SerializeField] private UnityEvent m_addPointUnityEvent;
+
     //Trap
     private Collider2D trapCollider;
 
-    //Unity Events
-    [SerializeField] private UnityEvent m_addPointUnityEvent;
     #endregion
 
     #region Unity Methods 

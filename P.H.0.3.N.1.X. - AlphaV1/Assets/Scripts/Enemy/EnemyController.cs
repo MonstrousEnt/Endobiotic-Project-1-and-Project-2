@@ -11,6 +11,9 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float moveSpeed;
     [SerializeField] private float aggroRadius = 5;
 
+    [Header("Tag")]
+    [SerializeField] private TagDataScriptableObject m_tagDataPlayer;
+
     //Attack 
     private bool isAttacking = false;
 
@@ -21,9 +24,6 @@ public class EnemyController : MonoBehaviour
     //Movement
     private Rigidbody2D m_rigidbody2D;
     private Vector3 preferredPosition;
-
-    [Header("Tag")]
-    [SerializeField] private TagDataScriptableObject m_tagDataPlayer;
     #endregion
 
     #region Getters and Setters

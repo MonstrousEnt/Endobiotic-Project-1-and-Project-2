@@ -2,7 +2,7 @@
  * Team Name: Monstrous Entertainment - Vex Team
  * Authors: Daniel Cox
  * Created Date: February 12, 2023
- * Last Updated: Match 12, 2023
+ * Last Updated: Match 28, 2023
  * Description: This is the class for player controls user interface.
  * Notes:
  * Resources: 
@@ -26,7 +26,7 @@ public class PlayerControllerUI : MonoBehaviour
     #region Unity Methods
     private void Update()
     {
-        //When the user press tab or start button, it open or close the menu.
+        //Player Menu
         if (Input.GetButtonDown("Menu"))
         {
             if (m_booleanFlagGlobalVariableUIManagerPauseMenuIsActive.booleanFlag)

@@ -2,14 +2,23 @@ using UnityEngine;
 
 public class CharacterItemHolder : MonoBehaviour
 {
-    private EffectPickupItem m_currentPickupObject;
+    #region Class Variables 
+    //Intractable  
+    [Header("Sprite")]
     [SerializeField] private SpriteRenderer m_itemSpriteRenderer;
 
+    //Intractable
+    private EffectPickupItem m_currentPickupObject;
+    #endregion
+
+    #region Unity Methods
     private void Start()
     {
         m_itemSpriteRenderer.sprite = null;
     }
+    #endregion
 
+    #region Item Holder Methods
     public void AddItem(EffectPickupItem pickupItem, Sprite itemSprite)
     {
         m_currentPickupObject = pickupItem;
@@ -39,4 +48,5 @@ public class CharacterItemHolder : MonoBehaviour
         m_currentPickupObject = null;
         m_itemSpriteRenderer.sprite = null;
     }
+    #endregion
 }

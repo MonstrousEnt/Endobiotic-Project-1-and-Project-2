@@ -7,19 +7,12 @@ using UnityEngine.Events;
 public class CharacterInteractionController : MonoBehaviour
 {
     #region Class Variables
-    //Components
-    private CharacterFormsController characterFormsController;
-    private CharacterItemHolder characterItemHolder;
-
-    //List of Intractable
-    private List<Interactable> currentlyInteractable;
-
     [Header("Prefabs")]
     [SerializeField] private GameObject deathPrefab;
 
     [Header("Special Effects")]
     [SerializeField] private ParticleSystem riseAgainParticles;
-    
+
     [Header("Sounds")]
     [SerializeField] private UnityEvent soundEffectUnityEvent;
 
@@ -33,95 +26,99 @@ public class CharacterInteractionController : MonoBehaviour
 
     [Header("Boolean Flag Scriptable Object - Player Manager")]
     [SerializeField] private BooleanFlagGlobalVariableScriptableObject m_booleanFlagGlobalVariablePlayerCanMove;
+
+    //Components
+    private CharacterFormsController characterFormsController;
+    private CharacterItemHolder characterItemHolder;
+
+    //Current Intractable
+    private List<Interactable> currentlyInteractable;
     #endregion
 
     #region Unity Methods
     private void Awake()
     {
-        //initialize components 
         characterFormsController = GetComponent<CharacterFormsController>();
         characterItemHolder = GetComponent<CharacterItemHolder>();
     }
 
     private void Start()
     {
-        //initialize the list
         currentlyInteractable = new List<Interactable>();
 
-        //set up the timer
         invulTimer = Time.time;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision2D)
     {
         if (invulTimer > Time.time) 
         {
             return;
         }
 
-        if (collision.collider.CompareTag(tagDataEnemy.tagName) && collision.collider.GetComponent<CharacterFormsController>().currForm == Form.Crab && characterFormsController.currForm == Form.Destroyer) //Note: what is crab form
+        if (collision2D.collider.CompareTag(tagDataEnemy.tagName) && collision2D.collider.GetComponent<CharacterFormsController>().currForm == Form.Crab && characterFormsController.currForm == Form.Destroyer) 
         {
             return;
         }
-        else if (collision.collider.CompareTag(tagDataEnemy.tagName) && collision.collider.GetComponent<CharacterFormsController>().currForm == Form.Crab) //Note: what is crab form
+        else if (collision2D.collider.CompareTag(tagDataEnemy.tagName) && collision2D.collider.GetComponent<CharacterFormsController>().currForm == Form.Crab) 
         {
-            Respawn();
+            respawnCrab();
         }
         //if the player collides with the enemy and is not the form of the enemy
-        else if (collision.collider.CompareTag(tagDataEnemy.tagName) && characterFormsController.currForm != collision.collider.GetComponent<CharacterFormsController>().currForm)
+        else if (collision2D.collider.CompareTag(tagDataEnemy.tagName) && characterFormsController.currForm != collision2D.collider.GetComponent<CharacterFormsController>().currForm)
         {
-            //Respawn the player as a new form
-            RespawnAsNewForm(collision.collider.GetComponent<CharacterFormsController>().currForm, collision.collider.transform.position);
-
-            //Destroy the enemy
-            collision.collider.GetComponent<EnemyInteraction>().DestroyEnemy();
-
-            invulTimer = Time.time + invulTime; 
+            respawnCharacter(collision2D);
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collider2D)
     {
-        //if the object Colliers with intractable or enemy
-        if (collision.CompareTag(tagDataInteractable.tagName) || collision.CompareTag(tagDataEnemy.tagName))
+        if (collider2D.CompareTag(tagDataInteractable.tagName) || collider2D.CompareTag(tagDataEnemy.tagName))
         {
-            //Add the intractable 
-            if (collision.TryGetComponent(out Interactable interactable))
-            {
-                currentlyInteractable.Add(interactable);
-            }
+            addIntractable(collider2D);
         }   
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collider2D)
     {
-        //Remove the intractable 
-        if (collision.TryGetComponent(out Interactable interactable))
-        {
-            currentlyInteractable.Remove(interactable);
-        }
+        removeIntractable(collider2D);
     }
     #endregion
 
-    #region C# Methods
+
+
+    #region Character Interaction Methods
     public void Interact()
     {
-        //if there is nothing to interact with, then exit out of the program
         if (currentlyInteractable.Count <= 0)
         {
             return;
         }
 
-        //if there is a interaction, then interact with the block
         foreach (Interactable interactable in currentlyInteractable)
         {
             interactable.Interact(characterFormsController.currForm);
         }
     }
 
-    private void Respawn()
+    private void addIntractable(Collider2D collider2D)
     {
-        //Drop the item - for Battery Form
+        if (collider2D.TryGetComponent(out Interactable interactable))
+        {
+            currentlyInteractable.Add(interactable);
+        }
+    }
+
+    private void removeIntractable(Collider2D collider2D)
+    {
+        if (collider2D.TryGetComponent(out Interactable interactable))
+        {
+            currentlyInteractable.Remove(interactable);
+        }
+    }
+
+    private void respawnCrab()
+    {
         characterItemHolder.DropItem();
 
         // TODO set a respawn location or enable a variable for a designer
@@ -129,45 +126,39 @@ public class CharacterInteractionController : MonoBehaviour
         transform.position = new Vector3(randomLocation.x, randomLocation.y, 0);
     }
 
-    private void RespawnAsNewForm(Form newForm, Vector3 position)
+    private void respawnAsNewForm(Form newForm, Vector3 position)
     {
-        //Drop the item - for Battery Form
+   
         characterItemHolder.DropItem();
 
-        //Disable player movement
         m_booleanFlagGlobalVariablePlayerCanMove.DisableBooleanFlag();
 
-        //span player death prefab
         GameObject deathInstance = Instantiate(deathPrefab, transform.position, Quaternion.identity);
 
-        //change to default form 
         deathInstance.GetComponent<CharacterFormsController>().ChangeForm(characterFormsController.currForm);  // These were firing before Start() on deathInstance. Weird. 
-
-        //run the player death animation 
         deathInstance.GetComponent<CharacterDeathController>().Die();
 
-        //Run special effect for transform animation
         riseAgainParticles.Play();
 
-        //change form to what the enemy was 
         characterFormsController.ChangeForm(newForm);
 
-        //repswan the player at the same position
         transform.position = position;
 
-        //player the spawn sound
-        soundEffectUnityEvent.Invoke();
+        soundEffectUnityEvent?.Invoke();
 
-        //wait for 2 seconds
-        StartCoroutine(WaitWhileDead(2));
+        StartCoroutine(waitWhileDead(2));
     }
 
-    /// <summary>
-    /// Wait for a certain amount of seconds then re-enable the player controls for movement.
-    /// </summary>
-    /// <param name="duration"></param>
-    /// <returns></returns>
-    private IEnumerator WaitWhileDead(float duration)
+    private void respawnCharacter(Collision2D collision2D)
+    {
+        respawnAsNewForm(collision2D.collider.GetComponent<CharacterFormsController>().currForm, collision2D.collider.transform.position);
+
+        collision2D.collider.GetComponent<EnemyInteraction>().DestroyEnemy();
+
+        invulTimer = Time.time + invulTime;
+    }
+
+    private IEnumerator waitWhileDead(float duration)
     {
         yield return new WaitForSeconds(duration);
 

@@ -24,17 +24,12 @@ public class InteractableSpriteController : MonoBehaviour
     {
         if (useInteractableSpriteController)
         {
-            DisableAnimatorIfNeeded();
+            disableAnimatorIfNeeded();
         }
     }
     #endregion
 
     #region Sprite Methods
-    /// <summary>
-    /// Change Sprite based on Intractable State
-    /// </summary>
-    /// <param name="isActive"></param>
-    /// <param name="hasActivated"></param>
     public void ChangeSprite(bool isActive, bool hasActivated)
     {
         if (!useInteractableSpriteController)
@@ -58,10 +53,7 @@ public class InteractableSpriteController : MonoBehaviour
     #endregion
 
     #region Animation Methods
-    /// <summary>
-    /// Disable Animator
-    /// </summary>
-    private void DisableAnimatorIfNeeded()
+    private void disableAnimatorIfNeeded()
     {
         if(TryGetComponent(out Animator animator))
         {

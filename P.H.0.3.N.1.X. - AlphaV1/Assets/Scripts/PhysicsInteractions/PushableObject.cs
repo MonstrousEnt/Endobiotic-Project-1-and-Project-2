@@ -4,9 +4,6 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PushableObject : MonoBehaviour
 {
-    //Components
-    private Rigidbody2D rigidBody2D;
-
     [Header("Form")]
     [SerializeField] private Form requiredForm;
 
@@ -18,6 +15,9 @@ public class PushableObject : MonoBehaviour
 
     [Header("Unity Events")]
     [SerializeField] private UnityEvent soundEffectUnityEvent;
+
+    //Components
+    private Rigidbody2D rigidBody2D;
 
     #region Unity Methods
     private void Awake()

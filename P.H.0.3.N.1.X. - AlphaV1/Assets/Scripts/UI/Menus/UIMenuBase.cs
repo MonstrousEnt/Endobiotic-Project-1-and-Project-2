@@ -49,9 +49,6 @@ public class UIMenuBase : UIBase
     #endregion
 
     #region UI Menu Base - UI Menu Methods 
-    /// <summary>
-    /// Enable the menu, default functionally 
-    /// </summary>
     public virtual void EnableMenu()
     {
         m_voidGameEventSettingsManagerEnablePause.Raise();
@@ -61,9 +58,6 @@ public class UIMenuBase : UIBase
         EnableMainWindow();
     }
 
-    /// <summary>
-    /// Disable the menu, default functionally 
-    /// </summary>
     public virtual void DisableMenu()
     {
         m_voidGameEventSettingsManagerDisablePause.Raise();
@@ -72,9 +66,6 @@ public class UIMenuBase : UIBase
         DisableMainWindow();
     }
 
-    /// <summary>
-    /// Open the quit pop up and set the data.
-    /// </summary>
     public void OepnQuitPopUp()
     {
         m_popUpDataGameEventUIMangerSetPopUpData.Raise(m_popUpDataQuitPopUp);

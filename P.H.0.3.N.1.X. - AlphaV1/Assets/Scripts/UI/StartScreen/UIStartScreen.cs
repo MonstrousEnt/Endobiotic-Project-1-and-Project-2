@@ -37,7 +37,6 @@ public class UIStartScreen : MonoBehaviour
 
     void Update()
     {
-        //stop the start screen soundtrack and load next level when the user press any key
         if (Input.anyKeyDown)
         {
             m_unityEventStartGame?.Invoke();

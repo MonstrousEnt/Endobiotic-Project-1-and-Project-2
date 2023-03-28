@@ -9,12 +9,13 @@ using UnityEngine;
 public class EffectChangeSprite : MonoBehaviour
 {
     #region Class Variables
-    //Components
-    private SpriteRenderer spriteRenderer;
-
     [Header("Sprites")]
     [SerializeField] private Sprite defaultState;
     [SerializeField] private Sprite newState;
+
+    //Components 
+    private SpriteRenderer spriteRenderer;
+
     #endregion
 
     #region Unity Methods

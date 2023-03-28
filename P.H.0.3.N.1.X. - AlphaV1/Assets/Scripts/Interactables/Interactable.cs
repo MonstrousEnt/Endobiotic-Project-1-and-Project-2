@@ -36,7 +36,7 @@ public class Interactable : MonoBehaviour, IPrerequisite
 
         hasInteracted = false;        
 
-        SubscribeToPrerequisites();
+        subscribeToPrerequisites();
 
         CheckSetActive();
     }
@@ -50,15 +50,15 @@ public class Interactable : MonoBehaviour, IPrerequisite
 
     private void CheckSetActive()
     {
-        if (CheckIfPrerequisitesMet())
+        if (checkIfPrerequisitesMet())
         {
             isInteractable = true;
-            UpdateSprite();
+            updateSprite();
         }
         else
         {
             isInteractable = false;
-            UpdateSprite();
+            updateSprite();
         }
     }
     #endregion
@@ -71,10 +71,6 @@ public class Interactable : MonoBehaviour, IPrerequisite
     #endregion
 
     #region Intractable Methods
-    /// <summary>
-    /// Interact with the object if there is interaction.
-    /// </summary>
-    /// <param name="currForm"></param>
     public void Interact(Form currForm)
     {
         if (!isInteractable)
@@ -94,28 +90,21 @@ public class Interactable : MonoBehaviour, IPrerequisite
             onActivated.Invoke();
         }
 
-        UpdateSprite();
+        updateSprite();
     }
 
     public void Reenable()
     {
         hasInteracted = false;
-        UpdateSprite();
+        updateSprite();
     }
 
-    /// <summary>
-    /// Update the sprite.
-    /// </summary>
-    private void UpdateSprite()
+    private void updateSprite()
     {
         interactableSpriteController.ChangeSprite(isInteractable, hasInteracted);
     }
 
-    /// <summary>
-    /// Check to see if the prerequisite were met or not.
-    /// </summary>
-    /// <returns></returns>
-    private bool CheckIfPrerequisitesMet()
+    private bool checkIfPrerequisitesMet()
     {
         if(prerequisites.Length <= 0)
         {
@@ -137,10 +126,7 @@ public class Interactable : MonoBehaviour, IPrerequisite
         }
     }    
 
-    /// <summary>
-    /// Subscribe to Prerequisites Unity Events
-    /// </summary>
-    private void SubscribeToPrerequisites()
+    private void subscribeToPrerequisites()
     {
         if(prerequisites.Length > 0)
         {

@@ -15,9 +15,6 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private GameObject BatteryPrefab;
     [SerializeField] private GameObject CrabPrefab;
 
-    //Prefab List
-    private List<GameObject> EnemyFormList;
-
     [Header("Spawner Data")]
     [SerializeField] private float spawnInterval = 5.0f;
     [SerializeField] private float spawnDistanceX;
@@ -29,6 +26,9 @@ public class EnemySpawner : MonoBehaviour
 
     [Header("Sound Unity Event")]
     [SerializeField] private UnityEvent soundEffectUnityEvent;
+
+    //Prefabs
+    private List<GameObject> EnemyFormList;
 
     #region Struts
     public struct Robot
@@ -83,8 +83,6 @@ public class EnemySpawner : MonoBehaviour
     private IEnumerator SpawnRobot(Robot robot)
     {
         yield return new WaitForSeconds(spawnInterval);
-
-        //TO DO: Might need a pool system
 
         GameObject newEnemy = Instantiate(
             EnemyFormList[(int)robot.m_form],

@@ -10,15 +10,13 @@ public class CharacterDeathController : BaseControllerAnimations
     #region Unity Methods
     private void Start()
     {
-        //Initialize components 
         m_animator = GetComponentInChildren<Animator>();
     }
     #endregion
 
-    #region C# Methods
+    #region Death Animations
     public void Die()
     {
-        //Run the death animation when player die
         ChangeAnimationState(m_DEATH);
     }
     #endregion

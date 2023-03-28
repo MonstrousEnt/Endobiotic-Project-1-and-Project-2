@@ -8,14 +8,15 @@ public class CharacterFormsController : MonoBehaviour
     /// </summary>
 
     #region Class Variables
+    [Header("Player Forms (Game Objects)")]
+    [SerializeField] private List<GameObject> formObjects;
+
+    //Components
+    private BaseControllerAnimations controllerAnimations;
+
     //Player Current form
     private Form m_currform;
 
-    [Header("List of player forms (Game Objects)")]
-    [SerializeField] private List<GameObject> formObjects;
-
-    //Reference to base animation controller 
-    private BaseControllerAnimations controllerAnimations;
     #endregion
 
     #region Getters and Setters
@@ -25,36 +26,28 @@ public class CharacterFormsController : MonoBehaviour
     #region Unity Methods
     private void Awake()
     {
-        //Initialize components 
         controllerAnimations = GetComponent<BaseControllerAnimations>();
-
-        //Initialize the default form
         Init();
     }
     #endregion
 
-    #region C# Methods
+    #region Character Form Methods
     private void Init()
     {
-        //Set the default from as Manipulator
         ChangeForm(0);        
     }
 
     public void ChangeForm(Form newForm)
     {
-        //Set the current form to the new form
         currForm = newForm;
 
-        //Turn off the previews form
         foreach (GameObject formObject in formObjects)
         {
             formObject.SetActive(false);
         }
 
-        //Turn on the new form
         formObjects[(int)newForm].SetActive(true);
 
-        //Change animator to the new form
         controllerAnimations.Animator = formObjects[(int)newForm].GetComponent<Animator>();
     }
     #endregion
