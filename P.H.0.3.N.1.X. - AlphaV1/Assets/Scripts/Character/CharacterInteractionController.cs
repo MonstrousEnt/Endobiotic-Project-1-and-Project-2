@@ -54,7 +54,7 @@ public class CharacterInteractionController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (invulTimer > Time.time) //Note: invul timer????
+        if (invulTimer > Time.time) 
         {
             return;
         }
@@ -76,7 +76,7 @@ public class CharacterInteractionController : MonoBehaviour
             //Destroy the enemy
             collision.collider.GetComponent<EnemyInteraction>().DestroyEnemy();
 
-            invulTimer = Time.time + invulTime; //Note: What does this line do ????
+            invulTimer = Time.time + invulTime; 
         }
     }
 
@@ -140,8 +140,8 @@ public class CharacterInteractionController : MonoBehaviour
         //span player death prefab
         GameObject deathInstance = Instantiate(deathPrefab, transform.position, Quaternion.identity);
 
-        //change to default form //Note: Why does this line exist
-        deathInstance.GetComponent<CharacterFormsController>().ChangeForm(characterFormsController.currForm);  // These were firing before Start() on deathInstance. Weird. (Daniel: isn't this in awake as well???
+        //change to default form 
+        deathInstance.GetComponent<CharacterFormsController>().ChangeForm(characterFormsController.currForm);  // These were firing before Start() on deathInstance. Weird. 
 
         //run the player death animation 
         deathInstance.GetComponent<CharacterDeathController>().Die();
