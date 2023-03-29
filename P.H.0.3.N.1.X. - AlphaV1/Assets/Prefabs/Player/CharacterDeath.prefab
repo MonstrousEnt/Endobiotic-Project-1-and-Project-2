@@ -66,6 +66,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23e28df5abf9f0b4eb0e7336ce60852a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_IDLE_DOWN: Idle_Down
+  m_IDLE_UP: Idle_Up
+  m_IDLE_LEFT: Idle_Left
+  m_IDLE_RIGHT: Idle_Right
+  m_WALK_DOWN: Walk_Down
+  m_WALK_UP: Walk_Up
+  m_WALK_LEFT: Walk_Left
+  m_WALK_RIGHT: Walk_Right
 --- !u!114 &213399276657375707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,7 +86,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f74a8284aa31fa9498d8819a05bbffb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  formObjects:
+  m_formObjects:
   - {fileID: 8008747214219758970}
   - {fileID: 5805144852400396636}
   - {fileID: 3206525306832679272}

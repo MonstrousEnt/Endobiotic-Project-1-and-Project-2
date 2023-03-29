@@ -9,10 +9,10 @@ public class CharacterFormsController : MonoBehaviour
 
     #region Class Variables
     [Header("Player Forms (Game Objects)")]
-    [SerializeField] private List<GameObject> formObjects;
+    [SerializeField] private List<GameObject> m_formObjects;
 
     //Components
-    private BaseControllerAnimations controllerAnimations;
+    private BaseControllerAnimations m_controllerAnimations;
 
     //Player Current form
     private Form m_currform;
@@ -26,7 +26,7 @@ public class CharacterFormsController : MonoBehaviour
     #region Unity Methods
     private void Awake()
     {
-        controllerAnimations = GetComponent<BaseControllerAnimations>();
+        m_controllerAnimations = GetComponent<BaseControllerAnimations>();
         Init();
     }
     #endregion
@@ -41,14 +41,14 @@ public class CharacterFormsController : MonoBehaviour
     {
         currForm = newForm;
 
-        foreach (GameObject formObject in formObjects)
+        foreach (GameObject formObject in m_formObjects)
         {
             formObject.SetActive(false);
         }
 
-        formObjects[(int)newForm].SetActive(true);
+        m_formObjects[(int)newForm].SetActive(true);
 
-        controllerAnimations.Animator = formObjects[(int)newForm].GetComponent<Animator>();
+        m_controllerAnimations.Animator = m_formObjects[(int)newForm].GetComponent<Animator>();
     }
     #endregion
 }
