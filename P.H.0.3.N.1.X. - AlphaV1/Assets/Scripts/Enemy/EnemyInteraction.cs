@@ -7,8 +7,8 @@ public class EnemyInteraction : MonoBehaviour
 
     #region Class Variables
     //Components  
-    private EnemyControllerAnimations enemyControllerAnimations;
-    private CharacterFormsController characterFormsController;
+    private EnemyControllerAnimations m_enemyControllerAnimations;
+    private CharacterFormsController m_characterFormsController;
 
     //Unity Events
     public UnityEvent<GameObject> deathEvent;
@@ -17,7 +17,7 @@ public class EnemyInteraction : MonoBehaviour
     #region Unity Methods
     private void Awake()
     {
-        characterFormsController = GetComponent<CharacterFormsController>();
+        m_characterFormsController = GetComponent<CharacterFormsController>();
         deathEvent = new UnityEvent<GameObject>();
     }
     #endregion
@@ -25,7 +25,7 @@ public class EnemyInteraction : MonoBehaviour
     #region AI Interaction Methods
     public void KillEnemy()
     {
-        if (characterFormsController.currForm != Form.Crab)
+        if (m_characterFormsController.currForm != Form.Crab)
         {
             return;
         }
