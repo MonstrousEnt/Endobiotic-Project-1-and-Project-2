@@ -127,9 +127,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37f80c61353516f4fa3093e2ed093647, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathPrefab: {fileID: 8873812475364736337, guid: 6d221463cad3d3848b72662c2a44a771, type: 3}
-  riseAgainParticles: {fileID: 4648500904063570242}
-  soundEffectUnityEvent:
+  m_deathPrefab: {fileID: 8873812475364736337, guid: 6d221463cad3d3848b72662c2a44a771, type: 3}
+  m_riseAgainParticles: {fileID: 4648500904063570242}
+  m_soundEffectUnityEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: 6618bbfd17f8eee41b477713af5522cb, type: 2}
@@ -144,9 +144,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  invulTime: 0.5
-  tagDataEnemy: {fileID: 11400000, guid: 94bd01555d6c0a64aa892d4ecc40bd7a, type: 2}
-  tagDataInteractable: {fileID: 11400000, guid: 0d1e0d57ef54aa54fac70f955397111c, type: 2}
+  m_invulnerableTimeSF: 0.5
+  m_tagDataEnemy: {fileID: 11400000, guid: 94bd01555d6c0a64aa892d4ecc40bd7a, type: 2}
+  m_tagDataInteractable: {fileID: 11400000, guid: 0d1e0d57ef54aa54fac70f955397111c, type: 2}
   m_booleanFlagGlobalVariablePlayerCanMove: {fileID: 11400000, guid: cb6522342c9d38243a7fb7bfc803cb25, type: 2}
 --- !u!114 &759186879241046266
 MonoBehaviour:
