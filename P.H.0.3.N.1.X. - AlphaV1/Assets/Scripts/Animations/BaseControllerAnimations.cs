@@ -18,17 +18,8 @@ public class BaseControllerAnimations : MonoBehaviour
 
     [Header("Animation")]
     protected string m_currentAnimaton;
-    protected m_moveDir m_LastMoveDir;
+    protected MoveDirection m_LastMoveDir;
     protected float m_turnThresholdMoveY = 0.71f;
-
-    //Enum Animation
-    protected enum m_moveDir
-    {
-        down,
-        up,
-        left,
-        right
-    }
 
     //To Do create these animations states into Unity Scriptable Object data container
     [Header("Animation States - Idle")] 
@@ -83,19 +74,19 @@ public class BaseControllerAnimations : MonoBehaviour
     {
         switch (m_LastMoveDir)
         {
-            case m_moveDir.down:
+            case MoveDirection.Down:
                 ChangeAnimationState(m_IDLE_DOWN);
                 break;
 
-            case m_moveDir.up:
+            case MoveDirection.Up:
                  ChangeAnimationState(m_IDLE_UP);
                 break;
 
-            case m_moveDir.left:
+            case MoveDirection.Left:
                 ChangeAnimationState(m_IDLE_LEFT);
                 break;
 
-            case m_moveDir.right:
+            case MoveDirection.Right:
                 ChangeAnimationState(m_IDLE_RIGHT);
                 break;
         }
@@ -111,22 +102,22 @@ public class BaseControllerAnimations : MonoBehaviour
         if (movement.y <= -0.01f && Mathf.Abs(movement.x) < m_turnThresholdMoveY)
         {
             ChangeAnimationState(m_WALK_DOWN);
-            m_LastMoveDir = m_moveDir.down;
+            m_LastMoveDir = MoveDirection.Down;
         }
         else if (movement.y >= 0.01f && Mathf.Abs(movement.x) < m_turnThresholdMoveY)
         {
             ChangeAnimationState(m_WALK_UP);
-            m_LastMoveDir = m_moveDir.up;
+            m_LastMoveDir = MoveDirection.Up;
         }
         else if (movement.x <= -0.01f)
         {
             ChangeAnimationState(m_WALK_LEFT);
-            m_LastMoveDir = m_moveDir.left;
+            m_LastMoveDir = MoveDirection.Left;
         }
         else if (movement.x >= 0.01f)
         {
             ChangeAnimationState(m_WALK_RIGHT);
-            m_LastMoveDir = m_moveDir.right;
+            m_LastMoveDir = MoveDirection.Right;
         }
         else
         {
