@@ -965,6 +965,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block-green (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_hasInteractedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 72035d0362e3f3a428aa1f78dcc61ebf, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_isInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cb9bb61dbc63ce440b793990e2a77e2a, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_nonInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cb9bb61dbc63ce440b793990e2a77e2a, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_useInteractableSpriteController
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6409998194036200798, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
       propertyPath: currPuzzlePointsList
       value: 2
@@ -1223,6 +1239,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Circuit1 A
       objectReference: {fileID: 0}
+    - target: {fileID: 6334992487962387125, guid: c0113d68b0de8874cad45f5a86ec0083, type: 3}
+      propertyPath: m_hasInteractedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5fb14250fa230234da2e6b296c6fe2be, type: 3}
+    - target: {fileID: 6334992487962387125, guid: c0113d68b0de8874cad45f5a86ec0083, type: 3}
+      propertyPath: m_isInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 72738edcf8b7286409bc78b8b578f75f, type: 3}
+    - target: {fileID: 6334992487962387125, guid: c0113d68b0de8874cad45f5a86ec0083, type: 3}
+      propertyPath: m_nonInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 72738edcf8b7286409bc78b8b578f75f, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0113d68b0de8874cad45f5a86ec0083, type: 3}
 --- !u!114 &1130836507091167482 stripped
@@ -1362,6 +1390,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block-red C
       objectReference: {fileID: 0}
+    - target: {fileID: 8688659566423670383, guid: 14a83c46bc04e05468b721f0bdb647cb, type: 3}
+      propertyPath: m_isInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6203c6239fcec624cb50ec05606f9d30, type: 3}
+    - target: {fileID: 8688659566423670383, guid: 14a83c46bc04e05468b721f0bdb647cb, type: 3}
+      propertyPath: m_nonInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6203c6239fcec624cb50ec05606f9d30, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14a83c46bc04e05468b721f0bdb647cb, type: 3}
 --- !u!114 &429592212776295184 stripped
@@ -1434,6 +1470,22 @@ PrefabInstance:
     - target: {fileID: 188307105416807641, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
       propertyPath: m_Name
       value: Block-green (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_hasInteractedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 72035d0362e3f3a428aa1f78dcc61ebf, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_isInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cb9bb61dbc63ce440b793990e2a77e2a, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_nonInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cb9bb61dbc63ce440b793990e2a77e2a, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_useInteractableSpriteController
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6409998194036200798, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
       propertyPath: currPuzzlePointsList
@@ -1611,6 +1663,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: batteryplatform1 C
       objectReference: {fileID: 0}
+    - target: {fileID: 6359039873362825074, guid: 8234d5c1afd423743a1f0e3abb1c6d65, type: 3}
+      propertyPath: m_hasInteractedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: edd9cd80f04da814d8bfad20850a44f8, type: 3}
+    - target: {fileID: 6359039873362825074, guid: 8234d5c1afd423743a1f0e3abb1c6d65, type: 3}
+      propertyPath: m_isInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 122ed713e1e89da409b820928c39eadf, type: 3}
+    - target: {fileID: 6359039873362825074, guid: 8234d5c1afd423743a1f0e3abb1c6d65, type: 3}
+      propertyPath: m_nonInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 122ed713e1e89da409b820928c39eadf, type: 3}
     - target: {fileID: 8445235787681307562, guid: 8234d5c1afd423743a1f0e3abb1c6d65, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1937,6 +2001,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block-green (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_hasInteractedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 72035d0362e3f3a428aa1f78dcc61ebf, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_isInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cb9bb61dbc63ce440b793990e2a77e2a, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_nonInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cb9bb61dbc63ce440b793990e2a77e2a, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_useInteractableSpriteController
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7507296298106502199, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
       propertyPath: currPuzzlePointsList
       value: 3
@@ -2194,6 +2274,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block-green (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_hasInteractedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 72035d0362e3f3a428aa1f78dcc61ebf, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_isInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cb9bb61dbc63ce440b793990e2a77e2a, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_nonInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cb9bb61dbc63ce440b793990e2a77e2a, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_useInteractableSpriteController
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6409998194036200798, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
       propertyPath: currPuzzlePointsList
       value: 3
@@ -2263,6 +2359,22 @@ PrefabInstance:
     - target: {fileID: 188307105416807641, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
       propertyPath: m_Name
       value: Block-green (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_hasInteractedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 72035d0362e3f3a428aa1f78dcc61ebf, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_isInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cb9bb61dbc63ce440b793990e2a77e2a, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_nonInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cb9bb61dbc63ce440b793990e2a77e2a, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_useInteractableSpriteController
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6409998194036200798, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
       propertyPath: currPuzzlePointsList
@@ -2334,6 +2446,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block-green (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_hasInteractedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 72035d0362e3f3a428aa1f78dcc61ebf, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_isInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cb9bb61dbc63ce440b793990e2a77e2a, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_nonInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cb9bb61dbc63ce440b793990e2a77e2a, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_useInteractableSpriteController
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6409998194036200798, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
       propertyPath: currPuzzlePointsList
       value: 1
@@ -2404,6 +2532,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block-green (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_hasInteractedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 72035d0362e3f3a428aa1f78dcc61ebf, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_isInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cb9bb61dbc63ce440b793990e2a77e2a, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_nonInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cb9bb61dbc63ce440b793990e2a77e2a, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_useInteractableSpriteController
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
 --- !u!4 &534582036623462247 stripped
@@ -2422,6 +2566,18 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2985887495635317926, guid: fccefa9843e890d4cbac830b8d889f74, type: 3}
+      propertyPath: m_hasInteractedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f53a11d893809764f9b8d9e4f0af9e63, type: 3}
+    - target: {fileID: 2985887495635317926, guid: fccefa9843e890d4cbac830b8d889f74, type: 3}
+      propertyPath: m_isInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f53a11d893809764f9b8d9e4f0af9e63, type: 3}
+    - target: {fileID: 2985887495635317926, guid: fccefa9843e890d4cbac830b8d889f74, type: 3}
+      propertyPath: m_nonInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1762e24161f28fc4f94f48617fcc75e0, type: 3}
     - target: {fileID: 4897866979042997234, guid: fccefa9843e890d4cbac830b8d889f74, type: 3}
       propertyPath: m_SortingOrder
       value: 5
@@ -2540,6 +2696,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7831489366631050728, guid: 3330a168158ed674c90cba740c58bd47, type: 3}
+      propertyPath: m_hasInteractedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0922e144ac650ad43bb7a0a588791514, type: 3}
+    - target: {fileID: 7831489366631050728, guid: 3330a168158ed674c90cba740c58bd47, type: 3}
+      propertyPath: m_isInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a78fd2df00d00f747bd7246ff886c6ef, type: 3}
+    - target: {fileID: 7831489366631050728, guid: 3330a168158ed674c90cba740c58bd47, type: 3}
+      propertyPath: m_nonInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a78fd2df00d00f747bd7246ff886c6ef, type: 3}
     - target: {fileID: 8573741446981851647, guid: 3330a168158ed674c90cba740c58bd47, type: 3}
       propertyPath: m_Name
       value: treasure (4)
@@ -2758,6 +2926,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block-green (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_hasInteractedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 72035d0362e3f3a428aa1f78dcc61ebf, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_isInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cb9bb61dbc63ce440b793990e2a77e2a, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_nonInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cb9bb61dbc63ce440b793990e2a77e2a, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_useInteractableSpriteController
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6409998194036200798, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
       propertyPath: currPuzzlePointsList
       value: 2
@@ -2828,6 +3012,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block-green (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_hasInteractedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 72035d0362e3f3a428aa1f78dcc61ebf, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_isInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cb9bb61dbc63ce440b793990e2a77e2a, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_nonInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cb9bb61dbc63ce440b793990e2a77e2a, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_useInteractableSpriteController
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6409998194036200798, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
       propertyPath: currPuzzlePointsList
       value: 3
@@ -2850,6 +3050,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 429592212843984892}
     m_Modifications:
+    - target: {fileID: 2985887495635317926, guid: fccefa9843e890d4cbac830b8d889f74, type: 3}
+      propertyPath: m_hasInteractedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f53a11d893809764f9b8d9e4f0af9e63, type: 3}
+    - target: {fileID: 2985887495635317926, guid: fccefa9843e890d4cbac830b8d889f74, type: 3}
+      propertyPath: m_isInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f53a11d893809764f9b8d9e4f0af9e63, type: 3}
+    - target: {fileID: 2985887495635317926, guid: fccefa9843e890d4cbac830b8d889f74, type: 3}
+      propertyPath: m_nonInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1762e24161f28fc4f94f48617fcc75e0, type: 3}
     - target: {fileID: 4897866979042997234, guid: fccefa9843e890d4cbac830b8d889f74, type: 3}
       propertyPath: m_SortingOrder
       value: 5
@@ -2972,6 +3184,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block-green (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_hasInteractedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 72035d0362e3f3a428aa1f78dcc61ebf, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_isInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cb9bb61dbc63ce440b793990e2a77e2a, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_nonInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cb9bb61dbc63ce440b793990e2a77e2a, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_useInteractableSpriteController
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6409998194036200798, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
       propertyPath: currPuzzlePointsList
       value: 3
@@ -3041,6 +3269,22 @@ PrefabInstance:
     - target: {fileID: 188307105416807641, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
       propertyPath: m_Name
       value: Block-green (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_hasInteractedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 72035d0362e3f3a428aa1f78dcc61ebf, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_isInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cb9bb61dbc63ce440b793990e2a77e2a, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_nonInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cb9bb61dbc63ce440b793990e2a77e2a, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_useInteractableSpriteController
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6409998194036200798, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
       propertyPath: currPuzzlePointsList
@@ -3168,6 +3412,18 @@ PrefabInstance:
       propertyPath: currPuzzlePointsList
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7441334633731823956, guid: 1314260ab8ddb53429a3f376c7c2baae, type: 3}
+      propertyPath: m_hasInteractedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0ea2254840f75df46b54ae6dc094f74d, type: 3}
+    - target: {fileID: 7441334633731823956, guid: 1314260ab8ddb53429a3f376c7c2baae, type: 3}
+      propertyPath: m_isInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e2f064414e5cf9545ada0a4df97eb9f0, type: 3}
+    - target: {fileID: 7441334633731823956, guid: 1314260ab8ddb53429a3f376c7c2baae, type: 3}
+      propertyPath: m_nonInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e2f064414e5cf9545ada0a4df97eb9f0, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1314260ab8ddb53429a3f376c7c2baae, type: 3}
 --- !u!114 &3812176901582856874 stripped
@@ -3353,6 +3609,18 @@ PrefabInstance:
       propertyPath: isInteractableSprite
       value: 
       objectReference: {fileID: 21300000, guid: edd9cd80f04da814d8bfad20850a44f8, type: 3}
+    - target: {fileID: 6359039873362825074, guid: 8234d5c1afd423743a1f0e3abb1c6d65, type: 3}
+      propertyPath: m_hasInteractedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: edd9cd80f04da814d8bfad20850a44f8, type: 3}
+    - target: {fileID: 6359039873362825074, guid: 8234d5c1afd423743a1f0e3abb1c6d65, type: 3}
+      propertyPath: m_isInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: edd9cd80f04da814d8bfad20850a44f8, type: 3}
+    - target: {fileID: 6359039873362825074, guid: 8234d5c1afd423743a1f0e3abb1c6d65, type: 3}
+      propertyPath: m_nonInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 122ed713e1e89da409b820928c39eadf, type: 3}
     - target: {fileID: 8445235787681307562, guid: 8234d5c1afd423743a1f0e3abb1c6d65, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -3517,6 +3785,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7831489366631050728, guid: 3330a168158ed674c90cba740c58bd47, type: 3}
+      propertyPath: m_hasInteractedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0922e144ac650ad43bb7a0a588791514, type: 3}
+    - target: {fileID: 7831489366631050728, guid: 3330a168158ed674c90cba740c58bd47, type: 3}
+      propertyPath: m_isInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a78fd2df00d00f747bd7246ff886c6ef, type: 3}
+    - target: {fileID: 7831489366631050728, guid: 3330a168158ed674c90cba740c58bd47, type: 3}
+      propertyPath: m_nonInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a78fd2df00d00f747bd7246ff886c6ef, type: 3}
     - target: {fileID: 8573741446981851647, guid: 3330a168158ed674c90cba740c58bd47, type: 3}
       propertyPath: m_Name
       value: treasure (1)
@@ -3747,6 +4027,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Circuit1 B
       objectReference: {fileID: 0}
+    - target: {fileID: 6334992487962387125, guid: c0113d68b0de8874cad45f5a86ec0083, type: 3}
+      propertyPath: m_hasInteractedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5fb14250fa230234da2e6b296c6fe2be, type: 3}
+    - target: {fileID: 6334992487962387125, guid: c0113d68b0de8874cad45f5a86ec0083, type: 3}
+      propertyPath: m_isInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 72738edcf8b7286409bc78b8b578f75f, type: 3}
+    - target: {fileID: 6334992487962387125, guid: c0113d68b0de8874cad45f5a86ec0083, type: 3}
+      propertyPath: m_nonInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 72738edcf8b7286409bc78b8b578f75f, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0113d68b0de8874cad45f5a86ec0083, type: 3}
 --- !u!114 &1130836506049808968 stripped
@@ -3976,6 +4268,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block-red B
       objectReference: {fileID: 0}
+    - target: {fileID: 8688659566423670383, guid: 14a83c46bc04e05468b721f0bdb647cb, type: 3}
+      propertyPath: m_isInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6203c6239fcec624cb50ec05606f9d30, type: 3}
+    - target: {fileID: 8688659566423670383, guid: 14a83c46bc04e05468b721f0bdb647cb, type: 3}
+      propertyPath: m_nonInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6203c6239fcec624cb50ec05606f9d30, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14a83c46bc04e05468b721f0bdb647cb, type: 3}
 --- !u!114 &429592211714780693 stripped
@@ -4048,6 +4348,22 @@ PrefabInstance:
     - target: {fileID: 188307105416807641, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
       propertyPath: m_Name
       value: Block-green (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_hasInteractedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 72035d0362e3f3a428aa1f78dcc61ebf, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_isInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cb9bb61dbc63ce440b793990e2a77e2a, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_nonInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cb9bb61dbc63ce440b793990e2a77e2a, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_useInteractableSpriteController
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6409998194036200798, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
       propertyPath: currPuzzlePointsList
@@ -4123,6 +4439,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7441334633731823956, guid: 1314260ab8ddb53429a3f376c7c2baae, type: 3}
+      propertyPath: m_hasInteractedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0ea2254840f75df46b54ae6dc094f74d, type: 3}
+    - target: {fileID: 7441334633731823956, guid: 1314260ab8ddb53429a3f376c7c2baae, type: 3}
+      propertyPath: m_isInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e2f064414e5cf9545ada0a4df97eb9f0, type: 3}
+    - target: {fileID: 7441334633731823956, guid: 1314260ab8ddb53429a3f376c7c2baae, type: 3}
+      propertyPath: m_nonInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e2f064414e5cf9545ada0a4df97eb9f0, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1314260ab8ddb53429a3f376c7c2baae, type: 3}
 --- !u!4 &5325544302078228775 stripped
@@ -4315,6 +4643,18 @@ PrefabInstance:
       propertyPath: currPuzzlePointsList
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7441334633731823956, guid: 1314260ab8ddb53429a3f376c7c2baae, type: 3}
+      propertyPath: m_hasInteractedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0ea2254840f75df46b54ae6dc094f74d, type: 3}
+    - target: {fileID: 7441334633731823956, guid: 1314260ab8ddb53429a3f376c7c2baae, type: 3}
+      propertyPath: m_isInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e2f064414e5cf9545ada0a4df97eb9f0, type: 3}
+    - target: {fileID: 7441334633731823956, guid: 1314260ab8ddb53429a3f376c7c2baae, type: 3}
+      propertyPath: m_nonInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e2f064414e5cf9545ada0a4df97eb9f0, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1314260ab8ddb53429a3f376c7c2baae, type: 3}
 --- !u!114 &3812176902204261131 stripped
@@ -4387,6 +4727,22 @@ PrefabInstance:
     - target: {fileID: 188307105416807641, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
       propertyPath: m_Name
       value: Block-green (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_hasInteractedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 72035d0362e3f3a428aa1f78dcc61ebf, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_isInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cb9bb61dbc63ce440b793990e2a77e2a, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_nonInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cb9bb61dbc63ce440b793990e2a77e2a, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_useInteractableSpriteController
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
@@ -4598,6 +4954,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block-green (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_hasInteractedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 72035d0362e3f3a428aa1f78dcc61ebf, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_isInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cb9bb61dbc63ce440b793990e2a77e2a, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_nonInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cb9bb61dbc63ce440b793990e2a77e2a, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_useInteractableSpriteController
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6409998194036200798, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
       propertyPath: currPuzzlePointsList
       value: 3
@@ -4806,6 +5178,22 @@ PrefabInstance:
     - target: {fileID: 188307105416807641, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
       propertyPath: m_Name
       value: Block-green (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_hasInteractedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 72035d0362e3f3a428aa1f78dcc61ebf, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_isInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cb9bb61dbc63ce440b793990e2a77e2a, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_nonInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cb9bb61dbc63ce440b793990e2a77e2a, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_useInteractableSpriteController
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
@@ -5019,6 +5407,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 429592211019123427}
     m_Modifications:
+    - target: {fileID: 1045515805451102450, guid: 0eb2abe8c14506946aa28b095a7d41c4, type: 3}
+      propertyPath: m_hasInteractedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 97e88ff808790e24ea45665b96be393f, type: 3}
+    - target: {fileID: 1045515805451102450, guid: 0eb2abe8c14506946aa28b095a7d41c4, type: 3}
+      propertyPath: m_isInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: de91f13e53881cc42b51bc1dc7c898a9, type: 3}
+    - target: {fileID: 1045515805451102450, guid: 0eb2abe8c14506946aa28b095a7d41c4, type: 3}
+      propertyPath: m_nonInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 422d6c68f4488844192e5630f87b5ec1, type: 3}
     - target: {fileID: 3697531769132700002, guid: 0eb2abe8c14506946aa28b095a7d41c4, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -5421,6 +5821,18 @@ PrefabInstance:
       propertyPath: isInteractableSprite
       value: 
       objectReference: {fileID: 21300000, guid: edd9cd80f04da814d8bfad20850a44f8, type: 3}
+    - target: {fileID: 6359039873362825074, guid: 8234d5c1afd423743a1f0e3abb1c6d65, type: 3}
+      propertyPath: m_hasInteractedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: edd9cd80f04da814d8bfad20850a44f8, type: 3}
+    - target: {fileID: 6359039873362825074, guid: 8234d5c1afd423743a1f0e3abb1c6d65, type: 3}
+      propertyPath: m_isInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: edd9cd80f04da814d8bfad20850a44f8, type: 3}
+    - target: {fileID: 6359039873362825074, guid: 8234d5c1afd423743a1f0e3abb1c6d65, type: 3}
+      propertyPath: m_nonInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 122ed713e1e89da409b820928c39eadf, type: 3}
     - target: {fileID: 8445235787681307562, guid: 8234d5c1afd423743a1f0e3abb1c6d65, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -5479,6 +5891,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 429592211019123427}
     m_Modifications:
+    - target: {fileID: 1045515805451102450, guid: 0eb2abe8c14506946aa28b095a7d41c4, type: 3}
+      propertyPath: m_hasInteractedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 97e88ff808790e24ea45665b96be393f, type: 3}
+    - target: {fileID: 1045515805451102450, guid: 0eb2abe8c14506946aa28b095a7d41c4, type: 3}
+      propertyPath: m_isInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: de91f13e53881cc42b51bc1dc7c898a9, type: 3}
+    - target: {fileID: 1045515805451102450, guid: 0eb2abe8c14506946aa28b095a7d41c4, type: 3}
+      propertyPath: m_nonInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 422d6c68f4488844192e5630f87b5ec1, type: 3}
     - target: {fileID: 3697531769132700002, guid: 0eb2abe8c14506946aa28b095a7d41c4, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -5703,6 +6127,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block-green (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_hasInteractedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 72035d0362e3f3a428aa1f78dcc61ebf, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_isInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cb9bb61dbc63ce440b793990e2a77e2a, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_nonInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cb9bb61dbc63ce440b793990e2a77e2a, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_useInteractableSpriteController
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6409998194036200798, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
       propertyPath: currPuzzlePointsList
       value: 2
@@ -5895,6 +6335,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7831489366631050728, guid: 3330a168158ed674c90cba740c58bd47, type: 3}
+      propertyPath: m_hasInteractedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0922e144ac650ad43bb7a0a588791514, type: 3}
+    - target: {fileID: 7831489366631050728, guid: 3330a168158ed674c90cba740c58bd47, type: 3}
+      propertyPath: m_isInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a78fd2df00d00f747bd7246ff886c6ef, type: 3}
+    - target: {fileID: 7831489366631050728, guid: 3330a168158ed674c90cba740c58bd47, type: 3}
+      propertyPath: m_nonInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a78fd2df00d00f747bd7246ff886c6ef, type: 3}
     - target: {fileID: 8573741446981851647, guid: 3330a168158ed674c90cba740c58bd47, type: 3}
       propertyPath: m_Name
       value: treasure (3)
@@ -6031,6 +6483,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block-green (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_hasInteractedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 72035d0362e3f3a428aa1f78dcc61ebf, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_isInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cb9bb61dbc63ce440b793990e2a77e2a, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_nonInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cb9bb61dbc63ce440b793990e2a77e2a, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_useInteractableSpriteController
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6409998194036200798, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
       propertyPath: currPuzzlePointsList
       value: 1
@@ -6100,6 +6568,22 @@ PrefabInstance:
     - target: {fileID: 188307105416807641, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
       propertyPath: m_Name
       value: Block-green (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_hasInteractedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 72035d0362e3f3a428aa1f78dcc61ebf, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_isInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cb9bb61dbc63ce440b793990e2a77e2a, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_nonInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cb9bb61dbc63ce440b793990e2a77e2a, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_useInteractableSpriteController
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6409998194036200798, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
       propertyPath: currPuzzlePointsList
@@ -6201,6 +6685,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 429592211019123427}
     m_Modifications:
+    - target: {fileID: 1045515805451102450, guid: 0eb2abe8c14506946aa28b095a7d41c4, type: 3}
+      propertyPath: m_hasInteractedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 97e88ff808790e24ea45665b96be393f, type: 3}
+    - target: {fileID: 1045515805451102450, guid: 0eb2abe8c14506946aa28b095a7d41c4, type: 3}
+      propertyPath: m_isInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: de91f13e53881cc42b51bc1dc7c898a9, type: 3}
+    - target: {fileID: 1045515805451102450, guid: 0eb2abe8c14506946aa28b095a7d41c4, type: 3}
+      propertyPath: m_nonInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 422d6c68f4488844192e5630f87b5ec1, type: 3}
     - target: {fileID: 3697531769132700002, guid: 0eb2abe8c14506946aa28b095a7d41c4, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -6279,6 +6775,14 @@ PrefabInstance:
       propertyPath: hasInteractedSprite
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2985887495635317926, guid: fccefa9843e890d4cbac830b8d889f74, type: 3}
+      propertyPath: m_isInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f53a11d893809764f9b8d9e4f0af9e63, type: 3}
+    - target: {fileID: 2985887495635317926, guid: fccefa9843e890d4cbac830b8d889f74, type: 3}
+      propertyPath: m_nonInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1762e24161f28fc4f94f48617fcc75e0, type: 3}
     - target: {fileID: 5607133989209406239, guid: fccefa9843e890d4cbac830b8d889f74, type: 3}
       propertyPath: m_Name
       value: batterypack1 C
@@ -6536,6 +7040,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Circuit1 C
       objectReference: {fileID: 0}
+    - target: {fileID: 6334992487962387125, guid: c0113d68b0de8874cad45f5a86ec0083, type: 3}
+      propertyPath: m_hasInteractedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5fb14250fa230234da2e6b296c6fe2be, type: 3}
+    - target: {fileID: 6334992487962387125, guid: c0113d68b0de8874cad45f5a86ec0083, type: 3}
+      propertyPath: m_isInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 72738edcf8b7286409bc78b8b578f75f, type: 3}
+    - target: {fileID: 6334992487962387125, guid: c0113d68b0de8874cad45f5a86ec0083, type: 3}
+      propertyPath: m_nonInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 72738edcf8b7286409bc78b8b578f75f, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0113d68b0de8874cad45f5a86ec0083, type: 3}
 --- !u!114 &1130836506391451631 stripped
@@ -6609,6 +7125,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block-green (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_hasInteractedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 72035d0362e3f3a428aa1f78dcc61ebf, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_isInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cb9bb61dbc63ce440b793990e2a77e2a, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_nonInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cb9bb61dbc63ce440b793990e2a77e2a, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_useInteractableSpriteController
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6409998194036200798, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
       propertyPath: currPuzzlePointsList
       value: 1
@@ -6679,6 +7211,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block-green (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_hasInteractedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 72035d0362e3f3a428aa1f78dcc61ebf, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_isInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cb9bb61dbc63ce440b793990e2a77e2a, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_nonInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cb9bb61dbc63ce440b793990e2a77e2a, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_useInteractableSpriteController
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6409998194036200798, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
       propertyPath: currPuzzlePointsList
       value: 1
@@ -6745,6 +7293,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7831489366631050728, guid: 3330a168158ed674c90cba740c58bd47, type: 3}
+      propertyPath: m_hasInteractedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0922e144ac650ad43bb7a0a588791514, type: 3}
+    - target: {fileID: 7831489366631050728, guid: 3330a168158ed674c90cba740c58bd47, type: 3}
+      propertyPath: m_isInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a78fd2df00d00f747bd7246ff886c6ef, type: 3}
+    - target: {fileID: 7831489366631050728, guid: 3330a168158ed674c90cba740c58bd47, type: 3}
+      propertyPath: m_nonInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a78fd2df00d00f747bd7246ff886c6ef, type: 3}
     - target: {fileID: 8573741446981851647, guid: 3330a168158ed674c90cba740c58bd47, type: 3}
       propertyPath: m_Name
       value: treasure (2)
@@ -6810,6 +7370,22 @@ PrefabInstance:
     - target: {fileID: 188307105416807641, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
       propertyPath: m_Name
       value: Block-green (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_hasInteractedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 72035d0362e3f3a428aa1f78dcc61ebf, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_isInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cb9bb61dbc63ce440b793990e2a77e2a, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_nonInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cb9bb61dbc63ce440b793990e2a77e2a, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_useInteractableSpriteController
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6409998194036200798, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
       propertyPath: currPuzzlePointsList
@@ -6880,6 +7456,22 @@ PrefabInstance:
     - target: {fileID: 188307105416807641, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
       propertyPath: m_Name
       value: Block-green
+      objectReference: {fileID: 0}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_hasInteractedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 72035d0362e3f3a428aa1f78dcc61ebf, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_isInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cb9bb61dbc63ce440b793990e2a77e2a, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_nonInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cb9bb61dbc63ce440b793990e2a77e2a, type: 3}
+    - target: {fileID: 1140174129068089872, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
+      propertyPath: m_useInteractableSpriteController
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6409998194036200798, guid: 405b6a1de3c274644a52b45f82a26ff7, type: 3}
       propertyPath: currPuzzlePointsList
@@ -7410,6 +8002,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7831489366631050728, guid: 3330a168158ed674c90cba740c58bd47, type: 3}
+      propertyPath: m_hasInteractedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0922e144ac650ad43bb7a0a588791514, type: 3}
+    - target: {fileID: 7831489366631050728, guid: 3330a168158ed674c90cba740c58bd47, type: 3}
+      propertyPath: m_isInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a78fd2df00d00f747bd7246ff886c6ef, type: 3}
+    - target: {fileID: 7831489366631050728, guid: 3330a168158ed674c90cba740c58bd47, type: 3}
+      propertyPath: m_nonInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a78fd2df00d00f747bd7246ff886c6ef, type: 3}
     - target: {fileID: 8573741446981851647, guid: 3330a168158ed674c90cba740c58bd47, type: 3}
       propertyPath: m_Name
       value: treasure
@@ -8334,6 +8938,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block-red A
       objectReference: {fileID: 0}
+    - target: {fileID: 8688659566423670383, guid: 14a83c46bc04e05468b721f0bdb647cb, type: 3}
+      propertyPath: m_isInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6203c6239fcec624cb50ec05606f9d30, type: 3}
+    - target: {fileID: 8688659566423670383, guid: 14a83c46bc04e05468b721f0bdb647cb, type: 3}
+      propertyPath: m_nonInteractableSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6203c6239fcec624cb50ec05606f9d30, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14a83c46bc04e05468b721f0bdb647cb, type: 3}
 --- !u!4 &429592212815190227 stripped

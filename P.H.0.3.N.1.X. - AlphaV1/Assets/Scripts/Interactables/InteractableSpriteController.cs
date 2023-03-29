@@ -4,25 +4,25 @@ using UnityEngine;
 public class InteractableSpriteController : MonoBehaviour
 {
     [Header("Intractable Boolean Flag for Sprite")]
-    [SerializeField] private bool useInteractableSpriteController = true;
+    [SerializeField] private bool m_useInteractableSpriteController = true;
 
     [Header("Intractable Sprite")]
-    [SerializeField] Sprite nonInteractableSprite;
-    [SerializeField] Sprite isInteractableSprite;
-    [SerializeField] Sprite hasInteractedSprite;
+    [SerializeField] private Sprite m_nonInteractableSprite;
+    [SerializeField] private Sprite m_isInteractableSprite;
+    [SerializeField] private Sprite m_hasInteractedSprite;
 
     //Components
-    private SpriteRenderer spriteRenderer;
+    private SpriteRenderer m_spriteRenderer;
 
     #region Unity Methods
     private void Awake()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        m_spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Start()
     {
-        if (useInteractableSpriteController)
+        if (m_useInteractableSpriteController)
         {
             disableAnimatorIfNeeded();
         }
@@ -32,22 +32,22 @@ public class InteractableSpriteController : MonoBehaviour
     #region Sprite Methods
     public void ChangeSprite(bool isActive, bool hasActivated)
     {
-        if (!useInteractableSpriteController)
+        if (!m_useInteractableSpriteController)
         {
             return;
         }
 
         if (hasActivated)
         {
-            spriteRenderer.sprite = hasInteractedSprite;
+            m_spriteRenderer.sprite = m_hasInteractedSprite;
         }
         else if(isActive)
         {
-            spriteRenderer.sprite = isInteractableSprite;
+            m_spriteRenderer.sprite = m_isInteractableSprite;
         }
         else
         {
-            spriteRenderer.sprite = nonInteractableSprite;
+            m_spriteRenderer.sprite = m_nonInteractableSprite;
         }
     }
     #endregion
