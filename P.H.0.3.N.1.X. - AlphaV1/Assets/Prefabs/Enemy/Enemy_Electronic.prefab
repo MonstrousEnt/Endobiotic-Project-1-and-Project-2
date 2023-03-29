@@ -32,8 +32,16 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5974273130741917466, guid: 59f54ee31f9c77142b6ecf369dd23689, type: 3}
+      propertyPath: m_moveSpeed
+      value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 5974273130741917466, guid: 59f54ee31f9c77142b6ecf369dd23689, type: 3}
       propertyPath: m_intialForm
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5974273130741917466, guid: 59f54ee31f9c77142b6ecf369dd23689, type: 3}
+      propertyPath: m_aggroRadius
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5974273130741917466, guid: 59f54ee31f9c77142b6ecf369dd23689, type: 3}
       propertyPath: tagDataPlayer

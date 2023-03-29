@@ -8,8 +8,8 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private Form m_intialForm = Form.Manipulator;
 
     [Header("AI")]
-    [SerializeField] private float moveSpeed;
-    [SerializeField] private float aggroRadius = 5;
+    [SerializeField] private float m_moveSpeed;
+    [SerializeField] private float m_aggroRadius;
 
     [Header("Tag")]
     [SerializeField] private TagDataScriptableObject m_tagDataPlayer;
@@ -19,11 +19,11 @@ public class EnemyController : MonoBehaviour
 
     //Target
     private Transform m_target = null;
-    private CharacterFormsController characterFormController;
+    private CharacterFormsController m_characterFormController;
 
     //Movement
     private Rigidbody2D m_rigidbody2D;
-    private Vector3 preferredPosition;
+    private Vector3 m_preferredPosition;
     #endregion
 
     #region Getters and Setters
@@ -31,7 +31,7 @@ public class EnemyController : MonoBehaviour
 
     private void SetBehaviour(GameObject target)
     {
-        if (target != null && target.TryGetComponent(out CharacterFormsController formController) && formController.currForm != characterFormController.currForm)
+        if (target != null && target.TryGetComponent(out CharacterFormsController formController) && formController.currForm != m_characterFormController.currForm)
         {
             m_target = target.transform;
             isAttacking = true;
@@ -65,20 +65,20 @@ public class EnemyController : MonoBehaviour
     #region Unity Methods
     private void Awake()
     {
-        characterFormController = GetComponent<CharacterFormsController>();
+        m_characterFormController = GetComponent<CharacterFormsController>();
         m_rigidbody2D = GetComponent<Rigidbody2D>();
-        preferredPosition = transform.position;
+        m_preferredPosition = transform.position;
     }
 
     private void Start()
     {
-        characterFormController.ChangeForm(m_intialForm);
-        StartCoroutine(intelligence(aggroRadius, 0.5f));
+        m_characterFormController.ChangeForm(m_intialForm);
+        StartCoroutine(intelligence(m_aggroRadius, 0.5f));
     }
 
     public void UpdatePreferredPosition(Vector3 position)
     {
-        preferredPosition = position;
+        m_preferredPosition = position;
     }
 
     private void Update()
@@ -91,7 +91,7 @@ public class EnemyController : MonoBehaviour
     private void move()
     {
         m_rigidbody2D.velocity = Vector2.zero;
-        float step = moveSpeed * Time.deltaTime;
+        float step = m_moveSpeed * Time.deltaTime;
 
         if (isAttacking)
         {
@@ -107,13 +107,13 @@ public class EnemyController : MonoBehaviour
         }
         else
         {
-            if (Vector3.Distance(transform.position, preferredPosition) < 0.001f)
+            if (Vector3.Distance(transform.position, m_preferredPosition) < 0.001f)
             {
                 return;
             }
             else
             {
-                transform.position = Vector3.MoveTowards(transform.position, preferredPosition, step);
+                transform.position = Vector3.MoveTowards(transform.position, m_preferredPosition, step);
             }
         }
     }
