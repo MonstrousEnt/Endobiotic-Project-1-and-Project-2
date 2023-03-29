@@ -2,7 +2,7 @@
  * Team Name: Monstrous Entertainment - Vex Team
  * Authors: Daniel Cox
  * Created Date: February 14, 2023
- * Last Updated: Match 12, 2023
+ * Last Updated: Match 29, 2023
  * Description: This is the UI action class for pop up.
  * Notes: 
  * Resources: 
@@ -12,18 +12,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PopUpActions : MonoBehaviour
 {
     #region Class Variables
-    [Header("Void Game Event - UI Manager")]
-    [SerializeField] private VoidGameEventScriptableObject m_voidGameEventUIManagerDisablePopUp;
+    [Header("Unity Events")]
+    [SerializeField] private UnityEvent m_disbalePopUpUnityEvent;
     #endregion
 
     #region Pop Up Action Methods - Quit Game
     public void QuitGame()
     {
-        m_voidGameEventUIManagerDisablePopUp.Raise();
+        m_disbalePopUpUnityEvent?.Invoke();
 
         Debug.Log("Quiting Game...");
         Application.Quit();

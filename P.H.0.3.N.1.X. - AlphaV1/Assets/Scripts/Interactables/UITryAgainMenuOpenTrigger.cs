@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 /// <summary>
 /// This trigger class is for open the try again UI Menu.
@@ -8,13 +9,13 @@ using UnityEngine;
 
 public class UITryAgainMenuOpenTrigger : MonoBehaviour
 {
-    [Header("Void Game Event Scriptable Object - UI Manager")]
-    [SerializeField] private VoidGameEventScriptableObject m_voidGameEventUIManagerEnableTryMenu;
+    [Header("Unity Events")]
+    [SerializeField] private UnityEvent m_enbaleTryAgainMenuUjnityEvent;
 
     #region Unity Methods
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        m_voidGameEventUIManagerEnableTryMenu.Raise();
+        m_enbaleTryAgainMenuUjnityEvent?.Invoke();
     }
     #endregion
 }

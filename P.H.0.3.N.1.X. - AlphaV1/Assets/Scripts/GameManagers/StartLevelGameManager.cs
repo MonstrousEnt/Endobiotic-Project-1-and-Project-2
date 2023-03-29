@@ -17,8 +17,7 @@ public class StartLevelGameManager : MonoBehaviour
 {
     #region Class Variables
     [Header("Unity Event")]
-    [SerializeField] private UnityEvent m_setUpTimerUnityEvent;
-    [SerializeField] private UnityEvent m_enbaleTimerUnityEvent;
+    [SerializeField] private UnityEvent m_startTimerUnityEvent;
     [SerializeField] private UnityEvent m_soundEffectUnityEvent;
     #endregion
 
@@ -32,8 +31,7 @@ public class StartLevelGameManager : MonoBehaviour
     #region Start Level Methods
     private void startlevel()
     {
-        m_setUpTimerUnityEvent?.Invoke();
-        m_enbaleTimerUnityEvent?.Invoke();
+        m_startTimerUnityEvent?.Invoke();
 
         m_soundEffectUnityEvent?.Invoke();
     }

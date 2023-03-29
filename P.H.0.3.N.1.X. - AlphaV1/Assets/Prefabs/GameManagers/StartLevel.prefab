@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4907aa883a9286a4a9751330b54ba983, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_setUpTimerUnityEvent:
+  m_startTimerUnityEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: 483240dc24a8c5c40841514a649ecc45, type: 2}
@@ -59,9 +59,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_enbaleTimerUnityEvent:
-    m_PersistentCalls:
-      m_Calls:
       - m_Target: {fileID: 11400000, guid: b049495b7237227409462ca8d833736f, type: 2}
         m_TargetAssemblyTypeName: TimerDataGameEventScriptableObject, Assembly-CSharp
         m_MethodName: Raise

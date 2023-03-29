@@ -23,7 +23,8 @@ public class UITryAgainMenu : UIMenuBase
     [SerializeField] private UIPiontSystem m_piontSystem;
 
     [Header("Unity Event")]
-    [SerializeField] private UnityEvent m_tryAgainunityEvent;
+    [SerializeField] private UnityEvent m_restartLevelUnityEvent;
+    [SerializeField] private UnityEvent m_loadNextScenceUnityEvent;
     #endregion
 
     #region UI Base - Over Methods - Try Again Menu
@@ -46,7 +47,8 @@ public class UITryAgainMenu : UIMenuBase
     {
         DisableMenu();
 
-        m_tryAgainunityEvent.Invoke();
+        m_restartLevelUnityEvent?.Invoke();
+        m_loadNextScenceUnityEvent?.Invoke();
     }
     #endregion
 }

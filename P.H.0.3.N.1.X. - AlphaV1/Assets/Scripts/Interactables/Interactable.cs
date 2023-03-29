@@ -87,7 +87,7 @@ public class Interactable : MonoBehaviour, IPrerequisite
 
         if (onActivated != null)
         {
-            onActivated.Invoke();
+            onActivated?.Invoke();
         }
 
         updateSprite();

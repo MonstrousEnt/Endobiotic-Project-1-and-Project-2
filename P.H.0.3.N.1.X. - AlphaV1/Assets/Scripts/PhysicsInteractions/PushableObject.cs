@@ -48,7 +48,7 @@ public class PushableObject : MonoBehaviour
             {
                 rigidBody2D.mass = 10;
 
-                soundEffectUnityEvent.Invoke();
+                soundEffectUnityEvent?.Invoke();
             }
             else
             {

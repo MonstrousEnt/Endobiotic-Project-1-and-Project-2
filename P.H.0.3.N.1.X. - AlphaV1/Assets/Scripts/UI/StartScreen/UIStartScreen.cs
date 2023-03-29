@@ -17,29 +17,24 @@ using UnityEngine.Events;
 public class UIStartScreen : MonoBehaviour
 {
     #region Class Variables
-    [Header("Audio Data")]
-    [SerializeField] private AudioDataScriptableObject m_audioDataStartScreenSoundtrack;
-
-    [Header("Audio Data Game Event - Audio Manager")]
-    [SerializeField] private AudioDataGameEventScriptableObject m_audioDataGameEventEnableLoop;
-    [SerializeField] private AudioDataGameEventScriptableObject m_audioDataGameEventPlaySound;
-
     [Header("Unity Event")]
-    [SerializeField] private UnityEvent m_unityEventStartGame;
+    [SerializeField] private UnityEvent m_startSoundtrackUnityEvent;
+    [SerializeField] private UnityEvent m_stopSoundtrackUnityEvent;
+    [SerializeField] private UnityEvent m_loadNextScenceUnityEvent;
     #endregion
 
     #region Unity Methods
     private void Start()
     {
-        m_audioDataGameEventEnableLoop.Raise(m_audioDataStartScreenSoundtrack);
-        m_audioDataGameEventPlaySound.Raise(m_audioDataStartScreenSoundtrack);
+        m_startSoundtrackUnityEvent?.Invoke();
     }
 
     void Update()
     {
         if (Input.anyKeyDown)
         {
-            m_unityEventStartGame?.Invoke();
+            m_stopSoundtrackUnityEvent?.Invoke();
+            m_loadNextScenceUnityEvent?.Invoke();
         }
     }
     #endregion

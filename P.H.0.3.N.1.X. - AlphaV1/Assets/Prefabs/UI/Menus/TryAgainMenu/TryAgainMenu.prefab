@@ -853,7 +853,7 @@ MonoBehaviour:
   m_popUpDataGameEventUIMangerSetPopUpData: {fileID: 11400000, guid: 29a6c36849ca25a40b9c666c995382c3, type: 2}
   m_voidGameEventUIManagerEanblePopUp: {fileID: 11400000, guid: 7ef7add07fa35104bbed2ad203302e7f, type: 2}
   m_piontSystem: {fileID: 8225104314088512471}
-  m_tryAgainunityEvent:
+  m_restartLevelUnityEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: 19a964f1f6283a64fa4f3b3681ca4fe5, type: 2}
@@ -868,6 +868,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  m_loadNextScenceUnityEvent:
+    m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 11400000, guid: ce2f301b6fb0a0844879a5b3b48a84b7, type: 2}
         m_TargetAssemblyTypeName: LevelDataGameEventScriptableObject, Assembly-CSharp
         m_MethodName: Raise

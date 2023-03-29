@@ -96,7 +96,7 @@ public class UIPopUp : UIBase
     {
         if (m_popUpData != null)
         {
-            m_popUpData.popUpActionUnityEvent.Invoke();
+            m_popUpData.popUpActionUnityEvent?.Invoke();
         }
     }
     #endregion

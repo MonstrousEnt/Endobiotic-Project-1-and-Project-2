@@ -2,7 +2,7 @@
  * Team Name: Monstrous Entertainment - Vex Team
  * Authors: Daniel Cox
  * Created Date: February 12, 2023
- * Last Updated: Match 28, 2023
+ * Last Updated: Match 29, 2023
  * Description: This is the class for player controls user interface.
  * Notes:
  * Resources: 
@@ -11,6 +11,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerControllerUI : MonoBehaviour
 {
@@ -18,9 +19,9 @@ public class PlayerControllerUI : MonoBehaviour
     [Header("Boolean Flag Global Variable Scriptable Object - UI Manager")]
     [SerializeField] private BooleanFlagGlobalVariableScriptableObject m_booleanFlagGlobalVariableUIManagerPauseMenuIsActive;
 
-    [Header("Void Game Event Scriptable Object - UI Manager")]
-    [SerializeField] private VoidGameEventScriptableObject m_voidGameEventUIManagerEnablePauseMneu;
-    [SerializeField] private VoidGameEventScriptableObject m_voidGameEventUIManagerDisablePauseMneu;
+    [Header("Unity Events")]
+    [SerializeField] private UnityEvent m_enablePauseMneuUnityEevnt;
+    [SerializeField] private UnityEvent m_disablePauseMneuUnityEevnt;
     #endregion
 
     #region Unity Methods
@@ -31,11 +32,11 @@ public class PlayerControllerUI : MonoBehaviour
         {
             if (m_booleanFlagGlobalVariableUIManagerPauseMenuIsActive.booleanFlag)
             {
-                m_voidGameEventUIManagerDisablePauseMneu.Raise();
+                m_disablePauseMneuUnityEevnt?.Invoke();
             }
             else if (!m_booleanFlagGlobalVariableUIManagerPauseMenuIsActive.booleanFlag)
             {
-                m_voidGameEventUIManagerEnablePauseMneu.Raise();
+                m_enablePauseMneuUnityEevnt?.Invoke();
             }
         }
     }

@@ -99,6 +99,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a0b30bcd3f68424788ba969aa77838d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_IDLE_DOWN: Idle_Down
+  m_IDLE_UP: Idle_Up
+  m_IDLE_LEFT: Idle_Left
+  m_IDLE_RIGHT: Idle_Right
+  m_WALK_DOWN: Walk_Down
+  m_WALK_UP: Walk_Up
+  m_WALK_LEFT: Walk_Left
+  m_WALK_RIGHT: Walk_Right
+  m_DEST_ATK_DOWN: Atk_Down
+  m_DEST_ATK_UP: Atk_Up
+  m_DEST_ATK_LEFT: Atk_Left
+  m_DEST_ATK_RIGHT: Atk_Right
+  m_MAGNET_PULL_DOWN: Pull_Down
+  m_MAGNET_PULL_UP: Pull_Up
+  m_MAGNET_PULL_LEFT: Pull_Left
+  m_MAGNET_PULL_RIGHT: Pull_Right
 --- !u!114 &759186879241046267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,8 +190,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_booleanFlagGlobalVariableUIManagerPauseMenuIsActive: {fileID: 11400000, guid: 5ab18ef0d5fb1aa4a8233cc4cc56f120, type: 2}
-  m_voidGameEventUIManagerEnablePauseMneu: {fileID: 11400000, guid: 3a9c2d3ee6753434db02fa6ba38d6ef7, type: 2}
-  m_voidGameEventUIManagerDisablePauseMneu: {fileID: 11400000, guid: 800d4c1c926b244459fde588e65ab6ff, type: 2}
+  m_enablePauseMneuUnityEevnt:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 3a9c2d3ee6753434db02fa6ba38d6ef7, type: 2}
+        m_TargetAssemblyTypeName: VoidGameEventScriptableObject, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_disablePauseMneuUnityEevnt:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 800d4c1c926b244459fde588e65ab6ff, type: 2}
+        m_TargetAssemblyTypeName: VoidGameEventScriptableObject, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!70 &580835355768018660
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

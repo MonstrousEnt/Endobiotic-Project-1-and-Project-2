@@ -100,7 +100,7 @@ public class EnemySpawner : MonoBehaviour
         newEnemy.GetComponent<EnemyInteraction>().deathEvent.AddListener(UpdateCurrentRobotsList);
         newEnemy.GetComponent<EnemyController>().UpdatePreferredPosition(robot.m_position);
 
-        soundEffectUnityEvent.Invoke();
+        soundEffectUnityEvent?.Invoke();
     }
 
     private void LoadUserSpawnedRobots()
