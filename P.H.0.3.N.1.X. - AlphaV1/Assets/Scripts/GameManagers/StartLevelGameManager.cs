@@ -2,7 +2,7 @@
  * Team Name: Monstrous Entertainment - Vex Team
  * Authors: Daniel Cox
  * Created Date: March 3, 2023
- * Last Updated: Match 12, 2023
+ * Last Updated: Match 29, 2023
  * Description: This is the game manager class for starting the level.
  * Notes: 
  * Resources: 
@@ -16,10 +16,9 @@ using UnityEngine.Events;
 public class StartLevelGameManager : MonoBehaviour
 {
     #region Class Variables
-    [Header("Time Data")]
-    [SerializeField] private TimerDataScriptableObject m_timeData;
-
     [Header("Unity Event")]
+    [SerializeField] private UnityEvent m_setUpTimerUnityEvent;
+    [SerializeField] private UnityEvent m_enbaleTimerUnityEvent;
     [SerializeField] private UnityEvent m_soundEffectUnityEvent;
     #endregion
 
@@ -30,12 +29,13 @@ public class StartLevelGameManager : MonoBehaviour
     }
     #endregion
 
-    #region Private Start Level Methods
+    #region Start Level Methods
     private void startlevel()
     {
-        m_soundEffectUnityEvent.Invoke();
+        m_setUpTimerUnityEvent?.Invoke();
+        m_enbaleTimerUnityEvent?.Invoke();
 
-        m_timeData.EnableTime();
+        m_soundEffectUnityEvent?.Invoke();
     }
     #endregion
 }

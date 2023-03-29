@@ -44,7 +44,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4907aa883a9286a4a9751330b54ba983, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_timeData: {fileID: 11400000, guid: 255fc27c64db2d341b6255bac2af23e8, type: 2}
+  m_setUpTimerUnityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 483240dc24a8c5c40841514a649ecc45, type: 2}
+        m_TargetAssemblyTypeName: TimerDataGameEventScriptableObject, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 255fc27c64db2d341b6255bac2af23e8, type: 2}
+          m_ObjectArgumentAssemblyTypeName: TimerDataScriptableObject, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_enbaleTimerUnityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: b049495b7237227409462ca8d833736f, type: 2}
+        m_TargetAssemblyTypeName: TimerDataGameEventScriptableObject, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 255fc27c64db2d341b6255bac2af23e8, type: 2}
+          m_ObjectArgumentAssemblyTypeName: TimerDataScriptableObject, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_soundEffectUnityEvent:
     m_PersistentCalls:
       m_Calls:

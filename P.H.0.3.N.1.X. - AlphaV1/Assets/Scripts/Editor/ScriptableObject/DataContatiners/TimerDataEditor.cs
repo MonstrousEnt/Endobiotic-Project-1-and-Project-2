@@ -2,7 +2,7 @@
  * Team Name: Monstrous Entertainment - Vex Team
  * Authors: Daniel Cox
  * Created Date: March 7, 2023
- * Last Updated: March 12, 2023
+ * Last Updated: March 29, 2023
  * Description: This is the editor class for Scriptable Object data container timer data.
  * Notes: 
  * Resources: 
@@ -18,6 +18,21 @@ using UnityEngine;
 [CustomEditor(typeof(TimerDataScriptableObject), true)]
 public class TimerDataEditor : Editor
 {
+    #region Class Variables
+        #region Serialized Property
+        SerializedProperty m_timerModeSerializedProperty;
+        #endregion
+    #endregion
+
+    #region Unity Methods
+    private void OnEnable()
+    {
+        #region Find Serialized Properties
+        m_timerModeSerializedProperty = serializedObject.FindProperty("m_timerMode");
+        #endregion
+    }
+    #endregion
+
     #region Custom Editor View
     public override void OnInspectorGUI()
     {
@@ -40,6 +55,8 @@ public class TimerDataEditor : Editor
 
         //User Inputs 
         timerData.timeInseconds = EditorGUILayout.FloatField("Time In Seconds", timerData.timeInseconds);
+        EditorGUILayout.PropertyField(m_timerModeSerializedProperty, new GUIContent("Timer Mode"));
+        timerData.stratTimeInSeconds = EditorGUILayout.FloatField("Start Time In Seconds", timerData.stratTimeInSeconds);
         timerData.startTimer = EditorGUILayout.Toggle("Start Timer", timerData.startTimer);
         timerData.updateUI = EditorGUILayout.Toggle("Update UI", timerData.updateUI);
 
