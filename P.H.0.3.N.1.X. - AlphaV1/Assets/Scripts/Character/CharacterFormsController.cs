@@ -1,12 +1,19 @@
+/* Project Name: Endobiotic - Project 2: Preparation for Galaxy Edition
+ * Team Name: Monstrous Entertainment - Vex Team
+ * Authors: James Dalziel, Daniel Cox
+ * Created Date: February 13, 2023
+ * Last Updated: Match 29, 2023
+ * Description: Controls which form the character is currently is and allows for switching forms.
+ * Notes: 
+ * Resources: 
+ *  
+ */
+
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterFormsController : MonoBehaviour
 {
-    /// <summary>
-    /// Controls which form the character is currently is and allows for switching forms
-    /// </summary>
-
     #region Class Variables
     [Header("Player Forms (Game Objects)")]
     [SerializeField] private List<GameObject> m_formObjects;

@@ -1,11 +1,18 @@
+/* Project Name: Endobiotic - Project 2: Preparation for Galaxy Edition
+ * Team Name: Monstrous Entertainment - Vex Team
+ * Authors: Daniel Cox
+ * Created Date: February 18, 2023
+ * Last Updated: Match 29, 2023
+ * Description: This trigger class is for open the try again UI Menu.
+ * Notes: 
+ * Resources: 
+ *  
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-
-/// <summary>
-/// This trigger class is for open the try again UI Menu.
-/// </summary>
 
 public class UITryAgainMenuOpenTrigger : MonoBehaviour
 {

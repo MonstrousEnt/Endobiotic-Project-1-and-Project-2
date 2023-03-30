@@ -1,3 +1,14 @@
+/* Project Name: Endobiotic - Project 2: Preparation for Galaxy Edition
+ * Team Name: Monstrous Entertainment - Vex Team
+ * Authors: James Dalziel, Daniel Cox
+ * Created Date: February 12, 2023
+ * Last Updated: Match 29, 2023
+ * Description: This class is for all game object intractables.
+ * Notes: 
+ * Resources: 
+ *  
+ */
+
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;

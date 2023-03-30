@@ -1,9 +1,16 @@
+/* Project Name: Endobiotic - Project 2: Preparation for Galaxy Edition
+ * Team Name: Monstrous Entertainment - Vex Team
+ * Authors: James Dalziel, Daniel Cox
+ * Created Date: February 18, 2023
+ * Last Updated: Match 29, 2023
+ * Description: This effect class is for changing sprites of any game object.
+ * Notes: 
+ * Resources: 
+ *  
+ */
+
+
 using UnityEngine;
-
-/// <summary>
-/// This effect class is for changing sprites of any game object.
-/// </summary>
-
 
 [RequireComponent(typeof(SpriteRenderer))]
 public class EffectChangeSprite : MonoBehaviour
