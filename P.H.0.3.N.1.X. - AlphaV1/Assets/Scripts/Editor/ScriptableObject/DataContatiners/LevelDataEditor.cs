@@ -2,7 +2,7 @@
  * Team Name: Monstrous Entertainment - Vex Team
  * Authors: Daniel Cox
  * Created Date: March 7, 2023
- * Last Updated: March 12, 2023
+ * Last Updated: March 30, 2023
  * Description: This is the editor class for Scriptable Object data container level data.
  * Notes: 
  * Resources: 
@@ -22,7 +22,7 @@ public class LevelDataEditor : Editor
 	public override void OnInspectorGUI()
 	{
 		//Local Variables
-		LevelDataScriptableObject levelData = (LevelDataScriptableObject)target;
+		LevelDataScriptableObject l_levelData = (LevelDataScriptableObject)target;
 
 		//Update the serialized object in the inspector
 		serializedObject.Update();
@@ -39,10 +39,10 @@ public class LevelDataEditor : Editor
 		GUILayout.Label("Level Data", EditorStyles.boldLabel);
 
 		//User Inputs 
-		levelData.id = EditorGUILayout.TextField("Id", levelData.id);
-		levelData.levelName = EditorGUILayout.TextField("Name", levelData.levelName);
-		levelData.buildindex = EditorGUILayout.IntField("Build Index", levelData.buildindex);
-		levelData.unlockLevel = EditorGUILayout.Toggle("Unlock Level", levelData.unlockLevel);
+		l_levelData.id = EditorGUILayout.TextField("Id", l_levelData.id);
+		l_levelData.levelName = EditorGUILayout.TextField("Name", l_levelData.levelName);
+		l_levelData.buildindex = EditorGUILayout.IntField("Build Index", l_levelData.buildindex);
+		l_levelData.unlockLevel = EditorGUILayout.Toggle("Unlock Level", l_levelData.unlockLevel);
 
 		//Apply changes
 		serializedObject.ApplyModifiedProperties();

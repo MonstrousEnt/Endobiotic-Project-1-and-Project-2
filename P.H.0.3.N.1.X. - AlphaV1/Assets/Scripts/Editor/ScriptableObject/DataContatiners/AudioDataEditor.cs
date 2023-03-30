@@ -2,7 +2,7 @@
  * Team Name: Monstrous Entertainment - Vex Team
  * Authors: Daniel Cox
  * Created Date: March 7, 2023
- * Last Updated: March 29, 2023
+ * Last Updated: March 30, 2023
  * Description: This is the editor class for Scriptable Object data container audio data.
  * Notes: 
  * Resources: 
@@ -55,7 +55,7 @@ public class AudioDataEditor : Editor
 	public override void OnInspectorGUI()
 	{
 		//Local Variables
-		AudioDataScriptableObject audioData = (AudioDataScriptableObject)target;
+		AudioDataScriptableObject l_audioData = (AudioDataScriptableObject)target;
 
 		//Update the serialized object in the inspector
 		serializedObject.Update();
@@ -72,19 +72,19 @@ public class AudioDataEditor : Editor
 		GUILayout.Label("Audio Data", EditorStyles.boldLabel);
 
 		//User Inputs 
-		audioData.clip = (AudioClip)EditorGUILayout.ObjectField("Clip", audioData.clip, typeof(AudioClip), true);
-		audioData.audioGameObjectName = EditorGUILayout.TextField("Game Object Name", audioData.audioGameObjectName);
-		audioData.volume = EditorGUILayout.Slider("Volume", audioData.volume, 0f, 1f);
-		audioData.pitch = EditorGUILayout.Slider("Pitch", audioData.pitch, 0f, 3f);
-		audioData.loop = EditorGUILayout.Toggle("Loop", audioData.loop);
-		audioData.playOnAwake = EditorGUILayout.Toggle("Play On Awake", audioData.playOnAwake);
+		l_audioData.clip = (AudioClip)EditorGUILayout.ObjectField("Clip", l_audioData.clip, typeof(AudioClip), true);
+		l_audioData.audioGameObjectName = EditorGUILayout.TextField("Game Object Name", l_audioData.audioGameObjectName);
+		l_audioData.volume = EditorGUILayout.Slider("Volume", l_audioData.volume, 0f, 1f);
+		l_audioData.pitch = EditorGUILayout.Slider("Pitch", l_audioData.pitch, 0f, 3f);
+		l_audioData.loop = EditorGUILayout.Toggle("Loop", l_audioData.loop);
+		l_audioData.playOnAwake = EditorGUILayout.Toggle("Play On Awake", l_audioData.playOnAwake);
 
 		EditorGUILayout.Space();
 
 		//Buttons
 		if (GUILayout.Button("Play Preview"))
 		{
-			playPreview(m_audioPreviewer, audioData);
+			playPreview(m_audioPreviewer, l_audioData);
 		}
 
 		if (GUILayout.Button("Stop Preview"))

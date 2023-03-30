@@ -2,7 +2,7 @@
  * Team Name: Monstrous Entertainment - Vex Team
  * Authors: James Dalziel, Daniel Cox
  * Created Date: February 17, 2023
- * Last Updated: Match 29, 2023
+ * Last Updated: Match 30, 2023
  * Description: This is the class for enemy animations.
  * Notes: 
  * Resources: 
@@ -35,10 +35,10 @@ public class EnemyControllerAnimations : BaseControllerAnimations
     #region Animations Methods
     private void movementDetection()
     {
-        Vector3 deltaMovement = transform.position - m_previousPosition;
-        Vector2 changeInPosition = new Vector2(deltaMovement.x, deltaMovement.y);
+        Vector3 l_deltaMovement = transform.position - m_previousPosition;
+        Vector2 l_changeInPosition = new Vector2(l_deltaMovement.x, l_deltaMovement.y);
 
-        CallMovementAnimation(changeInPosition);
+        CallMovementAnimation(l_changeInPosition);
 
         m_previousPosition = transform.position;
     }

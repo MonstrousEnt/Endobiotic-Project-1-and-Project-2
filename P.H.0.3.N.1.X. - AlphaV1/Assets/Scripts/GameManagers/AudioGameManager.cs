@@ -2,7 +2,7 @@
  * Team Name: Monstrous Entertainment - Vex Team
  * Authors: Daniel Cox
  * Created Date: February 15, 2023
- * Last Updated: Match 12, 2023
+ * Last Updated: Match 30, 2023
  * Description: This is the game manager class for audio.
  * Notes:
  * Resources: 
@@ -40,11 +40,11 @@ public class AudioGameManager : MonoBehaviour
 	#region Initialize Methods
 	private void intializeGameObject(AudioDataScriptableObject a_audioData, GameObject a_parentGameObject)
 	{
-		GameObject audioGameObject = new GameObject(a_audioData.audioGameObjectName);
-		audioGameObject.transform.parent = a_parentGameObject.transform;
+		GameObject l_audioGameObject = new GameObject(a_audioData.audioGameObjectName);
+		l_audioGameObject.transform.parent = a_parentGameObject.transform;
 
-		AudioSource audioSource = audioGameObject.AddComponent<AudioSource>();
-		a_audioData.source = audioSource;
+		AudioSource l_audioSource = l_audioGameObject.AddComponent<AudioSource>();
+		a_audioData.source = l_audioSource;
 	}
 	private void intializeGameObjects(AudioListScriptableObject a_audioList, GameObject a_parentGameObject)
 	{

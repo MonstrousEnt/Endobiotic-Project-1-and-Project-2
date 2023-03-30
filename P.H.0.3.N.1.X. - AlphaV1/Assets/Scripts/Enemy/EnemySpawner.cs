@@ -2,7 +2,7 @@
  * Team Name: Monstrous Entertainment - Vex Team
  * Authors: James Dalziel, Daniel Cox
  * Created Date: February 17, 2023
- * Last Updated: Match 29, 2023
+ * Last Updated: Match 30, 2023
  * Description: This is the class for spawner enemies.
  * Resources: 
  *  
@@ -46,10 +46,10 @@ public class EnemySpawner : MonoBehaviour
     #region Struts
     public struct robot
     {
-        public robot(Form form, Vector3 position)
+        public robot(Form a_form, Vector3 a_position)
         {
-            formRobot = form;
-            positionRobot = position;
+            formRobot = a_form;
+            positionRobot = a_position;
         }
 
         public Form formRobot;
@@ -97,7 +97,7 @@ public class EnemySpawner : MonoBehaviour
     {
         yield return new WaitForSeconds(m_spawnInterval);
 
-        GameObject newEnemy = Instantiate(
+        GameObject l_newEnemy = Instantiate(
             m_enemyFormList[(int)a_robot.formRobot],
             new Vector3(
                 Random.Range(transform.position.x - m_spawnDistanceX, transform.position.x + m_spawnDistanceX) + 0.5f,
@@ -107,24 +107,24 @@ public class EnemySpawner : MonoBehaviour
             Quaternion.identity
         );
 
-        m_trackedRobots.Add(newEnemy, a_robot);
+        m_trackedRobots.Add(l_newEnemy, a_robot);
         yield return 0;
 
-        newEnemy.GetComponent<EnemyInteraction>().deathEvent.AddListener(UpdateCurrentRobotsList);
-        newEnemy.GetComponent<EnemyController>().UpdatePreferredPosition(a_robot.positionRobot);
+        l_newEnemy.GetComponent<EnemyInteraction>().deathEvent.AddListener(UpdateCurrentRobotsList);
+        l_newEnemy.GetComponent<EnemyController>().UpdatePreferredPosition(a_robot.positionRobot);
 
         m_soundEffectUnityEvent?.Invoke();
     }
 
     private void LoadUserSpawnedRobots()
     {
-        foreach(GameObject robot in m_userSpawnedRobots)
+        foreach(GameObject l_robot in m_userSpawnedRobots)
         {
-            Form robotForm = robot.GetComponent<CharacterFormsController>().currForm;
+            Form l_robotForm = l_robot.GetComponent<CharacterFormsController>().currForm;
 
-            m_trackedRobots.Add(robot, new robot(robotForm, robot.transform.position));
+            m_trackedRobots.Add(l_robot, new robot(l_robotForm, l_robot.transform.position));
 
-            robot.GetComponent<EnemyInteraction>().deathEvent.AddListener(UpdateCurrentRobotsList);
+            l_robot.GetComponent<EnemyInteraction>().deathEvent.AddListener(UpdateCurrentRobotsList);
         }
     }
     #endregion

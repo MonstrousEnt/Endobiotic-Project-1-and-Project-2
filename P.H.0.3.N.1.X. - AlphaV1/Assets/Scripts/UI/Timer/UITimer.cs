@@ -2,7 +2,7 @@
  * Team Name: Monstrous Entertainment - Vex Team
  * Authors: Daniel Cox
  * Created Date: February 18, 2023
- * Last Updated: Match 29, 2023
+ * Last Updated: Match 30, 2023
  * Description: This is the UI class for timer.
  * Notes: 
  * Resources: 
@@ -37,14 +37,14 @@ public class UITimer : MonoBehaviour
     #endregion
 
     #region UI Methods
-    private void displayTime(float timeInSeconds)
+    private void displayTime(float a_timeInSeconds)
     {
-        string displayTime = "00:00";
+        string l_displayTime = "00:00";
 
-        TimeSpan timeSpan = TimeSpan.FromSeconds(timeInSeconds);
+        TimeSpan timeSpan = TimeSpan.FromSeconds(a_timeInSeconds);
 
-        displayTime = string.Format("{0:00}:{1:00}", (int)timeSpan.Minutes, (int)timeSpan.Seconds);
-        m_timerText.text = "Timer: " + displayTime;
+        l_displayTime = string.Format("{0:00}:{1:00}", (int)timeSpan.Minutes, (int)timeSpan.Seconds);
+        m_timerText.text = "Timer: " + l_displayTime;
     }
     #endregion
 }

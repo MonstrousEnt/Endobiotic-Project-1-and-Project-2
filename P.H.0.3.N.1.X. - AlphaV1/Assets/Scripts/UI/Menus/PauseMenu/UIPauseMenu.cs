@@ -2,7 +2,7 @@
  * Team Name: Monstrous Entertainment - Vex Team
  * Authors: Daniel Cox
  * Created Date: February 12, 2023
- * Last Updated: Match 12, 2023
+ * Last Updated: Match 30, 2023
  * Description: This is the UI class for pause menu.
  * Notes: 
  * Resources: 
@@ -21,10 +21,7 @@ public class UIPauseMenu : UIMenuBase
     [SerializeField] private BooleanFlagGlobalVariableScriptableObject m_booleanFlagGlobalVariableUIManagerPauseMenuIsActive;
     #endregion
 
-    #region UI Base - Over Methods - Pause Menu
-    /// <summary>
-    /// Enable the menu and set the global scriptable object variable to true for the UI object.
-    /// </summary>
+    #region UI Base - Over Methods - Pause Men
     public override void EnableMenu()
     {
         base.EnableMenu();
@@ -32,9 +29,6 @@ public class UIPauseMenu : UIMenuBase
         m_booleanFlagGlobalVariableUIManagerPauseMenuIsActive.EnableBoolFlag();
     }
 
-    /// <summary>
-    /// Disable the menu and set the global scriptable object variable to false for the UI object.
-    /// </summary>
     public override void DisableMenu()
     {
         base.DisableMenu();
@@ -44,9 +38,6 @@ public class UIPauseMenu : UIMenuBase
     #endregion
 
     #region UI Methods
-    /// <summary>
-    /// Resume the game and disable the menu
-    /// </summary>
     public void ResumeGame()
     {
         DisableMenu();

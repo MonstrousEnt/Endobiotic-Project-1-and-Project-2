@@ -2,7 +2,7 @@
  * Team Name: Monstrous Entertainment - Vex Team
  * Authors: Daniel Cox
  * Created Date: March 7, 2023
- * Last Updated: March 12, 2023
+ * Last Updated: March 30, 2023
  * Description: This is the editor class for Scriptable Object Tag tag data.
  * Notes: 
  * Resources: 
@@ -22,7 +22,7 @@ public class TagDataEditor : Editor
     public override void OnInspectorGUI()
     {
         //Local Variables
-        TagDataScriptableObject tagData = (TagDataScriptableObject)target; 
+        TagDataScriptableObject l_tagData = (TagDataScriptableObject)target; 
 
         //Update the serialized object in the inspector
         serializedObject.Update();
@@ -35,11 +35,11 @@ public class TagDataEditor : Editor
         //Make a space in the editor
         EditorGUILayout.Space();
 
-        //Create a tile section the Data Variables
+        //Create a tile section the Data VariablesS
         EditorGUILayout.LabelField("Tag Data", EditorStyles.boldLabel);
 
         //User Inputs 
-        tagData.tagName = EditorGUILayout.TagField(new GUIContent("Name"), tagData.tagName);
+        l_tagData.tagName = EditorGUILayout.TagField(new GUIContent("Name"), l_tagData.tagName);
 
         //Apply changes
         serializedObject.ApplyModifiedProperties();

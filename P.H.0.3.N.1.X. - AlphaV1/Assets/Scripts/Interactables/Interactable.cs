@@ -2,7 +2,7 @@
  * Team Name: Monstrous Entertainment - Vex Team
  * Authors: James Dalziel, Daniel Cox
  * Created Date: February 12, 2023
- * Last Updated: Match 29, 2023
+ * Last Updated: Match 30, 2023
  * Description: This class is for all game object intractables.
  * Notes: 
  * Resources: 
@@ -123,17 +123,17 @@ public class Interactable : MonoBehaviour, IPrerequisite
         }
         else
         {
-            bool returnValue = true;
+            bool l_returnValue = true;
 
             for (int i = 0; i < m_prerequisites.Count; i++)
             {
                 if (!m_prerequisites[i].IsComplete())
                 {
-                    returnValue = false;
+                    l_returnValue = false;
                 }
             }
 
-            return returnValue;
+            return l_returnValue;
         }
     }    
 

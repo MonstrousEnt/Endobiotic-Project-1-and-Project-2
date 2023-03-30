@@ -2,7 +2,7 @@
  * Team Name: Monstrous Entertainment - Vex Team
  * Authors: Daniel Cox
  * Created Date: March 2, 2023
- * Last Updated: Match 12, 2023
+ * Last Updated: Match 30, 2023
  * Description: This is the scriptable object list class for level list.
  * Notes: 
  * Resources: 
@@ -24,11 +24,11 @@ public class LevelListScriptableObject : ScriptableObject
     #region Getters and Setters
     public List<LevelDataScriptableObject> levelDatas { get { return m_levelDatas; } set { m_levelDatas = value; } }
 
-    public int getLevelById(string id)
+    public int getLevelById(string a_id)
     {
         for (int i = 0; i < m_levelDatas.Count; i++)
         {
-            if (m_levelDatas[i].id == id)
+            if (m_levelDatas[i].id == a_id)
             {
                 return i;
             }

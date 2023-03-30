@@ -2,7 +2,7 @@
  * Team Name: Monstrous Entertainment - Vex Team
  * Authors: James Dalziel, Daniel Cox
  * Created Date: February 15, 2023
- * Last Updated: Match 29, 2023
+ * Last Updated: Match 30, 2023
  * Description: This is the class for controlling the enemy.
  * Notes: 
  * Resources: 
@@ -26,7 +26,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private TagDataScriptableObject m_tagDataPlayer;
 
     //Attack 
-    private bool isAttacking = false;
+    private bool m_isAttacking = false;
 
     //Target
     private Transform m_target = null;
@@ -40,17 +40,17 @@ public class EnemyController : MonoBehaviour
     #region Getters and Setters
     public Form Form { get { return m_intialForm; } }
 
-    private void SetBehaviour(GameObject target)
+    private void SetBehaviour(GameObject a_target)
     {
-        if (target != null && target.TryGetComponent(out CharacterFormsController a_formController) && a_formController.currForm != m_characterFormController.currForm)
+        if (a_target != null && a_target.TryGetComponent(out CharacterFormsController a_formController) && a_formController.currForm != m_characterFormController.currForm)
         {
-            m_target = target.transform;
-            isAttacking = true;
+            m_target = a_target.transform;
+            m_isAttacking = true;
         }
         else
         {
             m_target = null;
-            isAttacking = false;
+            m_isAttacking = false;
         }
 
     }
@@ -104,7 +104,7 @@ public class EnemyController : MonoBehaviour
         m_rigidbody2D.velocity = Vector2.zero;
         float step = m_moveSpeed * Time.deltaTime;
 
-        if (isAttacking)
+        if (m_isAttacking)
         {
             if (Vector3.Distance(transform.position, m_target.position) < 0.001f)
             {

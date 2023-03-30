@@ -2,7 +2,7 @@
  * Team Name: Monstrous Entertainment - Vex Team
  * Authors: Daniel Cox
  * Created Date: March 7, 2023
- * Last Updated: March 29, 2023
+ * Last Updated: March 30, 2023
  * Description: This is the editor class for Scriptable Object data container timer data.
  * Notes: 
  * Resources: 
@@ -37,7 +37,7 @@ public class TimerDataEditor : Editor
     public override void OnInspectorGUI()
     {
         //Local Variables
-        TimerDataScriptableObject timerData = (TimerDataScriptableObject)target;
+        TimerDataScriptableObject l_timerData = (TimerDataScriptableObject)target;
 
         //Update the serialized object in the inspector
         serializedObject.Update();
@@ -54,11 +54,11 @@ public class TimerDataEditor : Editor
         GUILayout.Label("Timer Data", EditorStyles.boldLabel);
 
         //User Inputs 
-        timerData.timeInseconds = EditorGUILayout.FloatField("Time In Seconds", timerData.timeInseconds);
+        l_timerData.timeInseconds = EditorGUILayout.FloatField("Time In Seconds", l_timerData.timeInseconds);
         EditorGUILayout.PropertyField(m_timerModeSerializedProperty, new GUIContent("Timer Mode"));
-        timerData.stratTimeInSeconds = EditorGUILayout.FloatField("Start Time In Seconds", timerData.stratTimeInSeconds);
-        timerData.startTimer = EditorGUILayout.Toggle("Start Timer", timerData.startTimer);
-        timerData.updateUI = EditorGUILayout.Toggle("Update UI", timerData.updateUI);
+        l_timerData.stratTimeInSeconds = EditorGUILayout.FloatField("Start Time In Seconds", l_timerData.stratTimeInSeconds);
+        l_timerData.startTimer = EditorGUILayout.Toggle("Start Timer", l_timerData.startTimer);
+        l_timerData.updateUI = EditorGUILayout.Toggle("Update UI", l_timerData.updateUI);
 
         //Apply changes
         serializedObject.ApplyModifiedProperties();
