@@ -7,34 +7,34 @@ public class Interactable : MonoBehaviour, IPrerequisite
 {
     #region Class Variables
     [Header("Required Form")]
-    [SerializeField] private Form requiredForm = Form.Manipulator;
+    [SerializeField] private Form m_requiredForm = Form.Manipulator;
 
     [Header("Unity Events")]
-    [SerializeField] private UnityEvent onActivated;
+    [SerializeField] private UnityEvent m_onActivated;
 
     [Header("Lists")]
-    [SerializeField] private Interactable[] prerequisites;
+    [SerializeField] private List<Interactable> m_prerequisites;
 
     //Intractable
-    private bool isInteractable;
-    private bool hasInteracted;
-    private InteractableSpriteController interactableSpriteController;
+    private bool m_isInteractable;
+    private bool m_hasInteracted;
+    private InteractableSpriteController m_interactableSpriteController;
     #endregion
 
     #region Unity Methods
     private void Awake()
     {
-        interactableSpriteController = GetComponent<InteractableSpriteController>();
+        m_interactableSpriteController = GetComponent<InteractableSpriteController>();
     }
 
     private void Start()
     {
-        if(onActivated == null)
+        if(m_onActivated == null)
         {
-            onActivated = new UnityEvent();
+            m_onActivated = new UnityEvent();
         }
 
-        hasInteracted = false;        
+        m_hasInteracted = false;        
 
         subscribeToPrerequisites();
 
@@ -52,12 +52,12 @@ public class Interactable : MonoBehaviour, IPrerequisite
     {
         if (checkIfPrerequisitesMet())
         {
-            isInteractable = true;
+            m_isInteractable = true;
             updateSprite();
         }
         else
         {
-            isInteractable = false;
+            m_isInteractable = false;
             updateSprite();
         }
     }
@@ -66,28 +66,28 @@ public class Interactable : MonoBehaviour, IPrerequisite
     #region Interface Methods
     public bool IsComplete()
     {
-        return hasInteracted;
+        return m_hasInteracted;
     }
     #endregion
 
     #region Intractable Methods
     public void Interact(Form currForm)
     {
-        if (!isInteractable)
+        if (!m_isInteractable)
         {
             return;
         }
 
-        if (currForm != requiredForm || hasInteracted == true)
+        if (currForm != m_requiredForm || m_hasInteracted == true)
         {
             return;
         }
 
-        hasInteracted = true;
+        m_hasInteracted = true;
 
-        if (onActivated != null)
+        if (m_onActivated != null)
         {
-            onActivated?.Invoke();
+            m_onActivated?.Invoke();
         }
 
         updateSprite();
@@ -95,18 +95,18 @@ public class Interactable : MonoBehaviour, IPrerequisite
 
     public void Reenable()
     {
-        hasInteracted = false;
+        m_hasInteracted = false;
         updateSprite();
     }
 
     private void updateSprite()
     {
-        interactableSpriteController.ChangeSprite(isInteractable, hasInteracted);
+        m_interactableSpriteController.ChangeSprite(m_isInteractable, m_hasInteracted);
     }
 
     private bool checkIfPrerequisitesMet()
     {
-        if(prerequisites.Length <= 0)
+        if(m_prerequisites.Count <= 0)
         {
             return true;
         }
@@ -114,9 +114,9 @@ public class Interactable : MonoBehaviour, IPrerequisite
         {
             bool returnValue = true;
 
-            for (int i = 0; i < prerequisites.Length; i++)
+            for (int i = 0; i < m_prerequisites.Count; i++)
             {
-                if (!prerequisites[i].IsComplete())
+                if (!m_prerequisites[i].IsComplete())
                 {
                     returnValue = false;
                 }
@@ -128,11 +128,11 @@ public class Interactable : MonoBehaviour, IPrerequisite
 
     private void subscribeToPrerequisites()
     {
-        if(prerequisites.Length > 0)
+        if(m_prerequisites.Count > 0)
         {
-            for (int i = 0; i < prerequisites.Length; i++)
+            for (int i = 0; i < m_prerequisites.Count; i++)
             {
-                prerequisites[i].onActivated.AddListener(SetPrerequisiteComplete);
+                m_prerequisites[i].m_onActivated.AddListener(SetPrerequisiteComplete);
             }
         }
     }

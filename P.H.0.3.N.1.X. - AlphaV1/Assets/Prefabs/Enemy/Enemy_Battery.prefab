@@ -35,6 +35,38 @@ PrefabInstance:
       propertyPath: requiredForm
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 4972954114152376964, guid: 59f54ee31f9c77142b6ecf369dd23689, type: 3}
+      propertyPath: m_requiredForm
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4972954114152376964, guid: 59f54ee31f9c77142b6ecf369dd23689, type: 3}
+      propertyPath: m_onActivated.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4972954114152376964, guid: 59f54ee31f9c77142b6ecf369dd23689, type: 3}
+      propertyPath: m_onActivated.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4972954114152376964, guid: 59f54ee31f9c77142b6ecf369dd23689, type: 3}
+      propertyPath: m_onActivated.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2086093538756648230}
+    - target: {fileID: 4972954114152376964, guid: 59f54ee31f9c77142b6ecf369dd23689, type: 3}
+      propertyPath: m_onActivated.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4972954114152376964, guid: 59f54ee31f9c77142b6ecf369dd23689, type: 3}
+      propertyPath: m_onActivated.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KillEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4972954114152376964, guid: 59f54ee31f9c77142b6ecf369dd23689, type: 3}
+      propertyPath: m_onActivated.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: EnemyInteraction, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4972954114152376964, guid: 59f54ee31f9c77142b6ecf369dd23689, type: 3}
+      propertyPath: m_onActivated.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5974273130741917464, guid: 59f54ee31f9c77142b6ecf369dd23689, type: 3}
       propertyPath: m_Name
       value: Enemy_Battery
@@ -160,6 +192,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3782937970174877062, guid: 59f54ee31f9c77142b6ecf369dd23689, type: 3}
   m_PrefabInstance: {fileID: 2741888918678124021}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2086093538756648230 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4250956545374841043, guid: 59f54ee31f9c77142b6ecf369dd23689, type: 3}
+  m_PrefabInstance: {fileID: 2741888918678124021}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd37f211605169542936cde24b32f4e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4485624724664093698 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1751063088984209911, guid: 59f54ee31f9c77142b6ecf369dd23689, type: 3}

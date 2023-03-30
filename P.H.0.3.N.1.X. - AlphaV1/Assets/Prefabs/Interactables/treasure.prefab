@@ -130,10 +130,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1a29c6dca269fd4e9b88ef6d2eb50cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useInteractableSpriteController: 1
-  nonInteractableSprite: {fileID: 21300000, guid: a78fd2df00d00f747bd7246ff886c6ef, type: 3}
-  isInteractableSprite: {fileID: 21300000, guid: a78fd2df00d00f747bd7246ff886c6ef, type: 3}
-  hasInteractedSprite: {fileID: 21300000, guid: 0922e144ac650ad43bb7a0a588791514, type: 3}
+  m_useInteractableSpriteController: 1
+  m_nonInteractableSprite: {fileID: 0}
+  m_isInteractableSprite: {fileID: 0}
+  m_hasInteractedSprite: {fileID: 0}
 --- !u!114 &6387407614147305317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,8 +146,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d009865d7133ae44fb34cc672668f2a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requiredForm: 0
-  onActivated:
+  m_requiredForm: 0
+  m_onActivated:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1813868330237192204}
@@ -186,7 +186,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  prerequisites: []
+  m_prerequisites: []
 --- !u!61 &5820486581826931271
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -255,7 +255,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_audioData: {fileID: 11400000, guid: ae1ef5c3177806243b573fda307e1204, type: 2}
+  m_audioList: {fileID: 0}
   m_audioManagerGameEventPlaySound: {fileID: 11400000, guid: 6618bbfd17f8eee41b477713af5522cb, type: 2}
+  m_audioManagerGameEventPlayRandomSound: {fileID: 0}
   m_audioManagerGameEventStopSound: {fileID: 11400000, guid: af88926902e244844bbedcd2da002f06, type: 2}
   m_audioManagerGameEventEnableLoop: {fileID: 11400000, guid: d1badcf1f4061724f8c8685fe1161557, type: 2}
   m_audioManagerGameEventDisableLoop: {fileID: 11400000, guid: 55d52c95cb4b6c147aa8fd97814dfc01, type: 2}
