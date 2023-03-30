@@ -5,24 +5,24 @@ using UnityEngine.Events;
 public class PushableObject : MonoBehaviour
 {
     [Header("Form")]
-    [SerializeField] private Form requiredForm;
+    [SerializeField] private Form m_requiredForm;
 
     [Header("Intractable")]
-    [SerializeField] private InteractableOjbects objectType;
+    [SerializeField] private InteractableOjbects m_objectType;
 
     [Header("Pit Trap Data")]
-    [SerializeField] private bool destroyOnceUsed;
+    [SerializeField] private bool m_destroyOnceUsed;
 
     [Header("Unity Events")]
-    [SerializeField] private UnityEvent soundEffectUnityEvent;
+    [SerializeField] private UnityEvent m_soundEffectUnityEvent;
 
     //Components
-    private Rigidbody2D rigidBody2D;
+    private Rigidbody2D m_rigidBody2D;
 
     #region Unity Methods
     private void Awake()
     {
-        rigidBody2D = GetComponent<Rigidbody2D>();
+        m_rigidBody2D = GetComponent<Rigidbody2D>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -30,11 +30,11 @@ public class PushableObject : MonoBehaviour
         //Pit Trap
         if (collision.collider.gameObject.TryGetComponent(out TrapObject trapObject))
         {
-            if (trapObject.GetObjectType() == objectType)
+            if (trapObject.GetObjectType() == m_objectType)
             {
                 trapObject.Interact();
 
-                if (destroyOnceUsed)
+                if (m_destroyOnceUsed)
                 {
                     Destroy(gameObject);
                 }
@@ -44,15 +44,15 @@ public class PushableObject : MonoBehaviour
         //Movement the block
         else if (collision.gameObject.TryGetComponent(out CharacterFormsController formController))
         {
-            if (formController.currForm == requiredForm)
+            if (formController.currForm == m_requiredForm)
             {
-                rigidBody2D.mass = 10;
+                m_rigidBody2D.mass = 10;
 
-                soundEffectUnityEvent?.Invoke();
+                m_soundEffectUnityEvent?.Invoke();
             }
             else
             {
-                rigidBody2D.mass = float.MaxValue;
+                m_rigidBody2D.mass = float.MaxValue;
             }
         }
     }
