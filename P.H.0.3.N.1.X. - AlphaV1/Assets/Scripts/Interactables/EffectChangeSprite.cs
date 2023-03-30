@@ -10,30 +10,30 @@ public class EffectChangeSprite : MonoBehaviour
 {
     #region Class Variables
     [Header("Sprites")]
-    [SerializeField] private Sprite defaultState;
-    [SerializeField] private Sprite newState;
+    [SerializeField] private Sprite m_defaultState;
+    [SerializeField] private Sprite m_newState;
 
     //Components 
-    private SpriteRenderer spriteRenderer;
+    private SpriteRenderer m_spriteRenderer;
 
     #endregion
 
     #region Unity Methods
     private void Awake()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        m_spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Start()
     {
-        spriteRenderer.sprite = defaultState;
+        m_spriteRenderer.sprite = m_defaultState;
     }
     #endregion
 
     #region Sprite Changes Methods
     public void ChangeSprite()
     {
-        spriteRenderer.sprite = newState;
+        m_spriteRenderer.sprite = m_newState;
     }
     #endregion
 }
