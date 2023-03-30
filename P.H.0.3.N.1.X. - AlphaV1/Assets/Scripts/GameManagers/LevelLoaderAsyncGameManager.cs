@@ -36,10 +36,8 @@ public class LevelLoaderAsyncGameManager : MonoBehaviour
     {
         for (int i = 0; i < scenesLoading.Count; i++)
         {
-            //When the game hasn't finished loading
             while (!scenesLoading[i].isDone)
             {
-                //Next frame
                 yield return null;
             }
         }

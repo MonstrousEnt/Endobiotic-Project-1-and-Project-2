@@ -90,5 +90,4 @@ public class PlayerControllerAnimations : BaseControllerAnimations
         }        
     }
     #endregion
-
 }

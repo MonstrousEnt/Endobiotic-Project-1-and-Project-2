@@ -30,10 +30,10 @@ public class CharacterItemHolder : MonoBehaviour
     #endregion
 
     #region Item Holder Methods
-    public void AddItem(EffectPickupItem pickupItem, Sprite itemSprite)
+    public void AddItem(EffectPickupItem a_pickupItem, Sprite a_itemSprite)
     {
-        m_currentPickupObject = pickupItem;
-        m_itemSpriteRenderer.sprite = itemSprite;
+        m_currentPickupObject = a_pickupItem;
+        m_itemSpriteRenderer.sprite = a_itemSprite;
     }
 
     public void DropItem()

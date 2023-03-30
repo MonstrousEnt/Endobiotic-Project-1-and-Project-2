@@ -21,9 +21,9 @@ public class EffectPlayAnimation : MonoBehaviour
     #region Animation Methods
     public void PlayAnimation()
     {
-        if (TryGetComponent(out Animator animator))
+        if (TryGetComponent(out Animator a_animator))
         {
-            animator.Play(m_animationName);
+            a_animator.Play(m_animationName);
         }
     }
     #endregion

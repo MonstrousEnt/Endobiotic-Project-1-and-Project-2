@@ -40,23 +40,23 @@ public class BaseControllerAnimations : MonoBehaviour
     #endregion
 
     #region Mini Animation Manager
-    protected virtual void ChangeAnimationState(string newAnimation)
+    protected virtual void ChangeAnimationState(string a_newAnimation)
     {
-        if (m_currentAnimaton == newAnimation) return;
-        m_animator.Play(newAnimation);
-        m_currentAnimaton = newAnimation;
+        if (m_currentAnimaton == a_newAnimation) return;
+        m_animator.Play(a_newAnimation);
+        m_currentAnimaton = a_newAnimation;
     }
     #endregion
 
     #region Animations Methods
-    public void CallMovementAnimation(Vector2 movement)
+    public void CallMovementAnimation(Vector2 a_movement)
     {
         if (m_animator == null)
         {
             return;
         }
 
-        moveAnimations(movement);
+        moveAnimations(a_movement);
     }
 
     private void idleAnimation()
@@ -81,24 +81,24 @@ public class BaseControllerAnimations : MonoBehaviour
         }
     }
 
-    private void moveAnimations(Vector2 movement)
+    private void moveAnimations(Vector2 a_movement)
     {
-        if (movement.y <= -0.01f && Mathf.Abs(movement.x) < m_turnThresholdMoveY)
+        if (a_movement.y <= -0.01f && Mathf.Abs(a_movement.x) < m_turnThresholdMoveY)
         {
             ChangeAnimationState(m_WALK_DOWN);
             m_LastMoveDir = MoveDirection.Down;
         }
-        else if (movement.y >= 0.01f && Mathf.Abs(movement.x) < m_turnThresholdMoveY)
+        else if (a_movement.y >= 0.01f && Mathf.Abs(a_movement.x) < m_turnThresholdMoveY)
         {
             ChangeAnimationState(m_WALK_UP);
             m_LastMoveDir = MoveDirection.Up;
         }
-        else if (movement.x <= -0.01f)
+        else if (a_movement.x <= -0.01f)
         {
             ChangeAnimationState(m_WALK_LEFT);
             m_LastMoveDir = MoveDirection.Left;
         }
-        else if (movement.x >= 0.01f)
+        else if (a_movement.x >= 0.01f)
         {
             ChangeAnimationState(m_WALK_RIGHT);
             m_LastMoveDir = MoveDirection.Right;

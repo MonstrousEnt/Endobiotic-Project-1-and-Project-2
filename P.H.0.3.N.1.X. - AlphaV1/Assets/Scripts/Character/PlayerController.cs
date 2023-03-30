@@ -2,7 +2,7 @@
  * Team Name: Monstrous Entertainment - Vex Team
  * Authors: Daniel Cox, James Dalziel,
  * Created Date: February 12, 2023
- * Last Updated: Match 28, 2023
+ * Last Updated: Match 29, 2023
  * Description: This is the class for player controls.
  * Notes:
  * Resources: 
@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
     }
     #endregion
 
-    #region C# Methods
+    #region Player Controller Methods
     private void inputs()
     {
        

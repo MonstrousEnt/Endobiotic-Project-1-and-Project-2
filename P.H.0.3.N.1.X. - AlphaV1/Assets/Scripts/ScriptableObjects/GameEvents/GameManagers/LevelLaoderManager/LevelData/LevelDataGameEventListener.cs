@@ -2,7 +2,7 @@
  * Team Name: Monstrous Entertainment - Vex Team
  * Authors: Daniel Cox
  * Created Date: March 5, 2023
- * Last Updated: Match 12, 2023
+ * Last Updated: Match 29, 2023
  * Description: This is the game event listener class for level loader manager level data events.
  * Notes: 
  * Resources: 
@@ -25,9 +25,9 @@ public class LevelDataGameEventListener : MonoBehaviour
     #endregion
 
     #region Invoke Unity Events
-    public void OnEventRaised(LevelDataScriptableObject levelData)
+    public void OnEventRaised(LevelDataScriptableObject a_levelData)
     {
-        m_respone?.Invoke(levelData);
+        m_respone?.Invoke(a_levelData);
     }
     #endregion
 

@@ -20,7 +20,7 @@ public class UITryAgainMenuOpenTrigger : MonoBehaviour
     [SerializeField] private UnityEvent m_enbaleTryAgainMenuUjnityEvent;
 
     #region Unity Methods
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D a_collision)
     {
         m_enbaleTryAgainMenuUjnityEvent?.Invoke();
     }

@@ -27,73 +27,73 @@ public class AudioGameManager : MonoBehaviour
     #endregion
 
     #region Getters and Setters
-    private void setAudioScource(AudioDataScriptableObject audioData)
+    private void setAudioScource(AudioDataScriptableObject a_audioData)
 	{
-		audioData.source.clip = audioData.clip;
-		audioData.source.volume = audioData.volume;
-		audioData.source.pitch = audioData.pitch;
-		audioData.source.loop = audioData.loop;
-		audioData.source.playOnAwake = audioData.playOnAwake;
+		a_audioData.source.clip = a_audioData.clip;
+		a_audioData.source.volume = a_audioData.volume;
+		a_audioData.source.pitch = a_audioData.pitch;
+		a_audioData.source.loop = a_audioData.loop;
+		a_audioData.source.playOnAwake = a_audioData.playOnAwake;
 	}
 	#endregion
 
 	#region Initialize Methods
-	private void intializeGameObject(AudioDataScriptableObject audioData, GameObject parentGameObject)
+	private void intializeGameObject(AudioDataScriptableObject a_audioData, GameObject a_parentGameObject)
 	{
-		GameObject audioGameObject = new GameObject(audioData.audioGameObjectName);
-		audioGameObject.transform.parent = parentGameObject.transform;
+		GameObject audioGameObject = new GameObject(a_audioData.audioGameObjectName);
+		audioGameObject.transform.parent = a_parentGameObject.transform;
 
 		AudioSource audioSource = audioGameObject.AddComponent<AudioSource>();
-		audioData.source = audioSource;
+		a_audioData.source = audioSource;
 	}
-	private void intializeGameObjects(AudioListScriptableObject audioList, GameObject parentGameObject)
+	private void intializeGameObjects(AudioListScriptableObject a_audioList, GameObject a_parentGameObject)
 	{
-		for (int i = 0; i < audioList.audioDatas.Count; i++)
+		for (int i = 0; i < a_audioList.audioDatas.Count; i++)
         {
-			intializeGameObject(audioList.audioDatas[i], parentGameObject);
-			setAudioScource(audioList.audioDatas[i]);
+			intializeGameObject(a_audioList.audioDatas[i], a_parentGameObject);
+			setAudioScource(a_audioList.audioDatas[i]);
         }
 	}
 	#endregion
 
 	#region Audio Game Events
-	public void PlaySound(AudioDataScriptableObject audioData)
+	public void PlaySound(AudioDataScriptableObject a_audioData)
 	{
-		if (audioData.source != null)
+		if (a_audioData.source != null)
 		{
-			audioData.source.Play();
+			a_audioData.source.Play();
 		}
 	}
 
-	public void PlayRandomSound(AudioListScriptableObject audioList)
+	public void PlayRandomSound(AudioListScriptableObject a_audioList)
     {
-		int randomIndex = Random.Range(1, audioList.audioDatas.Count - 1);
-		PlaySound(audioList.audioDatas[randomIndex]);
+		int randomIndex = Random.Range(1, a_audioList.audioDatas.Count - 1);
+		PlaySound(a_audioList.audioDatas[randomIndex]);
     }
 
-	public void StopSound(AudioDataScriptableObject audioData)
+	public void StopSound(AudioDataScriptableObject a_audioData)
 	{
-		if (audioData.source != null)
+		if (a_audioData.source != null)
 		{
-			audioData.source.Stop();
+			a_audioData.source.Stop();
 		}
 	}
 
-	public void DisableLoop(AudioDataScriptableObject audioData)
+	public void DisableLoop(AudioDataScriptableObject a_audioData)
 	{
-		if (audioData.source != null)
+		if (a_audioData.source != null)
         {
-			audioData.loop = false;
-			audioData.source.loop = false;
+			a_audioData.loop = false;
+			a_audioData.source.loop = false;
 		}
 	}
 
-	public void EnableLoop(AudioDataScriptableObject audioData)
+	public void EnableLoop(AudioDataScriptableObject a_audioData)
 	{
-		if (audioData.source != null)
+		if (a_audioData.source != null)
         {
-			audioData.loop = true;
-			audioData.source.loop = true;
+			a_audioData.loop = true;
+			a_audioData.source.loop = true;
 		}
 	}
     #endregion

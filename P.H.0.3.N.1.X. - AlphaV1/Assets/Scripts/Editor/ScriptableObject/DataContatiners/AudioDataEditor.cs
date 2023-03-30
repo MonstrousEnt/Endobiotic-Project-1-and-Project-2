@@ -2,7 +2,7 @@
  * Team Name: Monstrous Entertainment - Vex Team
  * Authors: Daniel Cox
  * Created Date: March 7, 2023
- * Last Updated: March 12, 2023
+ * Last Updated: March 29, 2023
  * Description: This is the editor class for Scriptable Object data container audio data.
  * Notes: 
  * Resources: 
@@ -23,18 +23,18 @@ public class AudioDataEditor : Editor
     #endregion
 
     #region Custom Editor Methods - Buttons
-    private void playPreview(AudioSource source, AudioDataScriptableObject audioData)
+    private void playPreview(AudioSource a_source, AudioDataScriptableObject a_audioData)
 	{
-		source.clip = audioData.clip;
-		source.volume = audioData.volume;
-		source.pitch = audioData.pitch;
+		a_source.clip = a_audioData.clip;
+		a_source.volume = a_audioData.volume;
+		a_source.pitch = a_audioData.pitch;
 
-		source.Play();
+		a_source.Play();
 	}
 
-	private void stopPreview(AudioSource source)
+	private void stopPreview(AudioSource a_source)
 	{
-		source.Stop();
+		a_source.Stop();
 	}
 	#endregion
 

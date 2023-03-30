@@ -93,12 +93,12 @@ public class EnemySpawner : MonoBehaviour
         m_enemyFormList.Add(m_crabPrefab);
     }
 
-    private IEnumerator SpawnRobot(robot robot)
+    private IEnumerator SpawnRobot(robot a_robot)
     {
         yield return new WaitForSeconds(m_spawnInterval);
 
         GameObject newEnemy = Instantiate(
-            m_enemyFormList[(int)robot.formRobot],
+            m_enemyFormList[(int)a_robot.formRobot],
             new Vector3(
                 Random.Range(transform.position.x - m_spawnDistanceX, transform.position.x + m_spawnDistanceX) + 0.5f,
                 Random.Range(transform.position.y - m_spawnDistanceY, transform.position.y + m_spawnDistanceY) + 0.5f,
@@ -107,11 +107,11 @@ public class EnemySpawner : MonoBehaviour
             Quaternion.identity
         );
 
-        m_trackedRobots.Add(newEnemy, robot);
+        m_trackedRobots.Add(newEnemy, a_robot);
         yield return 0;
 
         newEnemy.GetComponent<EnemyInteraction>().deathEvent.AddListener(UpdateCurrentRobotsList);
-        newEnemy.GetComponent<EnemyController>().UpdatePreferredPosition(robot.positionRobot);
+        newEnemy.GetComponent<EnemyController>().UpdatePreferredPosition(a_robot.positionRobot);
 
         m_soundEffectUnityEvent?.Invoke();
     }

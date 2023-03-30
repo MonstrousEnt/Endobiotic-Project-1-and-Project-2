@@ -403,7 +403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_defaultState: {fileID: 0}
-  m_newState: {fileID: 0}
+  m_newState: {fileID: 21300000, guid: f53a11d893809764f9b8d9e4f0af9e63, type: 3}
 --- !u!1 &429592212723238272
 GameObject:
   m_ObjectHideFlags: 0
@@ -4166,7 +4166,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3822909757939837012, guid: 89ce67d46f79bc9449a3db1b86d641fa, type: 3}
       propertyPath: m_userSpawnedRobots.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3822909757939837012, guid: 89ce67d46f79bc9449a3db1b86d641fa, type: 3}
       propertyPath: requiredRobotsForms.Array.size
@@ -4196,6 +4196,10 @@ PrefabInstance:
       propertyPath: m_userSpawnedRobots.Array.data[2]
       value: 
       objectReference: {fileID: 4425380094351139386}
+    - target: {fileID: 3822909757939837012, guid: 89ce67d46f79bc9449a3db1b86d641fa, type: 3}
+      propertyPath: m_userSpawnedRobots.Array.data[3]
+      value: 
+      objectReference: {fileID: 2733064346170512805}
     - target: {fileID: 3822909757939837012, guid: 89ce67d46f79bc9449a3db1b86d641fa, type: 3}
       propertyPath: requiredRobotsForms.Array.data[0]
       value: 5
@@ -9577,6 +9581,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a73c3138525e5e45bd7f41a96da03c7, type: 3}
+--- !u!1 &2733064346170512805 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8423354953936655085, guid: 7a73c3138525e5e45bd7f41a96da03c7, type: 3}
+  m_PrefabInstance: {fileID: 5838933656448304968}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2733064346170512806 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8423354953936655086, guid: 7a73c3138525e5e45bd7f41a96da03c7, type: 3}

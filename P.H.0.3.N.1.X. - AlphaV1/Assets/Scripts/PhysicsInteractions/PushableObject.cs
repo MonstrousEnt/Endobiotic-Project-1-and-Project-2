@@ -36,14 +36,14 @@ public class PushableObject : MonoBehaviour
         m_rigidBody2D = GetComponent<Rigidbody2D>();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D a_collision)
     {
         //Pit Trap
-        if (collision.collider.gameObject.TryGetComponent(out TrapObject trapObject))
+        if (a_collision.collider.gameObject.TryGetComponent(out TrapObject a_trapObject))
         {
-            if (trapObject.GetObjectType() == m_objectType)
+            if (a_trapObject.GetObjectType() == m_objectType)
             {
-                trapObject.Interact();
+                a_trapObject.Interact();
 
                 if (m_destroyOnceUsed)
                 {
@@ -53,9 +53,9 @@ public class PushableObject : MonoBehaviour
         }
 
         //Movement the block
-        else if (collision.gameObject.TryGetComponent(out CharacterFormsController formController))
+        else if (a_collision.gameObject.TryGetComponent(out CharacterFormsController a_formController))
         {
-            if (formController.currForm == m_requiredForm)
+            if (a_formController.currForm == m_requiredForm)
             {
                 m_rigidBody2D.mass = 10;
 

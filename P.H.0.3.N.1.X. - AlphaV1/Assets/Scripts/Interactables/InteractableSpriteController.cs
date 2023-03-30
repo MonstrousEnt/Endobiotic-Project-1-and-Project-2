@@ -41,18 +41,18 @@ public class InteractableSpriteController : MonoBehaviour
     #endregion
 
     #region Sprite Methods
-    public void ChangeSprite(bool isActive, bool hasActivated)
+    public void ChangeSprite(bool a_isActive, bool a_hasActivated)
     {
         if (!m_useInteractableSpriteController)
         {
             return;
         }
 
-        if (hasActivated)
+        if (a_hasActivated)
         {
             m_spriteRenderer.sprite = m_hasInteractedSprite;
         }
-        else if(isActive)
+        else if(a_isActive)
         {
             m_spriteRenderer.sprite = m_isInteractableSprite;
         }
@@ -66,10 +66,10 @@ public class InteractableSpriteController : MonoBehaviour
     #region Animation Methods
     private void disableAnimatorIfNeeded()
     {
-        if(TryGetComponent(out Animator animator))
+        if(TryGetComponent(out Animator a_animator))
         {
-            if (animator.isActiveAndEnabled)
-                animator.enabled = false;
+            if (a_animator.isActiveAndEnabled)
+                a_animator.enabled = false;
         }
     }
     #endregion

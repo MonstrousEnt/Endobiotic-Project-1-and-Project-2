@@ -2,7 +2,7 @@
  * Team Name: Monstrous Entertainment - Vex Team
  * Authors: Daniel Cox
  * Created Date: March 5, 2023
- * Last Updated: Match 12, 2023
+ * Last Updated: Match 29, 2023
  * Description: This is the game event listener class for UI manager pop up data events.
  * Notes: 
  * Resources: 
@@ -26,9 +26,9 @@ public class PopUpDataGameEventListener : MonoBehaviour
     #endregion
 
     #region Invoke Unity Events
-    public void OnEventRaised(PopUpDataScriptableObject popUpData)
+    public void OnEventRaised(PopUpDataScriptableObject a_popUpData)
     {
-        m_respone?.Invoke(popUpData);
+        m_respone?.Invoke(a_popUpData);
     }
     #endregion
 

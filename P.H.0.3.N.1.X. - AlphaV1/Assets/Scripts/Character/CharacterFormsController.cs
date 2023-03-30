@@ -44,18 +44,18 @@ public class CharacterFormsController : MonoBehaviour
         ChangeForm(0);        
     }
 
-    public void ChangeForm(Form newForm)
+    public void ChangeForm(Form a_newForm)
     {
-        currForm = newForm;
+        currForm = a_newForm;
 
         foreach (GameObject formObject in m_formObjects)
         {
             formObject.SetActive(false);
         }
 
-        m_formObjects[(int)newForm].SetActive(true);
+        m_formObjects[(int)a_newForm].SetActive(true);
 
-        m_controllerAnimations.Animator = m_formObjects[(int)newForm].GetComponent<Animator>();
+        m_controllerAnimations.Animator = m_formObjects[(int)a_newForm].GetComponent<Animator>();
     }
     #endregion
 }

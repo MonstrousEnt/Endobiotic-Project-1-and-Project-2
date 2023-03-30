@@ -82,14 +82,14 @@ public class Interactable : MonoBehaviour, IPrerequisite
     #endregion
 
     #region Intractable Methods
-    public void Interact(Form currForm)
+    public void Interact(Form a_currForm)
     {
         if (!m_isInteractable)
         {
             return;
         }
 
-        if (currForm != m_requiredForm || m_hasInteracted == true)
+        if (a_currForm != m_requiredForm || m_hasInteracted == true)
         {
             return;
         }

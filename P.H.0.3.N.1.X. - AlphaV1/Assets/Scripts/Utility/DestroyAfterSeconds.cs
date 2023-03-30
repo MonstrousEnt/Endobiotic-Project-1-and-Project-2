@@ -27,9 +27,9 @@ public class DestroyAfterSeconds : MonoBehaviour
     #endregion
 
     #region Destroy After Methods
-    private IEnumerator destroyAfter(float duration)
+    private IEnumerator destroyAfter(float a_duration)
     {
-        yield return new WaitForSeconds(duration);
+        yield return new WaitForSeconds(a_duration);
 
         Destroy(this.gameObject);
     }

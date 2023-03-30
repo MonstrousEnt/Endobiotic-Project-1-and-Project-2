@@ -62,42 +62,40 @@ public class CharacterInteractionController : MonoBehaviour
         m_invulnerableTimer = Time.time;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision2D)
+    private void OnCollisionEnter2D(Collision2D a_collision2D)
     {
         if (m_invulnerableTimer > Time.time) 
         {
             return;
         }
 
-        if (collision2D.collider.CompareTag(m_tagDataEnemy.tagName) && collision2D.collider.GetComponent<CharacterFormsController>().currForm == Form.Crab && m_characterFormsController.currForm == Form.Destroyer) 
+        if (a_collision2D.collider.CompareTag(m_tagDataEnemy.tagName) && a_collision2D.collider.GetComponent<CharacterFormsController>().currForm == Form.Crab && m_characterFormsController.currForm == Form.Destroyer) 
         {
             return;
         }
-        else if (collision2D.collider.CompareTag(m_tagDataEnemy.tagName) && collision2D.collider.GetComponent<CharacterFormsController>().currForm == Form.Crab) 
+        else if (a_collision2D.collider.CompareTag(m_tagDataEnemy.tagName) && a_collision2D.collider.GetComponent<CharacterFormsController>().currForm == Form.Crab) 
         {
             respawnCrab();
         }
-        else if (collision2D.collider.CompareTag(m_tagDataEnemy.tagName) && m_characterFormsController.currForm != collision2D.collider.GetComponent<CharacterFormsController>().currForm)
+        else if (a_collision2D.collider.CompareTag(m_tagDataEnemy.tagName) && m_characterFormsController.currForm != a_collision2D.collider.GetComponent<CharacterFormsController>().currForm)
         {
-            respawnCharacter(collision2D);
+            respawnCharacter(a_collision2D);
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collider2D)
+    private void OnTriggerEnter2D(Collider2D a_collider2D)
     {
-        if (collider2D.CompareTag(m_tagDataInteractable.tagName) || collider2D.CompareTag(m_tagDataEnemy.tagName))
+        if (a_collider2D.CompareTag(m_tagDataInteractable.tagName) || a_collider2D.CompareTag(m_tagDataEnemy.tagName))
         {
-            addIntractable(collider2D);
+            addIntractable(a_collider2D);
         }   
     }
 
-    private void OnTriggerExit2D(Collider2D collider2D)
+    private void OnTriggerExit2D(Collider2D a_collider2D)
     {
-        removeIntractable(collider2D);
+        removeIntractable(a_collider2D);
     }
     #endregion
-
-
 
     #region Character Interaction Methods
     public void Interact()
@@ -113,19 +111,19 @@ public class CharacterInteractionController : MonoBehaviour
         }
     }
 
-    private void addIntractable(Collider2D collider2D)
+    private void addIntractable(Collider2D a_collider2D)
     {
-        if (collider2D.TryGetComponent(out Interactable interactable))
+        if (a_collider2D.TryGetComponent(out Interactable a_interactable))
         {
-            m_currentlyInteractable.Add(interactable);
+            m_currentlyInteractable.Add(a_interactable);
         }
     }
 
-    private void removeIntractable(Collider2D collider2D)
+    private void removeIntractable(Collider2D a_collider2D)
     {
-        if (collider2D.TryGetComponent(out Interactable interactable))
+        if (a_collider2D.TryGetComponent(out Interactable a_interactable))
         {
-            m_currentlyInteractable.Remove(interactable);
+            m_currentlyInteractable.Remove(a_interactable);
         }
     }
 
@@ -138,7 +136,7 @@ public class CharacterInteractionController : MonoBehaviour
         transform.position = new Vector3(randomLocation.x, randomLocation.y, 0);
     }
 
-    private void respawnAsNewForm(Form newForm, Vector3 position)
+    private void respawnAsNewForm(Form a_newForm, Vector3 a_position)
     {
    
         m_characterItemHolder.DropItem();
@@ -152,27 +150,27 @@ public class CharacterInteractionController : MonoBehaviour
 
         m_riseAgainParticles.Play();
 
-        m_characterFormsController.ChangeForm(newForm);
+        m_characterFormsController.ChangeForm(a_newForm);
 
-        transform.position = position;
+        transform.position = a_position;
 
         m_soundEffectUnityEvent?.Invoke();
 
         StartCoroutine(waitWhileDead(2));
     }
 
-    private void respawnCharacter(Collision2D collision2D)
+    private void respawnCharacter(Collision2D a_collision2D)
     {
-        respawnAsNewForm(collision2D.collider.GetComponent<CharacterFormsController>().currForm, collision2D.collider.transform.position);
+        respawnAsNewForm(a_collision2D.collider.GetComponent<CharacterFormsController>().currForm, a_collision2D.collider.transform.position);
 
-        collision2D.collider.GetComponent<EnemyInteraction>().DestroyEnemy();
+        a_collision2D.collider.GetComponent<EnemyInteraction>().DestroyEnemy();
 
         m_invulnerableTimer = Time.time + m_invulnerableTimeSF;
     }
 
-    private IEnumerator waitWhileDead(float duration)
+    private IEnumerator waitWhileDead(float a_duration)
     {
-        yield return new WaitForSeconds(duration);
+        yield return new WaitForSeconds(a_duration);
 
         m_booleanFlagGlobalVariablePlayerCanMove.EnableBoolFlag();
     }

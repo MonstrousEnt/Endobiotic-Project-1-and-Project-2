@@ -42,7 +42,7 @@ public class EnemyController : MonoBehaviour
 
     private void SetBehaviour(GameObject target)
     {
-        if (target != null && target.TryGetComponent(out CharacterFormsController formController) && formController.currForm != m_characterFormController.currForm)
+        if (target != null && target.TryGetComponent(out CharacterFormsController a_formController) && a_formController.currForm != m_characterFormController.currForm)
         {
             m_target = target.transform;
             isAttacking = true;
@@ -57,9 +57,9 @@ public class EnemyController : MonoBehaviour
     #endregion
 
     #region Find Methods
-    private GameObject FindTargetsInRange(float range)
+    private GameObject FindTargetsInRange(float a_range)
     {
-        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, range);
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, a_range);
 
         foreach (Collider2D hit in hits)
         {
@@ -87,9 +87,9 @@ public class EnemyController : MonoBehaviour
         StartCoroutine(intelligence(m_aggroRadius, 0.5f));
     }
 
-    public void UpdatePreferredPosition(Vector3 position)
+    public void UpdatePreferredPosition(Vector3 a_position)
     {
-        m_preferredPosition = position;
+        m_preferredPosition = a_position;
     }
 
     private void Update()
@@ -129,12 +129,12 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    private IEnumerator intelligence(float range, float updateSpeed)
+    private IEnumerator intelligence(float a_range, float a_updateSpeed)
     {
         while (true)
         {
-            SetBehaviour(FindTargetsInRange(range));
-            yield return new WaitForSeconds(updateSpeed);      
+            SetBehaviour(FindTargetsInRange(a_range));
+            yield return new WaitForSeconds(a_updateSpeed);      
         }
     }
     #endregion

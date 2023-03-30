@@ -21,48 +21,48 @@ public class TimerManager : MonoBehaviour
     #endregion
 
     #region Timer Game Events
-    public void SetUpTimer(TimerDataScriptableObject timerData)
+    public void SetUpTimer(TimerDataScriptableObject a_timerData)
     {
-        timerData.Reset();
+        a_timerData.Reset();
 
         m_timerData = null;
 
-        this.m_timerData = timerData;
+        this.m_timerData = a_timerData;
     }
 
-    public void EnableTime(TimerDataScriptableObject timerData)
+    public void EnableTime(TimerDataScriptableObject a_timerData)
     {
-        timerData.startTimer = true;
-        timerData.updateUI = true;
+        a_timerData.startTimer = true;
+        a_timerData.updateUI = true;
     }
     #endregion
 
     #region Time Mode Methods
-    private void UpdataeTimer(TimerDataScriptableObject timerData)
+    private void UpdataeTimer(TimerDataScriptableObject a_timerData)
     {
-        switch (timerData.timerMode)
+        switch (a_timerData.timerMode)
         {
             case TimerMode.CountUp:
             {
-                countUpTimer(timerData);
+                countUpTimer(a_timerData);
                 break;
             }
             case TimerMode.CountDown:
             {
-                countDownTimer(timerData);
+                countDownTimer(a_timerData);
                 break;
             }
         }
     }
 
-    private void countUpTimer(TimerDataScriptableObject timerData)
+    private void countUpTimer(TimerDataScriptableObject a_timerData)
     {
-        timerData.timeInseconds += Time.deltaTime;
+        a_timerData.timeInseconds += Time.deltaTime;
     }
 
-    private void countDownTimer(TimerDataScriptableObject timerData)
+    private void countDownTimer(TimerDataScriptableObject a_timerData)
     {
-        timerData.timeInseconds -= Time.deltaTime;
+        a_timerData.timeInseconds -= Time.deltaTime;
     }
     #endregion
 
