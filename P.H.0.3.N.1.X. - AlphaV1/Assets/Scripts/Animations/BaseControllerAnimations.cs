@@ -13,14 +13,6 @@ using UnityEngine;
 public class BaseControllerAnimations : MonoBehaviour
 {
     #region Class Variables 
-    [Header("Components")]
-    protected Animator m_animator;
-
-    [Header("Animation")]
-    protected string m_currentAnimaton;
-    protected MoveDirection m_LastMoveDir;
-    protected float m_turnThresholdMoveY = 0.71f;
-
     //To Do create these animations states into Unity Scriptable Object data container
     [Header("Animation States - Idle")] 
     [SerializeField] protected string m_IDLE_DOWN = "Idle_Down";
@@ -33,6 +25,14 @@ public class BaseControllerAnimations : MonoBehaviour
     [SerializeField] protected string m_WALK_UP = "Walk_Up";
     [SerializeField] protected string m_WALK_LEFT = "Walk_Left";
     [SerializeField] protected string m_WALK_RIGHT = "Walk_Right";
+
+    //Components
+    protected Animator m_animator;
+
+    //Animations
+    protected string m_currentAnimaton;
+    protected MoveDirection m_LastMoveDir;
+    protected float m_turnThresholdMoveY = 0.71f;
     #endregion
 
     #region Getters and Setters
