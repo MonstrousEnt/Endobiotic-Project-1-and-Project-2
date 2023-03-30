@@ -666,6 +666,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 429592212679584864, guid: d129c7ecc6fb71a4c9fe2ff4263033d0, type: 3}
+      propertyPath: m_newState
+      value: 
+      objectReference: {fileID: 21300000, guid: f53a11d893809764f9b8d9e4f0af9e63, type: 3}
+    - target: {fileID: 429592212679584864, guid: d129c7ecc6fb71a4c9fe2ff4263033d0, type: 3}
+      propertyPath: m_defaultState
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 837123608352963465, guid: d129c7ecc6fb71a4c9fe2ff4263033d0, type: 3}
       propertyPath: m_RootOrder
       value: 12
