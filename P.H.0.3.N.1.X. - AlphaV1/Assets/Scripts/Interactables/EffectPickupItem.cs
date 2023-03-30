@@ -10,33 +10,33 @@ public class EffectPickupItem : MonoBehaviour
 {
     #region Class Variables
     [Header("Tag Scriptable Object")]
-    [SerializeField] private TagDataScriptableObject tagDataPlayer;
+    [SerializeField] private TagDataScriptableObject m_tagDataPlayer;
 
     //Components
-    private SpriteRenderer spriteRenderer;
-    private Interactable interactable;
-    private CharacterItemHolder characterItemHolder;
+    private SpriteRenderer m_spriteRenderer;
+    private Interactable m_interactable;
+    private CharacterItemHolder m_characterItemHolder;
     #endregion
 
     #region Unity Methods
     private void Awake()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        interactable = GetComponent<Interactable>();
+        m_spriteRenderer = GetComponent<SpriteRenderer>();
+        m_interactable = GetComponent<Interactable>();
 
-        characterItemHolder = GameObject.FindGameObjectWithTag(tagDataPlayer.tagName).GetComponent<CharacterItemHolder>();  
+        m_characterItemHolder = GameObject.FindGameObjectWithTag(m_tagDataPlayer.tagName).GetComponent<CharacterItemHolder>();  
     }
     #endregion
 
     #region Items Methods
     public void PickupItem()
     {        
-        characterItemHolder.AddItem(this, spriteRenderer.sprite);
+        m_characterItemHolder.AddItem(this, m_spriteRenderer.sprite);
     }
 
     public void ReturnItem()
     {
-        interactable.Reenable();
+        m_interactable.Reenable();
     }
     #endregion
 }
