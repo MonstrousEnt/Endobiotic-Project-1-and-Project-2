@@ -66,7 +66,6 @@ public class CharacterInteractionController : MonoBehaviour
         {
             respawnCrab();
         }
-        //if the player collides with the enemy and is not the form of the enemy
         else if (collision2D.collider.CompareTag(m_tagDataEnemy.tagName) && m_characterFormsController.currForm != collision2D.collider.GetComponent<CharacterFormsController>().currForm)
         {
             respawnCharacter(collision2D);

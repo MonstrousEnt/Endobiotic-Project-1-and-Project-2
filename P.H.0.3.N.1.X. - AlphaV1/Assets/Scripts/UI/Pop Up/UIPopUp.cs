@@ -2,7 +2,7 @@
  * Team Name: Monstrous Entertainment - Vex Team
  * Authors: Daniel Cox
  * Created Date: February 14, 2023
- * Last Updated: Match 12, 2023
+ * Last Updated: Match 29, 2023
  * Description: This is the UI class for pop up.
  * Notes: 
  * Resources: 
@@ -41,7 +41,6 @@ public class UIPopUp : UIBase
     #region Unity Methods
     private void Update()
     {
-        //When the pop is ready to close, and if the user press any key, close the pop up.
         if (Input.anyKey)
         {
             if (m_popUpData != null)

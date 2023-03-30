@@ -2,7 +2,7 @@
  * Team Name: Monstrous Entertainment - Vex Team
  * Authors: Ben Topple, James Dalziel, Daniel Cox
  * Created Date: February 13, 2023
- * Last Updated: Match 12, 2023
+ * Last Updated: Match 29, 2023
  * Description: This is the class for player animations.
  * Notes:
  * Resources: 
@@ -33,7 +33,7 @@ public class PlayerControllerAnimations : BaseControllerAnimations
     #region Base Controller Animations Override Methods - Player Controller Animations
     protected override void ChangeAnimationState(string newAnimation)
     {
-        //check to see if the delay is in effect
+
         if (m_requiredTime > Time.time)
         {
             return;
@@ -51,9 +51,6 @@ public class PlayerControllerAnimations : BaseControllerAnimations
     #endregion
 
     #region Animation Methods
-    /// <summary>
-    /// Destroyer Attack animation.
-    /// </summary>
     public void DestroyerAttack()
     {
         switch (m_LastMoveDir)
@@ -74,9 +71,6 @@ public class PlayerControllerAnimations : BaseControllerAnimations
         m_requiredTime = Time.time + 0.25f;
     }
 
-    /// <summary>
-    /// Magnet Pull Animation.
-    /// </summary>
     public void MagnetPull()
     { 
         switch (m_LastMoveDir)

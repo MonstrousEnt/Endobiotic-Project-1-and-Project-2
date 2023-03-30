@@ -2,7 +2,7 @@
  * Team Name: Monstrous Entertainment - Vex Team
  * Authors: James Dalziel, Ben Topple, Daniel Cox
  * Created Date: February 17, 2023
- * Last Updated: Match 12, 2023
+ * Last Updated: Match 29, 2023
  * Description: This is the base class for player and enemy animations.
  * Notes:
  * Resources: 
@@ -40,10 +40,6 @@ public class BaseControllerAnimations : MonoBehaviour
     #endregion
 
     #region Mini Animation Manager
-    /// <summary>
-    /// Function to tell the animator to play the animation parameter we give it.
-    /// </summary>
-    /// <param name="newAnimation"></param>
     protected virtual void ChangeAnimationState(string newAnimation)
     {
         if (m_currentAnimaton == newAnimation) return;
@@ -53,10 +49,6 @@ public class BaseControllerAnimations : MonoBehaviour
     #endregion
 
     #region Animations Methods
-    /// <summary>
-    /// Call the move animations.
-    /// </summary>
-    /// <param name="movement"></param>
     public void CallMovementAnimation(Vector2 movement)
     {
         if (m_animator == null)
@@ -67,9 +59,6 @@ public class BaseControllerAnimations : MonoBehaviour
         moveAnimations(movement);
     }
 
-    /// <summary>
-    /// Idle animations for the player or enemy.
-    /// </summary>
     private void idleAnimation()
     {
         switch (m_LastMoveDir)
@@ -92,11 +81,6 @@ public class BaseControllerAnimations : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Checking for movement to animate based on input, 
-    /// using turn threshold values to determine when the sprite will change direction on y axis.
-    /// </summary>
-    /// <param name="movement"></param>
     private void moveAnimations(Vector2 movement)
     {
         if (movement.y <= -0.01f && Mathf.Abs(movement.x) < m_turnThresholdMoveY)
