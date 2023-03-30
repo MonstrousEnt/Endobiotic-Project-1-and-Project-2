@@ -1070,6 +1070,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3822909757939837012, guid: 89ce67d46f79bc9449a3db1b86d641fa, type: 3}
+      propertyPath: m_userSpawnedRobots.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3822909757939837012, guid: 89ce67d46f79bc9449a3db1b86d641fa, type: 3}
       propertyPath: requiredRobotsForms.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -1093,6 +1097,18 @@ PrefabInstance:
       propertyPath: userSpawnedRobots.Array.data[3]
       value: 
       objectReference: {fileID: 2582328465894422073}
+    - target: {fileID: 3822909757939837012, guid: 89ce67d46f79bc9449a3db1b86d641fa, type: 3}
+      propertyPath: m_userSpawnedRobots.Array.data[0]
+      value: 
+      objectReference: {fileID: 2596027699429034698}
+    - target: {fileID: 3822909757939837012, guid: 89ce67d46f79bc9449a3db1b86d641fa, type: 3}
+      propertyPath: m_userSpawnedRobots.Array.data[1]
+      value: 
+      objectReference: {fileID: 2582328465894422073}
+    - target: {fileID: 3822909757939837012, guid: 89ce67d46f79bc9449a3db1b86d641fa, type: 3}
+      propertyPath: m_userSpawnedRobots.Array.data[2]
+      value: 
+      objectReference: {fileID: 5279375534689330284}
     - target: {fileID: 3822909757939837012, guid: 89ce67d46f79bc9449a3db1b86d641fa, type: 3}
       propertyPath: requiredRobotsForms.Array.data[0]
       value: 3
@@ -2003,6 +2019,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3822909757939837012, guid: 89ce67d46f79bc9449a3db1b86d641fa, type: 3}
+      propertyPath: m_userSpawnedRobots.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3822909757939837012, guid: 89ce67d46f79bc9449a3db1b86d641fa, type: 3}
       propertyPath: requiredRobotsForms.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -2018,6 +2038,14 @@ PrefabInstance:
       propertyPath: userSpawnedRobots.Array.data[1]
       value: 
       objectReference: {fileID: 5830213354903938303}
+    - target: {fileID: 3822909757939837012, guid: 89ce67d46f79bc9449a3db1b86d641fa, type: 3}
+      propertyPath: m_userSpawnedRobots.Array.data[0]
+      value: 
+      objectReference: {fileID: 5830213354903938303}
+    - target: {fileID: 3822909757939837012, guid: 89ce67d46f79bc9449a3db1b86d641fa, type: 3}
+      propertyPath: m_userSpawnedRobots.Array.data[1]
+      value: 
+      objectReference: {fileID: 8421030490397904019}
     - target: {fileID: 3822909757939837012, guid: 89ce67d46f79bc9449a3db1b86d641fa, type: 3}
       propertyPath: requiredRobotsForms.Array.data[0]
       value: 1
@@ -2276,6 +2304,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3822909757939837012, guid: 89ce67d46f79bc9449a3db1b86d641fa, type: 3}
+      propertyPath: m_userSpawnedRobots.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3822909757939837012, guid: 89ce67d46f79bc9449a3db1b86d641fa, type: 3}
       propertyPath: requiredRobotsForms.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -2291,6 +2323,14 @@ PrefabInstance:
       propertyPath: userSpawnedRobots.Array.data[1]
       value: 
       objectReference: {fileID: 3794615121433118245}
+    - target: {fileID: 3822909757939837012, guid: 89ce67d46f79bc9449a3db1b86d641fa, type: 3}
+      propertyPath: m_userSpawnedRobots.Array.data[0]
+      value: 
+      objectReference: {fileID: 3794615121433118245}
+    - target: {fileID: 3822909757939837012, guid: 89ce67d46f79bc9449a3db1b86d641fa, type: 3}
+      propertyPath: m_userSpawnedRobots.Array.data[1]
+      value: 
+      objectReference: {fileID: 8104542437324030805}
     - target: {fileID: 3822909757939837012, guid: 89ce67d46f79bc9449a3db1b86d641fa, type: 3}
       propertyPath: requiredRobotsForms.Array.data[0]
       value: 4
@@ -4125,6 +4165,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3822909757939837012, guid: 89ce67d46f79bc9449a3db1b86d641fa, type: 3}
+      propertyPath: m_userSpawnedRobots.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3822909757939837012, guid: 89ce67d46f79bc9449a3db1b86d641fa, type: 3}
       propertyPath: requiredRobotsForms.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -4140,6 +4184,18 @@ PrefabInstance:
       propertyPath: userSpawnedRobots.Array.data[1]
       value: 
       objectReference: {fileID: 757560331063922849}
+    - target: {fileID: 3822909757939837012, guid: 89ce67d46f79bc9449a3db1b86d641fa, type: 3}
+      propertyPath: m_userSpawnedRobots.Array.data[0]
+      value: 
+      objectReference: {fileID: 790458269228639650}
+    - target: {fileID: 3822909757939837012, guid: 89ce67d46f79bc9449a3db1b86d641fa, type: 3}
+      propertyPath: m_userSpawnedRobots.Array.data[1]
+      value: 
+      objectReference: {fileID: 757560331063922849}
+    - target: {fileID: 3822909757939837012, guid: 89ce67d46f79bc9449a3db1b86d641fa, type: 3}
+      propertyPath: m_userSpawnedRobots.Array.data[2]
+      value: 
+      objectReference: {fileID: 4425380094351139386}
     - target: {fileID: 3822909757939837012, guid: 89ce67d46f79bc9449a3db1b86d641fa, type: 3}
       propertyPath: requiredRobotsForms.Array.data[0]
       value: 5
@@ -4414,6 +4470,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3822909757939837012, guid: 89ce67d46f79bc9449a3db1b86d641fa, type: 3}
+      propertyPath: m_userSpawnedRobots.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3822909757939837012, guid: 89ce67d46f79bc9449a3db1b86d641fa, type: 3}
       propertyPath: requiredRobotsForms.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -4425,6 +4485,10 @@ PrefabInstance:
       propertyPath: userSpawnedRobots.Array.data[0]
       value: 
       objectReference: {fileID: 4372762079193326916}
+    - target: {fileID: 3822909757939837012, guid: 89ce67d46f79bc9449a3db1b86d641fa, type: 3}
+      propertyPath: m_userSpawnedRobots.Array.data[0]
+      value: 
+      objectReference: {fileID: 2295320636756558374}
     - target: {fileID: 3822909757939837012, guid: 89ce67d46f79bc9449a3db1b86d641fa, type: 3}
       propertyPath: requiredRobotAmounts.Array.data[0]
       value: 1
@@ -5378,6 +5442,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3822909757939837012, guid: 89ce67d46f79bc9449a3db1b86d641fa, type: 3}
+      propertyPath: m_userSpawnedRobots.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3822909757939837012, guid: 89ce67d46f79bc9449a3db1b86d641fa, type: 3}
       propertyPath: requiredRobotsForms.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -5389,6 +5457,14 @@ PrefabInstance:
       propertyPath: userSpawnedRobots.Array.data[0]
       value: 
       objectReference: {fileID: 577542784092202406}
+    - target: {fileID: 3822909757939837012, guid: 89ce67d46f79bc9449a3db1b86d641fa, type: 3}
+      propertyPath: m_userSpawnedRobots.Array.data[0]
+      value: 
+      objectReference: {fileID: 577542784092202406}
+    - target: {fileID: 3822909757939837012, guid: 89ce67d46f79bc9449a3db1b86d641fa, type: 3}
+      propertyPath: m_userSpawnedRobots.Array.data[1]
+      value: 
+      objectReference: {fileID: 9042383291602496997}
     - target: {fileID: 3822909757939837012, guid: 89ce67d46f79bc9449a3db1b86d641fa, type: 3}
       propertyPath: requiredRobotsForms.Array.data[0]
       value: 2
@@ -6931,6 +7007,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3822909757939837012, guid: 89ce67d46f79bc9449a3db1b86d641fa, type: 3}
+      propertyPath: m_userSpawnedRobots.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3822909757939837012, guid: 89ce67d46f79bc9449a3db1b86d641fa, type: 3}
       propertyPath: requiredRobotsForms.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -6950,6 +7030,18 @@ PrefabInstance:
       propertyPath: userSpawnedRobots.Array.data[2]
       value: 
       objectReference: {fileID: 5372594568809152924}
+    - target: {fileID: 3822909757939837012, guid: 89ce67d46f79bc9449a3db1b86d641fa, type: 3}
+      propertyPath: m_userSpawnedRobots.Array.data[0]
+      value: 
+      objectReference: {fileID: 1254935397651735565}
+    - target: {fileID: 3822909757939837012, guid: 89ce67d46f79bc9449a3db1b86d641fa, type: 3}
+      propertyPath: m_userSpawnedRobots.Array.data[1]
+      value: 
+      objectReference: {fileID: 5372594568809152924}
+    - target: {fileID: 3822909757939837012, guid: 89ce67d46f79bc9449a3db1b86d641fa, type: 3}
+      propertyPath: m_userSpawnedRobots.Array.data[2]
+      value: 
+      objectReference: {fileID: 4280224216639081468}
     - target: {fileID: 3822909757939837012, guid: 89ce67d46f79bc9449a3db1b86d641fa, type: 3}
       propertyPath: requiredRobotsForms.Array.data[0]
       value: 4
@@ -8470,6 +8562,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0e0329687d1a8b4b8daa23115453d6f, type: 3}
+--- !u!1 &9042383291602496997 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8423354953936655085, guid: d0e0329687d1a8b4b8daa23115453d6f, type: 3}
+  m_PrefabInstance: {fileID: 691648898972729096}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9042383291602496998 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8423354953936655086, guid: d0e0329687d1a8b4b8daa23115453d6f, type: 3}
@@ -9160,6 +9257,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8423354953936655086, guid: d0e0329687d1a8b4b8daa23115453d6f, type: 3}
   m_PrefabInstance: {fileID: 5300700530707378391}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4425380094351139386 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8423354953936655085, guid: d0e0329687d1a8b4b8daa23115453d6f, type: 3}
+  m_PrefabInstance: {fileID: 5300700530707378391}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5375236797480305544
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9810,6 +9912,11 @@ PrefabInstance:
 --- !u!4 &2295320636756558373 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8423354953936655086, guid: b630dd55ecc288d428e3c1e9e1e7d7ba, type: 3}
+  m_PrefabInstance: {fileID: 7727993645341888715}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2295320636756558374 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8423354953936655085, guid: b630dd55ecc288d428e3c1e9e1e7d7ba, type: 3}
   m_PrefabInstance: {fileID: 7727993645341888715}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8125767451618088915
