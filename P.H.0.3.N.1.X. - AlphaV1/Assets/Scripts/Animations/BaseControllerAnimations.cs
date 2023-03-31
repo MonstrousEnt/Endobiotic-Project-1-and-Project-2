@@ -10,7 +10,7 @@
 
 using UnityEngine;
 
-public class BaseControllerAnimations : MonoBehaviour
+public abstract class BaseControllerAnimations : MonoBehaviour
 {
     #region Class Variables 
     //To Do create these animations states into Unity Scriptable Object data container
@@ -30,7 +30,7 @@ public class BaseControllerAnimations : MonoBehaviour
     protected Animator m_animator;
 
     //Animations
-    protected string m_currentAnimaton;
+    protected string m_currentAnimation;
     protected MoveDirection m_LastMoveDir;
     protected float m_turnThresholdMoveY = 0.71f;
     #endregion
@@ -42,9 +42,9 @@ public class BaseControllerAnimations : MonoBehaviour
     #region Mini Animation Manager
     protected virtual void ChangeAnimationState(string a_newAnimation)
     {
-        if (m_currentAnimaton == a_newAnimation) return;
+        if (m_currentAnimation == a_newAnimation) return;
         m_animator.Play(a_newAnimation);
-        m_currentAnimaton = a_newAnimation;
+        m_currentAnimation = a_newAnimation;
     }
     #endregion
 

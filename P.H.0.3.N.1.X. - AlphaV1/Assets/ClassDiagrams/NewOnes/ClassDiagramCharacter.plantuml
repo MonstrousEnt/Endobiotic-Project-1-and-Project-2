@@ -1,0 +1,95 @@
+@startuml Test
+
+package Scripts <<Folder>> 
+{
+    package Animations <<Folder>> 
+    {
+        abstract Class BaseControllerAnimations 
+        {
+            <b>Animations Status - Idle
+            #m_IDLE_DOWN: string
+            #m_IDLE_UP: string
+            #m_IDLE_LEFT: string
+            #m_IDLE_RIGHT: string
+            
+            <b>Animations Status - Walk
+            #m_WALK_DOWN: string
+            #m_WALK_UP: string
+            #m_WALK_LEFT: string
+            #m_WALK_RIGHT: string
+            
+            <b>Components
+            #m_animator: Animator
+           
+            <b>Animations
+            #m_currentAnimation: string
+            #m_LastMoveDir: MoveDirection
+            #m_turnThresholdMoveY: float
+
+            ===
+            <b>Getters and Setters
+            +Animator: Animator 
+
+            ===
+            <b>Mini Animation Manager
+            #ChangeAnimationState(string a_newAnimation): void
+            ===
+            <b>Animations Methods
+            +CallMovementAnimation(Vector2 a_movement): void
+            -idleAnimation(): void
+            -moveAnimations(Vector2 a_movement): void
+
+        }
+    } 
+    package Character <<Folder>> 
+    {
+        CharacterDeathController <|-- BaseControllerAnimations
+
+        class CharacterDeathController 
+        {
+            <b>Player Death animation
+            -m_DEATH
+
+            ====
+            <b>Unity Methods
+            +Start: void
+            
+            ====
+            <b>Death Animations
+            +Die: void
+
+        }
+
+        class CharacterFormsController 
+        {
+            <b>Player Forms (Game Objects)
+            -m_formObjects: List<GameObject>
+
+            ===
+            <b>Components
+            +m_controllerAnimations: BaseControllerAnimations
+
+            ===
+            Player Current form
+            -m_currform: Form
+
+            ===
+            <b>Getters annd Setters
+            +currForm: Form
+
+            ===
+            <b>Unity Methods
+            -Awake(): void
+
+            ===
+            <b>Character Form Methods
+            +ChangeForm(Form a_newForm): void
+            -Init: void
+
+        }
+    }
+}
+
+
+
+@enduml

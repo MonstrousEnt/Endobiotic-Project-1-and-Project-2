@@ -14,7 +14,7 @@ using UnityEngine;
 public class CharacterDeathController : BaseControllerAnimations
 {
     #region Class Variables
-    //player Death animation
+    //Player Death animation
     private const string m_DEATH = "death";
     #endregion
 

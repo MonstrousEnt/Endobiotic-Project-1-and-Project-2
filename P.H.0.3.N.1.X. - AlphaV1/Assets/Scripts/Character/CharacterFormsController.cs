@@ -39,11 +39,6 @@ public class CharacterFormsController : MonoBehaviour
     #endregion
 
     #region Character Form Methods
-    private void Init()
-    {
-        ChangeForm(0);        
-    }
-
     public void ChangeForm(Form a_newForm)
     {
         currForm = a_newForm;
@@ -56,6 +51,11 @@ public class CharacterFormsController : MonoBehaviour
         m_formObjects[(int)a_newForm].SetActive(true);
 
         m_controllerAnimations.Animator = m_formObjects[(int)a_newForm].GetComponent<Animator>();
+    }
+
+    private void Init()
+    {
+        ChangeForm(0);        
     }
     #endregion
 }
