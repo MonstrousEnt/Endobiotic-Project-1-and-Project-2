@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="UIFadeBackground">
+    <Position X="6.25" Y="4.25" Width="2.5" />
+    <InheritanceLine Type="UIBase" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.625" Y="2.377" />
+        <Point X="5.625" Y="2.617" />
+        <Point X="8.99" Y="2.617" />
+        <Point X="8.99" Y="4.812" />
+        <Point X="8.75" Y="4.812" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\FadeBackground\UIFadeBackground.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UIGameInstructionMenu" Collapsed="true">
+    <Position X="12" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQBABAAACACAACAAAAAkAAAAAAAAEAAAAAAQAACAEA=</HashCode>
+      <FileName>Assets\Scripts\UI\Menus\GameInstructionMenu\UIGameInstructionMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UIPauseMenu">
+    <Position X="0.5" Y="8.75" Width="4.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAEAAAAACAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\Menus\PauseMenu\UIPauseMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UITryAgainMenu">
+    <Position X="5.5" Y="9.5" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAQAAIAAAAAAAAAAAAAAAAgAAAEAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\Menus\TryAgainMenu\UITryAgainMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UIMenuBase">
+    <Position X="0.5" Y="4.25" Width="5.25" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAQEAAIAAIEEABAIAAEACAAAAIAAAAEAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\Menus\UIMenuBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PopUpActions">
+    <Position X="12" Y="0.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\Pop Up\PopUpActions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UIPopUp">
+    <Position X="9.25" Y="4.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAACAAAAAgAAEAAAAAAAAIAAAhCAABgCAABAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\Pop Up\UIPopUp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UIStartScreen">
+    <Position X="15" Y="2.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAACAKAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\StartScreen\UIStartScreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UITimer">
+    <Position X="12" Y="2.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAAAAAAAAABAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\Timer\UITimer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UIBase">
+    <Position X="4.25" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAASAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\UIBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

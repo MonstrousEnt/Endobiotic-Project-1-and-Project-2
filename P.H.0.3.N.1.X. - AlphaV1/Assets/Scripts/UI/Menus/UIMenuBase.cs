@@ -29,7 +29,7 @@ public class UIMenuBase : UIBase
     [SerializeField] protected VoidGameEventScriptableObject m_voidGameEventSettingsManagerDisablePause;
 
     [Header("Game Events Scriptable Object - UI Manager - Fade Background")]
-    [SerializeField] protected VoidGameEventScriptableObject M_voidGameEventUIManagerEnableFadeBackground;
+    [SerializeField] protected VoidGameEventScriptableObject m_voidGameEventUIManagerEnableFadeBackground;
     [SerializeField] protected VoidGameEventScriptableObject m_voidGameEventUIManagerDisableFadeBackground;
 
     [Header("Pop Up Data Scriptable Object")]
@@ -53,7 +53,7 @@ public class UIMenuBase : UIBase
     {
         m_voidGameEventSettingsManagerEnablePause.Raise();
         m_booleanFlagGlobalVariablePlayerManagerPlayerCanMove.DisableBooleanFlag();
-        M_voidGameEventUIManagerEnableFadeBackground.Raise();
+        m_voidGameEventUIManagerEnableFadeBackground.Raise();
         SetFirstButton();
         EnableMainWindow();
     }
