@@ -18,27 +18,27 @@ public class PopUpDataGameEventScriptableObject : ScriptableObject
 {
     #region Class Variables
     //Game Events Listener
-    private List<PopUpDataGameEventListener> listeners = new List<PopUpDataGameEventListener>();
+    private List<PopUpDataGameEventListener> m_listeners = new List<PopUpDataGameEventListener>();
     #endregion
 
     #region Registration Listener
     public void RegisterListener(PopUpDataGameEventListener a_listener)
     {
-        listeners.Add(a_listener);
+        m_listeners.Add(a_listener);
     }
 
     public void UnregisterListener(PopUpDataGameEventListener a_listener)
     {
-        listeners.Remove(a_listener);
+        m_listeners.Remove(a_listener);
     }
     #endregion
 
     #region Raise/Invoke Game Events
     public void Raise(PopUpDataScriptableObject a_popUpData)
     {
-        for (int i = listeners.Count - 1; i >= 0; i--)
+        for (int i = m_listeners.Count - 1; i >= 0; i--)
         {
-            listeners[i].OnEventRaised(a_popUpData);
+            m_listeners[i].OnEventRaised(a_popUpData);
         }
     }
     #endregion

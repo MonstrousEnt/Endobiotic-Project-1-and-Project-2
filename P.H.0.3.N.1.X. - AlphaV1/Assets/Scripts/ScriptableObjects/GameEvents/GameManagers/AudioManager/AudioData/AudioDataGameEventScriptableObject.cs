@@ -18,27 +18,27 @@ public class AudioDataGameEventScriptableObject : ScriptableObject
 {
     #region Class Variables
     //Game Events Listener
-    private List<AudioDataGameEventListener> listeners = new List<AudioDataGameEventListener>();
+    private List<AudioDataGameEventListener> m_listeners = new List<AudioDataGameEventListener>();
     #endregion
 
     #region Registration Listener
     public void RegisterListener(AudioDataGameEventListener a_listener)
     {
-        listeners.Add(a_listener);
+        m_listeners.Add(a_listener);
     }
 
     public void UnregisterListener(AudioDataGameEventListener a_listener)
     {
-        listeners.Remove(a_listener);
+        m_listeners.Remove(a_listener);
     }
     #endregion
 
     #region Raise/Invoke Game Events
     public void Raise(AudioDataScriptableObject a_audioData)
     {
-        for (int i = listeners.Count - 1; i >= 0; i--)
+        for (int i = m_listeners.Count - 1; i >= 0; i--)
         {
-            listeners[i].OnEventRaised(a_audioData);
+            m_listeners[i].OnEventRaised(a_audioData);
         }
     }
     #endregion
