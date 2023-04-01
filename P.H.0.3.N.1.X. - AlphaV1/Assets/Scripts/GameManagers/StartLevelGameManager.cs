@@ -21,15 +21,15 @@ public class StartLevelGameManager : MonoBehaviour
     [SerializeField] private UnityEvent m_soundEffectUnityEvent;
     #endregion
 
-    #region unity Methods
+    #region Unity Methods
     private void Start()
     {
-        startlevel();
+        startLevel();
     }
     #endregion
 
     #region Start Level Methods
-    private void startlevel()
+    private void startLevel()
     {
         m_startTimerUnityEvent?.Invoke();
 

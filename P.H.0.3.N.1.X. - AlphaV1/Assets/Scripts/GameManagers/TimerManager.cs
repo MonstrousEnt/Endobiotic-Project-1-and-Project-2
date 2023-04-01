@@ -36,8 +36,8 @@ public class TimerManager : MonoBehaviour
    }
    #endregion
 
-   #region Time Mode Methods
-   private void UpdataeTimer(TimerDataScriptableObject a_timerData)
+   #region Timer Mode Methods
+   private void UpdateTimer(TimerDataScriptableObject a_timerData)
    {
        switch (a_timerData.timerMode)
        {
@@ -72,7 +72,7 @@ public class TimerManager : MonoBehaviour
        {
            if (m_timerData.startTimer)
            {
-               UpdataeTimer(m_timerData);
+               UpdateTimer(m_timerData);
            }
        }
    }
