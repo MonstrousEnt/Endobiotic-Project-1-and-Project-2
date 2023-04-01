@@ -864,6 +864,21 @@ package Scripts <<Folder>>
             +GetObjectType(): InteractableOjbects
         }
     }
+
+    package Structs <<Folder>>
+    {
+        package EnemyStructs <<Folder>>
+        {
+            struct Robot 
+            {
+                +Robot(Form a_form, Vector3 a_position):
+
+                ===
+                +formRobot: Form
+                +positionRobot: Vector3
+            }
+        }
+    }
 }
 
 @enduml
