@@ -879,6 +879,23 @@ package Scripts <<Folder>>
             }
         }
     }
+
+    package Utility <<Folder>> 
+    {
+        class DestroyAfterSeconds 
+        {
+            <b>Duration Data
+            -m_duration: float
+
+            ===
+            <b>Unity Methods
+            -Start(): void
+
+            ===
+            <b>Destroy After Methods
+            -destroyAfter(float a_duration): IEnumerator
+        }
+    }
 }
 
 @enduml

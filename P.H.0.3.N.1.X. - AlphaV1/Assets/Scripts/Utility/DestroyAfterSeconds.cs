@@ -15,7 +15,7 @@ using UnityEngine;
 public class DestroyAfterSeconds : MonoBehaviour
 {
     #region Class Variables
-    [Header("How long the game object last unlit it get destroy")]
+    [Header("Duration Data")]
     [SerializeField] private float m_duration;
     #endregion
 
