@@ -953,6 +953,21 @@ package Scripts <<Folder>>
                 -OnEnable(): void
             }
         }
+
+        package GlobalVariables <<Folder>>
+        {
+            class BooleanFlagGlobalVariableScriptableObject 
+            {
+                <b>Class Variables
+                -m_booleanFlag: bool 
+
+                ===
+                <b>Getters and Setters
+                +booleanFlag: bool 
+                +EnableBoolFlag(): void
+                +DisableBooleanFlag(): void
+            }
+        }
     } 
 
     package Structs <<Folder>>

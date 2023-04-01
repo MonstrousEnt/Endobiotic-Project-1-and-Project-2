@@ -17,7 +17,6 @@ using UnityEngine;
 public class BooleanFlagGlobalVariableScriptableObject : ScriptableObject
 {
     #region Class Variables
-    //Global
     [SerializeField] private bool m_booleanFlag;
     #endregion
 
