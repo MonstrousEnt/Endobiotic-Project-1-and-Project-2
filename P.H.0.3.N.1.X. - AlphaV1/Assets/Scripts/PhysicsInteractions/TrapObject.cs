@@ -20,20 +20,18 @@ public class TrapObject : MonoBehaviour
     [Header("Intractable")]
     [SerializeField] private InteractableOjbects m_objectType;
 
-    [Header("Sprite")]
+    [Header("Sprite - Serialize Field")]
     [SerializeField] private Sprite m_hasActivatedSprite;
 
 
     [Header("Unity Events")]
     [SerializeField] private UnityEvent m_addPointUnityEvent;
 
-    //Sprite
+    //Sprite - Non-Serialize Field
     private SpriteRenderer m_spriteRenderer;
 
     //Trap
     private Collider2D m_trapCollider;
-
-
     #endregion
 
     #region Unity Methods 
