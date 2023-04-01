@@ -27,7 +27,7 @@ public class CharacterInteractionController : MonoBehaviour
     [Header("Sounds")]
     [SerializeField] private UnityEvent m_soundEffectUnityEvent;
 
-    [Header("Invulnerable Timer")]
+    [Header("Invulnerable Timer - Serialize Fields")]
     [SerializeField] private float m_invulnerableTimeSF = 1f;
 
     [Header("Tags Scripbale Object")]

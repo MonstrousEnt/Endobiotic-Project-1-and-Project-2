@@ -26,7 +26,7 @@ public class PlayerControllerAnimations : BaseControllerAnimations
     [SerializeField] private string m_MAGNET_PULL_LEFT = "Pull_Left";
     [SerializeField] private string m_MAGNET_PULL_RIGHT = "Pull_Right";
 
-    [Header("Delay or Time")]
+    //Delay or Timer
     private float m_requiredTime;
     #endregion
 
