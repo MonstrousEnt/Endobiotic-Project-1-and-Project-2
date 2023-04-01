@@ -421,6 +421,55 @@ package Scripts <<Folder>>
             -loadUserSpawnedRobots(): void
        }
     }
+
+    ' package Enums <<Folder>>
+    ' {
+    '     package Character <<Folder>>
+    '     {
+    '         enum Form 
+    '         {
+    '             +Manipulator
+    '             +Transport
+    '             +Magnetic
+    '             +Electronic
+    '             +Destroyer
+    '             +Battery
+    '             +Crab
+    '         }
+    '     }
+        
+    '     package GameManager <<Folder>> 
+    '     {
+    '         package TimerManager <<Folder>> 
+    '         {
+    '             enum TimerMode
+    '             {
+    '                 +CountUp
+    '                 +CountDown
+    '             }
+    '         }
+    '     }
+
+    '     package Interactables <<Folder>>
+    '     {
+    '         enum InteractableOjbects 
+    '         {
+    '             +Pit
+    '         }
+    '     }
+
+    '     package Movement <<Folder>>
+    '     {
+    '         enum MoveDirection 
+    '         {
+    '             +Down
+    '             +Up
+    '             +Left
+    '             +Right
+    '         }
+    '     }
+    ' }
+    
 }
 
 @enduml
