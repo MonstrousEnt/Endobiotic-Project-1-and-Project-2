@@ -1005,6 +1005,19 @@ package Scripts <<Folder>>
                 +GetLevelById(string a_id): int
             }
         }
+
+        package Tag <<Folder>> 
+        {
+            class TagDataScriptableObject 
+            {
+                <b>Class Variables
+                -m_tagName: string
+
+                ===
+                <b>Getters and Setters
+                +tagName: string
+            }
+        }
     } 
 
     package Structs <<Folder>>
