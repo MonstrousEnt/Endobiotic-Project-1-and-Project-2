@@ -15,16 +15,16 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-public class UIMenuBase : UIBase
+public abstract class UIMenuBase : UIBase
 {
     #region Class Variables
     [Header("UI Components")]
     [SerializeField] protected GameObject m_firstButtonGameObject;
 
-    [Header(" Global Variable Scriptable Object - Player Manager")]
+    [Header("Global Variable Scriptable Object - Player Manager")]
     [SerializeField] protected BooleanFlagGlobalVariableScriptableObject m_booleanFlagGlobalVariablePlayerManagerPlayerCanMove;
 
-    [Header(" Game Events Scriptable Object - Settings Manager")]
+    [Header("Game Events Scriptable Object - Settings Manager")]
     [SerializeField] protected VoidGameEventScriptableObject m_voidGameEventSettingsManagerEnablePause;
     [SerializeField] protected VoidGameEventScriptableObject m_voidGameEventSettingsManagerDisablePause;
 
@@ -37,7 +37,7 @@ public class UIMenuBase : UIBase
 
     [Header("Game Events Scriptable Object - UI Manger - Pop Up")]
     [SerializeField] protected PopUpDataGameEventScriptableObject m_popUpDataGameEventUIMangerSetPopUpData;
-    [SerializeField] protected VoidGameEventScriptableObject m_voidGameEventUIManagerEanblePopUp;
+    [SerializeField] protected VoidGameEventScriptableObject m_voidGameEventUIManagerEnablePopUp;
     #endregion
 
     #region Getters and Setters
@@ -66,10 +66,10 @@ public class UIMenuBase : UIBase
         DisableMainWindow();
     }
 
-    public void OepnQuitPopUp()
+    public void OpenQuitPopUp()
     {
         m_popUpDataGameEventUIMangerSetPopUpData.Raise(m_popUpDataQuitPopUp);
-        m_voidGameEventUIManagerEanblePopUp.Raise();
+        m_voidGameEventUIManagerEnablePopUp.Raise();
     }
     #endregion
 }

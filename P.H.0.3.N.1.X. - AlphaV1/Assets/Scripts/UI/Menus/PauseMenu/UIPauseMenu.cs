@@ -21,7 +21,7 @@ public class UIPauseMenu : UIMenuBase
     [SerializeField] private BooleanFlagGlobalVariableScriptableObject m_booleanFlagGlobalVariableUIManagerPauseMenuIsActive;
     #endregion
 
-    #region UI Base - Over Methods - Pause Men
+    #region UI Base - Override Methods - Pause Menu
     public override void EnableMenu()
     {
         base.EnableMenu();

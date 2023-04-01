@@ -20,7 +20,7 @@ public class UIStartScreen : MonoBehaviour
     [Header("Unity Event")]
     [SerializeField] private UnityEvent m_startSoundtrackUnityEvent;
     [SerializeField] private UnityEvent m_stopSoundtrackUnityEvent;
-    [SerializeField] private UnityEvent m_loadNextScenceUnityEvent;
+    [SerializeField] private UnityEvent m_loadNextSceneUnityEvent;
     #endregion
 
     #region Unity Methods
@@ -34,7 +34,7 @@ public class UIStartScreen : MonoBehaviour
         if (Input.anyKeyDown)
         {
             m_stopSoundtrackUnityEvent?.Invoke();
-            m_loadNextScenceUnityEvent?.Invoke();
+            m_loadNextSceneUnityEvent?.Invoke();
         }
     }
     #endregion

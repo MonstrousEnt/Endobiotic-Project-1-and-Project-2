@@ -880,6 +880,205 @@ package Scripts <<Folder>>
         }
     }
 
+    package UI <<Folder>>
+    {
+        abstract class UIBase 
+        {
+            <b>Main Window Data
+            #m_mainWindowGameObject: GameObject
+
+            ===
+            <b>UI Base - UI Main Window Methods
+            +EnableMainWindow(): void
+            +DisableMainWindow(): void
+        }
+
+        package FadeBackground <<Folder>> 
+        {
+            UIFadeBackground <|-- UIBase
+
+            class UIFadeBackground 
+            {
+
+            }
+        }
+
+        package Menus <<Folder>> 
+        {
+             UIMenuBase <|-- UIBase
+
+            package PauseMenu <<Folder>>
+            {
+                UIPauseMenu <|-- UIMenuBase
+
+                class UIPauseMenu 
+                {
+                    <b>Boolean Flag Global Variable Scriptable Object - UI Manager
+                    -m_booleanFlagGlobalVariableUIManagerPauseMenuIsActive: BooleanFlagGlobalVariableScriptableObject
+
+                    ===
+                    <b>UI Base - Override Methods - Pause Menu
+                    +EnableMenu(): void
+                    +DisableMenu(): void
+
+                    ===
+                    <b>UI Methods
+                    +ResumeGame(): void
+                }
+            }
+
+            package TryAgainMenu <<Folder>> 
+            {
+                UITryAgainMenu <|-- UIMenuBase
+
+                class UITryAgainMenu 
+                {
+                    <b>Point System
+                    -m_piontSystem: UIPiontSystem
+
+                    ===
+                    <b>Unity Event
+                    -m_restartLevelUnityEvent: UnityEvent
+                    -m_loadNextScenceUnityEvent: UnityEvent
+
+                    ===
+                    <b>UI Base - Override Methods - Try Again Menu
+                    +EnableMenu(): void
+
+                    ===
+                    <b>UI Methods
+                    +TryAgin(): void
+                }
+                
+            }
+
+            abstract class UIMenuBase 
+            {
+                <b>UI Components
+                #m_firstButtonGameObject: GameObject
+
+                ===
+                <b>Global Variable Scriptable Object - Player Manager
+                #m_booleanFlagGlobalVariablePlayerManagerPlayerCanMove: BooleanFlagGlobalVariableScriptableObject
+
+                ===
+                <b>Game Events Scriptable Object - Settings Manager
+                #m_voidGameEventSettingsManagerEnablePause: VoidGameEventScriptableObject
+                #m_voidGameEventSettingsManagerDisablePause: VoidGameEventScriptableObject
+
+                ===
+                <b>Game Events Scriptable Object - UI Manager - Fade Background
+                #m_voidGameEventUIManagerEnableFadeBackground: VoidGameEventScriptableObject
+                #m_voidGameEventUIManagerDisableFadeBackground: VoidGameEventScriptableObject
+
+                ===
+                <b>Pop Up Data Scriptable Object
+                #m_popUpDataQuitPopUp: PopUpDataScriptableObject
+
+                ===
+                <b>Game Events Scriptable Object - UI Manger - Pop Up
+                #m_popUpDataGameEventUIMangerSetPopUpData: PopUpDataGameEventScriptableObject
+                #m_voidGameEventUIManagerEnablePopUp: VoidGameEventScriptableObject
+
+                ===
+                <b>Getters and Setters
+                #SetFirstButton(): void
+
+                ===
+                <b>UI Menu Base - UI Menu Methods 
+                +EnableMenu(): void
+                +DisableMenu(): void
+                +OpenQuitPopUp(): void
+            }
+        }
+
+        package PopUp <<Folder>> 
+        {
+              UIPopUp <|-- UIBase
+
+            class PopUpActions 
+            {
+                <b>Unity Events
+                -m_disablePopUpUnityEvent: UnityEvent
+
+                ===
+                <b>Pop Up Action Methods - Quit Game
+                +QuitGame(): void
+            }
+
+            class UIPopUp
+            {
+                <b>UI Components
+                -m_messageTextBox: TextMeshProUGUI
+                -m_yesButtonGameObject: GameObject
+                -m_noButtonGameObject: GameObject
+
+                ===
+                <b>Controller Inputs
+                -m_popUpFirstButton: GameObject
+
+                ===
+                <b>Pop Up Data
+                m_popUpData: PopUpDataScriptableObject
+
+                ===
+                <b>Getters and Setters
+                +SetPopUpData(PopUpDataScriptableObject a_popUpData): void
+
+                ===
+                <b>Unity Methods
+                -Update(): void
+
+                ===
+                <b>UI Pop Up Methods
+                +EnablePopUp(): void
+                +DisablePopUp(): void
+                -displayPopUpData(): void
+                -cleanUIData(): void
+
+                ===
+                <b>On Click Methods 
+                +YesActionPopUpOnClick(): void
+            }
+        }
+
+        package StratScreen <<Folder>> 
+        {
+            class UIStartScreen 
+            {
+                <b>Unity Event
+                -m_startSoundtrackUnityEvent: UnityEvent
+                -m_stopSoundtrackUnityEvent: UnityEvent
+                -m_loadNextSceneUnityEvent: UnityEvent
+
+                ===
+                <b>Unity Methods
+                -Start(): void
+                -Update(): void
+            }
+        }
+
+        package Timer <<Folder>> 
+        {
+            class UITimer 
+            {
+                <b>UI Components
+                -m_timerText: TextMeshProUGUI
+                
+                ===
+                <b>Time Data Scriptable Object
+                -m_timerData: TimerDataScriptableObject
+
+                ===
+                <b>Unity Methods
+                -Update(): void
+
+                UI Methods
+                -displayTime(float a_timeInSeconds): void
+            }
+        }
+    }
+
     package Utility <<Folder>> 
     {
         class DestroyAfterSeconds 

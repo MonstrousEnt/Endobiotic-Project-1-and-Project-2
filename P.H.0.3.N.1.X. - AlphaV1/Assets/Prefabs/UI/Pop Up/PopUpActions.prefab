@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a8b75639ba645640bf7d820381290db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_disbalePopUpUnityEvent:
+  m_disablePopUpUnityEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: 9c47f84585b9fe74ba72decc290dbc3e, type: 2}

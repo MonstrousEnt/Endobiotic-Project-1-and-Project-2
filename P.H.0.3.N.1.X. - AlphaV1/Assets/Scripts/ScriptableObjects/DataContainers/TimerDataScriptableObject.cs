@@ -25,7 +25,7 @@ public class TimerDataScriptableObject : ScriptableObject
     #endregion
 
     #region Getters and Setters
-    public float timeInseconds { get { return m_timeInSeconds; } set { m_timeInSeconds = value; } }
+    public float timeInSeconds { get { return m_timeInSeconds; } set { m_timeInSeconds = value; } }
     public TimerMode timerMode { get { return m_timerMode; } }
     public float stratTimeInSeconds { get { return m_stratTimeInSeconds; } set { m_stratTimeInSeconds = value; } }
     public bool startTimer { get { return m_startTimer; } set { m_startTimer = value; } }

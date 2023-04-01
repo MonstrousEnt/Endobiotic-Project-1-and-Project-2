@@ -20,16 +20,18 @@ public class UIPopUp : UIBase
 {
     #region Class Variables
     [Header("UI Components")]
-    [SerializeField] private TextMeshProUGUI m_messgesTextBox;
+    [SerializeField] private TextMeshProUGUI m_messageTextBox;
     [SerializeField] private GameObject m_yesButtonGameObject;
-    [SerializeField] private GameObject m_NoButtonGameObject;
+    [SerializeField] private GameObject m_noButtonGameObject;
+
+    [Header("Controller Inputs")]
     [SerializeField] private GameObject m_popUpFirstButton;
 
     [Header("Pop Up Data")]
     [SerializeField] private PopUpDataScriptableObject m_popUpData;
     #endregion
 
-    #region Setters and Getters
+    #region Getters and Setters
     public void SetPopUpData(PopUpDataScriptableObject a_popUpData)
     {
         this.m_popUpData = null;
@@ -71,7 +73,7 @@ public class UIPopUp : UIBase
         {
             cleanUIData();
 
-            m_messgesTextBox.text = m_popUpData.message;
+            m_messageTextBox.text = m_popUpData.message;
 
             if (m_popUpData.isConfirm)
             {
@@ -79,18 +81,20 @@ public class UIPopUp : UIBase
                 EventSystem.current.SetSelectedGameObject(m_popUpFirstButton);
 
                 m_yesButtonGameObject.SetActive(true);
-                m_NoButtonGameObject.SetActive(true);
+                m_noButtonGameObject.SetActive(true);
             }
         }
     }
 
     private void cleanUIData()
     {
-        m_messgesTextBox.text = "";
+        m_messageTextBox.text = "";
         m_yesButtonGameObject.SetActive(false);
-        m_NoButtonGameObject.SetActive(false);
+        m_noButtonGameObject.SetActive(false);
     }
-
+    #endregion
+    
+    #region On Click Methods 
     public void YesActionPopUpOnClick()
     {
         if (m_popUpData != null)

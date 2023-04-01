@@ -56,12 +56,12 @@ public class TimerManager : MonoBehaviour
 
    private void countUpTimer(TimerDataScriptableObject a_timerData)
    {
-       a_timerData.timeInseconds += Time.deltaTime;
+       a_timerData.timeInSeconds += Time.deltaTime;
    }
 
    private void countDownTimer(TimerDataScriptableObject a_timerData)
    {
-       a_timerData.timeInseconds -= Time.deltaTime;
+       a_timerData.timeInSeconds -= Time.deltaTime;
    }
    #endregion
 

@@ -13,7 +13,7 @@ MonoImporter:
   - m_voidGameEventUIManagerDisableFadeBackground: {fileID: 11400000, guid: 6a9e7aff25c264844ab9bbc0308fcdd2, type: 2}
   - m_popUpDataQuitPopUp: {fileID: 11400000, guid: 0af3184b15876264abddb016fcde85f8, type: 2}
   - m_popUpDataGameEventUIMangerSetPopUpData: {fileID: 11400000, guid: 29a6c36849ca25a40b9c666c995382c3, type: 2}
-  - m_voidGameEventUIManagerEanblePopUp: {fileID: 11400000, guid: 7ef7add07fa35104bbed2ad203302e7f, type: 2}
+  - m_voidGameEventUIManagerEnablePopUp: {fileID: 11400000, guid: 7ef7add07fa35104bbed2ad203302e7f, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -30,7 +30,7 @@ public class UITimer : MonoBehaviour
     {
         if (m_timerData.updateUI && m_timerData.startTimer)
         {
-            displayTime(m_timerData.timeInseconds);
+            displayTime(m_timerData.timeInSeconds);
         }
     }
 

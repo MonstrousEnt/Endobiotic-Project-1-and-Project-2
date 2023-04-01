@@ -13,7 +13,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIBase : MonoBehaviour
+public abstract class UIBase : MonoBehaviour
 {
     #region Class Variables
     [Header("Main Window Data")]

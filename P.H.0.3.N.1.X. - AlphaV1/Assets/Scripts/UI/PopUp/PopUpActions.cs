@@ -18,13 +18,13 @@ public class PopUpActions : MonoBehaviour
 {
     #region Class Variables
     [Header("Unity Events")]
-    [SerializeField] private UnityEvent m_disbalePopUpUnityEvent;
+    [SerializeField] private UnityEvent m_disablePopUpUnityEvent;
     #endregion
 
     #region Pop Up Action Methods - Quit Game
     public void QuitGame()
     {
-        m_disbalePopUpUnityEvent?.Invoke();
+        m_disablePopUpUnityEvent?.Invoke();
 
         Debug.Log("Quiting Game...");
         Application.Quit();

@@ -27,7 +27,7 @@ public class UITryAgainMenu : UIMenuBase
     [SerializeField] private UnityEvent m_loadNextScenceUnityEvent;
     #endregion
 
-    #region UI Base - Over Methods - Try Again Menu
+    #region UI Base - Override Methods - Try Again Menu
     public override void EnableMenu()
     {
         base.EnableMenu();

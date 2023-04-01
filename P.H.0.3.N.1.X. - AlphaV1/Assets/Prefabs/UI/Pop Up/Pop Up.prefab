@@ -325,9 +325,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_mainWindowGameObject: {fileID: 4866575525421341017}
-  m_messgesTextBox: {fileID: 4866575524196978899}
+  m_messageTextBox: {fileID: 4866575524196978899}
   m_yesButtonGameObject: {fileID: 4866575525028407531}
-  m_NoButtonGameObject: {fileID: 4866575524669948298}
+  m_noButtonGameObject: {fileID: 4866575524669948298}
   m_popUpFirstButton: {fileID: 4866575525028407531}
   m_popUpData: {fileID: 0}
 --- !u!114 &8838083921143418719
