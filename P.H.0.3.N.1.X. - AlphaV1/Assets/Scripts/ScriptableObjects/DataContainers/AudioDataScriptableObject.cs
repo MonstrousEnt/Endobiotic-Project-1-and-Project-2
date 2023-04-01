@@ -23,9 +23,9 @@ public class AudioDataScriptableObject : ScriptableObject
     [SerializeField] private float m_pitch;
     [SerializeField] private bool m_loop;
     [SerializeField] private bool m_playOnAwake = false;
-    #endregion
 
     private AudioSource m_source;
+    #endregion
 
     #region Getters and Setters
     public AudioClip clip { get { return m_clip; } set { m_clip = value; } }
@@ -40,7 +40,7 @@ public class AudioDataScriptableObject : ScriptableObject
     #region Unity Methods
     private void OnEnable()
     {
-		source = null;
+        source = null;
     }
     #endregion
 }

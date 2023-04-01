@@ -56,7 +56,7 @@ public class TimerDataEditor : Editor
         //User Inputs 
         l_timerData.timeInSeconds = EditorGUILayout.FloatField("Time In Seconds", l_timerData.timeInSeconds);
         EditorGUILayout.PropertyField(m_timerModeSerializedProperty, new GUIContent("Timer Mode"));
-        l_timerData.stratTimeInSeconds = EditorGUILayout.FloatField("Start Time In Seconds", l_timerData.stratTimeInSeconds);
+        l_timerData.startTimeInSeconds = EditorGUILayout.FloatField("Start Time In Seconds", l_timerData.startTimeInSeconds);
         l_timerData.startTimer = EditorGUILayout.Toggle("Start Timer", l_timerData.startTimer);
         l_timerData.updateUI = EditorGUILayout.Toggle("Update UI", l_timerData.updateUI);
 

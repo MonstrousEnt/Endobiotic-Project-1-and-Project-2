@@ -30,7 +30,7 @@ public class CharacterInteractionController : MonoBehaviour
     [Header("Invulnerable Timer - Serialize Fields")]
     [SerializeField] private float m_invulnerableTimeSF = 1f;
 
-    [Header("Tags Scripbale Object")]
+    [Header("Tags Scriptable Object")]
     [SerializeField] private TagDataScriptableObject m_tagDataEnemy;
     [SerializeField] private TagDataScriptableObject m_tagDataInteractable;
 

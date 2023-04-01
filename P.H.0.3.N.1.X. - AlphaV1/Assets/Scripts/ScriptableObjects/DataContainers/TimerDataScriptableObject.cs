@@ -19,7 +19,7 @@ public class TimerDataScriptableObject : ScriptableObject
     #region Class Variables
     [SerializeField] private float m_timeInSeconds;
     [SerializeField] private TimerMode m_timerMode;
-    [SerializeField] private float m_stratTimeInSeconds;
+    [SerializeField] private float m_startTimeInSeconds;
     [SerializeField] private bool m_startTimer = false;
     [SerializeField] private bool m_UpdateUI = false;
     #endregion
@@ -27,7 +27,7 @@ public class TimerDataScriptableObject : ScriptableObject
     #region Getters and Setters
     public float timeInSeconds { get { return m_timeInSeconds; } set { m_timeInSeconds = value; } }
     public TimerMode timerMode { get { return m_timerMode; } }
-    public float stratTimeInSeconds { get { return m_stratTimeInSeconds; } set { m_stratTimeInSeconds = value; } }
+    public float startTimeInSeconds { get { return m_startTimeInSeconds; } set { m_startTimeInSeconds = value; } }
     public bool startTimer { get { return m_startTimer; } set { m_startTimer = value; } }
     public bool updateUI { get { return m_UpdateUI; } set { m_UpdateUI = value; } }
     #endregion
@@ -35,7 +35,7 @@ public class TimerDataScriptableObject : ScriptableObject
     #region Reset Data Methods
     public void Reset()
     {
-        m_timeInSeconds = m_stratTimeInSeconds;
+        m_timeInSeconds = m_startTimeInSeconds;
         m_startTimer = false;
         m_UpdateUI = false;
     }
