@@ -21,15 +21,19 @@ public class EnemyInteraction : MonoBehaviour
     private EnemyControllerAnimations m_enemyControllerAnimations;
     private CharacterFormsController m_characterFormsController;
 
-    //Unity Events
-    public UnityEvent<GameObject> deathEvent;
+    [Header("Unity Event")]
+    [SerializeField]private UnityEvent<GameObject> m_deathEvent;
+    #endregion
+
+    #region Getters and Setters
+    public UnityEvent<GameObject> deathEvent { get { return m_deathEvent; } }
     #endregion
 
     #region Unity Methods
     private void Awake()
     {
         m_characterFormsController = GetComponent<CharacterFormsController>();
-        deathEvent = new UnityEvent<GameObject>();
+        m_deathEvent = new UnityEvent<GameObject>();
     }
     #endregion
 
@@ -41,14 +45,14 @@ public class EnemyInteraction : MonoBehaviour
             return;
         }
 
-        deathEvent?.Invoke(this.gameObject);
+        m_deathEvent?.Invoke(this.gameObject);
 
         Destroy(this.gameObject);
     }
 
     public void DestroyEnemy()
     {
-        deathEvent?.Invoke(this.gameObject);
+        m_deathEvent?.Invoke(this.gameObject);
 
         Destroy(this.gameObject);
     }

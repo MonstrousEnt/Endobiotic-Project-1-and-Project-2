@@ -33,7 +33,6 @@ public class EnemySpawner : MonoBehaviour
     [Header("Robots List")]
     [SerializeField] private List<GameObject> m_userSpawnedRobots = new List<GameObject>();
     
-
     [Header("Sound Unity Event")]
     [SerializeField] private UnityEvent m_soundEffectUnityEvent;
 
@@ -41,46 +40,31 @@ public class EnemySpawner : MonoBehaviour
     private List<GameObject> m_enemyFormList;
 
     //Robots List Dictionary
-    private Dictionary<GameObject, robot> m_trackedRobots = new Dictionary<GameObject, robot>();
-
-    #region Struts
-    public struct robot
-    {
-        public robot(Form a_form, Vector3 a_position)
-        {
-            formRobot = a_form;
-            positionRobot = a_position;
-        }
-
-        public Form formRobot;
-        public Vector3 positionRobot;
-    }
-    #endregion
-
+    private Dictionary<GameObject, Robot> m_trackedRobots = new Dictionary<GameObject, Robot>();
     #endregion
 
     #region Unity Methods
     private void Start()
     {
         StartCoroutine(initialize());
-        LoadRobotList();
+        loadRobotList();
     }
     #endregion
 
     #region AI Methods
     public void UpdateCurrentRobotsList(GameObject caller)
     {
-        StartCoroutine(SpawnRobot(new robot(m_trackedRobots[caller].formRobot, m_trackedRobots[caller].positionRobot)));
+        StartCoroutine(spawnRobot(new Robot(m_trackedRobots[caller].formRobot, m_trackedRobots[caller].positionRobot)));
         m_trackedRobots.Remove(caller);
     }
 
     private IEnumerator initialize()
     {
         yield return new WaitForEndOfFrame();
-        LoadUserSpawnedRobots();
+        loadUserSpawnedRobots();
     }
 
-    private void LoadRobotList()
+    private void loadRobotList()
     {
         m_enemyFormList = new List<GameObject>();
 
@@ -93,7 +77,7 @@ public class EnemySpawner : MonoBehaviour
         m_enemyFormList.Add(m_crabPrefab);
     }
 
-    private IEnumerator SpawnRobot(robot a_robot)
+    private IEnumerator spawnRobot(Robot a_robot)
     {
         yield return new WaitForSeconds(m_spawnInterval);
 
@@ -116,13 +100,13 @@ public class EnemySpawner : MonoBehaviour
         m_soundEffectUnityEvent?.Invoke();
     }
 
-    private void LoadUserSpawnedRobots()
+    private void loadUserSpawnedRobots()
     {
         foreach(GameObject l_robot in m_userSpawnedRobots)
         {
             Form l_robotForm = l_robot.GetComponent<CharacterFormsController>().currForm;
 
-            m_trackedRobots.Add(l_robot, new robot(l_robotForm, l_robot.transform.position));
+            m_trackedRobots.Add(l_robot, new Robot(l_robotForm, l_robot.transform.position));
 
             l_robot.GetComponent<EnemyInteraction>().deathEvent.AddListener(UpdateCurrentRobotsList);
         }

@@ -1,8 +1,13 @@
-@startuml Test
+@startuml Class Diagram Mark 1
 title Endobiotic UML Class Digram - Mark 1\n<color:Gray>Monstrous | Endobiotic | 04/1/2023</color>
 
 package Scripts <<Folder>> 
 {
+
+    CharacterDeathController <|-- BaseControllerAnimations
+    PlayerControllerAnimations <|-- BaseControllerAnimations
+    EnemyControllerAnimations <|-- BaseControllerAnimations
+
     package Animations <<Folder>> 
     {
         abstract Class BaseControllerAnimations 
@@ -41,10 +46,9 @@ package Scripts <<Folder>>
             -moveAnimations(Vector2 a_movement): void
         }
     } 
+
     package Character <<Folder>> 
     {
-        CharacterDeathController <|-- BaseControllerAnimations
-        PlayerControllerAnimations <|-- BaseControllerAnimations
         
         class CharacterDeathController 
         {
@@ -258,6 +262,144 @@ package Scripts <<Folder>>
             +Update(): void
         }
 
+    }
+
+    package Enemy <<Folder>> 
+    {
+        class EnemyController 
+        {
+            <b>Form
+            -m_intialForm: Form
+
+            ===
+            <b>AI
+            -m_moveSpeed: float
+            -m_aggroRadius: float
+
+            ===
+            <b>Tag Scriptable Object
+            -m_tagDataPlayer: TagDataScriptableObject
+
+            ===
+            <b>Attack
+            -m_isAttacking: bool 
+
+            ===
+            <b>Target
+            -m_target: Transform
+            -m_characterFormController: CharacterFormsController
+
+            ===
+            <b>Movement
+            -m_rigidbody2D: Rigidbody2D
+            -m_preferredPosition:
+
+            ===
+            <b>Getters and Setters
+            +form: Form
+            setBehaviour(GameObject a_target): void
+
+            ===
+            <b>Find Methods
+            FFindTargetsInRange(float a_range): void
+
+            ===
+            <b>Unity Methods
+            -Awake(): void
+            -Start(): void
+            -Update(): void
+
+            ===
+            <b>AI Methods
+            +UpdatePreferredPosition(Vector3 a_position): void
+            -move(): void
+            -intelligence(float a_range, float a_updateSpeed): void
+        }
+
+        class EnemyControllerAnimations 
+        {
+           <b>Movements
+            -m_previousPosition: Vector3
+
+            ===
+            <b>Unity Methods
+            -Start(): void
+            -Update(): void
+
+            ===
+            <b>Animations Methods
+            -movementDetection(): void
+        }
+
+        class EnemyInteraction 
+        {
+            <b>Components
+            -m_enemyControllerAnimations: EnemyControllerAnimations
+            -m_characterFormsController: CharacterFormsController
+
+            ===
+            <b>Unity Events
+            -m_deathEvent: UnityEvent<GameObject>
+
+            ===
+            <b>Getters and Setters
+            +deathEvent: UnityEvent<GameObject>
+
+            ===
+            <b>Unity Methods
+            -Awake(): void
+
+            ===
+            <b>AI Interaction Methods
+            +KillEnemy(): void
+            +DestroyEnemy(): void
+        }
+
+       class EnemySpawner 
+       {
+            <b>Form Prefab
+            -m_manipulatorPrefab: GameObject
+            -m_transportPrefab: GameObject
+            -m_magneticPrefab: GameObject
+            -m_electricPrefab: GameObject
+            -m_destroyerPrefab: GameObject
+            -m_batteryPrefab: GameObject
+            -m_crabPrefab: GameObject
+
+            ===
+            <b>Spawner Data
+            -m_spawnInterval: float
+            -m_spawnDistanceX: float
+            -m_spawnDistanceY: float
+
+            ===
+            <b>Robots List
+            -m_userSpawnedRobots: List<GameObject>
+
+            ===
+            <b>Sound Unity Event
+            -m_soundEffectUnityEvent: UnityEvent
+
+            ===
+            <b>Prefabs
+            -m_enemyFormList: List<GameObject>
+
+            ===
+            <b>Robots List Dictionary
+            -m_trackedRobots: Dictionary<GameObject, robot>
+
+            ===
+            <b>Unity Methods
+            -Start(): void
+
+            ===
+            AI Methods
+            +UpdateCurrentRobotsList(GameObject caller): void
+            -initialize(): void
+            -loadRobotList(): void
+            -spawnRobot(): void
+            -loadUserSpawnedRobots(): void
+       }
     }
 }
 

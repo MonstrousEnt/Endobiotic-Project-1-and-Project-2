@@ -22,7 +22,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float m_moveSpeed;
     [SerializeField] private float m_aggroRadius;
 
-    [Header("Tag")]
+    [Header("Tag Scriptable Object")]
     [SerializeField] private TagDataScriptableObject m_tagDataPlayer;
 
     //Attack 
@@ -38,9 +38,9 @@ public class EnemyController : MonoBehaviour
     #endregion
 
     #region Getters and Setters
-    public Form Form { get { return m_intialForm; } }
+    public Form form { get { return m_intialForm; } }
 
-    private void SetBehaviour(GameObject a_target)
+    private void setBehaviour(GameObject a_target)
     {
         if (a_target != null && a_target.TryGetComponent(out CharacterFormsController a_formController) && a_formController.currForm != m_characterFormController.currForm)
         {
@@ -87,11 +87,6 @@ public class EnemyController : MonoBehaviour
         StartCoroutine(intelligence(m_aggroRadius, 0.5f));
     }
 
-    public void UpdatePreferredPosition(Vector3 a_position)
-    {
-        m_preferredPosition = a_position;
-    }
-
     private void Update()
     {
         move();
@@ -99,6 +94,12 @@ public class EnemyController : MonoBehaviour
     #endregion
 
     #region AI Methods
+    public void UpdatePreferredPosition(Vector3 a_position)
+    {
+        m_preferredPosition = a_position;
+    }
+
+
     private void move()
     {
         m_rigidbody2D.velocity = Vector2.zero;
@@ -133,7 +134,7 @@ public class EnemyController : MonoBehaviour
     {
         while (true)
         {
-            SetBehaviour(FindTargetsInRange(a_range));
+            setBehaviour(FindTargetsInRange(a_range));
             yield return new WaitForSeconds(a_updateSpeed);      
         }
     }
