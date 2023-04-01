@@ -591,6 +591,19 @@ package Scripts <<Folder>>
             -Update(): void
         }
     }
+
+    package Interfaces <<Folder>>
+    {
+        package InteractableInterfaces <<Folder>>
+        {
+            interface IPrerequisite 
+            {
+                <b>Interface Methods
+                +IsComplete(): void
+                ---
+            }
+        }
+    }
 }
 
 @enduml
