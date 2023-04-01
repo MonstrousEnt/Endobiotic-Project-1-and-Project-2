@@ -338,7 +338,7 @@ package Scripts <<Folder>>
 
         class EnemyControllerAnimations 
         {
-           <b>Movements
+            <b>Movements
             -m_previousPosition: Vector3
 
             ===
