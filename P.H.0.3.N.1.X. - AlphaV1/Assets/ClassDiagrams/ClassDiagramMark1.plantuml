@@ -968,6 +968,19 @@ package Scripts <<Folder>>
                 +DisableBooleanFlag(): void
             }
         }
+
+        package ID <<Folder>> 
+        {
+            class GuildIDScriptableObject 
+            {
+                <b>Class Variables
+                -m_guildID: string
+
+                ===
+                <b>Generate Methods
+                +GenerateID(): void
+            }
+        }
     } 
 
     package Structs <<Folder>>

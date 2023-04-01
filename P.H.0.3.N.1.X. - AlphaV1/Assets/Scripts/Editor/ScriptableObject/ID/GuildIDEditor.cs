@@ -59,9 +59,9 @@ public class GuildIdEditor : Editor
         EditorGUILayout.Space();
 
         //Buttons
-        if (GUILayout.Button("Gen ID"))
+        if (GUILayout.Button("Generate ID"))
         {
-            l_guildID.GenId();
+            l_guildID.GenerateID();
         }
 
         //Apply changes

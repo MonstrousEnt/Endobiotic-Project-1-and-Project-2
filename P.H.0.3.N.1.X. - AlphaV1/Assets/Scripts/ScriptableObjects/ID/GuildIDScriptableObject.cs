@@ -18,12 +18,11 @@ using System;
 public class GuildIDScriptableObject : ScriptableObject
 {
     #region Class Variables
-    //ID
     [SerializeField] private string m_guildID;
     #endregion
 
-    #region C# Methods
-    public void GenId()
+    #region Generate Methods
+    public void GenerateID()
     {
         m_guildID = Guid.NewGuid().ToString();
     }
