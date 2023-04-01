@@ -604,6 +604,209 @@ package Scripts <<Folder>>
             }
         }
     }
+
+    package Interactables <<Folder>> 
+    {
+        Interactable <|-- IPrerequisite
+
+        class EffectAudioManagerGameEvent
+        {
+            <b>Audio Data
+            -m_audioData: AudioDataScriptableObject
+            -m_audioList: AudioListScriptableObject
+
+            ===
+            <b>Game Event Scriptable Objects - Audio Manager
+            -m_audioManagerGameEventPlaySound: AudioDataGameEventScriptableObject
+            -m_audioManagerGameEventPlayRandomSound: AudioDataGameEventScriptableObject
+            -m_audioManagerGameEventStopSound: AudioDataGameEventScriptableObject
+            -m_audioManagerGameEventEnableLoop: AudioDataGameEventScriptableObject
+            -m_audioManagerGameEventDisableLoop: AudioDataGameEventScriptableObject
+
+            ===
+            <b>Call Audio Manager Game Events
+            +PlaySound(): void
+            +PlayRandomSound(): void
+            +StopSound(): void
+            +EnableLoop(): void
+            +DisableLoop(): void
+        }
+
+        class EffectChangeSprite 
+        {
+            <b>Sprites
+            -m_defaultState: Sprite
+            -m_newState: Sprite
+
+            ===
+            <b>Components
+            -m_spriteRenderer: SpriteRenderer
+
+            ===
+            <b>Unity Methods
+            -Awake(): void
+            -Start(): void
+
+            ====
+            <b>Sprite Changes Methods
+            +ChangeSprite(): void
+        }
+
+        class EffectDisableCollider 
+        {
+            <b>Delay
+            -m_delay: float
+
+            ===
+            <b>Collier 2D
+            -m_collider: Collider2D
+
+            ===
+            <b>Disable Collier Methods
+            +DisableCollider(): void
+            -disableColliderAfterDelay(): void
+        }
+
+        class EffectDisableObject 
+        {
+            <b>Disable Game Object Methods
+            +DisableObject(): void
+        }
+
+        class EffectPickupItem 
+        {
+            <b>Tag Scriptable Object
+            -m_tagDataPlayer: TagDataScriptableObject
+
+            ===
+            <b>Components
+            -m_spriteRenderer: SpriteRenderer
+            -m_interactable: Interactable
+            -m_characterItemHolder: CharacterItemHolder
+
+            ===
+            <b>Unity Methods
+            -Awake(): void
+
+            ===
+            <b>Items Methods
+            +PickupItem(): void
+            +ReturnItem(): void
+        }
+
+        class EffectPlayAnimation 
+        {
+            <b>Animation States
+            -m_animationName: string
+
+            ===
+            <b>Animation Methods
+            +PlayAnimation(): void
+        }
+
+        class EffectSpawnObject
+        {
+            <b>Components
+            -m_objectPrefab: GameObject
+            -m_locationOffset: Vector3
+
+            ===
+            <b>Spawn Object Methods
+            +SpawnObject(): void
+        }
+
+        class EffectUseItem 
+        {
+            <b>Tag Scriptabe Object
+            -m_tagDataPlayer: TagDataScriptableObject
+
+            ===
+            <b>Item Methods
+            +UseItem(): void
+        }
+        
+        class Interactable 
+        {
+            <b>Required Form
+            -m_requiredForm: Form
+
+            ===
+            <b>Unity Events
+            -m_onActivated: UnityEvent
+
+            ===
+            <b>Lists
+            -m_prerequisites: List<Interactable>
+
+            ===
+            <b>Intractable
+            -m_isInteractable: bool
+            -m_hasInteracted: bool
+            -m_interactableSpriteController: InteractableSpriteController
+
+            ===
+            <b>Getters and Setters
+            +SetPrerequisiteComplete(): void
+            -checkSetActive(): void
+
+            ===
+            <b>Interface Methods
+            +IsComplete(): void 
+
+            ===
+            <b>Unity Methods
+            -Awake(): void
+            -Start(): void
+
+
+            ===
+            <b>Intractable Methods
+            +Interact(Form a_currForm): void
+            +Reenable(): void
+            +updateSprite(): void
+            +checkIfPrerequisitesMet(): void
+            +subscribeToPrerequisites(): void
+        }
+
+        class InteractableSpriteController
+        {
+            <b>Intractable Boolean Flag for Sprite
+            -m_useInteractableSpriteController: bool
+
+            ===
+            <b>Intractable Sprite
+            -m_nonInteractableSprite: Sprite
+            -m_isInteractableSprite: Sprite
+            -m_hasInteractedSprite: Sprite
+
+            ===
+            <b>Components
+            -m_spriteRenderer: SpriteRenderer
+
+            ===
+            <b>Unity Methods
+            -Awake(): void
+            -Start(): void
+
+            ===
+            <b>Sprite Methods
+            +ChangeSprite(bool a_isActive, bool a_hasActivated): void
+
+            ===
+            Animation Methods
+            -disableAnimatorIfNeeded(): void
+        }
+
+        class UITryAgainMenuOpenTrigger 
+        {
+            <b>Unity Events
+            -m_enbaleTryAgainMenuUjnityEvent: UnityEvent
+
+            ===
+            <b>Unity Methods
+            -OnTriggerEnter2D(Collider2D a_collision): void
+        }
+    }
 }
 
 @enduml

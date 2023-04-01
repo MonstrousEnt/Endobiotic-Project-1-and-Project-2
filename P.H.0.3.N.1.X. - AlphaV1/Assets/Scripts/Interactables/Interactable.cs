@@ -32,34 +32,13 @@ public class Interactable : MonoBehaviour, IPrerequisite
     private InteractableSpriteController m_interactableSpriteController;
     #endregion
 
-    #region Unity Methods
-    private void Awake()
-    {
-        m_interactableSpriteController = GetComponent<InteractableSpriteController>();
-    }
-
-    private void Start()
-    {
-        if(m_onActivated == null)
-        {
-            m_onActivated = new UnityEvent();
-        }
-
-        m_hasInteracted = false;        
-
-        subscribeToPrerequisites();
-
-        CheckSetActive();
-    }
-    #endregion
-
     #region Getters and Setters
     public void SetPrerequisiteComplete()
     {
-        CheckSetActive();
+        checkSetActive();
     }
 
-    private void CheckSetActive()
+    private void checkSetActive()
     {
         if (checkIfPrerequisitesMet())
         {
@@ -78,6 +57,27 @@ public class Interactable : MonoBehaviour, IPrerequisite
     public bool IsComplete()
     {
         return m_hasInteracted;
+    }
+    #endregion
+
+    #region Unity Methods
+    private void Awake()
+    {
+        m_interactableSpriteController = GetComponent<InteractableSpriteController>();
+    }
+
+    private void Start()
+    {
+        if(m_onActivated == null)
+        {
+            m_onActivated = new UnityEvent();
+        }
+
+        m_hasInteracted = false;        
+
+        subscribeToPrerequisites();
+
+        checkSetActive();
     }
     #endregion
 

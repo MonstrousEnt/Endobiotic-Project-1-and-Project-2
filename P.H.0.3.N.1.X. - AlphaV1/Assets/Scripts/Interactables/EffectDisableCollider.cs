@@ -27,11 +27,11 @@ public class EffectDisableCollider : MonoBehaviour
     {
         if(m_collider != null)
         {
-            StartCoroutine(DisableColliderAfterDelay(m_delay));
+            StartCoroutine(disableColliderAfterDelay(m_delay));
         }
     }
 
-    private IEnumerator DisableColliderAfterDelay(float delay)
+    private IEnumerator disableColliderAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
 

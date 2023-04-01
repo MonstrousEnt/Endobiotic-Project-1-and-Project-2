@@ -28,7 +28,7 @@ public class EffectAudioManagerGameEvent : MonoBehaviour
     [SerializeField] private AudioDataGameEventScriptableObject m_audioManagerGameEventDisableLoop;
     #endregion
 
-    #region Call Audio Manager Game Event
+    #region Call Audio Manager Game Events
     public void PlaySound()
     {
         if (m_audioData != null)
