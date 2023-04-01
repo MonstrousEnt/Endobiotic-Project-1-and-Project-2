@@ -981,6 +981,30 @@ package Scripts <<Folder>>
                 +GenerateID(): void
             }
         }
+
+        package Lists <<Folder>> 
+        {
+            class AudioListScriptableObject
+            {
+                <b>Class Variables
+                -m_audioDatas: List<AudioDataScriptableObject>
+
+                ===
+                <b>Getters and Setters
+                +audioDatas: List<AudioDataScriptableObject>
+            }
+
+            class LevelListScriptableObject 
+            {
+                <b>Class Variables
+                -m_levelDatas: List<LevelDataScriptableObject>
+
+                ===
+                <b>Getters and Setters
+                +levelDatas: List<LevelDataScriptableObject>
+                +GetLevelById(string a_id): int
+            }
+        }
     } 
 
     package Structs <<Folder>>

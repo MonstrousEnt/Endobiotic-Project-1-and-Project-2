@@ -17,14 +17,13 @@ using UnityEngine;
 public class LevelListScriptableObject : ScriptableObject
 {
     #region Class Variables
-    //List
     [SerializeField] private List<LevelDataScriptableObject> m_levelDatas = new List<LevelDataScriptableObject>();
     #endregion
 
     #region Getters and Setters
     public List<LevelDataScriptableObject> levelDatas { get { return m_levelDatas; } set { m_levelDatas = value; } }
 
-    public int getLevelById(string a_id)
+    public int GetLevelById(string a_id)
     {
         for (int i = 0; i < m_levelDatas.Count; i++)
         {

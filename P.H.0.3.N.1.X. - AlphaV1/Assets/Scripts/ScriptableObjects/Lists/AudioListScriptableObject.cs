@@ -17,7 +17,6 @@ using UnityEngine;
 public class AudioListScriptableObject : ScriptableObject
 {
     #region Class Variables
-    //List
     [SerializeField] private List<AudioDataScriptableObject> m_audioDatas = new List<AudioDataScriptableObject>();
     #endregion
 
