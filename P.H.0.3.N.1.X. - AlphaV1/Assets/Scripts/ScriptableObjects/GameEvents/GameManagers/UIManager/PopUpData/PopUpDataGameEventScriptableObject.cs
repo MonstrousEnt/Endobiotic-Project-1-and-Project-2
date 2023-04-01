@@ -17,7 +17,6 @@ using UnityEngine;
 public class PopUpDataGameEventScriptableObject : ScriptableObject
 {
     #region Class Variables
-    //Game Events Listener
     private List<PopUpDataGameEventListener> m_listeners = new List<PopUpDataGameEventListener>();
     #endregion
 

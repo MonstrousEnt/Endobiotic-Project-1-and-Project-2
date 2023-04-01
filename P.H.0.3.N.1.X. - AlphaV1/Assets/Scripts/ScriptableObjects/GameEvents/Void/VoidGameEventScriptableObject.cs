@@ -17,28 +17,27 @@ using UnityEngine;
 public class VoidGameEventScriptableObject : ScriptableObject
 {
     #region Class Variables
-    //Game Events Listener
-    private List<VoidGameEventListener> listeners = new List<VoidGameEventListener>();
+    private List<VoidGameEventListener> m_listeners = new List<VoidGameEventListener>();
     #endregion
 
     #region Registration Listener
     public void RegisterListener(VoidGameEventListener listener)
     {
-        listeners.Add(listener);
+        m_listeners.Add(listener);
     }
 
     public void UnregisterListener(VoidGameEventListener listener)
     {
-        listeners.Remove(listener);
+        m_listeners.Remove(listener);
     }
     #endregion
 
     #region Raise/Invoke Game Events
     public void Raise()
     {
-        for (int i = listeners.Count - 1; i >= 0; i--)
+        for (int i = m_listeners.Count - 1; i >= 0; i--)
         {
-            listeners[i].OnEventRaised();
+            m_listeners[i].OnEventRaised();
         }
     }
     #endregion

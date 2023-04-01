@@ -17,7 +17,6 @@ using UnityEngine;
 public class TimerDataGameEventScriptableObject : ScriptableObject
 {
     #region Class Variables
-    //Game Events Listener
     private List<TimerDataGameEventListener> m_listeners = new List<TimerDataGameEventListener>();
     #endregion
 

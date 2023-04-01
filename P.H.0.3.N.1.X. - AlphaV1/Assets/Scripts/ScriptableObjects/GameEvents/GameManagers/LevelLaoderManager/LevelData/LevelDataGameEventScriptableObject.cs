@@ -17,7 +17,6 @@ using UnityEngine;
 public class LevelDataGameEventScriptableObject : ScriptableObject
 {
     #region Class Variables
-    //Game Events Listener
     private List<LevelDataGameEventListener> listeners = new List<LevelDataGameEventListener>();
     #endregion
 

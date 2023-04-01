@@ -371,7 +371,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_gameEvent: {fileID: 11400000, guid: 7ef7add07fa35104bbed2ad203302e7f, type: 2}
-  m_respone:
+  m_response:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4866575524029180367}
@@ -399,7 +399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_gameEvent: {fileID: 11400000, guid: 9c47f84585b9fe74ba72decc290dbc3e, type: 2}
-  m_respone:
+  m_response:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4866575524029180367}

@@ -26,7 +26,7 @@ public class PopUpDataScriptableObject : ScriptableObject
 
     #region Getters and Setters
     public string message { get { return m_message; } set { m_message = value; } }
-    public bool isConfirm { get { return m_isConfirm; } set { m_isConfrim = value; } }
+    public bool isConfirm { get { return m_isConfirm; } set { m_isConfirm = value; } }
     public bool isReadyToClose { get { return m_isReadyToClose; } set { m_isReadyToClose = value; } }
     public UnityEvent popUpActionUnityEvent { get { return m_popUpActionUnityEvent; } set { m_popUpActionUnityEvent = value; } }
     #endregion

@@ -21,13 +21,13 @@ public class VoidGameEventListener : MonoBehaviour
     [SerializeField] private VoidGameEventScriptableObject m_gameEvent;
 
     [Header("Unity Event")]
-    [SerializeField] private UnityEvent m_respone;
+    [SerializeField] private UnityEvent m_response;
     #endregion
 
     #region Invoke Unity Events
     public void OnEventRaised()
     {
-        m_respone?.Invoke();
+        m_response?.Invoke();
     }
     #endregion
 

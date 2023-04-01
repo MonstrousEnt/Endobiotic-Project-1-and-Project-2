@@ -17,7 +17,6 @@ using UnityEngine;
 public class AudioDataGameEventScriptableObject : ScriptableObject
 {
     #region Class Variables
-    //Game Events Listener
     private List<AudioDataGameEventListener> m_listeners = new List<AudioDataGameEventListener>();
     #endregion
 
