@@ -21,7 +21,7 @@ public class EnemyControllerAnimations : BaseControllerAnimations
     #region Unity Methods
     private void Start()
     {
-        m_LastMoveDir = MoveDirection.Down;
+        m_LastMoveDir = MoveDirection.down;
         m_previousPosition = transform.position;
     }
 

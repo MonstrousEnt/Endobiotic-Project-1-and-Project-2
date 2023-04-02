@@ -16,7 +16,7 @@ public class EnemyController : MonoBehaviour
 {
     #region Class Variables
     [Header("Form")]
-    [SerializeField] private Form m_intialForm = Form.Manipulator;
+    [SerializeField] private Form m_intialForm = Form.manipulator;
 
     [Header("AI")]
     [SerializeField] private float m_moveSpeed;

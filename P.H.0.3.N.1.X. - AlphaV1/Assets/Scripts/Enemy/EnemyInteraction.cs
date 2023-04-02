@@ -40,7 +40,7 @@ public class EnemyInteraction : MonoBehaviour
     #region AI Interaction Methods
     public void KillEnemy()
     {
-        if (m_characterFormsController.currForm != Form.Crab)
+        if (m_characterFormsController.currForm != Form.crab)
         {
             return;
         }

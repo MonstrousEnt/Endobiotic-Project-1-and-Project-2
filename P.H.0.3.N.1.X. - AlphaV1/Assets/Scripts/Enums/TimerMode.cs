@@ -11,7 +11,7 @@
 
 public enum TimerMode
 {
-    CountUp,
-    CountDown
+    countUp,
+    countDown
 }
 

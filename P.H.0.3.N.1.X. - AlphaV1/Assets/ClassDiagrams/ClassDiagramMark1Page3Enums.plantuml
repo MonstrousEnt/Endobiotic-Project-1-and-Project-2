@@ -7,32 +7,32 @@ package Scripts <<Folder>>
     {
         enum Form 
         {
-            +Manipulator
-            +Transport
-            +Magnetic
-            +Electronic
-            +Destroyer
-            +Battery
-            +Crab
+            +manipulator
+            +transport
+            +magnetic
+            +electronic
+            +destroyer
+            +battery
+            +crab
         }
 
         enum TimerMode
         {
-            +CountUp
-            +CountDown
+            +countUp
+            +countDown
         }
 
         enum InteractableOjbects 
         {
-            +Pit
+            +pit
         }
 
         enum MoveDirection 
         {
-            +Down
-            +Up
-            +Left
-            +Right
+            +down
+            +up
+            +left
+            +right
         }
     }
 }

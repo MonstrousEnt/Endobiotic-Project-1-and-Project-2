@@ -9656,7 +9656,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: c0f0d111f2e0524449a56011e1bbd5f0, type: 3}
     - target: {fileID: 6795955360767451340, guid: d1eda0a6ff742ea47b979ded52fafacd, type: 3}
       propertyPath: m_addPointUnityEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1eda0a6ff742ea47b979ded52fafacd, type: 3}

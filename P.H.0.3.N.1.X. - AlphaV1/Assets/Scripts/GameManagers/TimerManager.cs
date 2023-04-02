@@ -41,12 +41,12 @@ public class TimerManager : MonoBehaviour
    {
        switch (a_timerData.timerMode)
        {
-           case TimerMode.CountUp:
+           case TimerMode.countUp:
            {
                countUpTimer(a_timerData);
                break;
            }
-           case TimerMode.CountDown:
+           case TimerMode.countDown:
            {
                countDownTimer(a_timerData);
                break;

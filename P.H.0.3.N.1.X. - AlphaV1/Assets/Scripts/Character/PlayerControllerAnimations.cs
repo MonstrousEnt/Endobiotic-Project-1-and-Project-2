@@ -55,16 +55,16 @@ public class PlayerControllerAnimations : BaseControllerAnimations
     {
         switch (m_LastMoveDir)
         {            
-            case MoveDirection.Up:
+            case MoveDirection.up:
                 ChangeAnimationState(m_DEST_ATK_UP);
                 break;
-            case MoveDirection.Down:
+            case MoveDirection.down:
                 ChangeAnimationState(m_DEST_ATK_DOWN);
                 break;
-            case MoveDirection.Left:
+            case MoveDirection.left:
                 ChangeAnimationState(m_DEST_ATK_LEFT);
                 break;
-            case MoveDirection.Right:
+            case MoveDirection.right:
                 ChangeAnimationState(m_DEST_ATK_RIGHT);
                 break;
         }
@@ -75,16 +75,16 @@ public class PlayerControllerAnimations : BaseControllerAnimations
     { 
         switch (m_LastMoveDir)
         {
-            case MoveDirection.Up:
+            case MoveDirection.up:
                 ChangeAnimationState(m_MAGNET_PULL_DOWN);
                 break;
-            case MoveDirection.Down:
+            case MoveDirection.down:
                 ChangeAnimationState(m_MAGNET_PULL_DOWN);
                 break;
-            case MoveDirection.Left:
+            case MoveDirection.left:
                 ChangeAnimationState(m_MAGNET_PULL_LEFT);
                 break;
-            case MoveDirection.Right:
+            case MoveDirection.right:
                 ChangeAnimationState(m_MAGNET_PULL_RIGHT);
                 break;
         }        

@@ -18,7 +18,7 @@ public class Interactable : MonoBehaviour, IPrerequisite
 {
     #region Class Variables
     [Header("Required Form")]
-    [SerializeField] private Form m_requiredForm = Form.Manipulator;
+    [SerializeField] private Form m_requiredForm = Form.manipulator;
 
     [Header("Unity Events")]
     [SerializeField] private UnityEvent m_onActivated;

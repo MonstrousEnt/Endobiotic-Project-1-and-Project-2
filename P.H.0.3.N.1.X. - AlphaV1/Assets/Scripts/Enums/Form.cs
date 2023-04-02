@@ -11,11 +11,11 @@
 
 public enum Form
 {
-    Manipulator,
-    Transport,
-    Magnetic,
-    Electronic,
-    Destroyer,
-    Battery,
-    Crab
+    manipulator,
+    transport,
+    magnetic,
+    electronic,
+    destroyer,
+    battery,
+    crab
 }

@@ -63,19 +63,19 @@ public abstract class BaseControllerAnimations : MonoBehaviour
     {
         switch (m_LastMoveDir)
         {
-            case MoveDirection.Down:
+            case MoveDirection.down:
                 ChangeAnimationState(m_IDLE_DOWN);
                 break;
 
-            case MoveDirection.Up:
+            case MoveDirection.up:
                  ChangeAnimationState(m_IDLE_UP);
                 break;
 
-            case MoveDirection.Left:
+            case MoveDirection.left:
                 ChangeAnimationState(m_IDLE_LEFT);
                 break;
 
-            case MoveDirection.Right:
+            case MoveDirection.right:
                 ChangeAnimationState(m_IDLE_RIGHT);
                 break;
         }
@@ -86,22 +86,22 @@ public abstract class BaseControllerAnimations : MonoBehaviour
         if (a_movement.y <= -0.01f && Mathf.Abs(a_movement.x) < m_turnThresholdMoveY)
         {
             ChangeAnimationState(m_WALK_DOWN);
-            m_LastMoveDir = MoveDirection.Down;
+            m_LastMoveDir = MoveDirection.down;
         }
         else if (a_movement.y >= 0.01f && Mathf.Abs(a_movement.x) < m_turnThresholdMoveY)
         {
             ChangeAnimationState(m_WALK_UP);
-            m_LastMoveDir = MoveDirection.Up;
+            m_LastMoveDir = MoveDirection.up;
         }
         else if (a_movement.x <= -0.01f)
         {
             ChangeAnimationState(m_WALK_LEFT);
-            m_LastMoveDir = MoveDirection.Left;
+            m_LastMoveDir = MoveDirection.left;
         }
         else if (a_movement.x >= 0.01f)
         {
             ChangeAnimationState(m_WALK_RIGHT);
-            m_LastMoveDir = MoveDirection.Right;
+            m_LastMoveDir = MoveDirection.right;
         }
         else
         {

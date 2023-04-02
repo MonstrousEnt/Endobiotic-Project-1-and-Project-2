@@ -69,11 +69,11 @@ public class CharacterInteractionController : MonoBehaviour
             return;
         }
 
-        if (a_collision2D.collider.CompareTag(m_tagDataEnemy.tagName) && a_collision2D.collider.GetComponent<CharacterFormsController>().currForm == Form.Crab && m_characterFormsController.currForm == Form.Destroyer) 
+        if (a_collision2D.collider.CompareTag(m_tagDataEnemy.tagName) && a_collision2D.collider.GetComponent<CharacterFormsController>().currForm == Form.crab && m_characterFormsController.currForm == Form.destroyer) 
         {
             return;
         }
-        else if (a_collision2D.collider.CompareTag(m_tagDataEnemy.tagName) && a_collision2D.collider.GetComponent<CharacterFormsController>().currForm == Form.Crab) 
+        else if (a_collision2D.collider.CompareTag(m_tagDataEnemy.tagName) && a_collision2D.collider.GetComponent<CharacterFormsController>().currForm == Form.crab) 
         {
             respawnCrab();
         }
