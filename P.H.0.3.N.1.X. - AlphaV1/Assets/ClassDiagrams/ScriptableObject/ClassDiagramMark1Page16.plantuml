@@ -3,16 +3,19 @@ title Endobiotic UML Class Digram - Mark 1\nPage 16: ScriptableObject - Tag\n<co
 
 package Scripts <<Folder>>
 {
-    package Tag <<Folder>> 
+    package ScriptableObject 
     {
-        class TagDataScriptableObject 
+        package Tag <<Folder>> 
         {
-            <b>Class Variables
-            -m_tagName: string
+            class TagDataScriptableObject 
+            {
+                <b>Class Variables
+                -m_tagName: string
 
-            ===
-            <b>Getters and Setters
-            +tagName: string
+                ===
+                <b>Getters and Setters
+                +tagName: string
+            }
         }
     }
 }
