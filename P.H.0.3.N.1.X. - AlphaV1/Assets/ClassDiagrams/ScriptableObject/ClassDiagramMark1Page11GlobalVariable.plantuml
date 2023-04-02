@@ -1,4 +1,4 @@
-@startuml Class Diagram Mark 1 - Page 11
+@startuml Class Diagram Mark 1 - Page 11: ScriptableObject - GlobalVariable
 title Endobiotic UML Class Digram - Mark 1\nPage 11: ScriptableObject - GlobalVariables\n<color:Gray>Monstrous | Endobiotic | 04/2/2023</color>
 
 package Scripts <<Folder>>

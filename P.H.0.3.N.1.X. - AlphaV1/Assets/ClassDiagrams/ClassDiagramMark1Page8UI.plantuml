@@ -1,4 +1,4 @@
-@startuml Class Diagram Mark 1 - Page 18
+@startuml Class Diagram Mark 1 - Page 8: UI
 title Endobiotic UML Class Digram - Mark 1\nPage 18: UI\n<color:Gray>Monstrous | Endobiotic | 04/2/2023</color>
 
 package Scripts <<Folder>>
