@@ -2,7 +2,7 @@
  * Team Name: Monstrous Entertainment - Vex Team
  * Authors: James Dalziel, Ben Topple, Daniel Cox
  * Created Date: February 17, 2023
- * Last Updated: Match 12, 2023
+ * Last Updated: April 2, 2023
  * Description: This is the base class for player and enemy animations.
  * Notes:
  * Resources: 
@@ -10,26 +10,9 @@
 
 using UnityEngine;
 
-public class BaseControllerAnimations : MonoBehaviour
+public abstract class BaseControllerAnimations : MonoBehaviour
 {
     #region Class Variables 
-    [Header("Components")]
-    protected Animator m_animator;
-
-    [Header("Animation")]
-    protected string m_currentAnimaton;
-    protected m_moveDir m_LastMoveDir;
-    protected float m_turnThresholdMoveY = 0.71f;
-
-    //Enum Animation
-    protected enum m_moveDir
-    {
-        down,
-        up,
-        left,
-        right
-    }
-
     //To Do create these animations states into Unity Scriptable Object data container
     [Header("Animation States - Idle")] 
     [SerializeField] protected string m_IDLE_DOWN = "Idle_Down";
@@ -42,6 +25,14 @@ public class BaseControllerAnimations : MonoBehaviour
     [SerializeField] protected string m_WALK_UP = "Walk_Up";
     [SerializeField] protected string m_WALK_LEFT = "Walk_Left";
     [SerializeField] protected string m_WALK_RIGHT = "Walk_Right";
+
+    //Components
+    protected Animator m_animator;
+
+    //Animations
+    protected string m_currentAnimation;
+    protected MoveDirection m_LastMoveDir;
+    protected float m_turnThresholdMoveY = 0.71f;
     #endregion
 
     #region Getters and Setters
@@ -49,84 +40,68 @@ public class BaseControllerAnimations : MonoBehaviour
     #endregion
 
     #region Mini Animation Manager
-    /// <summary>
-    /// Function to tell the animator to play the animation parameter we give it.
-    /// </summary>
-    /// <param name="newAnimation"></param>
-    protected virtual void ChangeAnimationState(string newAnimation)
+    protected virtual void ChangeAnimationState(string a_newAnimation)
     {
-        if (m_currentAnimaton == newAnimation) return;
-        m_animator.Play(newAnimation);
-        m_currentAnimaton = newAnimation;
+        if (m_currentAnimation == a_newAnimation) return;
+        m_animator.Play(a_newAnimation);
+        m_currentAnimation = a_newAnimation;
     }
     #endregion
 
     #region Animations Methods
-    /// <summary>
-    /// Call the move animations.
-    /// </summary>
-    /// <param name="movement"></param>
-    public void CallMovementAnimation(Vector2 movement)
+    public void CallMovementAnimation(Vector2 a_movement)
     {
         if (m_animator == null)
         {
             return;
         }
 
-        moveAnimations(movement);
+        moveAnimations(a_movement);
     }
 
-    /// <summary>
-    /// Idle animations for the player or enemy.
-    /// </summary>
     private void idleAnimation()
     {
         switch (m_LastMoveDir)
         {
-            case m_moveDir.down:
+            case MoveDirection.down:
                 ChangeAnimationState(m_IDLE_DOWN);
                 break;
 
-            case m_moveDir.up:
+            case MoveDirection.up:
                  ChangeAnimationState(m_IDLE_UP);
                 break;
 
-            case m_moveDir.left:
+            case MoveDirection.left:
                 ChangeAnimationState(m_IDLE_LEFT);
                 break;
 
-            case m_moveDir.right:
+            case MoveDirection.right:
                 ChangeAnimationState(m_IDLE_RIGHT);
                 break;
         }
     }
 
-    /// <summary>
-    /// Checking for movement to animate based on input, 
-    /// using turn threshold values to determine when the sprite will change direction on y axis.
-    /// </summary>
-    /// <param name="movement"></param>
-    private void moveAnimations(Vector2 movement)
+    private void moveAnimations(Vector2 a_movement)
     {
-        if (movement.y <= -0.01f && Mathf.Abs(movement.x) < m_turnThresholdMoveY)
+        if (a_movement.y <= -0.01f && Mathf.Abs(a_movement.x) < m_turnThresholdMoveY)
         {
             ChangeAnimationState(m_WALK_DOWN);
-            m_LastMoveDir = m_moveDir.down;
+            m_LastMoveDir = MoveDirection.down;
         }
-        else if (movement.y >= 0.01f && Mathf.Abs(movement.x) < m_turnThresholdMoveY)
+        else if (a_movement.y >= 0.01f && Mathf.Abs(a_movement.x) < m_turnThresholdMoveY)
         {
             ChangeAnimationState(m_WALK_UP);
-            m_LastMoveDir = m_moveDir.up;
+            m_LastMoveDir = MoveDirection.up;
         }
-        else if (movement.x <= -0.01f)
+        else if (a_movement.x <= -0.01f)
         {
             ChangeAnimationState(m_WALK_LEFT);
-            m_LastMoveDir = m_moveDir.left;
+            m_LastMoveDir = MoveDirection.left;
         }
-        else if (movement.x >= 0.01f)
+        else if (a_movement.x >= 0.01f)
         {
             ChangeAnimationState(m_WALK_RIGHT);
-            m_LastMoveDir = m_moveDir.right;
+            m_LastMoveDir = MoveDirection.right;
         }
         else
         {

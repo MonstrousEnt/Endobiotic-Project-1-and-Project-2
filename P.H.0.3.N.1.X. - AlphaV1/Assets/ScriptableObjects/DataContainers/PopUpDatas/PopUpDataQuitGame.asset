@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PopUpDataQuitGame
   m_EditorClassIdentifier: 
   m_message: Do you want to quit the game?
-  m_isConfrim: 1
+  m_isConfirm: 1
   m_isReadyToClose: 0
   m_popUpActionUnityEvent:
     m_PersistentCalls:

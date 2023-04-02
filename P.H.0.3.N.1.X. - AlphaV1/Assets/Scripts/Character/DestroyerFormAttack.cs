@@ -1,25 +1,34 @@
+/* Project Name: Endobiotic - Project 2: Preparation for Galaxy Edition
+ * Team Name: Monstrous Entertainment - Vex Team
+ * Authors: James Dalziel, Daniel Cox
+ * Created Date: February 17, 2023
+ * Last Updated: April 2, 2023
+ * Description: This is the class for character destroyer attack.
+ * Notes: 
+ * Resources: 
+ *  
+ */
+
+
 using UnityEngine;
 
 public class DestroyerFormAttack : MonoBehaviour
 {
     #region Class Variables
-    //Reference to player controller animations
+    [Header("Components")]
     [SerializeField] PlayerControllerAnimations m_playerControllerAnimations;
     #endregion
 
     #region Unity Methods
     private void Update()
     {
-       //Null Check for player animation
         if (m_playerControllerAnimations == null)
         {
             return;
         }
 
-        //When the play press the Form Action
         if (Input.GetButton("FormAction"))
         {
-            //Run player destroyer attack animation
             m_playerControllerAnimations.DestroyerAttack();
         }
     }

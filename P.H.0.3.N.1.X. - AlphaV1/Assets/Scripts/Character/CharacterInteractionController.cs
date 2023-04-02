@@ -1,3 +1,14 @@
+/* Project Name: Endobiotic - Project 2: Preparation for Galaxy Edition
+ * Team Name: Monstrous Entertainment - Vex Team
+ * Authors: James Dalziel, Daniel Cox
+ * Created Date: February 13, 2023
+ * Last Updated: April 2, 2023
+ * Description: This is the character interaction controller for the player.
+ * Notes: 
+ * Resources: 
+ *  
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,169 +18,159 @@ using UnityEngine.Events;
 public class CharacterInteractionController : MonoBehaviour
 {
     #region Class Variables
-    //Components
-    private CharacterFormsController characterFormsController;
-    private CharacterItemHolder characterItemHolder;
-
-    //List of Intractable
-    private List<Interactable> currentlyInteractable;
-
     [Header("Prefabs")]
-    [SerializeField] private GameObject deathPrefab;
+    [SerializeField] private GameObject m_deathPrefab;
 
     [Header("Special Effects")]
-    [SerializeField] private ParticleSystem riseAgainParticles;
-    
+    [SerializeField] private ParticleSystem m_riseAgainParticles;
+
     [Header("Sounds")]
-    [SerializeField] private UnityEvent soundEffectUnityEvent;
+    [SerializeField] private UnityEvent m_soundEffectUnityEvent;
 
-    [Header("InvulTimer")]
-    [SerializeField] private float invulTime = 1f;
-    private float invulTimer;
+    [Header("Invulnerable Timer - Serialize Fields")]
+    [SerializeField] private float m_invulnerableTimeSF = 1f;
 
-    [Header("Tags Scripbale Object")]
-    [SerializeField] private TagDataScriptableObject tagDataEnemy;
-    [SerializeField] private TagDataScriptableObject tagDataInteractable;
+    [Header("Tags Scriptable Object")]
+    [SerializeField] private TagDataScriptableObject m_tagDataEnemy;
+    [SerializeField] private TagDataScriptableObject m_tagDataInteractable;
 
     [Header("Boolean Flag Scriptable Object - Player Manager")]
     [SerializeField] private BooleanFlagGlobalVariableScriptableObject m_booleanFlagGlobalVariablePlayerCanMove;
+
+    //Components
+    private CharacterFormsController m_characterFormsController;
+    private CharacterItemHolder m_characterItemHolder;
+
+    //Current Intractable
+    private List<Interactable> m_currentlyInteractable;
+
+    //Invulnerable Timer
+    private float m_invulnerableTimer;
     #endregion
 
     #region Unity Methods
     private void Awake()
     {
-        //initialize components 
-        characterFormsController = GetComponent<CharacterFormsController>();
-        characterItemHolder = GetComponent<CharacterItemHolder>();
+        m_characterFormsController = GetComponent<CharacterFormsController>();
+        m_characterItemHolder = GetComponent<CharacterItemHolder>();
     }
 
     private void Start()
     {
-        //initialize the list
-        currentlyInteractable = new List<Interactable>();
+        m_currentlyInteractable = new List<Interactable>();
 
-        //set up the timer
-        invulTimer = Time.time;
+        m_invulnerableTimer = Time.time;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D a_collision2D)
     {
-        if (invulTimer > Time.time) 
+        if (m_invulnerableTimer > Time.time) 
         {
             return;
         }
 
-        if (collision.collider.CompareTag(tagDataEnemy.tagName) && collision.collider.GetComponent<CharacterFormsController>().currForm == Form.Crab && characterFormsController.currForm == Form.Destroyer) //Note: what is crab form
+        if (a_collision2D.collider.CompareTag(m_tagDataEnemy.tagName) && a_collision2D.collider.GetComponent<CharacterFormsController>().currForm == Form.crab && m_characterFormsController.currForm == Form.destroyer) 
         {
             return;
         }
-        else if (collision.collider.CompareTag(tagDataEnemy.tagName) && collision.collider.GetComponent<CharacterFormsController>().currForm == Form.Crab) //Note: what is crab form
+        else if (a_collision2D.collider.CompareTag(m_tagDataEnemy.tagName) && a_collision2D.collider.GetComponent<CharacterFormsController>().currForm == Form.crab) 
         {
-            Respawn();
+            respawnCrab();
         }
-        //if the player collides with the enemy and is not the form of the enemy
-        else if (collision.collider.CompareTag(tagDataEnemy.tagName) && characterFormsController.currForm != collision.collider.GetComponent<CharacterFormsController>().currForm)
+        else if (a_collision2D.collider.CompareTag(m_tagDataEnemy.tagName) && m_characterFormsController.currForm != a_collision2D.collider.GetComponent<CharacterFormsController>().currForm)
         {
-            //Respawn the player as a new form
-            RespawnAsNewForm(collision.collider.GetComponent<CharacterFormsController>().currForm, collision.collider.transform.position);
-
-            //Destroy the enemy
-            collision.collider.GetComponent<EnemyInteraction>().DestroyEnemy();
-
-            invulTimer = Time.time + invulTime; 
+            respawnCharacter(a_collision2D);
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D a_collider2D)
     {
-        //if the object Colliers with intractable or enemy
-        if (collision.CompareTag(tagDataInteractable.tagName) || collision.CompareTag(tagDataEnemy.tagName))
+        if (a_collider2D.CompareTag(m_tagDataInteractable.tagName) || a_collider2D.CompareTag(m_tagDataEnemy.tagName))
         {
-            //Add the intractable 
-            if (collision.TryGetComponent(out Interactable interactable))
-            {
-                currentlyInteractable.Add(interactable);
-            }
+            addIntractable(a_collider2D);
         }   
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D a_collider2D)
     {
-        //Remove the intractable 
-        if (collision.TryGetComponent(out Interactable interactable))
-        {
-            currentlyInteractable.Remove(interactable);
-        }
+        removeIntractable(a_collider2D);
     }
     #endregion
 
-    #region C# Methods
+    #region Character Interaction Methods
     public void Interact()
     {
-        //if there is nothing to interact with, then exit out of the program
-        if (currentlyInteractable.Count <= 0)
+        if (m_currentlyInteractable.Count <= 0)
         {
             return;
         }
 
-        //if there is a interaction, then interact with the block
-        foreach (Interactable interactable in currentlyInteractable)
+        foreach (Interactable interactable in m_currentlyInteractable)
         {
-            interactable.Interact(characterFormsController.currForm);
+            interactable.Interact(m_characterFormsController.currForm);
         }
     }
 
-    private void Respawn()
+    private void addIntractable(Collider2D a_collider2D)
     {
-        //Drop the item - for Battery Form
-        characterItemHolder.DropItem();
+        if (a_collider2D.TryGetComponent(out Interactable a_interactable))
+        {
+            m_currentlyInteractable.Add(a_interactable);
+        }
+    }
+
+    private void removeIntractable(Collider2D a_collider2D)
+    {
+        if (a_collider2D.TryGetComponent(out Interactable a_interactable))
+        {
+            m_currentlyInteractable.Remove(a_interactable);
+        }
+    }
+
+    private void respawnCrab()
+    {
+        m_characterItemHolder.DropItem();
 
         // TODO set a respawn location or enable a variable for a designer
         Vector2 randomLocation = new Vector2(Random.Range(-4.0f, 4.0f), Random.Range(-2.0f, 2.0f));
         transform.position = new Vector3(randomLocation.x, randomLocation.y, 0);
     }
 
-    private void RespawnAsNewForm(Form newForm, Vector3 position)
+    private void respawnAsNewForm(Form a_newForm, Vector3 a_position)
     {
-        //Drop the item - for Battery Form
-        characterItemHolder.DropItem();
+   
+        m_characterItemHolder.DropItem();
 
-        //Disable player movement
         m_booleanFlagGlobalVariablePlayerCanMove.DisableBooleanFlag();
 
-        //span player death prefab
-        GameObject deathInstance = Instantiate(deathPrefab, transform.position, Quaternion.identity);
+        GameObject deathInstance = Instantiate(m_deathPrefab, transform.position, Quaternion.identity);
 
-        //change to default form 
-        deathInstance.GetComponent<CharacterFormsController>().ChangeForm(characterFormsController.currForm);  // These were firing before Start() on deathInstance. Weird. 
-
-        //run the player death animation 
+        deathInstance.GetComponent<CharacterFormsController>().ChangeForm(m_characterFormsController.currForm);  // These were firing before Start() on deathInstance. Weird. 
         deathInstance.GetComponent<CharacterDeathController>().Die();
 
-        //Run special effect for transform animation
-        riseAgainParticles.Play();
+        m_riseAgainParticles.Play();
 
-        //change form to what the enemy was 
-        characterFormsController.ChangeForm(newForm);
+        m_characterFormsController.ChangeForm(a_newForm);
 
-        //repswan the player at the same position
-        transform.position = position;
+        transform.position = a_position;
 
-        //player the spawn sound
-        soundEffectUnityEvent.Invoke();
+        m_soundEffectUnityEvent?.Invoke();
 
-        //wait for 2 seconds
-        StartCoroutine(WaitWhileDead(2));
+        StartCoroutine(waitWhileDead(2));
     }
 
-    /// <summary>
-    /// Wait for a certain amount of seconds then re-enable the player controls for movement.
-    /// </summary>
-    /// <param name="duration"></param>
-    /// <returns></returns>
-    private IEnumerator WaitWhileDead(float duration)
+    private void respawnCharacter(Collision2D a_collision2D)
     {
-        yield return new WaitForSeconds(duration);
+        respawnAsNewForm(a_collision2D.collider.GetComponent<CharacterFormsController>().currForm, a_collision2D.collider.transform.position);
+
+        a_collision2D.collider.GetComponent<EnemyInteraction>().DestroyEnemy();
+
+        m_invulnerableTimer = Time.time + m_invulnerableTimeSF;
+    }
+
+    private IEnumerator waitWhileDead(float a_duration)
+    {
+        yield return new WaitForSeconds(a_duration);
 
         m_booleanFlagGlobalVariablePlayerCanMove.EnableBoolFlag();
     }

@@ -2,7 +2,7 @@
  * Team Name: Monstrous Entertainment - Vex Team
  * Authors: Daniel Cox
  * Created Date: March 8, 2023
- * Last Updated: March 12, 2023
+ * Last Updated: April 2, 2023
  * Description: This is the editor class for Scriptable Object List audio List.
  * Notes: 
  * Resources: 
@@ -37,7 +37,7 @@ public class AudioListEditor : Editor
 	public override void OnInspectorGUI()
     {
 		//Local Variables
-		AudioListScriptableObject audioList = (AudioListScriptableObject)target;
+		AudioListScriptableObject l_audioList = (AudioListScriptableObject)target;
 
 		//Update the serialized object in the inspector
 		serializedObject.Update();

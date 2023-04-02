@@ -2,7 +2,7 @@
  * Team Name: Monstrous Entertainment - Vex Team
  * Authors: Daniel Cox
  * Created Date: March 6, 2023
- * Last Updated: Match 12, 2023
+ * Last Updated: April 2, 2023
  * Description: This is the scriptable object game event class for audio manager audio list events.
  * Notes: 
  * Resources: 
@@ -18,28 +18,27 @@ using UnityEngine;
 public class AudioListGameEventScritableObject : ScriptableObject
 {
     #region Class Variables
-    //Game Events Listener
-    private List<AudioListGameEventListener> listeners = new List<AudioListGameEventListener>();
+    private List<AudioListGameEventListener> m_listeners = new List<AudioListGameEventListener>();
     #endregion
 
     #region Registration Listener
-    public void RegisterListener(AudioListGameEventListener listener)
+    public void RegisterListener(AudioListGameEventListener a_listener)
     {
-        listeners.Add(listener);
+        m_listeners.Add(a_listener);
     }
 
-    public void UnregisterListener(AudioListGameEventListener listener)
+    public void UnregisterListener(AudioListGameEventListener a_listener)
     {
-        listeners.Remove(listener);
+        m_listeners.Remove(a_listener);
     }
     #endregion
 
     #region Raise/Invoke Game Events
-    public void Raise(AudioListScriptableObject audioList)
+    public void Raise(AudioListScriptableObject a_audioList)
     {
-        for (int i = listeners.Count - 1; i >= 0; i--)
+        for (int i = m_listeners.Count - 1; i >= 0; i--)
         {
-            listeners[i].OnEventRaised(audioList);
+            m_listeners[i].OnEventRaised(a_audioList);
         }
     }
     #endregion

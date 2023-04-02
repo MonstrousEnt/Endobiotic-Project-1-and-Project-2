@@ -1,3 +1,14 @@
+/* Project Name: Endobiotic - Project 2: Preparation for Galaxy Edition
+ * Team Name: Monstrous Entertainment - Vex Team
+ * Authors: James Dalziel, Daniel Cox
+ * Created Date: February 15, 2023
+ * Last Updated: April 2, 2023
+ * Description: This is the class for controlling the enemy.
+ * Notes: 
+ * Resources: 
+ *  
+ */
+
 using System.Collections;
 using UnityEngine;
 
@@ -5,50 +16,50 @@ public class EnemyController : MonoBehaviour
 {
     #region Class Variables
     [Header("Form")]
-    [SerializeField] private Form m_intialForm = Form.Manipulator;
+    [SerializeField] private Form m_intialForm = Form.manipulator;
 
     [Header("AI")]
-    [SerializeField] private float moveSpeed;
-    [SerializeField] private float aggroRadius = 5;
+    [SerializeField] private float m_moveSpeed;
+    [SerializeField] private float m_aggroRadius;
+
+    [Header("Tag Scriptable Object")]
+    [SerializeField] private TagDataScriptableObject m_tagDataPlayer;
 
     //Attack 
-    private bool isAttacking = false;
+    private bool m_isAttacking = false;
 
     //Target
     private Transform m_target = null;
-    private CharacterFormsController characterFormController;
+    private CharacterFormsController m_characterFormController;
 
     //Movement
     private Rigidbody2D m_rigidbody2D;
-    private Vector3 preferredPosition;
-
-    [Header("Tag")]
-    [SerializeField] private TagDataScriptableObject m_tagDataPlayer;
+    private Vector3 m_preferredPosition;
     #endregion
 
     #region Getters and Setters
-    public Form Form { get { return m_intialForm; } }
+    public Form form { get { return m_intialForm; } }
 
-    private void SetBehaviour(GameObject target)
+    private void setBehaviour(GameObject a_target)
     {
-        if (target != null && target.TryGetComponent(out CharacterFormsController formController) && formController.currForm != characterFormController.currForm)
+        if (a_target != null && a_target.TryGetComponent(out CharacterFormsController a_formController) && a_formController.currForm != m_characterFormController.currForm)
         {
-            m_target = target.transform;
-            isAttacking = true;
+            m_target = a_target.transform;
+            m_isAttacking = true;
         }
         else
         {
             m_target = null;
-            isAttacking = false;
+            m_isAttacking = false;
         }
 
     }
     #endregion
 
     #region Find Methods
-    private GameObject FindTargetsInRange(float range)
+    private GameObject FindTargetsInRange(float a_range)
     {
-        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, range);
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, a_range);
 
         foreach (Collider2D hit in hits)
         {
@@ -65,20 +76,15 @@ public class EnemyController : MonoBehaviour
     #region Unity Methods
     private void Awake()
     {
-        characterFormController = GetComponent<CharacterFormsController>();
+        m_characterFormController = GetComponent<CharacterFormsController>();
         m_rigidbody2D = GetComponent<Rigidbody2D>();
-        preferredPosition = transform.position;
+        m_preferredPosition = transform.position;
     }
 
     private void Start()
     {
-        characterFormController.ChangeForm(m_intialForm);
-        StartCoroutine(intelligence(aggroRadius, 0.5f));
-    }
-
-    public void UpdatePreferredPosition(Vector3 position)
-    {
-        preferredPosition = position;
+        m_characterFormController.ChangeForm(m_intialForm);
+        StartCoroutine(intelligence(m_aggroRadius, 0.5f));
     }
 
     private void Update()
@@ -88,12 +94,18 @@ public class EnemyController : MonoBehaviour
     #endregion
 
     #region AI Methods
+    public void UpdatePreferredPosition(Vector3 a_position)
+    {
+        m_preferredPosition = a_position;
+    }
+
+
     private void move()
     {
         m_rigidbody2D.velocity = Vector2.zero;
-        float step = moveSpeed * Time.deltaTime;
+        float step = m_moveSpeed * Time.deltaTime;
 
-        if (isAttacking)
+        if (m_isAttacking)
         {
             if (Vector3.Distance(transform.position, m_target.position) < 0.001f)
             {
@@ -107,23 +119,23 @@ public class EnemyController : MonoBehaviour
         }
         else
         {
-            if (Vector3.Distance(transform.position, preferredPosition) < 0.001f)
+            if (Vector3.Distance(transform.position, m_preferredPosition) < 0.001f)
             {
                 return;
             }
             else
             {
-                transform.position = Vector3.MoveTowards(transform.position, preferredPosition, step);
+                transform.position = Vector3.MoveTowards(transform.position, m_preferredPosition, step);
             }
         }
     }
 
-    private IEnumerator intelligence(float range, float updateSpeed)
+    private IEnumerator intelligence(float a_range, float a_updateSpeed)
     {
         while (true)
         {
-            SetBehaviour(FindTargetsInRange(range));
-            yield return new WaitForSeconds(updateSpeed);      
+            setBehaviour(FindTargetsInRange(a_range));
+            yield return new WaitForSeconds(a_updateSpeed);      
         }
     }
     #endregion

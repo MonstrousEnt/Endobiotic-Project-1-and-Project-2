@@ -2,7 +2,7 @@
  * Team Name: Monstrous Entertainment - Vex Team
  * Authors: Daniel Cox
  * Created Date: March 5, 2023
- * Last Updated: Match 12, 2023
+ * Last Updated: April 2, 2023
  * Description: This is the game event listener class for void events.
  * Notes: 
  * Resources: 
@@ -21,13 +21,13 @@ public class VoidGameEventListener : MonoBehaviour
     [SerializeField] private VoidGameEventScriptableObject m_gameEvent;
 
     [Header("Unity Event")]
-    [SerializeField] private UnityEvent m_respone;
+    [SerializeField] private UnityEvent m_response;
     #endregion
 
     #region Invoke Unity Events
     public void OnEventRaised()
     {
-        m_respone?.Invoke();
+        m_response?.Invoke();
     }
     #endregion
 

@@ -50,7 +50,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a8b75639ba645640bf7d820381290db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_voidGameEventUIManagerDisablePopUp: {fileID: 11400000, guid: 9c47f84585b9fe74ba72decc290dbc3e, type: 2}
+  m_disablePopUpUnityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 9c47f84585b9fe74ba72decc290dbc3e, type: 2}
+        m_TargetAssemblyTypeName: VoidGameEventScriptableObject, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1474202188797308102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,7 +78,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_gameEvent: {fileID: 11400000, guid: 3188504af79ac204283586a9a5cf682e, type: 2}
-  m_respone:
+  m_response:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2649427723563795383}

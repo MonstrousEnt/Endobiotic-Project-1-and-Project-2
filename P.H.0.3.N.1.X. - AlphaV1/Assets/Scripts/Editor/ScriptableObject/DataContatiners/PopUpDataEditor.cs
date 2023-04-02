@@ -2,7 +2,7 @@
  * Team Name: Monstrous Entertainment - Vex Team
  * Authors: Daniel Cox
  * Created Date: March 7, 2023
- * Last Updated: March 12, 2023
+ * Last Updated: April 2, 2023
  * Description: This is the editor class for Scriptable Object data container pop up data.
  * Notes: 
  * Resources: 
@@ -37,7 +37,7 @@ public class PopUpDataEditor : Editor
 	public override void OnInspectorGUI()
 	{
 		//Local Variables
-		PopUpDataScriptableObject popUpData = (PopUpDataScriptableObject)target;
+		PopUpDataScriptableObject l_popUpData = (PopUpDataScriptableObject)target;
 
 		//Update the serialized object in the inspector
 		serializedObject.Update();
@@ -54,9 +54,9 @@ public class PopUpDataEditor : Editor
 		GUILayout.Label("Pop Up Data", EditorStyles.boldLabel);
 
 		//User Inputs 
-		popUpData.message = EditorGUILayout.TextField("Message", popUpData.message);
-		popUpData.isConfirm = EditorGUILayout.Toggle("Is Confirm", popUpData.isConfirm);
-		popUpData.isReadyToClose = EditorGUILayout.Toggle("Is Ready To Close", popUpData.isReadyToClose);
+		l_popUpData.message = EditorGUILayout.TextField("Message", l_popUpData.message);
+		l_popUpData.isConfirm = EditorGUILayout.Toggle("Is Confirm", l_popUpData.isConfirm);
+		l_popUpData.isReadyToClose = EditorGUILayout.Toggle("Is Ready To Close", l_popUpData.isReadyToClose);
 
 		EditorGUILayout.Space();
 

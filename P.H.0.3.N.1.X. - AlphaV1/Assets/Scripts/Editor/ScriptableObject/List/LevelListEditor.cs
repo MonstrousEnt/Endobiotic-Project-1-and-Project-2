@@ -2,7 +2,7 @@
  * Team Name: Monstrous Entertainment - Vex Team
  * Authors: Daniel Cox
  * Created Date: March 8, 2023
- * Last Updated: March 12, 2023
+ * Last Updated: April 2, 2023
  * Description: This is the editor class for Scriptable Object List level list.
  * Notes: 
  * Resources: 
@@ -36,7 +36,7 @@ public class LevelListEditor : Editor
 	public override void OnInspectorGUI()
 	{
 		//Local Variables
-		LevelListScriptableObject levelList = (LevelListScriptableObject)target;
+		LevelListScriptableObject l_levelList = (LevelListScriptableObject)target;
 
 		//Update the serialized object in the inspector
 		serializedObject.Update();

@@ -2,7 +2,7 @@
  * Team Name: Monstrous Entertainment - Vex Team
  * Authors: Daniel Cox
  * Created Date: March 2, 2023
- * Last Updated: Match 12, 2023
+ * Last Updated: April 2, 2023
  * Description: This is the scriptable object id class for guild id.
  * Notes: 
  * Resources: 
@@ -18,12 +18,11 @@ using System;
 public class GuildIDScriptableObject : ScriptableObject
 {
     #region Class Variables
-    //ID
     [SerializeField] private string m_guildID;
     #endregion
 
-    #region C# Methods
-    public void GenId()
+    #region Generate Methods
+    public void GenerateID()
     {
         m_guildID = Guid.NewGuid().ToString();
     }

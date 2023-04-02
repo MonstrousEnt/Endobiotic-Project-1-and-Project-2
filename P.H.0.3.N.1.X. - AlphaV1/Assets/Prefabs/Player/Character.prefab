@@ -80,7 +80,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f74a8284aa31fa9498d8819a05bbffb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  formObjects:
+  m_formObjects:
   - {fileID: 1164270147615847811}
   - {fileID: 8031198080295446753}
   - {fileID: 2984225809329995038}
@@ -99,6 +99,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a0b30bcd3f68424788ba969aa77838d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_IDLE_DOWN: Idle_Down
+  m_IDLE_UP: Idle_Up
+  m_IDLE_LEFT: Idle_Left
+  m_IDLE_RIGHT: Idle_Right
+  m_WALK_DOWN: Walk_Down
+  m_WALK_UP: Walk_Up
+  m_WALK_LEFT: Walk_Left
+  m_WALK_RIGHT: Walk_Right
+  m_DEST_ATK_DOWN: Atk_Down
+  m_DEST_ATK_UP: Atk_Up
+  m_DEST_ATK_LEFT: Atk_Left
+  m_DEST_ATK_RIGHT: Atk_Right
+  m_MAGNET_PULL_DOWN: Pull_Down
+  m_MAGNET_PULL_UP: Pull_Up
+  m_MAGNET_PULL_LEFT: Pull_Left
+  m_MAGNET_PULL_RIGHT: Pull_Right
 --- !u!114 &759186879241046267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,9 +127,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37f80c61353516f4fa3093e2ed093647, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathPrefab: {fileID: 8873812475364736337, guid: 6d221463cad3d3848b72662c2a44a771, type: 3}
-  riseAgainParticles: {fileID: 4648500904063570242}
-  soundEffectUnityEvent:
+  m_deathPrefab: {fileID: 8873812475364736337, guid: 6d221463cad3d3848b72662c2a44a771, type: 3}
+  m_riseAgainParticles: {fileID: 4648500904063570242}
+  m_soundEffectUnityEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: 6618bbfd17f8eee41b477713af5522cb, type: 2}
@@ -128,9 +144,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  invulTime: 0.5
-  tagDataEnemy: {fileID: 11400000, guid: 94bd01555d6c0a64aa892d4ecc40bd7a, type: 2}
-  tagDataInteractable: {fileID: 11400000, guid: 0d1e0d57ef54aa54fac70f955397111c, type: 2}
+  m_invulnerableTimeSF: 0.5
+  m_tagDataEnemy: {fileID: 11400000, guid: 94bd01555d6c0a64aa892d4ecc40bd7a, type: 2}
+  m_tagDataInteractable: {fileID: 11400000, guid: 0d1e0d57ef54aa54fac70f955397111c, type: 2}
   m_booleanFlagGlobalVariablePlayerCanMove: {fileID: 11400000, guid: cb6522342c9d38243a7fb7bfc803cb25, type: 2}
 --- !u!114 &759186879241046266
 MonoBehaviour:
@@ -174,8 +190,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_booleanFlagGlobalVariableUIManagerPauseMenuIsActive: {fileID: 11400000, guid: 5ab18ef0d5fb1aa4a8233cc4cc56f120, type: 2}
-  m_voidGameEventUIManagerEnablePauseMneu: {fileID: 11400000, guid: 3a9c2d3ee6753434db02fa6ba38d6ef7, type: 2}
-  m_voidGameEventUIManagerDisablePauseMneu: {fileID: 11400000, guid: 800d4c1c926b244459fde588e65ab6ff, type: 2}
+  m_enablePauseMneuUnityEevnt:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 3a9c2d3ee6753434db02fa6ba38d6ef7, type: 2}
+        m_TargetAssemblyTypeName: VoidGameEventScriptableObject, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_disablePauseMneuUnityEevnt:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 800d4c1c926b244459fde588e65ab6ff, type: 2}
+        m_TargetAssemblyTypeName: VoidGameEventScriptableObject, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!70 &580835355768018660
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

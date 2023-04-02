@@ -1,72 +1,75 @@
+/* Project Name: Endobiotic - Project 2: Preparation for Galaxy Edition
+ * Team Name: Monstrous Entertainment - Vex Team
+ * Authors: James Dalziel, Daniel Cox
+ * Created Date: February 12, 2023
+ * Last Updated: April 2, 2023
+ * Description: This class is for intractable sprite.
+ * Notes: 
+ * Resources: 
+ *  
+ */
+
 using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
 public class InteractableSpriteController : MonoBehaviour
 {
     [Header("Intractable Boolean Flag for Sprite")]
-    [SerializeField] private bool useInteractableSpriteController = true;
+    [SerializeField] private bool m_useInteractableSpriteController = true;
 
     [Header("Intractable Sprite")]
-    [SerializeField] Sprite nonInteractableSprite;
-    [SerializeField] Sprite isInteractableSprite;
-    [SerializeField] Sprite hasInteractedSprite;
+    [SerializeField] private Sprite m_nonInteractableSprite;
+    [SerializeField] private Sprite m_isInteractableSprite;
+    [SerializeField] private Sprite m_hasInteractedSprite;
 
     //Components
-    private SpriteRenderer spriteRenderer;
+    private SpriteRenderer m_spriteRenderer;
 
     #region Unity Methods
     private void Awake()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        m_spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Start()
     {
-        if (useInteractableSpriteController)
+        if (m_useInteractableSpriteController)
         {
-            DisableAnimatorIfNeeded();
+            disableAnimatorIfNeeded();
         }
     }
     #endregion
 
     #region Sprite Methods
-    /// <summary>
-    /// Change Sprite based on Intractable State
-    /// </summary>
-    /// <param name="isActive"></param>
-    /// <param name="hasActivated"></param>
-    public void ChangeSprite(bool isActive, bool hasActivated)
+    public void ChangeSprite(bool a_isActive, bool a_hasActivated)
     {
-        if (!useInteractableSpriteController)
+        if (!m_useInteractableSpriteController)
         {
             return;
         }
 
-        if (hasActivated)
+        if (a_hasActivated)
         {
-            spriteRenderer.sprite = hasInteractedSprite;
+            m_spriteRenderer.sprite = m_hasInteractedSprite;
         }
-        else if(isActive)
+        else if(a_isActive)
         {
-            spriteRenderer.sprite = isInteractableSprite;
+            m_spriteRenderer.sprite = m_isInteractableSprite;
         }
         else
         {
-            spriteRenderer.sprite = nonInteractableSprite;
+            m_spriteRenderer.sprite = m_nonInteractableSprite;
         }
     }
     #endregion
 
     #region Animation Methods
-    /// <summary>
-    /// Disable Animator
-    /// </summary>
-    private void DisableAnimatorIfNeeded()
+    private void disableAnimatorIfNeeded()
     {
-        if(TryGetComponent(out Animator animator))
+        if(TryGetComponent(out Animator a_animator))
         {
-            if (animator.isActiveAndEnabled)
-                animator.enabled = false;
+            if (a_animator.isActiveAndEnabled)
+                a_animator.enabled = false;
         }
     }
     #endregion

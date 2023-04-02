@@ -2,7 +2,7 @@
  * Team Name: Monstrous Entertainment - Vex Team
  * Authors: Daniel Cox
  * Created Date: March 6, 2023
- * Last Updated: Match 12, 2023
+ * LLast Updated: April 2, 2023
  * Description: This is the scriptable object game event class for UI manager pop up data events.
  * Notes: 
  * Resources: 
@@ -17,28 +17,27 @@ using UnityEngine;
 public class PopUpDataGameEventScriptableObject : ScriptableObject
 {
     #region Class Variables
-    //Game Events Listener
-    private List<PopUpDataGameEventListener> listeners = new List<PopUpDataGameEventListener>();
+    private List<PopUpDataGameEventListener> m_listeners = new List<PopUpDataGameEventListener>();
     #endregion
 
     #region Registration Listener
-    public void RegisterListener(PopUpDataGameEventListener listener)
+    public void RegisterListener(PopUpDataGameEventListener a_listener)
     {
-        listeners.Add(listener);
+        m_listeners.Add(a_listener);
     }
 
-    public void UnregisterListener(PopUpDataGameEventListener listener)
+    public void UnregisterListener(PopUpDataGameEventListener a_listener)
     {
-        listeners.Remove(listener);
+        m_listeners.Remove(a_listener);
     }
     #endregion
 
     #region Raise/Invoke Game Events
-    public void Raise(PopUpDataScriptableObject popUpData)
+    public void Raise(PopUpDataScriptableObject a_popUpData)
     {
-        for (int i = listeners.Count - 1; i >= 0; i--)
+        for (int i = m_listeners.Count - 1; i >= 0; i--)
         {
-            listeners[i].OnEventRaised(popUpData);
+            m_listeners[i].OnEventRaised(a_popUpData);
         }
     }
     #endregion

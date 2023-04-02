@@ -99,18 +99,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434f3bc82591a6e46a3bbe165129c959, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ManipulatorPrefab: {fileID: 8423354953936655085, guid: b630dd55ecc288d428e3c1e9e1e7d7ba, type: 3}
-  TransportPrefab: {fileID: 8423354953936655085, guid: b3e9b16b12250b54f9960dfb83744569, type: 3}
-  MagneticPrefab: {fileID: 8423354953936655085, guid: 3772565115c9d5b418ca045582ed73af, type: 3}
-  ElectricPrefab: {fileID: 8423354953936655085, guid: d0e0329687d1a8b4b8daa23115453d6f, type: 3}
-  DestroyerPrefab: {fileID: 8423354953936655085, guid: 7a73c3138525e5e45bd7f41a96da03c7, type: 3}
-  BatteryPrefab: {fileID: 8423354953936655085, guid: 482548405759fa249be686efdcfc1208, type: 3}
-  CrabPrefab: {fileID: 8423354953936655085, guid: 55ae72dc857f94847884b9965922dea0, type: 3}
-  spawnInterval: 3.5
-  spawnDistanceX: 0.5
-  spawnDistanceY: 0.5
-  userSpawnedRobots: []
-  soundEffectUnityEvent:
+  m_manipulatorPrefab: {fileID: 8423354953936655085, guid: b630dd55ecc288d428e3c1e9e1e7d7ba, type: 3}
+  m_transportPrefab: {fileID: 8423354953936655085, guid: b3e9b16b12250b54f9960dfb83744569, type: 3}
+  m_magneticPrefab: {fileID: 8423354953936655085, guid: 3772565115c9d5b418ca045582ed73af, type: 3}
+  m_electricPrefab: {fileID: 8423354953936655085, guid: d0e0329687d1a8b4b8daa23115453d6f, type: 3}
+  m_destroyerPrefab: {fileID: 8423354953936655085, guid: 7a73c3138525e5e45bd7f41a96da03c7, type: 3}
+  m_batteryPrefab: {fileID: 8423354953936655085, guid: 482548405759fa249be686efdcfc1208, type: 3}
+  m_crabPrefab: {fileID: 8423354953936655085, guid: 55ae72dc857f94847884b9965922dea0, type: 3}
+  m_spawnInterval: 3.5
+  m_spawnDistanceX: 0.5
+  m_spawnDistanceY: 0.5
+  m_userSpawnedRobots: []
+  m_soundEffectUnityEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8811389482519414962}

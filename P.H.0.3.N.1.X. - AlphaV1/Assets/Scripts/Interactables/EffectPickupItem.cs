@@ -1,42 +1,48 @@
+/* Project Name: Endobiotic - Project 2: Preparation for Galaxy Edition
+ * Team Name: Monstrous Entertainment - Vex Team
+ * Authors: James Dalziel, Daniel Cox
+ * Created Date: February 13, 2023
+ * Last Updated: April 2, 2023
+ * Description: This effect class is for up item of any game object.
+ * Notes: 
+ * Resources: 
+ *  
+ */
+
 using UnityEngine;
-
-
-/// <summary>
-/// This effect class is for up item of any game object.
-/// </summary>
 
 [RequireComponent(typeof(SpriteRenderer))]
 public class EffectPickupItem : MonoBehaviour
 {
     #region Class Variables
     [Header("Tag Scriptable Object")]
-    [SerializeField] private TagDataScriptableObject tagDataPlayer;
+    [SerializeField] private TagDataScriptableObject m_tagDataPlayer;
 
     //Components
-    private SpriteRenderer spriteRenderer;
-    private Interactable interactable;
-    private CharacterItemHolder characterItemHolder;
+    private SpriteRenderer m_spriteRenderer;
+    private Interactable m_interactable;
+    private CharacterItemHolder m_characterItemHolder;
     #endregion
 
     #region Unity Methods
     private void Awake()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        interactable = GetComponent<Interactable>();
+        m_spriteRenderer = GetComponent<SpriteRenderer>();
+        m_interactable = GetComponent<Interactable>();
 
-        characterItemHolder = GameObject.FindGameObjectWithTag(tagDataPlayer.tagName).GetComponent<CharacterItemHolder>();  
+        m_characterItemHolder = GameObject.FindGameObjectWithTag(m_tagDataPlayer.tagName).GetComponent<CharacterItemHolder>();  
     }
     #endregion
 
     #region Items Methods
     public void PickupItem()
     {        
-        characterItemHolder.AddItem(this, spriteRenderer.sprite);
+        m_characterItemHolder.AddItem(this, m_spriteRenderer.sprite);
     }
 
     public void ReturnItem()
     {
-        interactable.Reenable();
+        m_interactable.Reenable();
     }
     #endregion
 }

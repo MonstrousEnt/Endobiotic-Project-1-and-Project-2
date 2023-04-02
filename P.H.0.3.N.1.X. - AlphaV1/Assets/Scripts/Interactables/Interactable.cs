@@ -1,3 +1,14 @@
+/* Project Name: Endobiotic - Project 2: Preparation for Galaxy Edition
+ * Team Name: Monstrous Entertainment - Vex Team
+ * Authors: James Dalziel, Daniel Cox
+ * Created Date: February 12, 2023
+ * Last Updated: April 2, 2023
+ * Description: This class is for all game object intractables.
+ * Notes: 
+ * Resources: 
+ *  
+ */
+
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -7,58 +18,37 @@ public class Interactable : MonoBehaviour, IPrerequisite
 {
     #region Class Variables
     [Header("Required Form")]
-    [SerializeField] private Form requiredForm = Form.Manipulator;
+    [SerializeField] private Form m_requiredForm = Form.manipulator;
 
     [Header("Unity Events")]
-    [SerializeField] private UnityEvent onActivated;
+    [SerializeField] private UnityEvent m_onActivated;
 
     [Header("Lists")]
-    [SerializeField] private Interactable[] prerequisites;
+    [SerializeField] private List<Interactable> m_prerequisites;
 
     //Intractable
-    private bool isInteractable;
-    private bool hasInteracted;
-    private InteractableSpriteController interactableSpriteController;
-    #endregion
-
-    #region Unity Methods
-    private void Awake()
-    {
-        interactableSpriteController = GetComponent<InteractableSpriteController>();
-    }
-
-    private void Start()
-    {
-        if(onActivated == null)
-        {
-            onActivated = new UnityEvent();
-        }
-
-        hasInteracted = false;        
-
-        SubscribeToPrerequisites();
-
-        CheckSetActive();
-    }
+    private bool m_isInteractable;
+    private bool m_hasInteracted;
+    private InteractableSpriteController m_interactableSpriteController;
     #endregion
 
     #region Getters and Setters
     public void SetPrerequisiteComplete()
     {
-        CheckSetActive();
+        checkSetActive();
     }
 
-    private void CheckSetActive()
+    private void checkSetActive()
     {
-        if (CheckIfPrerequisitesMet())
+        if (checkIfPrerequisitesMet())
         {
-            isInteractable = true;
-            UpdateSprite();
+            m_isInteractable = true;
+            updateSprite();
         }
         else
         {
-            isInteractable = false;
-            UpdateSprite();
+            m_isInteractable = false;
+            updateSprite();
         }
     }
     #endregion
@@ -66,87 +56,94 @@ public class Interactable : MonoBehaviour, IPrerequisite
     #region Interface Methods
     public bool IsComplete()
     {
-        return hasInteracted;
+        return m_hasInteracted;
+    }
+    #endregion
+
+    #region Unity Methods
+    private void Awake()
+    {
+        m_interactableSpriteController = GetComponent<InteractableSpriteController>();
+    }
+
+    private void Start()
+    {
+        if(m_onActivated == null)
+        {
+            m_onActivated = new UnityEvent();
+        }
+
+        m_hasInteracted = false;        
+
+        subscribeToPrerequisites();
+
+        checkSetActive();
     }
     #endregion
 
     #region Intractable Methods
-    /// <summary>
-    /// Interact with the object if there is interaction.
-    /// </summary>
-    /// <param name="currForm"></param>
-    public void Interact(Form currForm)
+    public void Interact(Form a_currForm)
     {
-        if (!isInteractable)
+        if (!m_isInteractable)
         {
             return;
         }
 
-        if (currForm != requiredForm || hasInteracted == true)
+        if (a_currForm != m_requiredForm || m_hasInteracted == true)
         {
             return;
         }
 
-        hasInteracted = true;
+        m_hasInteracted = true;
 
-        if (onActivated != null)
+        if (m_onActivated != null)
         {
-            onActivated.Invoke();
+            m_onActivated?.Invoke();
         }
 
-        UpdateSprite();
+        updateSprite();
     }
 
     public void Reenable()
     {
-        hasInteracted = false;
-        UpdateSprite();
+        m_hasInteracted = false;
+        updateSprite();
     }
 
-    /// <summary>
-    /// Update the sprite.
-    /// </summary>
-    private void UpdateSprite()
+    private void updateSprite()
     {
-        interactableSpriteController.ChangeSprite(isInteractable, hasInteracted);
+        m_interactableSpriteController.ChangeSprite(m_isInteractable, m_hasInteracted);
     }
 
-    /// <summary>
-    /// Check to see if the prerequisite were met or not.
-    /// </summary>
-    /// <returns></returns>
-    private bool CheckIfPrerequisitesMet()
+    private bool checkIfPrerequisitesMet()
     {
-        if(prerequisites.Length <= 0)
+        if(m_prerequisites.Count <= 0)
         {
             return true;
         }
         else
         {
-            bool returnValue = true;
+            bool l_returnValue = true;
 
-            for (int i = 0; i < prerequisites.Length; i++)
+            for (int i = 0; i < m_prerequisites.Count; i++)
             {
-                if (!prerequisites[i].IsComplete())
+                if (!m_prerequisites[i].IsComplete())
                 {
-                    returnValue = false;
+                    l_returnValue = false;
                 }
             }
 
-            return returnValue;
+            return l_returnValue;
         }
     }    
 
-    /// <summary>
-    /// Subscribe to Prerequisites Unity Events
-    /// </summary>
-    private void SubscribeToPrerequisites()
+    private void subscribeToPrerequisites()
     {
-        if(prerequisites.Length > 0)
+        if(m_prerequisites.Count > 0)
         {
-            for (int i = 0; i < prerequisites.Length; i++)
+            for (int i = 0; i < m_prerequisites.Count; i++)
             {
-                prerequisites[i].onActivated.AddListener(SetPrerequisiteComplete);
+                m_prerequisites[i].m_onActivated.AddListener(SetPrerequisiteComplete);
             }
         }
     }

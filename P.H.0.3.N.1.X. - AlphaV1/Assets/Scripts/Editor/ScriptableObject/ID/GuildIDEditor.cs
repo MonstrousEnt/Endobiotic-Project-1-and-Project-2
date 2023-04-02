@@ -2,7 +2,7 @@
  * Team Name: Monstrous Entertainment - Vex Team
  * Authors: Daniel Cox
  * Created Date: March 7, 2023
- * Last Updated: March 12, 2023
+ * Last Updated: April 2, 2023
  * Description: This is the editor class for Scriptable Object ID guild id.
  * Notes: 
  * Resources: 
@@ -16,7 +16,7 @@ using UnityEditor;
 using UnityEngine;
 
 [CustomEditor(typeof(GuildIDScriptableObject), true)]
-public class GuildIdEditor : Editor
+public class GuildIDEditor : Editor
 {
     #region Class Variables
         #region Serialized Property
@@ -37,7 +37,7 @@ public class GuildIdEditor : Editor
     public override void OnInspectorGUI()
     {
         //Local Variables
-        GuildIDScriptableObject guildID = (GuildIDScriptableObject)target;
+        GuildIDScriptableObject l_guildID = (GuildIDScriptableObject)target;
 
         //Update the serialized object in the inspector
         serializedObject.Update();
@@ -59,9 +59,9 @@ public class GuildIdEditor : Editor
         EditorGUILayout.Space();
 
         //Buttons
-        if (GUILayout.Button("Gen ID"))
+        if (GUILayout.Button("Generate ID"))
         {
-            guildID.GenId();
+            l_guildID.GenerateID();
         }
 
         //Apply changes

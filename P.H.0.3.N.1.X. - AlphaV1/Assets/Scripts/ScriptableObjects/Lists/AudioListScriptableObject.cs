@@ -2,7 +2,7 @@
  * Team Name: Monstrous Entertainment - Vex Team
  * Authors: Daniel Cox
  * Created Date: March 5, 2023
- * Last Updated: Match 12, 2023
+ * Last Updated: April 2, 2023
  * Description: This is the scriptable object list class for audio list.
  * Notes: 
  * Resources: 
@@ -17,7 +17,6 @@ using UnityEngine;
 public class AudioListScriptableObject : ScriptableObject
 {
     #region Class Variables
-    //List
     [SerializeField] private List<AudioDataScriptableObject> m_audioDatas = new List<AudioDataScriptableObject>();
     #endregion
 

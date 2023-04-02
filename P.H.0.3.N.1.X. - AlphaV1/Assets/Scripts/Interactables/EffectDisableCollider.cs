@@ -1,9 +1,16 @@
+/* Project Name: Endobiotic - Project 2: Preparation for Galaxy Edition
+ * Team Name: Monstrous Entertainment - Vex Team
+ * Authors: James Dalziel, Daniel Cox
+ * Created Date: February 19, 2023
+ * Last Updated: April 2, 2023
+ * Description: This effect class is for disable a Collier 2D of any game object.
+ * Notes: 
+ * Resources: 
+ *  
+ */
+
 using System.Collections;
 using UnityEngine;
-
-/// <summary>
-/// This effect class is for disable a Collier 2D of any game object.
-/// </summary>
 
 public class EffectDisableCollider : MonoBehaviour
 {
@@ -20,11 +27,11 @@ public class EffectDisableCollider : MonoBehaviour
     {
         if(m_collider != null)
         {
-            StartCoroutine(DisableColliderAfterDelay(m_delay));
+            StartCoroutine(disableColliderAfterDelay(m_delay));
         }
     }
 
-    private IEnumerator DisableColliderAfterDelay(float delay)
+    private IEnumerator disableColliderAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
 

@@ -1,40 +1,51 @@
+/* Project Name: Endobiotic - Project 2: Preparation for Galaxy Edition
+ * Team Name: Monstrous Entertainment - Vex Team
+ * Authors: James Dalziel, Daniel Cox
+ * Created Date: February 15, 2023
+ * Last Updated: April 2, 2023
+ * Description: This class is push any game object.
+ * Notes: 
+ * Resources: 
+ *  
+ */
+
 using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PushableObject : MonoBehaviour
 {
-    //Components
-    private Rigidbody2D rigidBody2D;
-
     [Header("Form")]
-    [SerializeField] private Form requiredForm;
+    [SerializeField] private Form m_requiredForm;
 
     [Header("Intractable")]
-    [SerializeField] private InteractableOjbects objectType;
+    [SerializeField] private InteractableOjbects m_objectType;
 
     [Header("Pit Trap Data")]
-    [SerializeField] private bool destroyOnceUsed;
+    [SerializeField] private bool m_destroyOnceUsed;
 
     [Header("Unity Events")]
-    [SerializeField] private UnityEvent soundEffectUnityEvent;
+    [SerializeField] private UnityEvent m_soundEffectUnityEvent;
+
+    //Components
+    private Rigidbody2D m_rigidBody2D;
 
     #region Unity Methods
     private void Awake()
     {
-        rigidBody2D = GetComponent<Rigidbody2D>();
+        m_rigidBody2D = GetComponent<Rigidbody2D>();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D a_collision)
     {
         //Pit Trap
-        if (collision.collider.gameObject.TryGetComponent(out TrapObject trapObject))
+        if (a_collision.collider.gameObject.TryGetComponent(out TrapObject a_trapObject))
         {
-            if (trapObject.GetObjectType() == objectType)
+            if (a_trapObject.GetObjectType() == m_objectType)
             {
-                trapObject.Interact();
+                a_trapObject.Interact();
 
-                if (destroyOnceUsed)
+                if (m_destroyOnceUsed)
                 {
                     Destroy(gameObject);
                 }
@@ -42,17 +53,17 @@ public class PushableObject : MonoBehaviour
         }
 
         //Movement the block
-        else if (collision.gameObject.TryGetComponent(out CharacterFormsController formController))
+        else if (a_collision.gameObject.TryGetComponent(out CharacterFormsController a_formController))
         {
-            if (formController.currForm == requiredForm)
+            if (a_formController.currForm == m_requiredForm)
             {
-                rigidBody2D.mass = 10;
+                m_rigidBody2D.mass = 10;
 
-                soundEffectUnityEvent.Invoke();
+                m_soundEffectUnityEvent?.Invoke();
             }
             else
             {
-                rigidBody2D.mass = float.MaxValue;
+                m_rigidBody2D.mass = float.MaxValue;
             }
         }
     }

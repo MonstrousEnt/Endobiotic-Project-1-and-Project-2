@@ -1,3 +1,14 @@
+/* Project Name: Endobiotic - Project 2: Preparation for Galaxy Edition
+ * Team Name: Monstrous Entertainment - Vex Team
+ * Authors: James Dalziel, Daniel Cox
+ * Created Date: February 17, 2023
+ * Last Updated: April 2, 2023
+ * Description: This is the class for enemy interaction.
+ * Notes: 
+ * Resources: 
+ *  
+ */
+
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -7,37 +18,41 @@ public class EnemyInteraction : MonoBehaviour
 
     #region Class Variables
     //Components  
-    private EnemyControllerAnimations enemyControllerAnimations;
-    private CharacterFormsController characterFormsController;
+    private EnemyControllerAnimations m_enemyControllerAnimations;
+    private CharacterFormsController m_characterFormsController;
 
-    //Unity Events
-    public UnityEvent<GameObject> deathEvent;
+    [Header("Unity Event")]
+    [SerializeField]private UnityEvent<GameObject> m_deathEvent;
+    #endregion
+
+    #region Getters and Setters
+    public UnityEvent<GameObject> deathEvent { get { return m_deathEvent; } }
     #endregion
 
     #region Unity Methods
     private void Awake()
     {
-        characterFormsController = GetComponent<CharacterFormsController>();
-        deathEvent = new UnityEvent<GameObject>();
+        m_characterFormsController = GetComponent<CharacterFormsController>();
+        m_deathEvent = new UnityEvent<GameObject>();
     }
     #endregion
 
     #region AI Interaction Methods
     public void KillEnemy()
     {
-        if (characterFormsController.currForm != Form.Crab)
+        if (m_characterFormsController.currForm != Form.crab)
         {
             return;
         }
 
-        deathEvent?.Invoke(this.gameObject);
+        m_deathEvent?.Invoke(this.gameObject);
 
         Destroy(this.gameObject);
     }
 
     public void DestroyEnemy()
     {
-        deathEvent?.Invoke(this.gameObject);
+        m_deathEvent?.Invoke(this.gameObject);
 
         Destroy(this.gameObject);
     }

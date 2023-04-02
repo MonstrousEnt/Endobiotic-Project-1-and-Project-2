@@ -1,37 +1,36 @@
+/* Project Name: Endobiotic - Project 2: Preparation for Galaxy Edition
+ * Team Name: Monstrous Entertainment - Vex Team
+ * Authors: James Dalziel, Daniel Cox
+ * Created Date: February 16, 2023
+ * Last Updated: April 2, 2023
+ * Description: This utility class is for destroy any game object after couple of seconds.
+ * Notes: 
+ * Resources: 
+ *  
+ */
+
 using System.Collections;
 using UnityEngine;
-
-/// <summary>
-/// This utility class is for Destroy any game object after couple of seconds.
-//// </summary>
 
 public class DestroyAfterSeconds : MonoBehaviour
 {
     #region Class Variables
-    [Header("How long the game object last unlit it get destroy")]
+    [Header("Duration Data")]
     [SerializeField] private float m_duration;
     #endregion
 
     #region Unity Methods
     void Start()
     {
-        //run the Destroy After IEnumerator 
-        StartCoroutine(DestroyAfter(m_duration));
+        StartCoroutine(destroyAfter(m_duration));
     }
     #endregion
 
     #region Destroy After Methods
-    /// <summary>
-    /// Destroy the game object after a certain amount of seconds.
-    /// </summary>
-    /// <param name="duration"></param>
-    /// <returns></returns>
-    IEnumerator DestroyAfter(float duration)
+    private IEnumerator destroyAfter(float a_duration)
     {
-        //Wait for a certain amount of seconds 
-        yield return new WaitForSeconds(duration);
+        yield return new WaitForSeconds(a_duration);
 
-        //Destroy the game object
         Destroy(this.gameObject);
     }
     #endregion

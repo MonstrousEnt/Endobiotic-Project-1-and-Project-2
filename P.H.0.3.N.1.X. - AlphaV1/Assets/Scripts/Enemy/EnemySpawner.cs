@@ -1,3 +1,13 @@
+/* Project Name: Endobiotic - Project 2: Preparation for Galaxy Edition
+ * Team Name: Monstrous Entertainment - Vex Team
+ * Authors: James Dalziel, Daniel Cox
+ * Created Date: February 17, 2023
+ * Last Updated: Last Updated: April 2, 2023
+ * Description: This is the class for spawner enemies.
+ * Resources: 
+ *  
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,113 +17,98 @@ public class EnemySpawner : MonoBehaviour
 {
     #region Class Variables
     [Header("Form Prefab")]
-    [SerializeField] private GameObject ManipulatorPrefab;
-    [SerializeField] private GameObject TransportPrefab;
-    [SerializeField] private GameObject MagneticPrefab;
-    [SerializeField] private GameObject ElectricPrefab;
-    [SerializeField] private GameObject DestroyerPrefab;
-    [SerializeField] private GameObject BatteryPrefab;
-    [SerializeField] private GameObject CrabPrefab;
-
-    //Prefab List
-    private List<GameObject> EnemyFormList;
+    [SerializeField] private GameObject m_manipulatorPrefab;
+    [SerializeField] private GameObject m_transportPrefab;
+    [SerializeField] private GameObject m_magneticPrefab;
+    [SerializeField] private GameObject m_electricPrefab;
+    [SerializeField] private GameObject m_destroyerPrefab;
+    [SerializeField] private GameObject m_batteryPrefab;
+    [SerializeField] private GameObject m_crabPrefab;
 
     [Header("Spawner Data")]
-    [SerializeField] private float spawnInterval = 5.0f;
-    [SerializeField] private float spawnDistanceX;
-    [SerializeField] private float spawnDistanceY;
+    [SerializeField] private float m_spawnInterval = 5.0f;
+    [SerializeField] private float m_spawnDistanceX;
+    [SerializeField] private float m_spawnDistanceY;
 
     [Header("Robots List")]
-    [SerializeField] private List<GameObject> userSpawnedRobots = new List<GameObject>();
-    private Dictionary<GameObject, Robot> trackedRobots = new Dictionary<GameObject, Robot>();
-
+    [SerializeField] private List<GameObject> m_userSpawnedRobots = new List<GameObject>();
+    
     [Header("Sound Unity Event")]
-    [SerializeField] private UnityEvent soundEffectUnityEvent;
+    [SerializeField] private UnityEvent m_soundEffectUnityEvent;
 
-    #region Struts
-    public struct Robot
-    {
-        public Robot(Form form, Vector3 position)
-        {
-            m_form = form;
-            m_position = position;
-        }
+    //Prefabs
+    private List<GameObject> m_enemyFormList;
 
-        public Form m_form;
-        public Vector3 m_position;
-    }
-    #endregion
-
+    //Robots List Dictionary
+    private Dictionary<GameObject, Robot> m_trackedRobots = new Dictionary<GameObject, Robot>();
     #endregion
 
     #region Unity Methods
     private void Start()
     {
         StartCoroutine(initialize());
-        LoadRobotList();
+        loadRobotList();
     }
     #endregion
 
     #region AI Methods
     public void UpdateCurrentRobotsList(GameObject caller)
     {
-        StartCoroutine(SpawnRobot(new Robot(trackedRobots[caller].m_form, trackedRobots[caller].m_position)));
-        trackedRobots.Remove(caller);
+        StartCoroutine(spawnRobot(new Robot(m_trackedRobots[caller].formRobot, m_trackedRobots[caller].positionRobot)));
+        m_trackedRobots.Remove(caller);
     }
 
     private IEnumerator initialize()
     {
         yield return new WaitForEndOfFrame();
-        LoadUserSpawnedRobots();
+        loadUserSpawnedRobots();
     }
 
-    private void LoadRobotList()
+    private void loadRobotList()
     {
-        EnemyFormList = new List<GameObject>();
+        m_enemyFormList = new List<GameObject>();
 
-        EnemyFormList.Add(ManipulatorPrefab);
-        EnemyFormList.Add(TransportPrefab);
-        EnemyFormList.Add(MagneticPrefab);
-        EnemyFormList.Add(ElectricPrefab);
-        EnemyFormList.Add(DestroyerPrefab);
-        EnemyFormList.Add(BatteryPrefab);
-        EnemyFormList.Add(CrabPrefab);
+        m_enemyFormList.Add(m_manipulatorPrefab);
+        m_enemyFormList.Add(m_transportPrefab);
+        m_enemyFormList.Add(m_magneticPrefab);
+        m_enemyFormList.Add(m_electricPrefab);
+        m_enemyFormList.Add(m_destroyerPrefab);
+        m_enemyFormList.Add(m_batteryPrefab);
+        m_enemyFormList.Add(m_crabPrefab);
     }
 
-    private IEnumerator SpawnRobot(Robot robot)
+    private IEnumerator spawnRobot(Robot a_robot)
     {
-        yield return new WaitForSeconds(spawnInterval);
+        yield return new WaitForSeconds(m_spawnInterval);
 
-        //TO DO: Might need a pool system
-
-        GameObject newEnemy = Instantiate(
-            EnemyFormList[(int)robot.m_form],
+        GameObject l_newEnemy = Instantiate(
+            m_enemyFormList[(int)a_robot.formRobot],
             new Vector3(
-                Random.Range(transform.position.x - spawnDistanceX, transform.position.x + spawnDistanceX) + 0.5f,
-                Random.Range(transform.position.y - spawnDistanceY, transform.position.y + spawnDistanceY) + 0.5f,
+                Random.Range(transform.position.x - m_spawnDistanceX, transform.position.x + m_spawnDistanceX) + 0.5f,
+                Random.Range(transform.position.y - m_spawnDistanceY, transform.position.y + m_spawnDistanceY) + 0.5f,
                 0
             ),
             Quaternion.identity
         );
 
-        trackedRobots.Add(newEnemy, robot);
+        m_trackedRobots.Add(l_newEnemy, a_robot);
         yield return 0;
 
-        newEnemy.GetComponent<EnemyInteraction>().deathEvent.AddListener(UpdateCurrentRobotsList);
-        newEnemy.GetComponent<EnemyController>().UpdatePreferredPosition(robot.m_position);
+        l_newEnemy.GetComponent<EnemyInteraction>().deathEvent.AddListener(UpdateCurrentRobotsList);
+        l_newEnemy.GetComponent<EnemyController>().UpdatePreferredPosition(a_robot.positionRobot);
 
-        soundEffectUnityEvent.Invoke();
+        m_soundEffectUnityEvent?.Invoke();
     }
 
-    private void LoadUserSpawnedRobots()
+    private void loadUserSpawnedRobots()
     {
-        foreach(GameObject robot in userSpawnedRobots)
+        foreach(GameObject l_robot in m_userSpawnedRobots)
         {
-            Form robotForm = robot.GetComponent<CharacterFormsController>().currForm;
+            Form l_robotForm = l_robot.GetComponent<CharacterFormsController>().currForm;
 
-            trackedRobots.Add(robot, new Robot(robotForm, robot.transform.position));
+            m_trackedRobots.Add(l_robot, new Robot(l_robotForm, l_robot.transform.position));
 
-            robot.GetComponent<EnemyInteraction>().deathEvent.AddListener(UpdateCurrentRobotsList);
+            l_robot.GetComponent<EnemyInteraction>().deathEvent.AddListener(UpdateCurrentRobotsList);
         }
     }
     #endregion

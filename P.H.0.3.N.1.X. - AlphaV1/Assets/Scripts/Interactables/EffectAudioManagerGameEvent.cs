@@ -1,10 +1,17 @@
+/* Project Name: Endobiotic - Project 2: Preparation for Galaxy Edition
+ * Team Name: Monstrous Entertainment - Vex Team
+ * Authors: Daniel Cox
+ * Created Date: March 6, 2023
+ * Last Updated: April 2, 2023
+ * Description: This effect class is for control in game audio of any game object.
+ * Notes: 
+ * Resources: 
+ *  
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-/// <summary>
-/// This effect class is for control in game audio of any game object.
-/// </summary>
 
 public class EffectAudioManagerGameEvent : MonoBehaviour
 {
@@ -21,7 +28,7 @@ public class EffectAudioManagerGameEvent : MonoBehaviour
     [SerializeField] private AudioDataGameEventScriptableObject m_audioManagerGameEventDisableLoop;
     #endregion
 
-    #region Call Audio Manager Game Event
+    #region Call Audio Manager Game Events
     public void PlaySound()
     {
         if (m_audioData != null)

@@ -2,7 +2,7 @@
  * Team Name: Monstrous Entertainment - Vex Team
  * Authors: Daniel Cox
  * Created Date: March 5, 2023
- * Last Updated: Match 12, 2023
+ * Last Updated: April 2, 2023
  * Description: This is the game event listener class for audio manager audio data events.
  * Notes: 
  * Resources: 
@@ -21,13 +21,13 @@ public class AudioDataGameEventListener : MonoBehaviour
     [SerializeField] private AudioDataGameEventScriptableObject m_gameEvent;
 
     [Header("Unity Event")]
-    [SerializeField] private UnityEvent<AudioDataScriptableObject> m_respone;
+    [SerializeField] private UnityEvent<AudioDataScriptableObject> m_response;
     #endregion
 
     #region Invoke Unity Events
-    public void OnEventRaised(AudioDataScriptableObject audioData)
+    public void OnEventRaised(AudioDataScriptableObject a_audioData)
     {
-        m_respone?.Invoke(audioData);
+        m_response?.Invoke(a_audioData);
     }
     #endregion
 

@@ -2,7 +2,7 @@
  * Team Name: Monstrous Entertainment - Vex Team
  * Authors: Ben Topple, James Dalziel, Daniel Cox
  * Created Date: February 13, 2023
- * Last Updated: Match 12, 2023
+ * Last Updated: April 2, 2023
  * Description: This is the class for player animations.
  * Notes:
  * Resources: 
@@ -26,14 +26,14 @@ public class PlayerControllerAnimations : BaseControllerAnimations
     [SerializeField] private string m_MAGNET_PULL_LEFT = "Pull_Left";
     [SerializeField] private string m_MAGNET_PULL_RIGHT = "Pull_Right";
 
-    [Header("Delay or Time")]
+    //Delay or Timer
     private float m_requiredTime;
     #endregion
 
     #region Base Controller Animations Override Methods - Player Controller Animations
     protected override void ChangeAnimationState(string newAnimation)
     {
-        //check to see if the delay is in effect
+
         if (m_requiredTime > Time.time)
         {
             return;
@@ -51,50 +51,43 @@ public class PlayerControllerAnimations : BaseControllerAnimations
     #endregion
 
     #region Animation Methods
-    /// <summary>
-    /// Destroyer Attack animation.
-    /// </summary>
     public void DestroyerAttack()
     {
         switch (m_LastMoveDir)
         {            
-            case m_moveDir.up:
+            case MoveDirection.up:
                 ChangeAnimationState(m_DEST_ATK_UP);
                 break;
-            case m_moveDir.down:
+            case MoveDirection.down:
                 ChangeAnimationState(m_DEST_ATK_DOWN);
                 break;
-            case m_moveDir.left:
+            case MoveDirection.left:
                 ChangeAnimationState(m_DEST_ATK_LEFT);
                 break;
-            case m_moveDir.right:
+            case MoveDirection.right:
                 ChangeAnimationState(m_DEST_ATK_RIGHT);
                 break;
         }
         m_requiredTime = Time.time + 0.25f;
     }
 
-    /// <summary>
-    /// Magnet Pull Animation.
-    /// </summary>
     public void MagnetPull()
     { 
         switch (m_LastMoveDir)
         {
-            case m_moveDir.up:
+            case MoveDirection.up:
                 ChangeAnimationState(m_MAGNET_PULL_DOWN);
                 break;
-            case m_moveDir.down:
+            case MoveDirection.down:
                 ChangeAnimationState(m_MAGNET_PULL_DOWN);
                 break;
-            case m_moveDir.left:
+            case MoveDirection.left:
                 ChangeAnimationState(m_MAGNET_PULL_LEFT);
                 break;
-            case m_moveDir.right:
+            case MoveDirection.right:
                 ChangeAnimationState(m_MAGNET_PULL_RIGHT);
                 break;
         }        
     }
     #endregion
-
 }

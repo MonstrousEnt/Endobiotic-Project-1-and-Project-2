@@ -847,13 +847,13 @@ MonoBehaviour:
   m_booleanFlagGlobalVariablePlayerManagerPlayerCanMove: {fileID: 11400000, guid: cb6522342c9d38243a7fb7bfc803cb25, type: 2}
   m_voidGameEventSettingsManagerEnablePause: {fileID: 11400000, guid: 2d576d7a71be9a543952c7487094620b, type: 2}
   m_voidGameEventSettingsManagerDisablePause: {fileID: 11400000, guid: 251ebfd62673e5f479fbb25228817a72, type: 2}
-  M_voidGameEventUIManagerEnableFadeBackground: {fileID: 11400000, guid: 846d08271bdc6324bb0a952dfc6e4178, type: 2}
+  m_voidGameEventUIManagerEnableFadeBackground: {fileID: 11400000, guid: 846d08271bdc6324bb0a952dfc6e4178, type: 2}
   m_voidGameEventUIManagerDisableFadeBackground: {fileID: 11400000, guid: 6a9e7aff25c264844ab9bbc0308fcdd2, type: 2}
   m_popUpDataQuitPopUp: {fileID: 11400000, guid: 0af3184b15876264abddb016fcde85f8, type: 2}
   m_popUpDataGameEventUIMangerSetPopUpData: {fileID: 11400000, guid: 29a6c36849ca25a40b9c666c995382c3, type: 2}
-  m_voidGameEventUIManagerEanblePopUp: {fileID: 11400000, guid: 7ef7add07fa35104bbed2ad203302e7f, type: 2}
+  m_voidGameEventUIManagerEnablePopUp: {fileID: 11400000, guid: 7ef7add07fa35104bbed2ad203302e7f, type: 2}
   m_piontSystem: {fileID: 8225104314088512471}
-  m_tryAgainunityEvent:
+  m_restartLevelUnityEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: 19a964f1f6283a64fa4f3b3681ca4fe5, type: 2}
@@ -868,6 +868,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  m_loadNextScenceUnityEvent:
+    m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 11400000, guid: ce2f301b6fb0a0844879a5b3b48a84b7, type: 2}
         m_TargetAssemblyTypeName: LevelDataGameEventScriptableObject, Assembly-CSharp
         m_MethodName: Raise
@@ -893,7 +896,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_gameEvent: {fileID: 11400000, guid: 4865a33ad2bab7d4288f4c5e45aa3129, type: 2}
-  m_respone:
+  m_response:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8225104314968284485}
@@ -1031,8 +1034,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8225104314968284485}
-        m_TargetAssemblyTypeName: UITryAgainMenu, Assembly-CSharp
-        m_MethodName: OepnQuitPopUp
+        m_TargetAssemblyTypeName: UIMenuBase, Assembly-CSharp
+        m_MethodName: OpenQuitPopUp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

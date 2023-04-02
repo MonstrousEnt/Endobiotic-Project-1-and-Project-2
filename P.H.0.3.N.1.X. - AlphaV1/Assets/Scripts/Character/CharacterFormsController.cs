@@ -1,21 +1,29 @@
+/* Project Name: Endobiotic - Project 2: Preparation for Galaxy Edition
+ * Team Name: Monstrous Entertainment - Vex Team
+ * Authors: James Dalziel, Daniel Cox
+ * Created Date: February 13, 2023
+ * Last Updated: April 2, 2023
+ * Description: Controls which form the character is currently is and allows for switching forms.
+ * Notes: 
+ * Resources: 
+ *  
+ */
+
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterFormsController : MonoBehaviour
 {
-    /// <summary>
-    /// Controls which form the character is currently is and allows for switching forms
-    /// </summary>
-
     #region Class Variables
+    [Header("Player Forms (Game Objects)")]
+    [SerializeField] private List<GameObject> m_formObjects;
+
+    //Components
+    private BaseControllerAnimations m_controllerAnimations;
+
     //Player Current form
     private Form m_currform;
 
-    [Header("List of player forms (Game Objects)")]
-    [SerializeField] private List<GameObject> formObjects;
-
-    //Reference to base animation controller 
-    private BaseControllerAnimations controllerAnimations;
     #endregion
 
     #region Getters and Setters
@@ -25,37 +33,29 @@ public class CharacterFormsController : MonoBehaviour
     #region Unity Methods
     private void Awake()
     {
-        //Initialize components 
-        controllerAnimations = GetComponent<BaseControllerAnimations>();
-
-        //Initialize the default form
+        m_controllerAnimations = GetComponent<BaseControllerAnimations>();
         Init();
     }
     #endregion
 
-    #region C# Methods
-    private void Init()
+    #region Character Form Methods
+    public void ChangeForm(Form a_newForm)
     {
-        //Set the default from as Manipulator
-        ChangeForm(0);        
-    }
+        currForm = a_newForm;
 
-    public void ChangeForm(Form newForm)
-    {
-        //Set the current form to the new form
-        currForm = newForm;
-
-        //Turn off the previews form
-        foreach (GameObject formObject in formObjects)
+        foreach (GameObject formObject in m_formObjects)
         {
             formObject.SetActive(false);
         }
 
-        //Turn on the new form
-        formObjects[(int)newForm].SetActive(true);
+        m_formObjects[(int)a_newForm].SetActive(true);
 
-        //Change animator to the new form
-        controllerAnimations.Animator = formObjects[(int)newForm].GetComponent<Animator>();
+        m_controllerAnimations.Animator = m_formObjects[(int)a_newForm].GetComponent<Animator>();
+    }
+
+    private void Init()
+    {
+        ChangeForm(0);        
     }
     #endregion
 }

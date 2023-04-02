@@ -2,7 +2,7 @@
  * Team Name: Monstrous Entertainment - Vex Team
  * Authors: Daniel Cox
  * Created Date: March 7, 2023
- * Last Updated: March 12, 2023
+ * Last Updated: April 2, 2023
  * Description: This is the editor class for Scriptable Object Global Variables boolean flags.
  * Notes: 
  * Resources: 
@@ -37,7 +37,7 @@ public class BooleanFlagGlobalVariableEditor : Editor
     public override void OnInspectorGUI()
     {
         //Local Varabiles
-        BooleanFlagGlobalVariableScriptableObject booleanFlagGlobalVariable = (BooleanFlagGlobalVariableScriptableObject)target;
+        BooleanFlagGlobalVariableScriptableObject l_booleanFlagGlobalVariable = (BooleanFlagGlobalVariableScriptableObject)target;
 
         serializedObject.Update();
 

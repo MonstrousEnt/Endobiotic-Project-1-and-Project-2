@@ -2,7 +2,7 @@
  * Team Name: Monstrous Entertainment - Vex Team
  * Authors: Daniel Cox
  * Created Date: February 13, 2023
- * Last Updated: Match 12, 2023
+ * Last Updated: April 2, 2023
  * Description: This is the UI class for try again menu.
  * Notes: 
  * Resources: 
@@ -23,13 +23,11 @@ public class UITryAgainMenu : UIMenuBase
     [SerializeField] private UIPiontSystem m_piontSystem;
 
     [Header("Unity Event")]
-    [SerializeField] private UnityEvent m_tryAgainunityEvent;
+    [SerializeField] private UnityEvent m_restartLevelUnityEvent;
+    [SerializeField] private UnityEvent m_loadNextScenceUnityEvent;
     #endregion
 
-    #region UI Base - Over Methods - Try Again Menu
-    /// <summary>
-    /// Enable the menu and display the points,
-    /// </summary>
+    #region UI Base - Override Methods - Try Again Menu
     public override void EnableMenu()
     {
         base.EnableMenu();
@@ -39,14 +37,12 @@ public class UITryAgainMenu : UIMenuBase
     #endregion
 
     #region UI Methods
-    /// <summary>
-    /// Disable the menu and reset the level.
-    /// </summary>
     public void TryAgin()
     {
         DisableMenu();
 
-        m_tryAgainunityEvent.Invoke();
+        m_restartLevelUnityEvent?.Invoke();
+        m_loadNextScenceUnityEvent?.Invoke();
     }
     #endregion
 }
