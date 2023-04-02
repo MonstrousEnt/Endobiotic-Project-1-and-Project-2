@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: fa078943d5e7e78439a68930df0e713a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - m_mainWindowGameObject: {instanceID: 0}
+  - m_firstButtonGameObject: {instanceID: 0}
+  - m_booleanFlagGlobalVariablePlayerManagerPlayerCanMove: {fileID: 11400000, guid: cb6522342c9d38243a7fb7bfc803cb25, type: 2}
+  - m_voidGameEventSettingsManagerEnablePause: {fileID: 11400000, guid: 2d576d7a71be9a543952c7487094620b, type: 2}
+  - m_voidGameEventSettingsManagerDisablePause: {fileID: 11400000, guid: 251ebfd62673e5f479fbb25228817a72, type: 2}
+  - m_voidGameEventUIManagerEnableFadeBackground: {fileID: 11400000, guid: 846d08271bdc6324bb0a952dfc6e4178, type: 2}
+  - m_voidGameEventUIManagerDisableFadeBackground: {fileID: 11400000, guid: 6a9e7aff25c264844ab9bbc0308fcdd2, type: 2}
+  - m_popUpDataQuitPopUp: {fileID: 11400000, guid: 0af3184b15876264abddb016fcde85f8, type: 2}
+  - m_popUpDataGameEventUIMangerSetPopUpData: {fileID: 11400000, guid: 29a6c36849ca25a40b9c666c995382c3, type: 2}
+  - m_voidGameEventUIManagerEnablePopUp: {fileID: 11400000, guid: 7ef7add07fa35104bbed2ad203302e7f, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

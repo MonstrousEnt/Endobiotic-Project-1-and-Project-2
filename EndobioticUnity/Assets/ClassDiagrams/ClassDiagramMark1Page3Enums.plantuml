@@ -1,0 +1,40 @@
+@startuml Class Diagram Mark 1 - Page 3: Enums
+title Endobiotic UML Class Digram - Mark 1\nPage 3: Enums\n<color:Gray>Monstrous | Endobiotic | 04/2/2023</color>
+
+package Scripts <<Folder>>
+{
+    package Enums <<Folder>>
+    {
+        enum Form 
+        {
+            +manipulator
+            +transport
+            +magnetic
+            +electronic
+            +destroyer
+            +battery
+            +crab
+        }
+
+        enum TimerMode
+        {
+            +countUp
+            +countDown
+        }
+
+        enum InteractableOjbects 
+        {
+            +pit
+        }
+
+        enum MoveDirection 
+        {
+            +down
+            +up
+            +left
+            +right
+        }
+    }
+}
+
+@enduml

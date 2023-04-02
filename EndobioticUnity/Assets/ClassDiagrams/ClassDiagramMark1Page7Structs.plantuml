@@ -1,0 +1,19 @@
+@startuml Class Diagram Mark 1 - Page 7: Structs
+title Endobiotic UML Class Digram - Mark 1\nPage 7: Structs\n<color:Gray>Monstrous | Endobiotic | 04/2/2023</color>
+
+package Scripts <<Folder>>
+{
+    package Structs <<Folder>>
+    {
+        struct Robot 
+        {
+            +Robot(Form a_form, Vector3 a_position):
+
+            ===
+            +formRobot: Form
+            +positionRobot: Vector3
+        }
+    }
+}
+
+@endum
