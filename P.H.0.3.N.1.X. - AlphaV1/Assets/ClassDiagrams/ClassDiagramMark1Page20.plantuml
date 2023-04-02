@@ -1,11 +1,11 @@
-@startuml Class Diagram Mark 1
-title Endobiotic UML Class Digram - Mark 1\n<color:Gray>Monstrous | Endobiotic | 04/2/2023</color>
+@startuml Class Diagram Mark 1 - Page 20
+title Endobiotic UML Class Digram - Mark 1\nPage 20: Editor\n<color:Gray>Monstrous | Endobiotic | 04/2/2023</color>
 
 package Scripts <<Folder>> 
 {
     package Editor <<Folder>> 
     {
-        package DataContainersE 
+        package DataContainers 
         {
             class AudioDataEditor 
             {
@@ -34,7 +34,7 @@ package Scripts <<Folder>>
             }
         }
 
-        package GlobalVariablesE 
+        package GlobalVariables
         {
             class BooleanFlagGlobalVariableEditor 
             {
@@ -51,7 +51,7 @@ package Scripts <<Folder>>
             }
         }
 
-        package IDE 
+        package ID
         {
             class GuildIDEditor 
             {
@@ -68,7 +68,7 @@ package Scripts <<Folder>>
             }
         }
 
-        package ListsE 
+        package Lists
         {
             class AudioListEditor 
             {
@@ -99,7 +99,7 @@ package Scripts <<Folder>>
             }
         }
 
-        package TagE 
+        package Tag
         {
             class TagDataEditor
             {
