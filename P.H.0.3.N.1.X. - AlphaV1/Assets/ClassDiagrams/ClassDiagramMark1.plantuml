@@ -3,29 +3,6 @@ title Endobiotic UML Class Digram - Mark 1\n<color:Gray>Monstrous | Endobiotic |
 
 package Scripts <<Folder>> 
 {
-    
-
-    package Cutscenes <<Folder>> 
-    {
-        class RebirthCutscene 
-        {
-            <b>Special Effect
-            -m_rebirthParticles: ParticleSystem
-
-            ===
-            <b>Boolean Flag Scriptable Object - Player Manager
-            -m_booleanFlagGlobalVariablePlayerCanMove: BooleanFlagGlobalVariableScriptableObject
-
-            ===
-            <b>Unity Methods
-            -Start(): void
-
-            ===
-            Cutscene Methods
-            -playRebirthCutscene(): IEnumerator
-        }
-    }
-
     package Enums <<Folder>>
     {
         package CharacterEnums <<Folder>>

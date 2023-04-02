@@ -1,6 +1,8 @@
 @startuml Class Diagram Mark 1 - Page 1
 title Endobiotic UML Class Digram - Mark 1\nPage 1: BaseControllerAnimations Inherits\n<color:Gray>Monstrous | Endobiotic | 04/2/2023</color>
 
+package Scripts <<Folder>> 
+{
     package Animations <<Folder>> 
     {
         abstract Class BaseControllerAnimations 
@@ -258,7 +260,7 @@ title Endobiotic UML Class Digram - Mark 1\nPage 1: BaseControllerAnimations Inh
         }
 
     }
-    
+
     package Enemy <<Folder>> 
     {
          EnemyControllerAnimations <|-- BaseControllerAnimations
@@ -398,4 +400,5 @@ title Endobiotic UML Class Digram - Mark 1\nPage 1: BaseControllerAnimations Inh
             -loadUserSpawnedRobots(): void
        }
     }
+}
 @enduml
