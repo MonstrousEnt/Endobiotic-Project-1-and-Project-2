@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2abe29c900e2f846b4efeb9692e6ff2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_timerData: {fileID: 0}
 --- !u!114 &7716190790970332249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,7 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_gameEvent: {fileID: 11400000, guid: 483240dc24a8c5c40841514a649ecc45, type: 2}
-  m_respone:
+  m_response:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4830934442344880351}
@@ -87,7 +88,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_gameEvent: {fileID: 11400000, guid: b049495b7237227409462ca8d833736f, type: 2}
-  m_respone:
+  m_response:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4830934442344880351}

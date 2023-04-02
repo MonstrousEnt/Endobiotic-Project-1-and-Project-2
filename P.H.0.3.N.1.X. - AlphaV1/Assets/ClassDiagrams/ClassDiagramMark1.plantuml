@@ -1021,7 +1021,7 @@ package Scripts <<Folder>>
 
                             ===
                             <b>Unity Event
-                            -m_response: UnityEvent
+                            -m_response: UnityEvent<AudioDataScriptableObject>
 
                             ===
                             <b>Invoke Unity Events
@@ -1058,11 +1058,131 @@ package Scripts <<Folder>>
 
                             ===
                             <b>Unity Event
-                            -m_response: UnityEvent
+                            -m_response: UnityEvent<AudioListScriptableObject>
 
                             ===
                             <b>Invoke Unity Events
                             +OnEventRaised(AudioListScriptableObject a_audioList): void
+
+                            ===
+                            <b>Unity Methods
+                            -OnEnable(): void
+                            -nDisable(): void
+                        }
+                    }
+                }
+
+                package LevelManager <<Folder>>
+                {
+                    package LevelData <<Folder>> 
+                    {
+                        class LevelDataGameEventScriptableObject 
+                        {
+                             <b>Class Variables
+                            -m_listeners: LevelDataGameEventListener
+
+                            ===
+                            <b>Registration Listener
+                            +RegisterListener(LevelDataGameEventListener listener): void
+                            +UnregisterListener(LevelDataGameEventListener listener): void
+
+                            ===
+                            <b>Raise/Invoke Game Events
+                            +Raise(LevelDataGameEventScriptableObject a_levelData): void
+                        }
+
+                        class LevelDataGameEventListener 
+                        {
+                            <b>Game Event Scriptable Object
+                            -m_gameEvent: LevelDataGameEventListener
+
+                            ===
+                            <b>Unity Event
+                            -m_response: UnityEvent<LevelDataScriptableObject>
+
+                            ===
+                            <b>Invoke Unity Events
+                            +OnEventRaised(LevelDataGameEventScriptableObject a_levelData): void
+
+                            ===
+                            <b>Unity Methods
+                            -OnEnable(): void
+                            -nDisable(): void
+                        }
+                    }
+                }
+
+                package TimerManager <<Folder>> 
+                {
+                    package TimerData <<Folder>> 
+                    {
+                        class TimerDataGameEventScriptableObject 
+                        {
+                            <b>Class Variables
+                            -m_listeners: TimerDataGameEventListener
+
+                            ===
+                            <b>Registration Listener
+                            +RegisterListener(TimerDataGameEventListener listener): void
+                            +UnregisterListener(TimerDataGameEventListener listener): void
+
+                            ===
+                            <b>Raise/Invoke Game Events
+                            +Raise(TimerDataScriptableObject a_timerData): void
+                        }
+
+                        class TimerDataGameEventListener 
+                        {
+                            <b>Game Event Scriptable Object
+                            -m_gameEvent: TimerDataGameEventScriptableObject
+
+                            ===
+                            <b>Unity Event
+                            -m_response: UnityEvent<TimerDataScriptableObject>
+
+                            ===
+                            <b>Invoke Unity Events
+                            +OnEventRaised(TimerDataScriptableObject a_timerData): void
+
+                            ===
+                            <b>Unity Methods
+                            -OnEnable(): void
+                            -nDisable(): void
+                        }
+                    }
+                }
+
+                package UIManager <<Folder>> 
+                {
+                    package PopUpData <<Folder>> 
+                    {
+                        class PopUpDataGameEventScriptableObject 
+                        {
+                            <b>Class Variables
+                            -m_listeners: PopUpDataGameEventListener
+
+                            ===
+                            <b>Registration Listener
+                            +RegisterListener(PopUpDataGameEventListener listener): void
+                            +UnregisterListener(PopUpDataGameEventListener listener): void
+
+                            ===
+                            <b>Raise/Invoke Game Events
+                            +Raise(PopUpDataScriptableObject a_popUpData): void
+                        }
+
+                        class PopUpDataGameEventListener 
+                        {
+                            <b>Game Event Scriptable Object
+                            -m_gameEvent: PopUpDataGameEventScriptableObject
+
+                            ===
+                            <b>Unity Event
+                            -m_response: UnityEvent<PopUpDataScriptableObject>
+
+                            ===
+                            <b>Invoke Unity Events
+                            +OnEventRaised(PopUpDataScriptableObject a_popUpData): void
 
                             ===
                             <b>Unity Methods

@@ -21,13 +21,13 @@ public class LevelDataGameEventListener : MonoBehaviour
     [SerializeField] private LevelDataGameEventScriptableObject m_gameEvent;
 
     [Header("Unity Event")]
-    [SerializeField] private UnityEvent<LevelDataScriptableObject> m_respone;
+    [SerializeField] private UnityEvent<LevelDataScriptableObject> m_response;
     #endregion
 
     #region Invoke Unity Events
     public void OnEventRaised(LevelDataScriptableObject a_levelData)
     {
-        m_respone?.Invoke(a_levelData);
+        m_response?.Invoke(a_levelData);
     }
     #endregion
 

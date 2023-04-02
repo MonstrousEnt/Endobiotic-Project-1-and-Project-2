@@ -21,13 +21,13 @@ public class TimerDataGameEventListener : MonoBehaviour
     [SerializeField] private TimerDataGameEventScriptableObject m_gameEvent;
 
     [Header("Unity Event")]
-    [SerializeField] private UnityEvent<TimerDataScriptableObject> m_respone;
+    [SerializeField] private UnityEvent<TimerDataScriptableObject> m_response;
     #endregion
 
     #region Invoke Unity Events
     public void OnEventRaised(TimerDataScriptableObject a_timerData)
     {
-        m_respone?.Invoke(a_timerData);
+        m_response?.Invoke(a_timerData);
     }
     #endregion
 

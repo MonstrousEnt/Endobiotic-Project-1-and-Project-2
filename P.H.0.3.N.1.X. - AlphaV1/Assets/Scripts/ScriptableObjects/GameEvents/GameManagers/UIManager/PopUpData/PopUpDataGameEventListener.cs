@@ -22,13 +22,13 @@ public class PopUpDataGameEventListener : MonoBehaviour
     [SerializeField] private PopUpDataGameEventScriptableObject m_gameEvent;
 
     [Header("Unity Event")]
-    [SerializeField] private UnityEvent<PopUpDataScriptableObject> m_respone;
+    [SerializeField] private UnityEvent<PopUpDataScriptableObject> m_response;
     #endregion
 
     #region Invoke Unity Events
     public void OnEventRaised(PopUpDataScriptableObject a_popUpData)
     {
-        m_respone?.Invoke(a_popUpData);
+        m_response?.Invoke(a_popUpData);
     }
     #endregion
 
