@@ -39,13 +39,13 @@ public class AudioDataEditor : Editor
 	#endregion
 
 	#region Unity Methods
-	public void OnEnable()
+	private void OnEnable()
 	{ 
 		m_audioPreviewer = EditorUtility.CreateGameObjectWithHideFlags("Audio preview", HideFlags.HideAndDontSave, typeof(AudioSource)).GetComponent<AudioSource>();
 
 	}
 
-	public void OnDisable()
+	private void OnDisable()
 	{
 		DestroyImmediate(m_audioPreviewer.gameObject);
 	}

@@ -16,7 +16,7 @@ using UnityEditor;
 using UnityEngine;
 
 [CustomEditor(typeof(GuildIDScriptableObject), true)]
-public class GuildIdEditor : Editor
+public class GuildIDEditor : Editor
 {
     #region Class Variables
         #region Serialized Property

@@ -1,5 +1,5 @@
 @startuml Class Diagram Mark 1
-title Endobiotic UML Class Digram - Mark 1\n<color:Gray>Monstrous | Endobiotic | 04/1/2023</color>
+title Endobiotic UML Class Digram - Mark 1\n<color:Gray>Monstrous | Endobiotic | 04/2/2023</color>
 
 package Scripts <<Folder>> 
 {
@@ -1488,6 +1488,112 @@ package Scripts <<Folder>>
             ===
             <b>Destroy After Methods
             -destroyAfter(float a_duration): IEnumerator
+        }
+    }
+
+    package Editor <<Folder>> 
+    {
+        package DataContainersE 
+        {
+            class AudioDataEditor 
+            {
+                <b>Class Variables
+                -m_audioPreviewer: AudioSource
+
+                ===
+                <b>Custom Editor Methods - Buttons
+                -playPreview(AudioSource a_source, AudioDataScriptableObject a_audioData): void
+                -stopPreview(AudioSource a_source)
+
+                ===
+                <b>Unity Methods
+                -OnEnable(): void
+                -OnDisable(): void
+
+                ===
+                <b>Custom Editor View
+                +OnInspectorGUI(): void
+            }
+
+            class LevelDataEditor 
+            {
+                <b>Custom Editor View
+                +OnInspectorGUI(): void   
+            }
+        }
+
+        package GlobalVariablesE 
+        {
+            class BooleanFlagGlobalVariableEditor 
+            {
+                <b>Serialized Property
+                -m_booleanFlagSerializedProperty: SerializedProperty
+
+                ===
+                <b>Unity Methods
+                -OnEnable(): void
+
+                ===
+                <b>Custom Editor View
+                +OnInspectorGUI(): void   
+            }
+        }
+
+        package IDE 
+        {
+            class GuildIDEditor 
+            {
+                <b>Serialized Property
+                -m_guilDIDSerializedProperty: SerializedProperty
+
+                ===
+                <b>Unity Methods
+                -OnEnable(): void
+
+                ===
+                <b>Custom Editor View
+                +OnInspectorGUI(): void   
+            }
+        }
+
+        package ListsE 
+        {
+            class AudioListEditor 
+            {
+                <b>Serialized Property
+                -m_audioDatasSerializedProperty: SerializedProperty
+
+                ===
+                <b>Unity Methods
+                -OnEnable(): void
+
+                ===
+                <b>Custom Editor View
+                +OnInspectorGUI(): void  
+            }
+
+            class LevelListEditor 
+            {
+                <b>Serialized Property
+                -m_levelDatasSerializedProperty: SerializedProperty
+
+                ===
+                <b>Unity Methods
+                -OnEnable(): void
+
+                ===
+                <b>Custom Editor View
+                +OnInspectorGUI(): void 
+            }
+        }
+
+        package TagE 
+        {
+            class TagDataEditor
+            {
+                <b>Custom Editor View
+                +OnInspectorGUI(): void 
+            }
         }
     }
 }
