@@ -2,7 +2,7 @@
  * Team Name: Monstrous Entertainment - Vex Team
  * Authors: Daniel Cox
  * Created Date: March 6, 2023
- * Last Updated: Match 29, 2023
+ * Last Updated: April 2, 2023
  * Description: This effect class is for control in game audio of any game object.
  * Notes: 
  * Resources: 

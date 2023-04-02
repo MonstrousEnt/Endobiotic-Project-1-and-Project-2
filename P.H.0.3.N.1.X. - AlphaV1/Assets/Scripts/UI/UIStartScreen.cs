@@ -2,7 +2,7 @@
  * Team Name: Monstrous Entertainment - Vex Team
  * Authors: Daniel Cox
  * Created Date: February 12, 2023
- * Last Updated: Match 12, 2023
+ * LLast Updated: April 2, 2023
  * Description: This is the UI class for start screen.
  * Notes: 
  * Resources: 

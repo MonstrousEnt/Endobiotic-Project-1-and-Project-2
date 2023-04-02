@@ -2,7 +2,7 @@
  * Team Name: Monstrous Entertainment - Vex Team
  * Authors: James Dalziel, Daniel Cox
  * Created Date: February 12, 2023
- * Last Updated: Match 29, 2023
+ * Last Updated: April 2, 2023
  * Description: This effect class is for disable any game object.
  * Notes: 
  * Resources: 

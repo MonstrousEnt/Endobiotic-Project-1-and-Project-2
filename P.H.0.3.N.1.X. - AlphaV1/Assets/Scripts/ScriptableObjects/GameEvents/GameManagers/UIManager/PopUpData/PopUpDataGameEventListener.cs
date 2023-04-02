@@ -2,7 +2,7 @@
  * Team Name: Monstrous Entertainment - Vex Team
  * Authors: Daniel Cox
  * Created Date: March 5, 2023
- * Last Updated: Match 29, 2023
+ * Last Updated: April 2, 2023
  * Description: This is the game event listener class for UI manager pop up data events.
  * Notes: 
  * Resources: 

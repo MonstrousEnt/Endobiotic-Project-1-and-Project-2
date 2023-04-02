@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
  * Team Name: Monstrous Entertainment - Vex Team
  * Authors: Daniel Cox
  * Created Date: February 12, 2023
- * Last Updated: Match 29, 2023
+ * Last Updated: April 2, 2023
  * Description: This is the game manager class for level loader async.
  * Notes: Feel free to add a loading screen.
  * Resources: 

@@ -2,7 +2,7 @@
  * Team Name: Monstrous Entertainment - Vex Team
  * Authors: Daniel Cox
  * Created Date: February 18, 2023
- * Last Updated: Match 29, 2023
+ * Last Updated: April 2, 2023
  * Description: This trigger class is for open the try again UI Menu.
  * Notes: 
  * Resources: 

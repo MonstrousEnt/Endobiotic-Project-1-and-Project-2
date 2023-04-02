@@ -2,7 +2,7 @@
  * Team Name: Monstrous Entertainment - Vex Team
  * Authors: Daniel Cox
  * Created Date: March 7, 2023
- * Last Updated: March 30, 2023
+ * Last Updated: April 2, 2023
  * Description: This is the editor class for Scriptable Object data container pop up data.
  * Notes: 
  * Resources: 
