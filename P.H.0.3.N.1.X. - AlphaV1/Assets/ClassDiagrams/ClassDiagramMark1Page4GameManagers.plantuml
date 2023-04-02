@@ -1,0 +1,129 @@
+@startuml Class Diagram Mark 1 - Page 4: GameManagers
+title Endobiotic UML Class Digram - Mark 1\nPage 4: GameManagers\n<color:Gray>Monstrous | Endobiotic | 04/2/2023</color>
+
+package Scripts <<Folder>>
+{
+    package GameManager <<Folder>>
+    {
+        class AudioGameManager 
+        {
+            <b>Audio List
+            -m_audioListSoundEffects: AudioListScriptableObject
+            -m_audioListSoundtracks: AudioListScriptableObject
+
+            ===
+            <b>Game Objects
+            -m_soundEffectsGameObject: GameObject
+            -m_soundtrackGameObject: GameObject
+
+            ===
+            <b>Getters and Setters
+            -setAudioScource(AudioDataScriptableObject a_audioData): void
+
+            ===
+            <b>Initialize Methods
+            -intializeGameObject(AudioDataScriptableObject a_audioData, GameObject a_parentGameObject): void
+            -intializeGameObjects(AudioListScriptableObject a_audioList, GameObject a_parentGameObject): void
+
+            ===
+            <b>Audio Game Events
+            +PlaySound(AudioDataScriptableObject a_audioData): void
+            +PlayRandomSound(AudioListScriptableObject a_audioList): void
+            +StopSound(AudioDataScriptableObject a_audioData): void
+            +DisableLoop(AudioDataScriptableObject a_audioData): void
+            +EnableLoop(AudioDataScriptableObject a_audioData): void
+
+            ===
+            <b>Unity Methods
+            -Awake(): void
+        }
+
+        class LevelLoaderAsyncGameManager 
+        {
+            <b>Async Operation
+            -scenesLoading: List<AsyncOperation>
+
+            ===
+            <b>Level Loader Game Events
+            +LoadNextScene(LevelDataScriptableObject levelData): void
+
+            ===
+            <b>Level Load Methods
+            -getScenceLoadProgress(): IEnumerator
+        }
+
+        class LevelResetGameManager 
+        {
+            <b>Data Containers - Scriptable Object
+            -m_pointList: PointList
+            -m_timerData: TimerDataScriptableObject
+
+            ===
+            <b>Level Reset Game Events
+            +RestartLevel(): void
+        }
+
+        class SettingsGameManager 
+        {
+            <b>Pause Data
+            -m_gameIsPause: bool
+
+            ===
+            <b>FPS Data
+            -m_lockFps: int
+            -m_fps: int
+
+            ===
+            <b>Getters and Setters
+            -setFPS(int a_fps): void
+            -disableVsync(): void
+
+            ===
+            <b>Settings Game Events
+            +EnablePause(): void
+            +DisablePause(): void
+
+            ===
+            <b>Unity Methods
+            -Start(): void
+        }
+
+        class StartLevelGameManager
+        {
+            <b>Unity Event
+            -m_startTimerUnityEvent: UnityEvent
+            -m_soundEffectUnityEvent: UnityEvent
+
+            ===
+            <b>Unity Methods
+            -Start(): void
+
+            ===
+            <b>Start Level Methods
+            -startLevel(): void
+        }
+
+        class TimerManager 
+        {
+            <b>Time Data
+            -m_timerData: TimerDataScriptableObject
+
+            ===
+            <b>Timer Game Events
+            +SetUpTimer(TimerDataScriptableObject a_timerData): void
+            +EnableTime(TimerDataScriptableObject a_timerData): void
+
+            ===
+            Timer Mode Methods
+            -UpdateTimer(TimerDataScriptableObject a_timerData): void
+            -countUpTimer(TimerDataScriptableObject a_timerData): void
+            -countDownTimer(TimerDataScriptableObject a_timerData): void
+
+            ===
+            <b>Unity Methods
+            -Update(): void
+        }
+    }
+}
+
+@enduml

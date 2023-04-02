@@ -1,0 +1,23 @@
+@startuml Class Diagram Mark 1 - Page 14: ScriptableObject - Tag
+title Endobiotic UML Class Digram - Mark 1\nPage 14: ScriptableObject - Tag\n<color:Gray>Monstrous | Endobiotic | 04/2/2023</color>
+
+package Scripts <<Folder>>
+{
+    package ScriptableObject 
+    {
+        package Tag <<Folder>> 
+        {
+            class TagDataScriptableObject 
+            {
+                <b>Class Variables
+                -m_tagName: string
+
+                ===
+                <b>Getters and Setters
+                +tagName: string
+            }
+        }
+    }
+}
+
+@endum

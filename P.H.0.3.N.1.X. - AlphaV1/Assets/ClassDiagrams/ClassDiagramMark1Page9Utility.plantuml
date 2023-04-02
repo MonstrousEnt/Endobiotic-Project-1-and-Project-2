@@ -1,0 +1,24 @@
+@startuml Class Diagram Mark 1 - Page 9: Utility
+title Endobiotic UML Class Digram - Mark 1\nPage 9: Utility\n<color:Gray>Monstrous | Endobiotic | 04/2/2023</color>
+
+package Scripts <<Folder>>
+{
+    package Utility <<Folder>> 
+    {
+        class DestroyAfterSeconds 
+        {
+            <b>Duration Data
+            -m_duration: float
+
+            ===
+            <b>Unity Methods
+            -Start(): void
+
+            ===
+            <b>Destroy After Methods
+            -destroyAfter(float a_duration): IEnumerator
+        }
+    }
+}
+
+@endum
