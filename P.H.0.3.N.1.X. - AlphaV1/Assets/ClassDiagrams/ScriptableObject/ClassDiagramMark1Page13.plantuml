@@ -1,0 +1,25 @@
+@startuml Class Diagram Mark 1 - Page 13
+title Endobiotic UML Class Digram - Mark 1\nPage 13: ScriptableObject - GlobalVariables\n<color:Gray>Monstrous | Endobiotic | 04/2/2023</color>
+
+package Scripts <<Folder>>
+{
+   package ScriptableObject <<Folder>> 
+    {
+        package GlobalVariables <<Folder>>
+        {
+            class BooleanFlagGlobalVariableScriptableObject 
+            {
+                <b>Class Variables
+                -m_booleanFlag: bool 
+
+                ===
+                <b>Getters and Setters
+                +booleanFlag: bool 
+                +EnableBoolFlag(): void
+                +DisableBooleanFlag(): void
+            }
+        }
+    } 
+}
+
+@enduml

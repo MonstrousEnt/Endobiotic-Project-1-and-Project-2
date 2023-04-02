@@ -1,0 +1,53 @@
+@startuml Class Diagram Mark 1 - Page 12
+title Endobiotic UML Class Digram - Mark 1\nPage 12: ScriptableObject - Game Events - GameManagers - UIManager\n<color:Gray>Monstrous | Endobiotic | 04/2/2023</color>
+
+package Scripts <<Folder>>
+{
+   package ScriptableObject <<Folder>> 
+    {
+        package GameEvents <<Folder>> 
+        {
+            package UIManager <<Folder>> 
+            {
+                package PopUpData <<Folder>> 
+                {
+                    class PopUpDataGameEventScriptableObject 
+                    {
+                        <b>Class Variables
+                        -m_listeners: PopUpDataGameEventListener
+
+                        ===
+                        <b>Registration Listener
+                        +RegisterListener(PopUpDataGameEventListener listener): void
+                        +UnregisterListener(PopUpDataGameEventListener listener): void
+
+                        ===
+                        <b>Raise/Invoke Game Events
+                        +Raise(PopUpDataScriptableObject a_popUpData): void
+                    }
+
+                    class PopUpDataGameEventListener 
+                    {
+                        <b>Game Event Scriptable Object
+                        -m_gameEvent: PopUpDataGameEventScriptableObject
+
+                        ===
+                        <b>Unity Event
+                        -m_response: UnityEvent<PopUpDataScriptableObject>
+
+                        ===
+                        <b>Invoke Unity Events
+                        +OnEventRaised(PopUpDataScriptableObject a_popUpData): void
+
+                        ===
+                        <b>Unity Methods
+                        -OnEnable(): void
+                        -nDisable(): void
+                    }
+                }
+            }
+        }
+    } 
+}
+
+@enduml

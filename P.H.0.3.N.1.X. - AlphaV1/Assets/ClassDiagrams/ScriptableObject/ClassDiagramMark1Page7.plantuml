@@ -1,0 +1,97 @@
+@startuml Class Diagram Mark 1 - Page 7
+title Endobiotic UML Class Digram - Mark 1\nPage 7: ScriptableObject - DataContainers\n<color:Gray>Monstrous | Endobiotic | 04/2/2023</color>
+
+package Scripts <<Folder>>
+{
+   package ScriptableObject <<Folder>> 
+    {
+        package DataContainers <<Folder>> 
+        {
+            class AudioDataScriptableObject 
+            {
+                <b>Class Variable
+                -m_clip: AudioClip
+                -m_audioGameObjectName: string
+                -m_volume: float
+                -m_pitch: float
+                -m_loop: bold
+                -m_playOnAwake: bool
+                -m_source: AudioSource
+
+                ===
+                <b>Getters and Setters
+                +clip: AudioClip
+                +audioGameObjectName: string
+                +volume: float
+                +pitch: float
+                +loop: bold
+                +playOnAwake: bool
+                +source: AudioSource
+
+                ===
+                <b>Unity Methods
+                -OnEnable(): void
+            }
+
+            class LevelDataScriptableObject 
+            {
+                <b>Class Variables
+                -m_levelID: string
+                -m_levelName: string
+                -m_buildIndex: int
+                -m_unlockLevel: bool
+
+                ===
+                <b>Getters and Setters
+                +levelID: string
+                +levelName: string
+                +buildIndex: int
+                +unlockLevel: bool
+            }
+
+            class PopUpDataScriptableObject 
+            {
+                <b>Class Variables 
+                -m_message: string
+                -m_isConfirm: bool
+                -m_isReadyToClose: bool
+                -m_popUpActionUnityEvent: UnityEvent
+
+                ===
+                <b>Getters and Setters 
+                +message: string
+                +isConfirm: bool
+                +isReadyToClose: bool
+                +popUpActionUnityEvent: UnityEvent
+            }
+
+            class TimerDataScriptableObject 
+            {
+                <b>Class Variables
+                -m_timeInSeconds: float
+                -m_timerMode: TimerMode
+                -m_startTimeInSeconds: float
+                -m_startTimer: bool
+                -m_UpdateUI: bool
+
+                ===
+                <b>Getters and Setters
+                +timeInSeconds: float
+                +timerMode: TimerMode
+                +startTimeInSeconds: float
+                +startTimer: bool
+                +UpdateUI: bool
+
+                ===
+                <b>Reset Data Methods
+                +Reset(): void
+
+                ===
+                <b>Unity Methods
+                -OnEnable(): void
+            }
+        }
+    } 
+}
+
+@enduml

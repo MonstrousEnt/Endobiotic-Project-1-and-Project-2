@@ -1,0 +1,50 @@
+@startuml Class Diagram Mark 1 - Page 8
+title Endobiotic UML Class Digram - Mark 1\nPage 8: ScriptableObject - Game Events - Void\n<color:Gray>Monstrous | Endobiotic | 04/2/2023</color>
+
+package Scripts <<Folder>>
+{
+   package ScriptableObject <<Folder>> 
+    {
+        package GameEvents <<Folder>> 
+        {
+            package Void <<Folder>> 
+            {
+                class VoidGameEventScriptableObject 
+                {
+                    <b>Class Variables
+                    -m_listeners: VoidGameEventListener
+
+                    ===
+                    <b>Registration Listener
+                    +RegisterListener(VoidGameEventListener listener): void
+                    +UnregisterListener(VoidGameEventListener listener): void
+
+                    ===
+                    <b>Raise/Invoke Game Events
+                    +Raise(): void
+                }
+
+                class VoidGameEventListener 
+                {
+                    <b>Game Event Scriptable Object
+                    -m_gameEvent: VoidGameEventScriptableObject
+
+                    ===
+                    <b>Unity Event
+                    -m_response: UnityEvent
+
+                    ===
+                    <b>Invoke Unity Events
+                    +OnEventRaised(): void
+
+                    ===
+                    <b>Unity Methods
+                    -OnEnable(): void
+                    -nDisable(): void
+                }
+            }
+        }
+    } 
+}
+
+@enduml
