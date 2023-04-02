@@ -992,6 +992,49 @@ package Scripts <<Folder>>
                     -nDisable(): void
                 }
             }
+
+            package GameManagerSO <<Folder>> 
+            {
+                package AudioManager <<Folder>> 
+                {
+                    package AudioData <<Folder>> 
+                    {
+                        class AudioDataGameEventScriptableObject 
+                        {
+                             <b>Class Variables
+                            -m_listeners: AudioDataGameEventListener
+
+                            ===
+                            <b>Registration Listener
+                            +RegisterListener(AudioDataGameEventListener listener): void
+                            +UnregisterListener(AudioDataGameEventListener listener): void
+
+                            ===
+                            <b>Raise/Invoke Game Events
+                            +Raise(AudioDataScriptableObject a_audioData): void
+                        }
+
+                        class AudioDataGameEventListener 
+                        {
+                            <b>Game Event Scriptable Object
+                            -m_gameEvent: AudioDataScriptableObject
+
+                            ===
+                            <b>Unity Event
+                            -m_response: UnityEvent
+
+                            ===
+                            <b>Invoke Unity Events
+                            +OnEventRaised(AudioDataScriptableObject a_audioData): void
+
+                            ===
+                            <b>Unity Methods
+                            -OnEnable(): void
+                            -nDisable(): void
+                        }
+                    }
+                }
+            }
         }
 
         package GlobalVariables <<Folder>>
