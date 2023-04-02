@@ -1,0 +1,64 @@
+@startuml Class Diagram Mark 1 - Page 6
+title Endobiotic UML Class Digram - Mark 1\nPage 6: PhysicsInteractions\n<color:Gray>Monstrous | Endobiotic | 04/2/2023</color>
+
+package Scripts <<Folder>>
+{
+    package PhysicsInteractions <<Folder>>
+    {
+        class PushableObject
+        {
+            <b>Form
+            -m_requiredForm: Form
+            
+            ===
+            <b>Intractable
+            -m_objectType: InteractableOjbects 
+
+            ===
+            <b>Pit Trap Data
+            -m_destroyOnceUsed: bool
+
+            ===
+            <b>Unity Events
+            -m_soundEffectUnityEvent: UnityEvent
+
+            ===
+            <b>Unity Methods
+            -Awake(): void
+            -OnCollisionEnter2D(Collision2D a_collision): void
+        }
+
+        class TrapObject 
+        {
+            <b>Intractable
+            -m_objectType: InteractableOjbects
+
+            ===
+            <b>Sprite
+            -m_hasActivatedSprite: Sprite
+
+            ===
+            <b>Unity Events
+            -m_addPointUnityEvent: UnityEvent
+
+            ===
+            <b>Sprite - Non-Serialize Field
+            -m_spriteRenderer: SpriteRenderer
+
+            ===
+            <b>Trap
+            m_trapCollider: Collider2D
+
+            ===
+            <b>Unity Methods 
+            -Awake(): void
+
+            ===
+            <b>Intractable Methods
+            +Interact(): void
+            +GetObjectType(): InteractableOjbects
+        }
+    }
+}
+
+@enduml
