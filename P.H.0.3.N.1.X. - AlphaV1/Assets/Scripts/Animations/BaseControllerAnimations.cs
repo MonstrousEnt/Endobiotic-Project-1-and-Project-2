@@ -6,6 +6,7 @@
  * Description: This is the base class for player and enemy animations.
  * Notes:
  * Resources: 
+ *  Escaping Unity Animator HELL: https://youtu.be/nBkiSJ5z-hE
  */
 
 using UnityEngine;

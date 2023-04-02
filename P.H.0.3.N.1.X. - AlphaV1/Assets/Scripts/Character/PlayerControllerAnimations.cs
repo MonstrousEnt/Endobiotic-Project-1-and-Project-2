@@ -6,6 +6,7 @@
  * Description: This is the class for player animations.
  * Notes:
  * Resources: 
+ *  Escaping Unity Animator HELL: https://youtu.be/nBkiSJ5z-hE
  */
 
 using UnityEngine;
