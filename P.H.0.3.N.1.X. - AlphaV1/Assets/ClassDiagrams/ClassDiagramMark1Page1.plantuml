@@ -1,0 +1,401 @@
+@startuml Class Diagram Mark 1 - Page 1
+title Endobiotic UML Class Digram - Mark 1\nPage 1: BaseControllerAnimations Inherits\n<color:Gray>Monstrous | Endobiotic | 04/2/2023</color>
+
+    package Animations <<Folder>> 
+    {
+        abstract Class BaseControllerAnimations 
+        {
+            <b>Animations Status - Idle
+            #m_IDLE_DOWN: string
+            #m_IDLE_UP: string
+            #m_IDLE_LEFT: string
+            #m_IDLE_RIGHT: string
+            
+            <b>Animations Status - Walk
+            #m_WALK_DOWN: string
+            #m_WALK_UP: string
+            #m_WALK_LEFT: string
+            #m_WALK_RIGHT: string
+            
+            <b>Components
+            #m_animator: Animator
+           
+            <b>Animations
+            #m_currentAnimation: string
+            #m_LastMoveDir: MoveDirection
+            #m_turnThresholdMoveY: float
+
+            ===
+            <b>Getters and Setters
+            +Animator: Animator 
+
+            ===
+            <b>Mini Animation Manager
+            #ChangeAnimationState(string a_newAnimation): void
+            ===
+            <b>Animations Methods
+            +CallMovementAnimation(Vector2 a_movement): void
+            -idleAnimation(): void
+            -moveAnimations(Vector2 a_movement): void
+        }
+    } 
+
+    package Character <<Folder>> 
+    {
+        CharacterDeathController <|-- BaseControllerAnimations
+        PlayerControllerAnimations <|-- BaseControllerAnimations
+
+        class CharacterDeathController 
+        {
+            <b>Player Death animation
+            -m_DEATH
+
+            ====
+            <b>Unity Methods
+            +Start: void
+            
+            ====
+            <b>Death Animations
+            +Die: void
+
+        }
+
+        class CharacterFormsController 
+        {
+            <b>Player Forms (Game Objects)
+            -m_formObjects: List<GameObject>
+
+            ===
+            <b>Components
+            +m_controllerAnimations: BaseControllerAnimations
+
+            ===
+            Player Current form
+            -m_currform: Form
+
+            ===
+            <b>Getters annd Setters
+            +currForm: Form
+
+            ===
+            <b>Unity Methods
+            -Awake(): void
+
+            ===
+            <b>Character Form Methods
+            +ChangeForm(Form a_newForm): void
+            -Init: void
+
+        }
+
+        class CharacterInteractionController 
+        {
+            <b>Prefabs
+            -m_deathPrefab: GameObject
+
+            ===
+            <b>Special Effects
+            -m_riseAgainParticles: ParticleSystem
+
+            ===
+            <b>Sounds
+            -m_soundEffectUnityEvent: UnityEvent
+
+            ====
+            <b>Invulnerable Timer - Serialize Fields
+            -m_invulnerableTimeSF: float
+
+            ===
+            <b>Tags Scriptable Object
+            -m_tagDataEnemy: TagDataScriptableObject
+            -m_tagDataInteractable: TagDataScriptableObject
+
+            ===
+            <b>Boolean Flag Scriptable Object - Player Manager
+            -m_booleanFlagGlobalVariablePlayerCanMove: BooleanFlagGlobalVariableScriptableObject
+
+            ===
+            <b>Components
+            -m_characterFormsController: CharacterFormsController
+            -m_characterItemHolder: CharacterItemHolder
+
+            ===
+            <b>Current Intractable
+            -m_currentlyInteractable: List<Interactable> 
+
+            ===
+            Invulnerable Timer - Non-Serialize Fields
+            -m_invulnerableTimer:float
+
+            ===
+            <b>Unity Methods
+            -Awake(): void
+            -Start(): void
+            -OnCollisionEnter2D(Collision2D a_collision2D): void
+            -OnTriggerEnter2D(Collider2D a_collider2D): void
+            -OnTriggerExit2D(Collider2D a_collider2D): void
+
+            ===
+            <b>Character Interaction Methods
+            +Interact(): void
+            -addIntractable(Collider2D a_collider2D): void
+            -removeIntractable(Collider2D a_collider2D): void
+            -respawnCrab(): void
+            -respawnAsNewForm(Form a_newForm, Vector3 a_position): void
+            -respawnCharacter(Collision2D a_collision2D): void
+            -waitWhileDead(float a_duration): void
+        }
+
+        class CharacterItemHolder
+        {
+            <b>Sprite
+            -m_itemSpriteRenderer: SpriteRenderer
+
+            ===
+            <b>Intractable
+            -m_currentPickupObject: EffectPickupItem
+
+            ===
+            <b>Unity Methods
+            Start(): void
+
+            ===
+            <b>Item Holder Methods
+            +AddItem(EffectPickupItem a_pickupItem, Sprite a_itemSprite): void
+            +DropItem(): void
+            +UseItem(): void
+        }
+
+        class DestroyerFormAttack 
+        {
+            <b>Components
+            -m_playerControllerAnimations: PlayerControllerAnimations
+
+            ===
+            <b>Unity Methods
+            -Update():void
+
+        }
+
+        class PlayerController 
+        {
+            <b>Components (Reference by Unity)
+            -m_playerAnimation: PlayerControllerAnimations
+
+            ===
+            <b>Global Scriptable Object Variable
+            -m_booleanFlagGlobalVariablePlayerCanMove: BooleanFlagGlobalVariableScriptableObject
+
+            ===
+            <b>Move
+            -m_moveSpeed: float
+            -m_movement: Vector2
+
+            ===
+            <b>Components (Initializes in Awake)
+            -m_rigidBody2D: Rigidbody2D
+            -m_characterInteractionController: CharacterInteractionController
+
+            ===
+            <b>Unity Methods
+            -Awake(): void
+            -Update(): void
+            -FixedUpdate(): void
+
+            ===
+            <b>Player Controller Methods
+            -inputs(): void
+            -move(): void
+            -interact(): void
+        }
+
+        class PlayerControllerAnimations
+        {
+            <b>Animation States - Destroyer
+            -m_DEST_ATK_DOWN: string
+            -m_DEST_ATK_UP: string
+            -m_DEST_ATK_LEFT: string
+            -m_DEST_ATK_RIGHT: string
+
+            ===
+            <b>Animation States - Magnetic
+            -m_MAGNET_PULL_DOWN: string
+            -m_MAGNET_PULL_UP: string
+            -m_MAGNET_PULL_LEFT: string
+            -m_MAGNET_PULL_RIGHT: string
+
+            ===
+            <b>Delay or Timer
+            -m_requiredTime: float
+
+            ===
+            <b>Base Controller Animations Override Methods - Player Controller Animations
+            #ChangeAnimationState(string newAnimation): void
+
+            ===
+            <b>Unity Methods
+            -Start(): void
+
+            ===
+            <b>Animation Methods
+            +DestroyerAttack(): void
+            +void MagnetPull(): void
+        }
+
+        class PlayerControllerUI 
+        {
+            <b>Boolean Flag Global Variable Scriptable Object - UI Manager
+            -m_booleanFlagGlobalVariableUIManagerPauseMenuIsActive: BooleanFlagGlobalVariableScriptableObject
+            
+            ===
+            <b>Unity Events
+            -m_enablePauseMneuUnityEevnt: UnityEvent
+            -m_disablePauseMneuUnityEevnt: UnityEvent
+
+            ===
+            <b>Unity Methods
+            +Update(): void
+        }
+
+    }
+    
+    package Enemy <<Folder>> 
+    {
+         EnemyControllerAnimations <|-- BaseControllerAnimations
+
+        class EnemyController 
+        {
+            <b>Form
+            -m_intialForm: Form
+
+            ===
+            <b>AI
+            -m_moveSpeed: float
+            -m_aggroRadius: float
+
+            ===
+            <b>Tag Scriptable Object
+            -m_tagDataPlayer: TagDataScriptableObject
+
+            ===
+            <b>Attack
+            -m_isAttacking: bool 
+
+            ===
+            <b>Target
+            -m_target: Transform
+            -m_characterFormController: CharacterFormsController
+
+            ===
+            <b>Movement
+            -m_rigidbody2D: Rigidbody2D
+            -m_preferredPosition:
+
+            ===
+            <b>Getters and Setters
+            +form: Form
+            setBehaviour(GameObject a_target): void
+
+            ===
+            <b>Find Methods
+            FFindTargetsInRange(float a_range): void
+
+            ===
+            <b>Unity Methods
+            -Awake(): void
+            -Start(): void
+            -Update(): void
+
+            ===
+            <b>AI Methods
+            +UpdatePreferredPosition(Vector3 a_position): void
+            -move(): void
+            -intelligence(float a_range, float a_updateSpeed): void
+        }
+
+        class EnemyControllerAnimations 
+        {
+            <b>Movements
+            -m_previousPosition: Vector3
+
+            ===
+            <b>Unity Methods
+            -Start(): void
+            -Update(): void
+
+            ===
+            <b>Animations Methods
+            -movementDetection(): void
+        }
+
+        class EnemyInteraction 
+        {
+            <b>Components
+            -m_enemyControllerAnimations: EnemyControllerAnimations
+            -m_characterFormsController: CharacterFormsController
+
+            ===
+            <b>Unity Events
+            -m_deathEvent: UnityEvent<GameObject>
+
+            ===
+            <b>Getters and Setters
+            +deathEvent: UnityEvent<GameObject>
+
+            ===
+            <b>Unity Methods
+            -Awake(): void
+
+            ===
+            <b>AI Interaction Methods
+            +KillEnemy(): void
+            +DestroyEnemy(): void
+        }
+
+       class EnemySpawner 
+       {
+            <b>Form Prefab
+            -m_manipulatorPrefab: GameObject
+            -m_transportPrefab: GameObject
+            -m_magneticPrefab: GameObject
+            -m_electricPrefab: GameObject
+            -m_destroyerPrefab: GameObject
+            -m_batteryPrefab: GameObject
+            -m_crabPrefab: GameObject
+
+            ===
+            <b>Spawner Data
+            -m_spawnInterval: float
+            -m_spawnDistanceX: float
+            -m_spawnDistanceY: float
+
+            ===
+            <b>Robots List
+            -m_userSpawnedRobots: List<GameObject>
+
+            ===
+            <b>Sound Unity Event
+            -m_soundEffectUnityEvent: UnityEvent
+
+            ===
+            <b>Prefabs
+            -m_enemyFormList: List<GameObject>
+
+            ===
+            <b>Robots List Dictionary
+            -m_trackedRobots: Dictionary<GameObject, robot>
+
+            ===
+            <b>Unity Methods
+            -Start(): void
+
+            ===
+            AI Methods
+            +UpdateCurrentRobotsList(GameObject caller): void
+            -initialize(): void
+            -loadRobotList(): void
+            -spawnRobot(): void
+            -loadUserSpawnedRobots(): void
+       }
+    }
+@enduml
