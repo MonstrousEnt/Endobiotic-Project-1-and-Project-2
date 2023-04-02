@@ -3,7 +3,7 @@ title Endobiotic UML Class Digram - Mark 1\nPage 17: Structs\n<color:Gray>Monstr
 
 package Scripts <<Folder>>
 {
-     package Structs <<Folder>>
+    package Structs <<Folder>>
     {
         package Enemy <<Folder>>
         {
