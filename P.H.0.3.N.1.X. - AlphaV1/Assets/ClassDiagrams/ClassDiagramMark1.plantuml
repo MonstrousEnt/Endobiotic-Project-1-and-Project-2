@@ -3,54 +3,6 @@ title Endobiotic UML Class Digram - Mark 1\n<color:Gray>Monstrous | Endobiotic |
 
 package Scripts <<Folder>> 
 {
-    package Enums <<Folder>>
-    {
-        package CharacterEnums <<Folder>>
-        {
-            enum Form 
-            {
-                +Manipulator
-                +Transport
-                +Magnetic
-                +Electronic
-                +Destroyer
-                +Battery
-                +Crab
-            }
-        }
-        
-        package GameManagerEnums <<Folder>> 
-        {
-            package TimerManagerEnums <<Folder>> 
-            {
-                enum TimerMode
-                {
-                    +CountUp
-                    +CountDown
-                }
-            }
-        }
-
-        package InteractableEnums <<Folder>>
-        {
-            enum InteractableOjbects 
-            {
-                +Pit
-            }
-        }
-
-        package MovementEnums <<Folder>>
-        {
-            enum MoveDirection 
-            {
-                +Down
-                +Up
-                +Left
-                +Right
-            }
-        }
-    }
-
     package GameManager <<Folder>>
     {
         class AudioGameManager 
