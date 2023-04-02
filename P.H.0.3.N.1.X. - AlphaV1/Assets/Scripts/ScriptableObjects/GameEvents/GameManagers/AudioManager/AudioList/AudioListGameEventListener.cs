@@ -21,13 +21,13 @@ public class AudioListGameEventListener : MonoBehaviour
     [SerializeField] private AudioListGameEventScritableObject m_gameEvent;
 
     [Header("Unity Event")]
-    [SerializeField] private UnityEvent<AudioListScriptableObject> m_respone;
+    [SerializeField] private UnityEvent<AudioListScriptableObject> m_response;
     #endregion
 
     #region Invoke Unity Events
     public void OnEventRaised(AudioListScriptableObject a_audioList)
     {
-        m_respone?.Invoke(a_audioList);
+        m_response?.Invoke(a_audioList);
     }
     #endregion
 

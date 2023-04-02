@@ -1033,6 +1033,43 @@ package Scripts <<Folder>>
                             -nDisable(): void
                         }
                     }
+
+                    package AudioList <<Folder>> 
+                    {
+                         class AudioListGameEventScritableObject 
+                        {
+                             <b>Class Variables
+                            -m_listeners: AudioListGameEventListener
+
+                            ===
+                            <b>Registration Listener
+                            +RegisterListener(AudioListGameEventListener listener): void
+                            +UnregisterListener(AudioListGameEventListener listener): void
+
+                            ===
+                            <b>Raise/Invoke Game Events
+                            +Raise(AudioListScriptableObject a_audioList): void
+                        }
+
+                        class AudioListGameEventListener 
+                        {
+                            <b>Game Event Scriptable Object
+                            -m_gameEvent: AudioListGameEventScritableObject
+
+                            ===
+                            <b>Unity Event
+                            -m_response: UnityEvent
+
+                            ===
+                            <b>Invoke Unity Events
+                            +OnEventRaised(AudioListScriptableObject a_audioList): void
+
+                            ===
+                            <b>Unity Methods
+                            -OnEnable(): void
+                            -nDisable(): void
+                        }
+                    }
                 }
             }
         }
